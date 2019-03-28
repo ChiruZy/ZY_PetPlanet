@@ -1,0 +1,5 @@
+target 'PetPlanet'
+pod 'EllipsePageControl','~> 0.0.4'
+pod 'AFNetworking', '~> 3.0'
+pod 'SDWebImage', '~> 4.0'
+pod 'FXBlurView', '~> 1.6.4'

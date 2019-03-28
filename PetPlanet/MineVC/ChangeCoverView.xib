@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChangeCoverView">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFw-wn-Maq">
+                    <rect key="frame" x="0.0" y="75" width="245" height="55"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="UGX-bN-Dtw">
+                            <rect key="frame" x="32.5" y="2.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="7dL-PN-wIR"/>
+                                <constraint firstAttribute="height" constant="50" id="VzT-Q9-uID"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93o-l5-dMQ">
+                            <rect key="frame" x="97.5" y="18.5" width="83" height="18"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UGX-bN-Dtw" firstAttribute="centerX" secondItem="vFw-wn-Maq" secondAttribute="centerX" constant="-65" id="Ati-qk-6sh"/>
+                        <constraint firstItem="93o-l5-dMQ" firstAttribute="centerY" secondItem="vFw-wn-Maq" secondAttribute="centerY" id="PQo-aX-c1e"/>
+                        <constraint firstItem="93o-l5-dMQ" firstAttribute="leading" secondItem="UGX-bN-Dtw" secondAttribute="trailing" constant="15" id="WHm-bZ-ctl"/>
+                        <constraint firstItem="UGX-bN-Dtw" firstAttribute="centerY" secondItem="vFw-wn-Maq" secondAttribute="centerY" id="lJP-mY-iHi"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaz-07-kEH">
+                    <rect key="frame" x="0.0" y="20" width="245" height="55"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="ie8-xG-gl8">
+                            <rect key="frame" x="32.5" y="2.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="2Di-dh-vJw"/>
+                                <constraint firstAttribute="height" constant="50" id="Lfy-Lp-RA6"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-Rn-uw8">
+                            <rect key="frame" x="97.5" y="18.5" width="90" height="18"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ie8-xG-gl8" firstAttribute="centerY" secondItem="vaz-07-kEH" secondAttribute="centerY" id="GYc-ip-JdT"/>
+                        <constraint firstItem="vvc-Rn-uw8" firstAttribute="centerY" secondItem="vaz-07-kEH" secondAttribute="centerY" id="JRg-KN-kvI"/>
+                        <constraint firstItem="vvc-Rn-uw8" firstAttribute="leading" secondItem="ie8-xG-gl8" secondAttribute="trailing" constant="15" id="baS-ZU-b7B"/>
+                        <constraint firstItem="ie8-xG-gl8" firstAttribute="centerX" secondItem="vaz-07-kEH" secondAttribute="centerX" constant="-65" id="kUN-Yy-P87"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vaz-07-kEH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="HQw-AS-Xrr"/>
+                <constraint firstItem="vFw-wn-Maq" firstAttribute="leading" secondItem="vaz-07-kEH" secondAttribute="leading" id="Ro6-uy-jQ3"/>
+                <constraint firstItem="vFw-wn-Maq" firstAttribute="top" secondItem="vaz-07-kEH" secondAttribute="bottom" id="aPX-Yw-rAE"/>
+                <constraint firstItem="vaz-07-kEH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="crV-uL-MNc"/>
+                <constraint firstItem="vFw-wn-Maq" firstAttribute="trailing" secondItem="vaz-07-kEH" secondAttribute="trailing" id="eJU-O9-ztv"/>
+                <constraint firstItem="vFw-wn-Maq" firstAttribute="height" secondItem="vaz-07-kEH" secondAttribute="height" id="jQD-WV-ldF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vFw-wn-Maq" secondAttribute="bottom" constant="20" id="kNQ-2c-YPH"/>
+                <constraint firstItem="vFw-wn-Maq" firstAttribute="top" secondItem="vaz-07-kEH" secondAttribute="bottom" id="upN-2X-sLT"/>
+                <constraint firstItem="vaz-07-kEH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="vuH-9M-lgG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                    <size key="value" width="0.0" height="3"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                    <real key="value" value="0.20000000000000001"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="53.600000000000001" y="48.575712143928037"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photo" width="50" height="50"/>
+        <image name="upload" width="50" height="50"/>
+    </resources>
+</document>

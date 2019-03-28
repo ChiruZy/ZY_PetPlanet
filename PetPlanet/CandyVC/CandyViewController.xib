@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CandyViewController">
+            <connections>
+                <outlet property="listView" destination="ZKK-CC-RUL" id="jRu-9c-kKa"/>
+                <outlet property="titleView" destination="suK-ca-SgV" id="zrx-uf-sBQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKK-CC-RUL" customClass="JXCategoryListContainerView">
+                    <rect key="frame" x="0.0" y="144" width="375" height="634"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6x-fL-jmx">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rF1-91-XEl">
+                            <rect key="frame" x="20" y="60" width="262.66666666666669" height="26"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="ym2-tW-QUl">
+                                    <rect key="frame" x="12" y="3" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="BFX-Ok-xu2"/>
+                                        <constraint firstAttribute="height" constant="20" id="c4S-2d-0ho"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ym2-tW-QUl" firstAttribute="centerY" secondItem="rF1-91-XEl" secondAttribute="centerY" id="FHj-Lv-tSY"/>
+                                <constraint firstAttribute="height" constant="26" id="G3P-OM-AdJ"/>
+                                <constraint firstItem="ym2-tW-QUl" firstAttribute="leading" secondItem="rF1-91-XEl" secondAttribute="leading" constant="12" id="Z3Z-E9-RB5"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="13"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-qQ-AWD">
+                            <rect key="frame" x="325" y="53" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="JCq-tI-0TN"/>
+                                <constraint firstAttribute="height" constant="40" id="Q8f-hL-XzP"/>
+                            </constraints>
+                            <state key="normal" image="bell"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suK-ca-SgV" customClass="JXCategoryTitleView">
+                            <rect key="frame" x="-10" y="104" width="320" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="N48-OO-XQ8"/>
+                                <constraint firstAttribute="width" constant="320" id="aWg-yG-qLA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.63137254901960782" green="0.62352941176470589" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="eUe-qQ-AWD" secondAttribute="trailing" constant="10" id="2O9-yA-kUH"/>
+                        <constraint firstItem="suK-ca-SgV" firstAttribute="leading" secondItem="T6x-fL-jmx" secondAttribute="leading" constant="-10" id="5yb-gW-foO"/>
+                        <constraint firstItem="rF1-91-XEl" firstAttribute="leading" secondItem="T6x-fL-jmx" secondAttribute="leading" constant="20" id="Nfz-RF-6Df"/>
+                        <constraint firstItem="rF1-91-XEl" firstAttribute="top" secondItem="T6x-fL-jmx" secondAttribute="top" constant="60" id="Oiq-aK-Htk"/>
+                        <constraint firstItem="rF1-91-XEl" firstAttribute="width" secondItem="T6x-fL-jmx" secondAttribute="width" multiplier="0.7" id="VQc-He-zS8"/>
+                        <constraint firstItem="eUe-qQ-AWD" firstAttribute="centerY" secondItem="rF1-91-XEl" secondAttribute="centerY" id="llj-BT-OKm"/>
+                        <constraint firstAttribute="bottom" secondItem="suK-ca-SgV" secondAttribute="bottom" id="pmj-r2-usM"/>
+                        <constraint firstAttribute="height" constant="144" id="taz-DK-NBl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZKK-CC-RUL" secondAttribute="trailing" id="9e3-Le-Q3X"/>
+                <constraint firstItem="T6x-fL-jmx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-44" id="J0n-h5-iSZ"/>
+                <constraint firstItem="T6x-fL-jmx" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="PpF-NR-Nqj"/>
+                <constraint firstItem="ZKK-CC-RUL" firstAttribute="top" secondItem="T6x-fL-jmx" secondAttribute="bottom" id="lrU-GQ-pf7"/>
+                <constraint firstItem="T6x-fL-jmx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="lvb-I7-ze3"/>
+                <constraint firstItem="ZKK-CC-RUL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="nCk-Gy-HMo"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ZKK-CC-RUL" secondAttribute="bottom" id="oSZ-2L-pRE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="138.40000000000001" y="134.48275862068965"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bell" width="40" height="40"/>
+        <image name="search" width="20" height="20"/>
+    </resources>
+</document>

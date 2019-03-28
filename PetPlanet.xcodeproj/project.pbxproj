@@ -1,0 +1,1026 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D9C6A3E779AA5A813B0251 /* libPods-PetPlanet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91524463320E4412F44030 /* libPods-PetPlanet.a */; };
+		636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEF9B224A75ED00675B0C /* ZYTabBarController.m */; };
+		636CEFA2224A77A500675B0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA0224A77A500675B0C /* MainViewController.m */; };
+		636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA1224A77A500675B0C /* MainViewController.xib */; };
+		636CEFA7224A77B800675B0C /* CandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA5224A77B800675B0C /* CandyViewController.m */; };
+		636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA6224A77B800675B0C /* CandyViewController.xib */; };
+		636CEFAC224A77C700675B0C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFAA224A77C700675B0C /* MineViewController.m */; };
+		636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFAB224A77C700675B0C /* MineViewController.xib */; };
+		636CEFB1224A879700675B0C /* ZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFB0224A879700675B0C /* ZYNavigationController.m */; };
+		636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFB4224A8EBE00675B0C /* ZYBaseViewController.m */; };
+		636CEFCA224AB72000675B0C /* KolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFC8224AB72000675B0C /* KolCell.m */; };
+		636CEFCB224AB72000675B0C /* KolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFC9224AB72000675B0C /* KolCell.xib */; };
+		636CEFCF224AB88E00675B0C /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFCD224AB88E00675B0C /* BannerCell.m */; };
+		636CEFD0224AB88E00675B0C /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFCE224AB88E00675B0C /* BannerCell.xib */; };
+		636CEFD3224ABF4700675B0C /* KolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFD2224ABF4700675B0C /* KolView.m */; };
+		636CEFD5224ABF5700675B0C /* KolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFD4224ABF5700675B0C /* KolView.xib */; };
+		636CEFDB224B3DDD00675B0C /* AdoptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFD9224B3DDD00675B0C /* AdoptCell.m */; };
+		636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFDA224B3DDD00675B0C /* AdoptCell.xib */; };
+		636CEFE0224B459000675B0C /* PopularCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFDE224B459000675B0C /* PopularCell.m */; };
+		636CEFE1224B459000675B0C /* PopularCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFDF224B459000675B0C /* PopularCell.xib */; };
+		636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFE3224BA5E100675B0C /* MainViewNetworking.m */; };
+		636CEFE9224C96BC00675B0C /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFE7224C96BC00675B0C /* MessageViewController.m */; };
+		636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFE8224C96BC00675B0C /* MessageViewController.xib */; };
+		636CEFEE224C9E3F00675B0C /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFEC224C9E3F00675B0C /* MineCell.m */; };
+		636CEFEF224C9E3F00675B0C /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFED224C9E3F00675B0C /* MineCell.xib */; };
+		636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFF7224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m */; };
+		636CF04F224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFF8224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m */; };
+		636CF050224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFF9224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m */; };
+		636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF000224CCACE00675B0C /* JXCategoryIndicatorLineView.m */; };
+		636CF052224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF001224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m */; };
+		636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF002224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m */; };
+		636CF054224CCACE00675B0C /* JXCategoryIndicatorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF004224CCACE00675B0C /* JXCategoryIndicatorImageView.m */; };
+		636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF005224CCACE00675B0C /* JXCategoryIndicatorBallView.m */; };
+		636CF056224CCACE00675B0C /* JXCategoryIndicatorComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF006224CCACE00675B0C /* JXCategoryIndicatorComponentView.m */; };
+		636CF057224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF008224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m */; };
+		636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF00D224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m */; };
+		636CF059224CCACE00675B0C /* JXCategoryIndicatorCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF00F224CCACE00675B0C /* JXCategoryIndicatorCellModel.m */; };
+		636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF010224CCACE00675B0C /* JXCategoryIndicatorCell.m */; };
+		636CF05B224CCACE00675B0C /* JXCategoryIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF011224CCACE00675B0C /* JXCategoryIndicatorView.m */; };
+		636CF05C224CCACE00675B0C /* JXCategoryDotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF013224CCACE00675B0C /* JXCategoryDotCell.m */; };
+		636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF015224CCACE00675B0C /* JXCategoryDotView.m */; };
+		636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF018224CCACE00675B0C /* JXCategoryDotCellModel.m */; };
+		636CF05F224CCACE00675B0C /* JXCategoryTitleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF01A224CCACE00675B0C /* JXCategoryTitleImageView.m */; };
+		636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF01B224CCACE00675B0C /* JXCategoryTitleImageCell.m */; };
+		636CF061224CCACE00675B0C /* JXCategoryTitleImageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF01E224CCACE00675B0C /* JXCategoryTitleImageCellModel.m */; };
+		636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF024224CCACE00675B0C /* JXCategoryTitleCellModel.m */; };
+		636CF063224CCACE00675B0C /* JXCategoryTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF025224CCACE00675B0C /* JXCategoryTitleCell.m */; };
+		636CF064224CCACE00675B0C /* JXCategoryTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF026224CCACE00675B0C /* JXCategoryTitleView.m */; };
+		636CF065224CCACE00675B0C /* JXCategoryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF029224CCACE00675B0C /* JXCategoryImageView.m */; };
+		636CF066224CCACE00675B0C /* JXCategoryImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF02A224CCACE00675B0C /* JXCategoryImageCell.m */; };
+		636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF02E224CCACE00675B0C /* JXCategoryImageCellModel.m */; };
+		636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF031224CCACE00675B0C /* JXCategoryNumberView.m */; };
+		636CF069224CCACE00675B0C /* JXCategoryNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF032224CCACE00675B0C /* JXCategoryNumberCell.m */; };
+		636CF06A224CCACE00675B0C /* JXCategoryNumberCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF033224CCACE00675B0C /* JXCategoryNumberCellModel.m */; };
+		636CF06B224CCACE00675B0C /* JXCategoryListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF037224CCACE00675B0C /* JXCategoryListContainerView.m */; };
+		636CF06C224CCACE00675B0C /* JXCategoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF03E224CCACE00675B0C /* JXCategoryFactory.m */; };
+		636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF040224CCACE00675B0C /* JXCategoryCollectionView.m */; };
+		636CF06E224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF041224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m */; };
+		636CF06F224CCACE00675B0C /* JXCategoryViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF042224CCACE00675B0C /* JXCategoryViewAnimator.m */; };
+		636CF070224CCACE00675B0C /* JXCategoryListCollectionContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF044224CCACE00675B0C /* JXCategoryListCollectionContainerView.m */; };
+		636CF071224CCACE00675B0C /* UIColor+JXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF045224CCACE00675B0C /* UIColor+JXAdd.m */; };
+		636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF04B224CCACE00675B0C /* JXCategoryBaseView.m */; };
+		636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF04C224CCACE00675B0C /* JXCategoryBaseCell.m */; };
+		636CF074224CCACE00675B0C /* JXCategoryBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF04D224CCACE00675B0C /* JXCategoryBaseCellModel.m */; };
+		636CF083224CE33400675B0C /* ZYPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF082224CE33400675B0C /* ZYPopView.m */; };
+		636CF088224D044300675B0C /* ChangeCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF087224D044300675B0C /* ChangeCoverView.m */; };
+		636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF089224D046800675B0C /* ChangeCoverView.xib */; };
+		636CF08E224D2E8100675B0C /* CandyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF08C224D2E8100675B0C /* CandyTableViewController.m */; };
+		636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF08D224D2E8100675B0C /* CandyTableViewController.xib */; };
+		636CF094224D315500675B0C /* CandyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF092224D315500675B0C /* CandyCell.m */; };
+		636CF095224D315500675B0C /* CandyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF093224D315500675B0C /* CandyCell.xib */; };
+		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
+		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
+		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
+		63D0A1EE223046E6007E5B36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1ED223046E6007E5B36 /* main.m */; };
+		63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1F6223055E2007E5B36 /* WelcomeViewController.m */; };
+		63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1F7223055E2007E5B36 /* WelcomeViewController.xib */; };
+		63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1F9223055E2007E5B36 /* WelcomeAnimateView.m */; };
+		63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1FA223055E2007E5B36 /* WelcomeAnimateView.xib */; };
+		63D0A202223059AC007E5B36 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A201223059AC007E5B36 /* Common.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29B472290C2928DB0F723F03 /* Pods-PetPlanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet.release.xcconfig"; sourceTree = "<group>"; };
+		2B91524463320E4412F44030 /* libPods-PetPlanet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetPlanet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		636CEF9A224A75ED00675B0C /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
+		636CEF9B224A75ED00675B0C /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
+		636CEF9F224A77A500675B0C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		636CEFA0224A77A500675B0C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		636CEFA1224A77A500675B0C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		636CEFA4224A77B800675B0C /* CandyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyViewController.h; sourceTree = "<group>"; };
+		636CEFA5224A77B800675B0C /* CandyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyViewController.m; sourceTree = "<group>"; };
+		636CEFA6224A77B800675B0C /* CandyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyViewController.xib; sourceTree = "<group>"; };
+		636CEFA9224A77C700675B0C /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		636CEFAA224A77C700675B0C /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		636CEFAB224A77C700675B0C /* MineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		636CEFAF224A879700675B0C /* ZYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNavigationController.h; sourceTree = "<group>"; };
+		636CEFB0224A879700675B0C /* ZYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNavigationController.m; sourceTree = "<group>"; };
+		636CEFB3224A8EBE00675B0C /* ZYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBaseViewController.h; sourceTree = "<group>"; };
+		636CEFB4224A8EBE00675B0C /* ZYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYBaseViewController.m; sourceTree = "<group>"; };
+		636CEFC7224AB72000675B0C /* KolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KolCell.h; sourceTree = "<group>"; };
+		636CEFC8224AB72000675B0C /* KolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KolCell.m; sourceTree = "<group>"; };
+		636CEFC9224AB72000675B0C /* KolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KolCell.xib; sourceTree = "<group>"; };
+		636CEFCC224AB88E00675B0C /* BannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
+		636CEFCD224AB88E00675B0C /* BannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
+		636CEFCE224AB88E00675B0C /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
+		636CEFD1224ABF4700675B0C /* KolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KolView.h; sourceTree = "<group>"; };
+		636CEFD2224ABF4700675B0C /* KolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KolView.m; sourceTree = "<group>"; };
+		636CEFD4224ABF5700675B0C /* KolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KolView.xib; sourceTree = "<group>"; };
+		636CEFD8224B3DDD00675B0C /* AdoptCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdoptCell.h; sourceTree = "<group>"; };
+		636CEFD9224B3DDD00675B0C /* AdoptCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdoptCell.m; sourceTree = "<group>"; };
+		636CEFDA224B3DDD00675B0C /* AdoptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdoptCell.xib; sourceTree = "<group>"; };
+		636CEFDD224B459000675B0C /* PopularCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopularCell.h; sourceTree = "<group>"; };
+		636CEFDE224B459000675B0C /* PopularCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopularCell.m; sourceTree = "<group>"; };
+		636CEFDF224B459000675B0C /* PopularCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCell.xib; sourceTree = "<group>"; };
+		636CEFE2224BA5E100675B0C /* MainViewNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewNetworking.h; sourceTree = "<group>"; };
+		636CEFE3224BA5E100675B0C /* MainViewNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewNetworking.m; sourceTree = "<group>"; };
+		636CEFE6224C96BC00675B0C /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		636CEFE7224C96BC00675B0C /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		636CEFE8224C96BC00675B0C /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		636CEFEB224C9E3F00675B0C /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		636CEFEC224C9E3F00675B0C /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		636CEFED224C9E3F00675B0C /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
+		636CEFF4224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleVerticalZoomCellModel.h; sourceTree = "<group>"; };
+		636CEFF5224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleVerticalZoomCell.h; sourceTree = "<group>"; };
+		636CEFF6224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleVerticalZoomView.h; sourceTree = "<group>"; };
+		636CEFF7224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleVerticalZoomCellModel.m; sourceTree = "<group>"; };
+		636CEFF8224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleVerticalZoomCell.m; sourceTree = "<group>"; };
+		636CEFF9224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleVerticalZoomView.m; sourceTree = "<group>"; };
+		636CEFFB224CCACE00675B0C /* JXCategoryIndicatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorCell.h; sourceTree = "<group>"; };
+		636CEFFC224CCACE00675B0C /* JXCategoryIndicatorCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorCellModel.h; sourceTree = "<group>"; };
+		636CEFFD224CCACE00675B0C /* JXCategoryIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorView.h; sourceTree = "<group>"; };
+		636CEFFF224CCACE00675B0C /* JXCategoryIndicatorDotLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorDotLineView.h; sourceTree = "<group>"; };
+		636CF000224CCACE00675B0C /* JXCategoryIndicatorLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorLineView.m; sourceTree = "<group>"; };
+		636CF001224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorTriangleView.m; sourceTree = "<group>"; };
+		636CF002224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorRainbowLineView.m; sourceTree = "<group>"; };
+		636CF003224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorBackgroundView.h; sourceTree = "<group>"; };
+		636CF004224CCACE00675B0C /* JXCategoryIndicatorImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorImageView.m; sourceTree = "<group>"; };
+		636CF005224CCACE00675B0C /* JXCategoryIndicatorBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorBallView.m; sourceTree = "<group>"; };
+		636CF006224CCACE00675B0C /* JXCategoryIndicatorComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorComponentView.m; sourceTree = "<group>"; };
+		636CF007224CCACE00675B0C /* JXCategoryIndicatorLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorLineView.h; sourceTree = "<group>"; };
+		636CF008224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorDotLineView.m; sourceTree = "<group>"; };
+		636CF009224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorRainbowLineView.h; sourceTree = "<group>"; };
+		636CF00A224CCACE00675B0C /* JXCategoryIndicatorTriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorTriangleView.h; sourceTree = "<group>"; };
+		636CF00B224CCACE00675B0C /* JXCategoryIndicatorBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorBallView.h; sourceTree = "<group>"; };
+		636CF00C224CCACE00675B0C /* JXCategoryIndicatorImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorImageView.h; sourceTree = "<group>"; };
+		636CF00D224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorBackgroundView.m; sourceTree = "<group>"; };
+		636CF00E224CCACE00675B0C /* JXCategoryIndicatorComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorComponentView.h; sourceTree = "<group>"; };
+		636CF00F224CCACE00675B0C /* JXCategoryIndicatorCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorCellModel.m; sourceTree = "<group>"; };
+		636CF010224CCACE00675B0C /* JXCategoryIndicatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorCell.m; sourceTree = "<group>"; };
+		636CF011224CCACE00675B0C /* JXCategoryIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorView.m; sourceTree = "<group>"; };
+		636CF013224CCACE00675B0C /* JXCategoryDotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryDotCell.m; sourceTree = "<group>"; };
+		636CF014224CCACE00675B0C /* JXCategoryDotCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryDotCellModel.h; sourceTree = "<group>"; };
+		636CF015224CCACE00675B0C /* JXCategoryDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryDotView.m; sourceTree = "<group>"; };
+		636CF016224CCACE00675B0C /* JXCategoryDotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryDotCell.h; sourceTree = "<group>"; };
+		636CF017224CCACE00675B0C /* JXCategoryDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryDotView.h; sourceTree = "<group>"; };
+		636CF018224CCACE00675B0C /* JXCategoryDotCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryDotCellModel.m; sourceTree = "<group>"; };
+		636CF01A224CCACE00675B0C /* JXCategoryTitleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleImageView.m; sourceTree = "<group>"; };
+		636CF01B224CCACE00675B0C /* JXCategoryTitleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleImageCell.m; sourceTree = "<group>"; };
+		636CF01C224CCACE00675B0C /* JXCategoryTitleImageCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleImageCellModel.h; sourceTree = "<group>"; };
+		636CF01D224CCACE00675B0C /* JXCategoryTitleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleImageView.h; sourceTree = "<group>"; };
+		636CF01E224CCACE00675B0C /* JXCategoryTitleImageCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleImageCellModel.m; sourceTree = "<group>"; };
+		636CF01F224CCACE00675B0C /* JXCategoryTitleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleImageCell.h; sourceTree = "<group>"; };
+		636CF021224CCACE00675B0C /* JXCategoryTitleCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleCellModel.h; sourceTree = "<group>"; };
+		636CF022224CCACE00675B0C /* JXCategoryTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleCell.h; sourceTree = "<group>"; };
+		636CF023224CCACE00675B0C /* JXCategoryTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTitleView.h; sourceTree = "<group>"; };
+		636CF024224CCACE00675B0C /* JXCategoryTitleCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleCellModel.m; sourceTree = "<group>"; };
+		636CF025224CCACE00675B0C /* JXCategoryTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleCell.m; sourceTree = "<group>"; };
+		636CF026224CCACE00675B0C /* JXCategoryTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryTitleView.m; sourceTree = "<group>"; };
+		636CF027224CCACE00675B0C /* JXCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryView.h; sourceTree = "<group>"; };
+		636CF029224CCACE00675B0C /* JXCategoryImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryImageView.m; sourceTree = "<group>"; };
+		636CF02A224CCACE00675B0C /* JXCategoryImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryImageCell.m; sourceTree = "<group>"; };
+		636CF02B224CCACE00675B0C /* JXCategoryImageCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryImageCellModel.h; sourceTree = "<group>"; };
+		636CF02C224CCACE00675B0C /* JXCategoryImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryImageView.h; sourceTree = "<group>"; };
+		636CF02D224CCACE00675B0C /* JXCategoryImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryImageCell.h; sourceTree = "<group>"; };
+		636CF02E224CCACE00675B0C /* JXCategoryImageCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryImageCellModel.m; sourceTree = "<group>"; };
+		636CF030224CCACE00675B0C /* JXCategoryNumberCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryNumberCellModel.h; sourceTree = "<group>"; };
+		636CF031224CCACE00675B0C /* JXCategoryNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryNumberView.m; sourceTree = "<group>"; };
+		636CF032224CCACE00675B0C /* JXCategoryNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryNumberCell.m; sourceTree = "<group>"; };
+		636CF033224CCACE00675B0C /* JXCategoryNumberCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryNumberCellModel.m; sourceTree = "<group>"; };
+		636CF034224CCACE00675B0C /* JXCategoryNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryNumberView.h; sourceTree = "<group>"; };
+		636CF035224CCACE00675B0C /* JXCategoryNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryNumberCell.h; sourceTree = "<group>"; };
+		636CF037224CCACE00675B0C /* JXCategoryListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryListContainerView.m; sourceTree = "<group>"; };
+		636CF038224CCACE00675B0C /* JXCategoryViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryViewAnimator.h; sourceTree = "<group>"; };
+		636CF039224CCACE00675B0C /* JXCategoryIndicatorParamsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorParamsModel.h; sourceTree = "<group>"; };
+		636CF03A224CCACE00675B0C /* JXCategoryCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryCollectionView.h; sourceTree = "<group>"; };
+		636CF03B224CCACE00675B0C /* JXCategoryListCollectionContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryListCollectionContainerView.h; sourceTree = "<group>"; };
+		636CF03C224CCACE00675B0C /* JXCategoryIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorProtocol.h; sourceTree = "<group>"; };
+		636CF03D224CCACE00675B0C /* JXCategoryViewDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryViewDefines.h; sourceTree = "<group>"; };
+		636CF03E224CCACE00675B0C /* JXCategoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryFactory.m; sourceTree = "<group>"; };
+		636CF03F224CCACE00675B0C /* UIColor+JXAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JXAdd.h"; sourceTree = "<group>"; };
+		636CF040224CCACE00675B0C /* JXCategoryCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryCollectionView.m; sourceTree = "<group>"; };
+		636CF041224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryIndicatorParamsModel.m; sourceTree = "<group>"; };
+		636CF042224CCACE00675B0C /* JXCategoryViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryViewAnimator.m; sourceTree = "<group>"; };
+		636CF043224CCACE00675B0C /* JXCategoryListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryListContainerView.h; sourceTree = "<group>"; };
+		636CF044224CCACE00675B0C /* JXCategoryListCollectionContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryListCollectionContainerView.m; sourceTree = "<group>"; };
+		636CF045224CCACE00675B0C /* UIColor+JXAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JXAdd.m"; sourceTree = "<group>"; };
+		636CF046224CCACE00675B0C /* JXCategoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryFactory.h; sourceTree = "<group>"; };
+		636CF048224CCACE00675B0C /* JXCategoryBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryBaseView.h; sourceTree = "<group>"; };
+		636CF049224CCACE00675B0C /* JXCategoryBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryBaseCell.h; sourceTree = "<group>"; };
+		636CF04A224CCACE00675B0C /* JXCategoryBaseCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryBaseCellModel.h; sourceTree = "<group>"; };
+		636CF04B224CCACE00675B0C /* JXCategoryBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseView.m; sourceTree = "<group>"; };
+		636CF04C224CCACE00675B0C /* JXCategoryBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseCell.m; sourceTree = "<group>"; };
+		636CF04D224CCACE00675B0C /* JXCategoryBaseCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseCellModel.m; sourceTree = "<group>"; };
+		636CF081224CE33400675B0C /* ZYPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPopView.h; sourceTree = "<group>"; };
+		636CF082224CE33400675B0C /* ZYPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYPopView.m; sourceTree = "<group>"; };
+		636CF084224CE74200675B0C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		636CF086224D044300675B0C /* ChangeCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeCoverView.h; sourceTree = "<group>"; };
+		636CF087224D044300675B0C /* ChangeCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeCoverView.m; sourceTree = "<group>"; };
+		636CF089224D046800675B0C /* ChangeCoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCoverView.xib; sourceTree = "<group>"; };
+		636CF08B224D2E8100675B0C /* CandyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyTableViewController.h; sourceTree = "<group>"; };
+		636CF08C224D2E8100675B0C /* CandyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyTableViewController.m; sourceTree = "<group>"; };
+		636CF08D224D2E8100675B0C /* CandyTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyTableViewController.xib; sourceTree = "<group>"; };
+		636CF091224D315500675B0C /* CandyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyCell.h; sourceTree = "<group>"; };
+		636CF092224D315500675B0C /* CandyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyCell.m; sourceTree = "<group>"; };
+		636CF093224D315500675B0C /* CandyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyCell.xib; sourceTree = "<group>"; };
+		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63D0A1E7223046E6007E5B36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63D0A1EA223046E6007E5B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63D0A1EC223046E6007E5B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D0A1ED223046E6007E5B36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63D0A1F5223055E2007E5B36 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		63D0A1F6223055E2007E5B36 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		63D0A1F7223055E2007E5B36 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		63D0A1F9223055E2007E5B36 /* WelcomeAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeAnimateView.m; sourceTree = "<group>"; };
+		63D0A1FA223055E2007E5B36 /* WelcomeAnimateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeAnimateView.xib; sourceTree = "<group>"; };
+		63D0A1FB223055E2007E5B36 /* WelcomeAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeAnimateView.h; sourceTree = "<group>"; };
+		63D0A200223059AC007E5B36 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		63D0A201223059AC007E5B36 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		B48CEF95AB93A8F909B67857 /* Pods-PetPlanet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63D0A1D8223046E5007E5B36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D9C6A3E779AA5A813B0251 /* libPods-PetPlanet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		636CEF96224A725C00675B0C /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				636CF080224CE32200675B0C /* ZYPopView */,
+				636CEFF2224CCACE00675B0C /* JXCategoryView */,
+				636CEFB2224A8E9C00675B0C /* ZYBaseViewController */,
+				636CEFAE224A877500675B0C /* ZYNavigationController */,
+				636CEF99224A75C100675B0C /* ZYTabBarController */,
+				636CEF97224A728300675B0C /* Common */,
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
+		636CEF97224A728300675B0C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63D0A200223059AC007E5B36 /* Common.h */,
+				63D0A201223059AC007E5B36 /* Common.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		636CEF98224A757F00675B0C /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFD7224B3D6400675B0C /* PopularCell */,
+				636CEFD6224B3D5500675B0C /* AdoptCell */,
+				636CEFC1224AAC8900675B0C /* KolCell */,
+				636CEFBC224AA21A00675B0C /* BannerCell */,
+				636CEF9F224A77A500675B0C /* MainViewController.h */,
+				636CEFA0224A77A500675B0C /* MainViewController.m */,
+				636CEFA1224A77A500675B0C /* MainViewController.xib */,
+				636CEFE2224BA5E100675B0C /* MainViewNetworking.h */,
+				636CEFE3224BA5E100675B0C /* MainViewNetworking.m */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		636CEF99224A75C100675B0C /* ZYTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				636CEF9A224A75ED00675B0C /* ZYTabBarController.h */,
+				636CEF9B224A75ED00675B0C /* ZYTabBarController.m */,
+			);
+			path = ZYTabBarController;
+			sourceTree = "<group>";
+		};
+		636CEF9D224A775D00675B0C /* CandyVC */ = {
+			isa = PBXGroup;
+			children = (
+				636CF090224D304200675B0C /* CandyTable */,
+				636CEFA4224A77B800675B0C /* CandyViewController.h */,
+				636CEFA5224A77B800675B0C /* CandyViewController.m */,
+				636CEFA6224A77B800675B0C /* CandyViewController.xib */,
+			);
+			path = CandyVC;
+			sourceTree = "<group>";
+		};
+		636CEF9E224A777D00675B0C /* MineVC */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFA9224A77C700675B0C /* MineViewController.h */,
+				636CEFAA224A77C700675B0C /* MineViewController.m */,
+				636CEFAB224A77C700675B0C /* MineViewController.xib */,
+				636CEFEB224C9E3F00675B0C /* MineCell.h */,
+				636CEFEC224C9E3F00675B0C /* MineCell.m */,
+				636CEFED224C9E3F00675B0C /* MineCell.xib */,
+				636CF086224D044300675B0C /* ChangeCoverView.h */,
+				636CF087224D044300675B0C /* ChangeCoverView.m */,
+				636CF089224D046800675B0C /* ChangeCoverView.xib */,
+			);
+			path = MineVC;
+			sourceTree = "<group>";
+		};
+		636CEFAE224A877500675B0C /* ZYNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFAF224A879700675B0C /* ZYNavigationController.h */,
+				636CEFB0224A879700675B0C /* ZYNavigationController.m */,
+			);
+			path = ZYNavigationController;
+			sourceTree = "<group>";
+		};
+		636CEFB2224A8E9C00675B0C /* ZYBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFB3224A8EBE00675B0C /* ZYBaseViewController.h */,
+				636CEFB4224A8EBE00675B0C /* ZYBaseViewController.m */,
+			);
+			path = ZYBaseViewController;
+			sourceTree = "<group>";
+		};
+		636CEFBC224AA21A00675B0C /* BannerCell */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFCC224AB88E00675B0C /* BannerCell.h */,
+				636CEFCD224AB88E00675B0C /* BannerCell.m */,
+				636CEFCE224AB88E00675B0C /* BannerCell.xib */,
+			);
+			path = BannerCell;
+			sourceTree = "<group>";
+		};
+		636CEFC1224AAC8900675B0C /* KolCell */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFC7224AB72000675B0C /* KolCell.h */,
+				636CEFC8224AB72000675B0C /* KolCell.m */,
+				636CEFC9224AB72000675B0C /* KolCell.xib */,
+				636CEFD1224ABF4700675B0C /* KolView.h */,
+				636CEFD2224ABF4700675B0C /* KolView.m */,
+				636CEFD4224ABF5700675B0C /* KolView.xib */,
+			);
+			path = KolCell;
+			sourceTree = "<group>";
+		};
+		636CEFD6224B3D5500675B0C /* AdoptCell */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFD8224B3DDD00675B0C /* AdoptCell.h */,
+				636CEFD9224B3DDD00675B0C /* AdoptCell.m */,
+				636CEFDA224B3DDD00675B0C /* AdoptCell.xib */,
+			);
+			path = AdoptCell;
+			sourceTree = "<group>";
+		};
+		636CEFD7224B3D6400675B0C /* PopularCell */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFDD224B459000675B0C /* PopularCell.h */,
+				636CEFDE224B459000675B0C /* PopularCell.m */,
+				636CEFDF224B459000675B0C /* PopularCell.xib */,
+			);
+			path = PopularCell;
+			sourceTree = "<group>";
+		};
+		636CEFE5224C969700675B0C /* MessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFE6224C96BC00675B0C /* MessageViewController.h */,
+				636CEFE7224C96BC00675B0C /* MessageViewController.m */,
+				636CEFE8224C96BC00675B0C /* MessageViewController.xib */,
+			);
+			path = MessageVC;
+			sourceTree = "<group>";
+		};
+		636CEFF2224CCACE00675B0C /* JXCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFF3224CCACE00675B0C /* VerticalZoomTitle */,
+				636CEFFA224CCACE00675B0C /* Indicator */,
+				636CF012224CCACE00675B0C /* Dot */,
+				636CF019224CCACE00675B0C /* TitleImage */,
+				636CF020224CCACE00675B0C /* Title */,
+				636CF027224CCACE00675B0C /* JXCategoryView.h */,
+				636CF028224CCACE00675B0C /* Image */,
+				636CF02F224CCACE00675B0C /* Number */,
+				636CF036224CCACE00675B0C /* Common */,
+				636CF047224CCACE00675B0C /* Base */,
+			);
+			path = JXCategoryView;
+			sourceTree = "<group>";
+		};
+		636CEFF3224CCACE00675B0C /* VerticalZoomTitle */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFF4224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.h */,
+				636CEFF5224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.h */,
+				636CEFF6224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.h */,
+				636CEFF7224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m */,
+				636CEFF8224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m */,
+				636CEFF9224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m */,
+			);
+			path = VerticalZoomTitle;
+			sourceTree = "<group>";
+		};
+		636CEFFA224CCACE00675B0C /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFFB224CCACE00675B0C /* JXCategoryIndicatorCell.h */,
+				636CEFFC224CCACE00675B0C /* JXCategoryIndicatorCellModel.h */,
+				636CEFFD224CCACE00675B0C /* JXCategoryIndicatorView.h */,
+				636CEFFE224CCACE00675B0C /* IndicatorViews */,
+				636CF00F224CCACE00675B0C /* JXCategoryIndicatorCellModel.m */,
+				636CF010224CCACE00675B0C /* JXCategoryIndicatorCell.m */,
+				636CF011224CCACE00675B0C /* JXCategoryIndicatorView.m */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		636CEFFE224CCACE00675B0C /* IndicatorViews */ = {
+			isa = PBXGroup;
+			children = (
+				636CEFFF224CCACE00675B0C /* JXCategoryIndicatorDotLineView.h */,
+				636CF000224CCACE00675B0C /* JXCategoryIndicatorLineView.m */,
+				636CF001224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m */,
+				636CF002224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m */,
+				636CF003224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.h */,
+				636CF004224CCACE00675B0C /* JXCategoryIndicatorImageView.m */,
+				636CF005224CCACE00675B0C /* JXCategoryIndicatorBallView.m */,
+				636CF006224CCACE00675B0C /* JXCategoryIndicatorComponentView.m */,
+				636CF007224CCACE00675B0C /* JXCategoryIndicatorLineView.h */,
+				636CF008224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m */,
+				636CF009224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.h */,
+				636CF00A224CCACE00675B0C /* JXCategoryIndicatorTriangleView.h */,
+				636CF00B224CCACE00675B0C /* JXCategoryIndicatorBallView.h */,
+				636CF00C224CCACE00675B0C /* JXCategoryIndicatorImageView.h */,
+				636CF00D224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m */,
+				636CF00E224CCACE00675B0C /* JXCategoryIndicatorComponentView.h */,
+			);
+			path = IndicatorViews;
+			sourceTree = "<group>";
+		};
+		636CF012224CCACE00675B0C /* Dot */ = {
+			isa = PBXGroup;
+			children = (
+				636CF013224CCACE00675B0C /* JXCategoryDotCell.m */,
+				636CF014224CCACE00675B0C /* JXCategoryDotCellModel.h */,
+				636CF015224CCACE00675B0C /* JXCategoryDotView.m */,
+				636CF016224CCACE00675B0C /* JXCategoryDotCell.h */,
+				636CF017224CCACE00675B0C /* JXCategoryDotView.h */,
+				636CF018224CCACE00675B0C /* JXCategoryDotCellModel.m */,
+			);
+			path = Dot;
+			sourceTree = "<group>";
+		};
+		636CF019224CCACE00675B0C /* TitleImage */ = {
+			isa = PBXGroup;
+			children = (
+				636CF01A224CCACE00675B0C /* JXCategoryTitleImageView.m */,
+				636CF01B224CCACE00675B0C /* JXCategoryTitleImageCell.m */,
+				636CF01C224CCACE00675B0C /* JXCategoryTitleImageCellModel.h */,
+				636CF01D224CCACE00675B0C /* JXCategoryTitleImageView.h */,
+				636CF01E224CCACE00675B0C /* JXCategoryTitleImageCellModel.m */,
+				636CF01F224CCACE00675B0C /* JXCategoryTitleImageCell.h */,
+			);
+			path = TitleImage;
+			sourceTree = "<group>";
+		};
+		636CF020224CCACE00675B0C /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				636CF021224CCACE00675B0C /* JXCategoryTitleCellModel.h */,
+				636CF022224CCACE00675B0C /* JXCategoryTitleCell.h */,
+				636CF023224CCACE00675B0C /* JXCategoryTitleView.h */,
+				636CF024224CCACE00675B0C /* JXCategoryTitleCellModel.m */,
+				636CF025224CCACE00675B0C /* JXCategoryTitleCell.m */,
+				636CF026224CCACE00675B0C /* JXCategoryTitleView.m */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		636CF028224CCACE00675B0C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				636CF029224CCACE00675B0C /* JXCategoryImageView.m */,
+				636CF02A224CCACE00675B0C /* JXCategoryImageCell.m */,
+				636CF02B224CCACE00675B0C /* JXCategoryImageCellModel.h */,
+				636CF02C224CCACE00675B0C /* JXCategoryImageView.h */,
+				636CF02D224CCACE00675B0C /* JXCategoryImageCell.h */,
+				636CF02E224CCACE00675B0C /* JXCategoryImageCellModel.m */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		636CF02F224CCACE00675B0C /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				636CF030224CCACE00675B0C /* JXCategoryNumberCellModel.h */,
+				636CF031224CCACE00675B0C /* JXCategoryNumberView.m */,
+				636CF032224CCACE00675B0C /* JXCategoryNumberCell.m */,
+				636CF033224CCACE00675B0C /* JXCategoryNumberCellModel.m */,
+				636CF034224CCACE00675B0C /* JXCategoryNumberView.h */,
+				636CF035224CCACE00675B0C /* JXCategoryNumberCell.h */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		636CF036224CCACE00675B0C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				636CF037224CCACE00675B0C /* JXCategoryListContainerView.m */,
+				636CF038224CCACE00675B0C /* JXCategoryViewAnimator.h */,
+				636CF039224CCACE00675B0C /* JXCategoryIndicatorParamsModel.h */,
+				636CF03A224CCACE00675B0C /* JXCategoryCollectionView.h */,
+				636CF03B224CCACE00675B0C /* JXCategoryListCollectionContainerView.h */,
+				636CF03C224CCACE00675B0C /* JXCategoryIndicatorProtocol.h */,
+				636CF03D224CCACE00675B0C /* JXCategoryViewDefines.h */,
+				636CF03E224CCACE00675B0C /* JXCategoryFactory.m */,
+				636CF03F224CCACE00675B0C /* UIColor+JXAdd.h */,
+				636CF040224CCACE00675B0C /* JXCategoryCollectionView.m */,
+				636CF041224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m */,
+				636CF042224CCACE00675B0C /* JXCategoryViewAnimator.m */,
+				636CF043224CCACE00675B0C /* JXCategoryListContainerView.h */,
+				636CF044224CCACE00675B0C /* JXCategoryListCollectionContainerView.m */,
+				636CF045224CCACE00675B0C /* UIColor+JXAdd.m */,
+				636CF046224CCACE00675B0C /* JXCategoryFactory.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		636CF047224CCACE00675B0C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				636CF048224CCACE00675B0C /* JXCategoryBaseView.h */,
+				636CF049224CCACE00675B0C /* JXCategoryBaseCell.h */,
+				636CF04A224CCACE00675B0C /* JXCategoryBaseCellModel.h */,
+				636CF04B224CCACE00675B0C /* JXCategoryBaseView.m */,
+				636CF04C224CCACE00675B0C /* JXCategoryBaseCell.m */,
+				636CF04D224CCACE00675B0C /* JXCategoryBaseCellModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		636CF080224CE32200675B0C /* ZYPopView */ = {
+			isa = PBXGroup;
+			children = (
+				636CF081224CE33400675B0C /* ZYPopView.h */,
+				636CF082224CE33400675B0C /* ZYPopView.m */,
+			);
+			path = ZYPopView;
+			sourceTree = "<group>";
+		};
+		636CF090224D304200675B0C /* CandyTable */ = {
+			isa = PBXGroup;
+			children = (
+				636CF08B224D2E8100675B0C /* CandyTableViewController.h */,
+				636CF08C224D2E8100675B0C /* CandyTableViewController.m */,
+				636CF08D224D2E8100675B0C /* CandyTableViewController.xib */,
+				636CF091224D315500675B0C /* CandyCell.h */,
+				636CF092224D315500675B0C /* CandyCell.m */,
+				636CF093224D315500675B0C /* CandyCell.xib */,
+			);
+			path = CandyTable;
+			sourceTree = "<group>";
+		};
+		63D0A1D2223046E5007E5B36 = {
+			isa = PBXGroup;
+			children = (
+				63D0A1DD223046E5007E5B36 /* PetPlanet */,
+				63D0A1DC223046E5007E5B36 /* Products */,
+				EE08AC234BC9983D65869148 /* Pods */,
+				E9678D26A770232E2FA33DFE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		63D0A1DC223046E5007E5B36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63D0A1DB223046E5007E5B36 /* PetPlanet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63D0A1DD223046E5007E5B36 /* PetPlanet */ = {
+			isa = PBXGroup;
+			children = (
+				636CEF98224A757F00675B0C /* MainVC */,
+				636CEF9D224A775D00675B0C /* CandyVC */,
+				636CEFE5224C969700675B0C /* MessageVC */,
+				636CEF9E224A777D00675B0C /* MineVC */,
+				63D0A1F4223055E2007E5B36 /* WelcomeVC */,
+				636CEF96224A725C00675B0C /* Componentes */,
+				63D0A1DE223046E5007E5B36 /* AppDelegate.h */,
+				63D0A1DF223046E5007E5B36 /* AppDelegate.m */,
+				63D0A1E7223046E6007E5B36 /* Assets.xcassets */,
+				63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */,
+				63D0A1EC223046E6007E5B36 /* Info.plist */,
+				63D0A1ED223046E6007E5B36 /* main.m */,
+			);
+			path = PetPlanet;
+			sourceTree = "<group>";
+		};
+		63D0A1F4223055E2007E5B36 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				63D0A1F5223055E2007E5B36 /* WelcomeViewController.h */,
+				63D0A1F6223055E2007E5B36 /* WelcomeViewController.m */,
+				63D0A1F7223055E2007E5B36 /* WelcomeViewController.xib */,
+				63D0A1F8223055E2007E5B36 /* AnimateView */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		63D0A1F8223055E2007E5B36 /* AnimateView */ = {
+			isa = PBXGroup;
+			children = (
+				63D0A1F9223055E2007E5B36 /* WelcomeAnimateView.m */,
+				63D0A1FA223055E2007E5B36 /* WelcomeAnimateView.xib */,
+				63D0A1FB223055E2007E5B36 /* WelcomeAnimateView.h */,
+			);
+			path = AnimateView;
+			sourceTree = "<group>";
+		};
+		E9678D26A770232E2FA33DFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				636CF084224CE74200675B0C /* CoreImage.framework */,
+				2B91524463320E4412F44030 /* libPods-PetPlanet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE08AC234BC9983D65869148 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B48CEF95AB93A8F909B67857 /* Pods-PetPlanet.debug.xcconfig */,
+				29B472290C2928DB0F723F03 /* Pods-PetPlanet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63D0A1DA223046E5007E5B36 /* PetPlanet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63D0A1F1223046E6007E5B36 /* Build configuration list for PBXNativeTarget "PetPlanet" */;
+			buildPhases = (
+				9424A930DE504E7FBA2766C1 /* [CP] Check Pods Manifest.lock */,
+				63D0A1D7223046E5007E5B36 /* Sources */,
+				63D0A1D8223046E5007E5B36 /* Frameworks */,
+				63D0A1D9223046E5007E5B36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetPlanet;
+			productName = PetPlanet;
+			productReference = 63D0A1DB223046E5007E5B36 /* PetPlanet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63D0A1D3223046E5007E5B36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Chiru;
+				TargetAttributes = {
+					63D0A1DA223046E5007E5B36 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 63D0A1D6223046E5007E5B36 /* Build configuration list for PBXProject "PetPlanet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63D0A1D2223046E5007E5B36;
+			productRefGroup = 63D0A1DC223046E5007E5B36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63D0A1DA223046E5007E5B36 /* PetPlanet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63D0A1D9223046E5007E5B36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636CEFEF224C9E3F00675B0C /* MineCell.xib in Resources */,
+				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
+				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
+				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
+				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
+				636CF095224D315500675B0C /* CandyCell.xib in Resources */,
+				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
+				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
+				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
+				636CEFD0224AB88E00675B0C /* BannerCell.xib in Resources */,
+				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
+				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
+				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
+				636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */,
+				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
+				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
+				63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9424A930DE504E7FBA2766C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetPlanet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63D0A1D7223046E5007E5B36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636CEFCA224AB72000675B0C /* KolCell.m in Sources */,
+				636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */,
+				636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */,
+				636CF083224CE33400675B0C /* ZYPopView.m in Sources */,
+				636CF065224CCACE00675B0C /* JXCategoryImageView.m in Sources */,
+				636CEFCF224AB88E00675B0C /* BannerCell.m in Sources */,
+				636CF071224CCACE00675B0C /* UIColor+JXAdd.m in Sources */,
+				636CF054224CCACE00675B0C /* JXCategoryIndicatorImageView.m in Sources */,
+				636CF04F224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m in Sources */,
+				636CF074224CCACE00675B0C /* JXCategoryBaseCellModel.m in Sources */,
+				636CF06F224CCACE00675B0C /* JXCategoryViewAnimator.m in Sources */,
+				636CF066224CCACE00675B0C /* JXCategoryImageCell.m in Sources */,
+				636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */,
+				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
+				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
+				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
+				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
+				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,
+				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
+				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
+				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
+				636CF061224CCACE00675B0C /* JXCategoryTitleImageCellModel.m in Sources */,
+				636CEFE9224C96BC00675B0C /* MessageViewController.m in Sources */,
+				636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */,
+				636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */,
+				636CF05F224CCACE00675B0C /* JXCategoryTitleImageView.m in Sources */,
+				636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */,
+				636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */,
+				636CEFAC224A77C700675B0C /* MineViewController.m in Sources */,
+				636CF064224CCACE00675B0C /* JXCategoryTitleView.m in Sources */,
+				636CF063224CCACE00675B0C /* JXCategoryTitleCell.m in Sources */,
+				63D0A202223059AC007E5B36 /* Common.m in Sources */,
+				636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */,
+				636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */,
+				636CEFA2224A77A500675B0C /* MainViewController.m in Sources */,
+				63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */,
+				636CF050224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m in Sources */,
+				636CEFEE224C9E3F00675B0C /* MineCell.m in Sources */,
+				636CEFDB224B3DDD00675B0C /* AdoptCell.m in Sources */,
+				636CF06A224CCACE00675B0C /* JXCategoryNumberCellModel.m in Sources */,
+				636CF05C224CCACE00675B0C /* JXCategoryDotCell.m in Sources */,
+				636CF06C224CCACE00675B0C /* JXCategoryFactory.m in Sources */,
+				636CEFE0224B459000675B0C /* PopularCell.m in Sources */,
+				636CF059224CCACE00675B0C /* JXCategoryIndicatorCellModel.m in Sources */,
+				636CF06E224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m in Sources */,
+				636CF094224D315500675B0C /* CandyCell.m in Sources */,
+				636CF070224CCACE00675B0C /* JXCategoryListCollectionContainerView.m in Sources */,
+				636CF05B224CCACE00675B0C /* JXCategoryIndicatorView.m in Sources */,
+				636CF08E224D2E8100675B0C /* CandyTableViewController.m in Sources */,
+				636CF06B224CCACE00675B0C /* JXCategoryListContainerView.m in Sources */,
+				636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */,
+				636CEFA7224A77B800675B0C /* CandyViewController.m in Sources */,
+				636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */,
+				636CEFD3224ABF4700675B0C /* KolView.m in Sources */,
+				636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */,
+				636CF056224CCACE00675B0C /* JXCategoryIndicatorComponentView.m in Sources */,
+				636CEFB1224A879700675B0C /* ZYNavigationController.m in Sources */,
+				636CF057224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m in Sources */,
+				636CF069224CCACE00675B0C /* JXCategoryNumberCell.m in Sources */,
+				636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */,
+				636CF052224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m in Sources */,
+				63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D0A1EA223046E6007E5B36 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63D0A1EF223046E6007E5B36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		63D0A1F0223046E6007E5B36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63D0A1F2223046E6007E5B36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48CEF95AB93A8F909B67857 /* Pods-PetPlanet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79FTCPLTXZ;
+				INFOPLIST_FILE = PetPlanet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chiru.PetPlanet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		63D0A1F3223046E6007E5B36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B472290C2928DB0F723F03 /* Pods-PetPlanet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79FTCPLTXZ;
+				INFOPLIST_FILE = PetPlanet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chiru.PetPlanet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63D0A1D6223046E5007E5B36 /* Build configuration list for PBXProject "PetPlanet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63D0A1EF223046E6007E5B36 /* Debug */,
+				63D0A1F0223046E6007E5B36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63D0A1F1223046E6007E5B36 /* Build configuration list for PBXNativeTarget "PetPlanet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63D0A1F2223046E6007E5B36 /* Debug */,
+				63D0A1F3223046E6007E5B36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63D0A1D3223046E5007E5B36 /* Project object */;
+}
