@@ -23,6 +23,11 @@
         self.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
         self.navigationBar.layer.shadowOpacity = 0.2;
         self.navigationBar.translucent = NO;
+        [self.navigationBar setTitleTextAttributes:
+                @{
+                    NSForegroundColorAttributeName : [UIColor whiteColor],
+                    NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:22]
+                }];
         [self.navigationBar setBarTintColor:HEXCOLOR(0xA19FEC)];
         [self.navigationBar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self.navigationBar setShadowImage:[UIImage new]];

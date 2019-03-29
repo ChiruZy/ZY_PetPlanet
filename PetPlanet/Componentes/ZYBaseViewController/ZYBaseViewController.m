@@ -8,7 +8,7 @@
 
 #import "ZYBaseViewController.h"
 
-@interface ZYBaseViewController ()
+@interface ZYBaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -26,7 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.interactivePopGestureRecognizer.enabled  = YES;
+    
     if (self.navigationController.viewControllers.count>1) {
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backItemEvent)];
         self.navigationItem.backBarButtonItem = nil;
@@ -47,4 +49,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    BOOL result = NO;
+    if( gestureRecognizer == self.navigationController.interactivePopGestureRecognizer ){
+        if(self.navigationController.viewControllers.count >= 2){
+            result = YES;
+        }
+    }
+    return result;
+}
 @end

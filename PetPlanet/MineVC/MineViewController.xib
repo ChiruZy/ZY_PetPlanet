@@ -12,8 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
+                <outlet property="image" destination="QaG-QI-LvE" id="cuD-rh-Oty"/>
                 <outlet property="mineBG" destination="IY0-yz-AQU" id="wlj-7l-Ykn"/>
-                <outlet property="photo" destination="UmW-3R-FiT" id="xJu-HS-35a"/>
+                <outlet property="name" destination="Ge9-W1-LOv" id="PRd-5v-Nbc"/>
                 <outlet property="tableView" destination="56X-72-amM" id="MNP-ES-aKl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,42 +39,46 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UmW-3R-FiT">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56X-72-amM">
+                    <rect key="frame" x="60" y="214" width="255" height="564"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge9-W1-LOv">
+                    <rect key="frame" x="142.66666666666666" y="148" width="90" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="eKe-DB-th0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Login"/>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-QI-LvE">
                     <rect key="frame" x="142.66666666666666" y="58" width="90" height="90"/>
                     <color key="backgroundColor" red="0.84313725490196079" green="0.99607843137254903" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="BtF-wA-MJi"/>
-                        <constraint firstAttribute="height" constant="90" id="nhc-vi-sNx"/>
+                        <constraint firstAttribute="width" constant="90" id="Pr8-nH-yGe"/>
+                        <constraint firstAttribute="height" constant="90" id="QO8-ma-Aj5"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="45"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="56X-72-amM">
-                    <rect key="frame" x="60" y="214" width="255" height="564"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge9-W1-LOv">
-                    <rect key="frame" x="164.66666666666666" y="148" width="46" height="66"/>
-                    <state key="normal" title="Button"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="56X-72-amM" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="31F-x8-EDi"/>
-                <constraint firstItem="UmW-3R-FiT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3v3-4a-BsD"/>
                 <constraint firstItem="Ge9-W1-LOv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="824-sc-ASC"/>
-                <constraint firstItem="Ge9-W1-LOv" firstAttribute="top" secondItem="UmW-3R-FiT" secondAttribute="bottom" id="8Xh-ij-p20"/>
+                <constraint firstItem="Ge9-W1-LOv" firstAttribute="top" secondItem="QaG-QI-LvE" secondAttribute="bottom" id="8m5-H0-fNY"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="top" secondItem="Ge9-W1-LOv" secondAttribute="bottom" id="EOi-cC-s3J"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="top" secondItem="IY0-yz-AQU" secondAttribute="bottom" id="FlO-R4-s96"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Kf5-R3-siS"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="-60" id="MW4-9q-0su"/>
+                <constraint firstItem="QaG-QI-LvE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RfV-uB-xCh"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="60" id="U3F-5A-PL3"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-44" id="dmh-9z-sMr"/>
-                <constraint firstItem="UmW-3R-FiT" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="14" id="qjm-5e-COy"/>
+                <constraint firstItem="QaG-QI-LvE" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="14" id="nQB-f0-mMY"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="wkL-NP-avv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

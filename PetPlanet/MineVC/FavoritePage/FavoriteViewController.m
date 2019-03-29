@@ -1,26 +1,26 @@
 //
-//  MessageViewController.m
+//  FavoriteViewController.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/28.
+//  Created by Overloop on 2019/3/30.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "MessageViewController.h"
-#import "LoginViewController.h"
+#import "FavoriteViewController.h"
 #import "LoginView.h"
+#import "LoginViewController.h"
 
-@interface MessageViewController ()
+@interface FavoriteViewController ()
 @property (weak, nonatomic) IBOutlet LoginView *loginView;
 
 @end
 
-@implementation MessageViewController
+@implementation FavoriteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = YES;
-    self.navigationItem.title = @"Message";
+    self.navigationItem.title = @"My Favorite";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -36,5 +36,4 @@
     LoginViewController *loginVC = [LoginViewController new];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
-
 @end

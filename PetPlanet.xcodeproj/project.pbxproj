@@ -89,6 +89,12 @@
 		636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0AF224E0BE900675B0C /* LoginViewController.xib */; };
 		636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0B2224E0C5400675B0C /* NotConnectView.xib */; };
 		636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0B9224E10E000675B0C /* NotConnectView.m */; };
+		6373149E224E9E7C00D4D5CD /* CollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373149C224E9E7C00D4D5CD /* CollectionsViewController.m */; };
+		6373149F224E9E7C00D4D5CD /* CollectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6373149D224E9E7C00D4D5CD /* CollectionsViewController.xib */; };
+		637314A3224E9ECD00D4D5CD /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314A1224E9ECD00D4D5CD /* FavoriteViewController.m */; };
+		637314A4224E9ECD00D4D5CD /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A2224E9ECD00D4D5CD /* FavoriteViewController.xib */; };
+		637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A5224EA03E00D4D5CD /* LoginView.xib */; };
+		637314A9224EA08D00D4D5CD /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314A8224EA08D00D4D5CD /* LoginView.m */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -251,6 +257,15 @@
 		636CF0B2224E0C5400675B0C /* NotConnectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotConnectView.xib; sourceTree = "<group>"; };
 		636CF0B8224E10E000675B0C /* NotConnectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotConnectView.h; sourceTree = "<group>"; };
 		636CF0B9224E10E000675B0C /* NotConnectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotConnectView.m; sourceTree = "<group>"; };
+		6373149B224E9E7C00D4D5CD /* CollectionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionsViewController.h; sourceTree = "<group>"; };
+		6373149C224E9E7C00D4D5CD /* CollectionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionsViewController.m; sourceTree = "<group>"; };
+		6373149D224E9E7C00D4D5CD /* CollectionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsViewController.xib; sourceTree = "<group>"; };
+		637314A0224E9ECD00D4D5CD /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		637314A1224E9ECD00D4D5CD /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
+		637314A2224E9ECD00D4D5CD /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		637314A5224EA03E00D4D5CD /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		637314A7224EA08D00D4D5CD /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		637314A8224EA08D00D4D5CD /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -354,15 +369,14 @@
 		636CEF9E224A777D00675B0C /* MineVC */ = {
 			isa = PBXGroup;
 			children = (
+				6373149A224E9E6300D4D5CD /* CollectionsPage */,
+				63731499224E9E5300D4D5CD /* FavoritePage */,
 				636CEFA9224A77C700675B0C /* MineViewController.h */,
 				636CEFAA224A77C700675B0C /* MineViewController.m */,
 				636CEFAB224A77C700675B0C /* MineViewController.xib */,
 				636CEFEB224C9E3F00675B0C /* MineCell.h */,
 				636CEFEC224C9E3F00675B0C /* MineCell.m */,
 				636CEFED224C9E3F00675B0C /* MineCell.xib */,
-				636CF086224D044300675B0C /* ChangeCoverView.h */,
-				636CF087224D044300675B0C /* ChangeCoverView.m */,
-				636CF089224D046800675B0C /* ChangeCoverView.xib */,
 			);
 			path = MineVC;
 			sourceTree = "<group>";
@@ -672,11 +686,37 @@
 		636CF0B7224E0F2A00675B0C /* OthersView */ = {
 			isa = PBXGroup;
 			children = (
-				636CF0B2224E0C5400675B0C /* NotConnectView.xib */,
+				636CF086224D044300675B0C /* ChangeCoverView.h */,
+				636CF087224D044300675B0C /* ChangeCoverView.m */,
+				636CF089224D046800675B0C /* ChangeCoverView.xib */,
 				636CF0B8224E10E000675B0C /* NotConnectView.h */,
 				636CF0B9224E10E000675B0C /* NotConnectView.m */,
+				636CF0B2224E0C5400675B0C /* NotConnectView.xib */,
+				637314A7224EA08D00D4D5CD /* LoginView.h */,
+				637314A8224EA08D00D4D5CD /* LoginView.m */,
+				637314A5224EA03E00D4D5CD /* LoginView.xib */,
 			);
 			path = OthersView;
+			sourceTree = "<group>";
+		};
+		63731499224E9E5300D4D5CD /* FavoritePage */ = {
+			isa = PBXGroup;
+			children = (
+				637314A0224E9ECD00D4D5CD /* FavoriteViewController.h */,
+				637314A1224E9ECD00D4D5CD /* FavoriteViewController.m */,
+				637314A2224E9ECD00D4D5CD /* FavoriteViewController.xib */,
+			);
+			path = FavoritePage;
+			sourceTree = "<group>";
+		};
+		6373149A224E9E6300D4D5CD /* CollectionsPage */ = {
+			isa = PBXGroup;
+			children = (
+				6373149B224E9E7C00D4D5CD /* CollectionsViewController.h */,
+				6373149C224E9E7C00D4D5CD /* CollectionsViewController.m */,
+				6373149D224E9E7C00D4D5CD /* CollectionsViewController.xib */,
+			);
+			path = CollectionsPage;
 			sourceTree = "<group>";
 		};
 		63D0A1D2223046E5007E5B36 = {
@@ -818,11 +858,13 @@
 			files = (
 				636CEFEF224C9E3F00675B0C /* MineCell.xib in Resources */,
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
+				637314A4224E9ECD00D4D5CD /* FavoriteViewController.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
+				6373149F224E9E7C00D4D5CD /* CollectionsViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* CandyCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
@@ -832,6 +874,7 @@
 				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
 				636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */,
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
+				637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
 				636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
@@ -887,6 +930,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637314A3224E9ECD00D4D5CD /* FavoriteViewController.m in Sources */,
 				636CEFCA224AB72000675B0C /* KolCell.m in Sources */,
 				636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */,
 				636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */,
@@ -903,6 +947,7 @@
 				636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */,
 				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
+				637314A9224EA08D00D4D5CD /* LoginView.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
 				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
@@ -953,6 +998,7 @@
 				636CF057224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m in Sources */,
 				636CF069224CCACE00675B0C /* JXCategoryNumberCell.m in Sources */,
 				636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */,
+				6373149E224E9E7C00D4D5CD /* CollectionsViewController.m in Sources */,
 				636CF052224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m in Sources */,
 				63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */,
 			);

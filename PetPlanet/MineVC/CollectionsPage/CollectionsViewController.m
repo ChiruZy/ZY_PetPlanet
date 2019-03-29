@@ -1,26 +1,26 @@
 //
-//  MessageViewController.m
+//  CollectionsViewController.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/28.
+//  Created by Overloop on 2019/3/30.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "MessageViewController.h"
-#import "LoginViewController.h"
+#import "CollectionsViewController.h"
 #import "LoginView.h"
+#import "LoginViewController.h"
 
-@interface MessageViewController ()
+@interface CollectionsViewController ()
 @property (weak, nonatomic) IBOutlet LoginView *loginView;
 
 @end
 
-@implementation MessageViewController
+@implementation CollectionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = YES;
-    self.navigationItem.title = @"Message";
+    self.navigationItem.title = @"Collections";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -36,5 +36,4 @@
     LoginViewController *loginVC = [LoginViewController new];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
-
 @end
