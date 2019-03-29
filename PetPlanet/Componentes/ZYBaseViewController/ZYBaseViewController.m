@@ -28,7 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    if (self.navigationController.viewControllers.count>1) {
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backItemEvent)];
+        self.navigationItem.backBarButtonItem = nil;
+        self.navigationItem.leftBarButtonItems = @[backItem];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,12 +48,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
-//-(UIStatusBarStyle)preferredStatusBarStyle{
-//    return UIStatusBarStyleLightContent;
-//}
-//
-//-(BOOL)prefersStatusBarHidden{
-//    return NO;
-//}
+- (void)backItemEvent{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

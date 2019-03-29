@@ -26,6 +26,9 @@
         [self.navigationBar setBarTintColor:HEXCOLOR(0xA19FEC)];
         [self.navigationBar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self.navigationBar setShadowImage:[UIImage new]];
+        
+        [self.navigationBar setBackIndicatorImage:[[UIImage alloc]init]];
+        [self.navigationBar setBackIndicatorTransitionMaskImage:[[UIImage alloc] init]];
     }
     return self;
 }
@@ -35,11 +38,12 @@
     // Do any additional setup after loading the view.
 }
 
-//-(UIViewController *)childViewControllerForStatusBarStyle {
-//    return self.topViewController;
-//}
-//
-//-(UIViewController *)childViewControllerForStatusBarHidden {
-//    return self.topViewController;
-//}
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    viewController.hidesBottomBarWhenPushed = YES;
+    [super pushViewController:viewController animated:animated];
+    if (self.viewControllers.count <= 1) {
+        viewController.hidesBottomBarWhenPushed = NO;
+    }
+}
+
 @end

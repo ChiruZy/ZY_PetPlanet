@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CandyViewController">
             <connections>
+                <outlet property="commentButton" destination="eUe-qQ-AWD" id="PHK-Cd-zEf"/>
                 <outlet property="listView" destination="ZKK-CC-RUL" id="jRu-9c-kKa"/>
+                <outlet property="searchView" destination="rF1-91-XEl" id="qi0-eT-UJv"/>
                 <outlet property="titleView" destination="suK-ca-SgV" id="zrx-uf-sBQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -9,10 +9,14 @@
 #import "CandyViewController.h"
 #import "JXCategoryView.h"
 #import "CandyTable/CandyTableViewController.h"
+#import "CommentPage/CommentViewController.h"
+#import "SearchPage/SearchViewController.h"
 
 @interface CandyViewController ()<JXCategoryViewDelegate,JXCategoryListContainerViewDelegate>
 @property (weak, nonatomic) IBOutlet JXCategoryTitleView *titleView;
 @property (weak, nonatomic) IBOutlet JXCategoryListContainerView *listView;
+@property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
 
 @end
 
@@ -21,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configCategoryView];
+    
+    [_commentButton addTarget:self action:@selector(gotoCommentPage) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *tapSearch = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoSearchPage)];
+    [_searchView addGestureRecognizer:tapSearch];
+    _searchView.userInteractionEnabled = YES;
 }
 
 - (void)configCategoryView{
@@ -40,7 +49,15 @@
     _titleView.contentScrollView = _listView.scrollView;
 }
 
+- (void)gotoCommentPage{
+    CommentViewController *commentVC = [CommentViewController new];
+    [self.navigationController pushViewController:commentVC animated:YES];
+}
 
+- (void)gotoSearchPage{
+    SearchViewController *searchVC = [SearchViewController new];
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
 #pragma mark - categoryViewDelegate
 - (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {
     return 3;

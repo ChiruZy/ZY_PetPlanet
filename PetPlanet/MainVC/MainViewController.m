@@ -25,10 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.needNavBar = YES;
-//    self.title = @"PetPlanet";
-    [self configGradientView];
-    
+    self.needNavBar = YES;
+    self.navigationItem.title = @"PetPlanet";
     [self configTableView];
 }
 
@@ -43,16 +41,16 @@
     [_tableView registerNib: [UINib nibWithNibName:@"PopularCell" bundle:nil] forCellReuseIdentifier:@"PopularCell"];
 }
 
-- (void)configGradientView{
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, Screen_Width,208);
-    gradientLayer.colors = @[(__bridge id)HEXCOLOR(0xA19FEC).CGColor,
-                             (__bridge id)HEXCOLOR(0xF5F5F5).CGColor];
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(0, 1);
-    gradientLayer.locations = @[@(0),@(1)];
-    [self.view.layer insertSublayer:gradientLayer atIndex:0];
-}
+//- (void)configGradientView{
+//    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//    gradientLayer.frame = CGRectMake(0, 0, Screen_Width,208);
+//    gradientLayer.colors = @[(__bridge id)HEXCOLOR(0xA19FEC).CGColor,
+//                             (__bridge id)HEXCOLOR(0xF5F5F5).CGColor];
+//    gradientLayer.startPoint = CGPointMake(0, 0);
+//    gradientLayer.endPoint = CGPointMake(0, 1);
+//    gradientLayer.locations = @[@(0),@(1)];
+//    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+//}
 
 #pragma mark - events
 - (void)tapBannerWithIndex:(NSUInteger)index{
@@ -87,7 +85,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
-        return 40;
+        return 20;
     }else{
         return 14;
     }

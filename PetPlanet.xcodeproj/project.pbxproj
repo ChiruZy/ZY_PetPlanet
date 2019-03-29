@@ -78,6 +78,12 @@
 		636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF08D224D2E8100675B0C /* CandyTableViewController.xib */; };
 		636CF094224D315500675B0C /* CandyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF092224D315500675B0C /* CandyCell.m */; };
 		636CF095224D315500675B0C /* CandyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF093224D315500675B0C /* CandyCell.xib */; };
+		636CF09A224D50E800675B0C /* PopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF098224D50E800675B0C /* PopularViewController.m */; };
+		636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF099224D50E800675B0C /* PopularViewController.xib */; };
+		636CF0A0224D51E400675B0C /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF09E224D51E400675B0C /* CommentViewController.m */; };
+		636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF09F224D51E400675B0C /* CommentViewController.xib */; };
+		636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0A4224D561B00675B0C /* SearchViewController.m */; };
+		636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0A5224D561B00675B0C /* SearchViewController.xib */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -223,6 +229,15 @@
 		636CF091224D315500675B0C /* CandyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyCell.h; sourceTree = "<group>"; };
 		636CF092224D315500675B0C /* CandyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyCell.m; sourceTree = "<group>"; };
 		636CF093224D315500675B0C /* CandyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyCell.xib; sourceTree = "<group>"; };
+		636CF097224D50E800675B0C /* PopularViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopularViewController.h; sourceTree = "<group>"; };
+		636CF098224D50E800675B0C /* PopularViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopularViewController.m; sourceTree = "<group>"; };
+		636CF099224D50E800675B0C /* PopularViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularViewController.xib; sourceTree = "<group>"; };
+		636CF09D224D51E400675B0C /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		636CF09E224D51E400675B0C /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		636CF09F224D51E400675B0C /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		636CF0A3224D561B00675B0C /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		636CF0A4224D561B00675B0C /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		636CF0A5224D561B00675B0C /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -256,6 +271,7 @@
 		636CEF96224A725C00675B0C /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				636CF0A8224D600600675B0C /* EnlargeTouchArea */,
 				636CF080224CE32200675B0C /* ZYPopView */,
 				636CEFF2224CCACE00675B0C /* JXCategoryView */,
 				636CEFB2224A8E9C00675B0C /* ZYBaseViewController */,
@@ -303,6 +319,8 @@
 		636CEF9D224A775D00675B0C /* CandyVC */ = {
 			isa = PBXGroup;
 			children = (
+				636CF0A2224D55FE00675B0C /* SearchPage */,
+				636CF09C224D51CB00675B0C /* CommentPage */,
 				636CF090224D304200675B0C /* CandyTable */,
 				636CEFA4224A77B800675B0C /* CandyViewController.h */,
 				636CEFA5224A77B800675B0C /* CandyViewController.m */,
@@ -381,6 +399,7 @@
 		636CEFD7224B3D6400675B0C /* PopularCell */ = {
 			isa = PBXGroup;
 			children = (
+				636CF096224D50AD00675B0C /* PopularPage */,
 				636CEFDD224B459000675B0C /* PopularCell.h */,
 				636CEFDE224B459000675B0C /* PopularCell.m */,
 				636CEFDF224B459000675B0C /* PopularCell.xib */,
@@ -588,6 +607,43 @@
 			path = CandyTable;
 			sourceTree = "<group>";
 		};
+		636CF096224D50AD00675B0C /* PopularPage */ = {
+			isa = PBXGroup;
+			children = (
+				636CF097224D50E800675B0C /* PopularViewController.h */,
+				636CF098224D50E800675B0C /* PopularViewController.m */,
+				636CF099224D50E800675B0C /* PopularViewController.xib */,
+			);
+			path = PopularPage;
+			sourceTree = "<group>";
+		};
+		636CF09C224D51CB00675B0C /* CommentPage */ = {
+			isa = PBXGroup;
+			children = (
+				636CF09D224D51E400675B0C /* CommentViewController.h */,
+				636CF09E224D51E400675B0C /* CommentViewController.m */,
+				636CF09F224D51E400675B0C /* CommentViewController.xib */,
+			);
+			path = CommentPage;
+			sourceTree = "<group>";
+		};
+		636CF0A2224D55FE00675B0C /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				636CF0A3224D561B00675B0C /* SearchViewController.h */,
+				636CF0A4224D561B00675B0C /* SearchViewController.m */,
+				636CF0A5224D561B00675B0C /* SearchViewController.xib */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		636CF0A8224D600600675B0C /* EnlargeTouchArea */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnlargeTouchArea;
+			sourceTree = "<group>";
+		};
 		63D0A1D2223046E5007E5B36 = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +782,7 @@
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
+				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* CandyCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
@@ -733,11 +790,13 @@
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
 				636CEFD0224AB88E00675B0C /* BannerCell.xib in Resources */,
 				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
+				636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */,
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
 				636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
+				636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */,
 				63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +833,7 @@
 				636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */,
 				636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */,
 				636CF083224CE33400675B0C /* ZYPopView.m in Sources */,
+				636CF0A0224D51E400675B0C /* CommentViewController.m in Sources */,
 				636CF065224CCACE00675B0C /* JXCategoryImageView.m in Sources */,
 				636CEFCF224AB88E00675B0C /* BannerCell.m in Sources */,
 				636CF071224CCACE00675B0C /* UIColor+JXAdd.m in Sources */,
@@ -788,6 +848,7 @@
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
 				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,
+				636CF09A224D50E800675B0C /* PopularViewController.m in Sources */,
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
 				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
@@ -795,6 +856,7 @@
 				636CEFE9224C96BC00675B0C /* MessageViewController.m in Sources */,
 				636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */,
 				636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */,
+				636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */,
 				636CF05F224CCACE00675B0C /* JXCategoryTitleImageView.m in Sources */,
 				636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */,
 				636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */,

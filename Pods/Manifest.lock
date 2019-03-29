@@ -19,12 +19,14 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - UINavigation-SXFixSpace (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - EllipsePageControl (~> 0.0.4)
   - FXBlurView (~> 1.6.4)
   - SDWebImage (~> 4.0)
+  - UINavigation-SXFixSpace (~> 1.0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -32,13 +34,15 @@ SPEC REPOS:
     - EllipsePageControl
     - FXBlurView
     - SDWebImage
+    - UINavigation-SXFixSpace
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   EllipsePageControl: d6c436006d72119c6cbba45af6648d15a7af7d3a
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  UINavigation-SXFixSpace: d5cf69960794667c1315167d53658a89193ccba4
 
-PODFILE CHECKSUM: 412992a35b921ea00d972776a472e25123d2fbe8
+PODFILE CHECKSUM: 10148ebea14ebce38697da9a61b0e12a47b96d14
 
 COCOAPODS: 1.5.3

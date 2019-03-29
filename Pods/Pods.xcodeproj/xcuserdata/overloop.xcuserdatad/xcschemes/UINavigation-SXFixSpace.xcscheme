@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6CCB6FF4A855950B603FECE717CBA0A"
-               BlueprintName = "Pods-PetPlanet"
+               BlueprintIdentifier = "47A7FF7552F786FDC83BCA2C441F234B"
+               BlueprintName = "UINavigation-SXFixSpace"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-PetPlanet.a">
+               BuildableName = "libUINavigation-SXFixSpace.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
