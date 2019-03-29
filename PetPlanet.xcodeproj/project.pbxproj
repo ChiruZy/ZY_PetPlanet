@@ -84,6 +84,10 @@
 		636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF09F224D51E400675B0C /* CommentViewController.xib */; };
 		636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0A4224D561B00675B0C /* SearchViewController.m */; };
 		636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0A5224D561B00675B0C /* SearchViewController.xib */; };
+		636CF0B0224E0BE900675B0C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0AE224E0BE900675B0C /* LoginViewController.m */; };
+		636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0AF224E0BE900675B0C /* LoginViewController.xib */; };
+		636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0B2224E0C5400675B0C /* NotConnectView.xib */; };
+		636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0B9224E10E000675B0C /* NotConnectView.m */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -238,6 +242,12 @@
 		636CF0A3224D561B00675B0C /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		636CF0A4224D561B00675B0C /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		636CF0A5224D561B00675B0C /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		636CF0AD224E0BE900675B0C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		636CF0AE224E0BE900675B0C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		636CF0AF224E0BE900675B0C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		636CF0B2224E0C5400675B0C /* NotConnectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotConnectView.xib; sourceTree = "<group>"; };
+		636CF0B8224E10E000675B0C /* NotConnectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotConnectView.h; sourceTree = "<group>"; };
+		636CF0B9224E10E000675B0C /* NotConnectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotConnectView.m; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -636,6 +646,26 @@
 			path = SearchPage;
 			sourceTree = "<group>";
 		};
+		636CF0AC224E0BB700675B0C /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				636CF0AD224E0BE900675B0C /* LoginViewController.h */,
+				636CF0AE224E0BE900675B0C /* LoginViewController.m */,
+				636CF0AF224E0BE900675B0C /* LoginViewController.xib */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		636CF0B7224E0F2A00675B0C /* OthersView */ = {
+			isa = PBXGroup;
+			children = (
+				636CF0B2224E0C5400675B0C /* NotConnectView.xib */,
+				636CF0B8224E10E000675B0C /* NotConnectView.h */,
+				636CF0B9224E10E000675B0C /* NotConnectView.m */,
+			);
+			path = OthersView;
+			sourceTree = "<group>";
+		};
 		63D0A1D2223046E5007E5B36 = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +692,8 @@
 				636CEFE5224C969700675B0C /* MessageVC */,
 				636CEF9E224A777D00675B0C /* MineVC */,
 				63D0A1F4223055E2007E5B36 /* WelcomeVC */,
+				636CF0AC224E0BB700675B0C /* LoginVC */,
+				636CF0B7224E0F2A00675B0C /* OthersView */,
 				636CEF96224A725C00675B0C /* Componentes */,
 				63D0A1DE223046E5007E5B36 /* AppDelegate.h */,
 				63D0A1DF223046E5007E5B36 /* AppDelegate.m */,
@@ -774,7 +806,9 @@
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
+				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
+				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* CandyCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
@@ -838,9 +872,11 @@
 				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
+				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
 				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,
 				636CF09A224D50E800675B0C /* PopularViewController.m in Sources */,
+				636CF0B0224E0BE900675B0C /* LoginViewController.m in Sources */,
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
 				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
