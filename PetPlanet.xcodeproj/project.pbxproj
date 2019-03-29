@@ -271,7 +271,6 @@
 		636CEF96224A725C00675B0C /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
-				636CF0A8224D600600675B0C /* EnlargeTouchArea */,
 				636CF080224CE32200675B0C /* ZYPopView */,
 				636CEFF2224CCACE00675B0C /* JXCategoryView */,
 				636CEFB2224A8E9C00675B0C /* ZYBaseViewController */,
@@ -635,13 +634,6 @@
 				636CF0A5224D561B00675B0C /* SearchViewController.xib */,
 			);
 			path = SearchPage;
-			sourceTree = "<group>";
-		};
-		636CF0A8224D600600675B0C /* EnlargeTouchArea */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EnlargeTouchArea;
 			sourceTree = "<group>";
 		};
 		63D0A1D2223046E5007E5B36 = {

@@ -16,9 +16,12 @@
 
 - (instancetype)initWithControllers:(NSArray<UIViewController *>*)controllers{
     if (self = [super init]) {
-        self.tabBar.clipsToBounds = YES;
         [UITabBar appearance].translucent = NO;
         self.tabBar.backgroundColor = [UIColor whiteColor];
+        self.tabBar.backgroundImage = [UIImage new];
+        self.tabBar.shadowImage = [UIImage new];
+        self.tabBar.layer.shadowOffset = CGSizeMake(0, -1);
+        self.tabBar.layer.shadowOpacity = 0.1;
         self.viewControllers = controllers;
     }
     return self;
