@@ -24,6 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor whiteColor];
 //    WelcomeViewController *wvc =[WelcomeViewController new];
 //    _window.rootViewController = wvc;
     __weak typeof(self) weakSelf = self;
@@ -46,11 +47,12 @@
     ZYNavigationController * candyNav = [[ZYNavigationController alloc]initWithRootViewController:candyVC];
     
     MineViewController *mineVC = [MineViewController new];
+    ZYNavigationController * mineNav = [[ZYNavigationController alloc]initWithRootViewController:mineVC];
     
     MessageViewController *messageVC = [MessageViewController new];
     ZYNavigationController * messageNav = [[ZYNavigationController alloc]initWithRootViewController:messageVC];
     
-    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[mainNav,candyNav,messageNav,mineVC]];
+    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[mainNav,candyNav,messageNav,mineNav]];
     [tabBar setItemsWithImageNameArray:@[@"main",@"candy",@"message",@"mine"]];
     _window.rootViewController = tabBar;
 }

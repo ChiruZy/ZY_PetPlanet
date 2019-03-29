@@ -10,11 +10,12 @@
 #import "MineCell.h"
 #import "ZYPopView.h"
 #import "ChangeCoverView.h"
-
+#import "LoginViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mineBG;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -22,19 +23,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configSubviews];
-}
-
-- (void)configSubviews{
-    _mineBG.image = [Common imageWithColor:HEXCOLOR(0xA19FEC)];
-    UITapGestureRecognizer *tapCover = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeCover)];
-    _mineBG.userInteractionEnabled = YES;
-    [_mineBG addGestureRecognizer:tapCover];
     
-    _photo.image = [Common imageWithColor:HEXCOLOR(0xD7FEF1)];
+    [_tableView registerNib:[UINib nibWithNibName:@"MineCell" bundle:nil] forCellReuseIdentifier:@"MineCell"];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView registerNib:[UINib nibWithNibName:@"MineCell" bundle:nil] forCellReuseIdentifier:@"MineCell"];
+    
+    if (IS_LOGIN) {
+        
+    }else{
+        [self configSubviews];
+    }
+}
+
+
+
+- (void)configSubviews{
+    UITapGestureRecognizer *tapCover = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeCover)];
+    [_mineBG addGestureRecognizer:tapCover];
+    
+    UITapGestureRecognizer *tapUser = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapUser)];
+    [_name addGestureRecognizer:tapUser];
+    [_photo addGestureRecognizer:tapUser];
+}
+
+- (void)tapUser{
+    LoginViewController *loginVC = [LoginViewController new];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 - (void)changeCover{
@@ -43,6 +57,7 @@
     [pop show];
 }
 
+#pragma mark - TableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 6;
@@ -77,7 +92,6 @@
     [cell configCellWithImage:[UIImage imageNamed:imageNameArr[indexPath.section]] title:titleArr[indexPath.section]];
     return cell;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

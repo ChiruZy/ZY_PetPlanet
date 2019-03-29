@@ -24,8 +24,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (NO) {
+    if (IS_LOGIN) {
         _loginView.hidden = YES;
+    }else{
+        
     }
 }
 

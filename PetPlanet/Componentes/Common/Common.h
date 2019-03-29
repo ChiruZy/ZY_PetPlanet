@@ -15,6 +15,8 @@
 
 #define IS_IPX [Common isIPX]
 
+#define IS_LOGIN NO
+
 #define DocumentPath  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES)objectAtIndex:0]
 
 

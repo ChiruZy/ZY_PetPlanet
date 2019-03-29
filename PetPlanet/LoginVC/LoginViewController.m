@@ -12,19 +12,19 @@
 
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (nonatomic,assign) CGPoint position;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *verificationField;
 @property (weak, nonatomic) IBOutlet UIView *verificationView;
-@property (nonatomic,assign) BOOL showPassword;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpace;
 @property (nonatomic,assign) BOOL isSignUp;
+@property (nonatomic,assign) BOOL showPassword;
+@property (nonatomic,assign) CGFloat moveDistance;
 @end
 
 @implementation LoginViewController
 
+#pragma mark - LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = NO;
@@ -46,6 +46,11 @@
     [self.view endEditing:YES];
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+#pragma mark - PrivateMethod
 - (void)tapBG{
     [self.view endEditing:YES];
 }
@@ -54,51 +59,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)keyboardWillChangeFrame:(NSNotification*)sender{
-    if (!CGPointEqualToPoint(_position, CGPointZero)) {
-        return;
-    }
-    CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height;
-    
-    if (IS_IPX) {
-        transformY += 104;
-    }else{
-        transformY += 60;
-    }
-    
-    CGPoint position = self.view.layer.position;
-    _position = position;
-    position.y += transformY;
-    __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:duration animations:^{
-        weakSelf.view.layer.position = position;
-    }];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (void)keyboardDidHide:(NSNotification *)notification{
-    if (CGPointEqualToPoint(_position, CGPointZero)) {
-        return;
-    }
-    CGFloat duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:duration animations:^{
-        weakSelf.view.layer.position = weakSelf.position;
-    }completion:^(BOOL finished) {
-        weakSelf.position = CGPointZero;
-    }];
-}
-
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-}
 
 - (IBAction)showPassword:(id)sender {
     _showPassword = !_showPassword;
@@ -110,21 +70,6 @@
     _passwordField.secureTextEntry = !_showPassword;
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSMutableString *newStr = [NSMutableString stringWithString:textField.text];
-    [newStr replaceCharactersInRange:range withString:string];
-    if (textField == _phoneField) {
-        if (newStr.length>11) {
-            return NO;
-        }
-    }
-    if (textField == _passwordField) {
-        if (newStr.length>18) {
-            return NO;
-        }
-    }
-    return YES;
-}
 - (IBAction)signUp:(id)sender {
     [self.view endEditing:YES];
     if (_phoneField.text.length<11 || ![Common validateCellPhoneNumber:_phoneField.text]) {
@@ -143,6 +88,7 @@
         return;
     }
 }
+
 - (IBAction)register:(id)sender {
     UIButton *button = sender;
     button.userInteractionEnabled = NO;
@@ -158,8 +104,57 @@
     } completion:^(BOOL finished) {
         button.userInteractionEnabled = YES;
     }];
+}
+#pragma mark - KeyboardEvent
+- (void)keyboardWillChangeFrame:(NSNotification*)sender{
+    CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
-    
+    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height;
+    CGFloat value = transformY - _moveDistance;
+    _moveDistance = transformY;
+
+    CGPoint position = self.view.layer.position;
+    position.y += value;
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:duration animations:^{
+        weakSelf.view.layer.position = position;
+    }];
 }
 
+- (void)keyboardDidHide:(NSNotification *)notification{
+    CGFloat duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    __weak typeof(self) weakSelf = self;
+    
+    CGPoint position = self.view.layer.position;
+    position.y -= _moveDistance;
+    
+    [UIView animateWithDuration:duration animations:^{
+        weakSelf.view.layer.position = position;
+    }completion:^(BOOL finished) {
+        weakSelf.moveDistance = 0;
+    }];
+}
+
+#pragma mark - TextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSMutableString *newStr = [NSMutableString stringWithString:textField.text];
+    [newStr replaceCharactersInRange:range withString:string];
+    if (textField == _phoneField) {
+        if (newStr.length>11) {
+            return NO;
+        }
+    }
+    if (textField == _passwordField) {
+        if (newStr.length>18) {
+            return NO;
+        }
+    }
+    return YES;
+}
 @end
