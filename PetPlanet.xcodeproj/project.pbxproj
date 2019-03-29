@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05D9C6A3E779AA5A813B0251 /* libPods-PetPlanet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91524463320E4412F44030 /* libPods-PetPlanet.a */; };
+		6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6312F5E5224E4DE100FFC391 /* ZYSVPManager.m */; };
 		636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEF9B224A75ED00675B0C /* ZYTabBarController.m */; };
 		636CEFA2224A77A500675B0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA0224A77A500675B0C /* MainViewController.m */; };
 		636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA1224A77A500675B0C /* MainViewController.xib */; };
@@ -102,6 +103,8 @@
 /* Begin PBXFileReference section */
 		29B472290C2928DB0F723F03 /* Pods-PetPlanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet.release.xcconfig"; sourceTree = "<group>"; };
 		2B91524463320E4412F44030 /* libPods-PetPlanet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetPlanet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6312F5E4224E4DE100FFC391 /* ZYSVPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYSVPManager.h; sourceTree = "<group>"; };
+		6312F5E5224E4DE100FFC391 /* ZYSVPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSVPManager.m; sourceTree = "<group>"; };
 		636CEF9A224A75ED00675B0C /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
 		636CEF9B224A75ED00675B0C /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
 		636CEF9F224A77A500675B0C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -278,9 +281,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6312F5E3224E4DC700FFC391 /* ZYSVPManager */ = {
+			isa = PBXGroup;
+			children = (
+				6312F5E4224E4DE100FFC391 /* ZYSVPManager.h */,
+				6312F5E5224E4DE100FFC391 /* ZYSVPManager.m */,
+			);
+			path = ZYSVPManager;
+			sourceTree = "<group>";
+		};
 		636CEF96224A725C00675B0C /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				6312F5E3224E4DC700FFC391 /* ZYSVPManager */,
 				636CF080224CE32200675B0C /* ZYPopView */,
 				636CEFF2224CCACE00675B0C /* JXCategoryView */,
 				636CEFB2224A8E9C00675B0C /* ZYBaseViewController */,
@@ -755,6 +768,7 @@
 				63D0A1D7223046E5007E5B36 /* Sources */,
 				63D0A1D8223046E5007E5B36 /* Frameworks */,
 				63D0A1D9223046E5007E5B36 /* Resources */,
+				3BD2E8AF227E9E5DB31A5DBC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -830,6 +844,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3BD2E8AF227E9E5DB31A5DBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9424A930DE504E7FBA2766C1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -911,6 +943,7 @@
 				636CF08E224D2E8100675B0C /* CandyTableViewController.m in Sources */,
 				636CF06B224CCACE00675B0C /* JXCategoryListContainerView.m in Sources */,
 				636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */,
+				6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */,
 				636CEFA7224A77B800675B0C /* CandyViewController.m in Sources */,
 				636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */,
 				636CEFD3224ABF4700675B0C /* KolView.m in Sources */,

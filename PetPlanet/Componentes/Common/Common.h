@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)isIPX;
 + (UIImage *)imageWithColor:(UIColor *)color;
-
++ (BOOL)validateCellPhoneNumber:(NSString *)cellNum;
 @end
 
 NS_ASSUME_NONNULL_END

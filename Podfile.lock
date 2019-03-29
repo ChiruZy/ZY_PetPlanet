@@ -19,6 +19,7 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - SVProgressHUD (2.2.5)
   - UINavigation-SXFixSpace (1.0.9)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - EllipsePageControl (~> 0.0.4)
   - FXBlurView (~> 1.6.4)
   - SDWebImage (~> 4.0)
+  - SVProgressHUD
   - UINavigation-SXFixSpace (~> 1.0.9)
 
 SPEC REPOS:
@@ -34,6 +36,7 @@ SPEC REPOS:
     - EllipsePageControl
     - FXBlurView
     - SDWebImage
+    - SVProgressHUD
     - UINavigation-SXFixSpace
 
 SPEC CHECKSUMS:
@@ -41,8 +44,9 @@ SPEC CHECKSUMS:
   EllipsePageControl: d6c436006d72119c6cbba45af6648d15a7af7d3a
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UINavigation-SXFixSpace: d5cf69960794667c1315167d53658a89193ccba4
 
-PODFILE CHECKSUM: 10148ebea14ebce38697da9a61b0e12a47b96d14
+PODFILE CHECKSUM: 56af49a503ae63263bb3562b2e6fa2ca70dfa297
 
 COCOAPODS: 1.5.3

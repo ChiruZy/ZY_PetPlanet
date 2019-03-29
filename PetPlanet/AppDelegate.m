@@ -46,9 +46,11 @@
     ZYNavigationController * candyNav = [[ZYNavigationController alloc]initWithRootViewController:candyVC];
     
     MineViewController *mineVC = [MineViewController new];
-    MessageViewController *messageVC = [MessageViewController new];
     
-    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[mainNav,candyNav,messageVC,mineVC]];
+    MessageViewController *messageVC = [MessageViewController new];
+    ZYNavigationController * messageNav = [[ZYNavigationController alloc]initWithRootViewController:messageVC];
+    
+    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[mainNav,candyNav,messageNav,mineVC]];
     [tabBar setItemsWithImageNameArray:@[@"main",@"candy",@"message",@"mine"]];
     _window.rootViewController = tabBar;
 }

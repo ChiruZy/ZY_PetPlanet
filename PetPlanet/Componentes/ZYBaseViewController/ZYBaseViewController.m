@@ -17,9 +17,7 @@
 #pragma mark - init
 - (instancetype)init{
     if (self = [super init]) {
-        if (self.navigationController) {
-            self.needNavBar = YES;
-        }
+
     }
     return self;
 }
@@ -38,14 +36,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (!self.needNavBar) {
-        [self.navigationController setNavigationBarHidden:YES animated:animated];
-    }
+    [self.navigationController setNavigationBarHidden:!self.needNavBar animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)backItemEvent{

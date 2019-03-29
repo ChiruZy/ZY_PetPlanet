@@ -22,7 +22,7 @@
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.bounds];
-        imageView.image = [self getWindowImage];
+        imageView.image = [ZYPopView getWindowImage];
         [self addSubview:imageView];
         
         _blurView = [[FXBlurView alloc]initWithFrame:self.bounds];
@@ -44,6 +44,19 @@
         [self addSubview:_contentView];
     }
     return self;
+}
+
+
++ (void)addBlurToView:(UIView *)view{
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:view.bounds];
+    imageView.image = [self getWindowImage];
+    [view addSubview:imageView];
+    
+    FXBlurView *blurView = [[FXBlurView alloc]initWithFrame:view.bounds];
+    blurView.blurRadius = 4;
+    blurView.tintColor = [UIColor clearColor];
+    blurView.layer.opacity = 0;
+    [view addSubview:blurView];
 }
 
 - (void)show{
@@ -79,7 +92,7 @@
     }];  
 }
 
-- (UIImage *)getWindowImage{
++ (UIImage *)getWindowImage{
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     CGRect rect = [keyWindow bounds];
     UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
@@ -90,5 +103,6 @@
    
     return capturedScreen;
 }
+
 
 @end

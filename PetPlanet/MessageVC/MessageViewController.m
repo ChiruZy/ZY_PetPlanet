@@ -7,8 +7,10 @@
 //
 
 #import "MessageViewController.h"
+#import "LoginViewController.h"
 
 @interface MessageViewController ()
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end
 
@@ -16,17 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.needNavBar = YES;
+    self.navigationItem.title = @"Message";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (NO) {
+        _loginView.hidden = YES;
+    }
 }
-*/
+
+- (IBAction)login:(id)sender {
+    LoginViewController *loginVC = [LoginViewController new];
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
 
 @end

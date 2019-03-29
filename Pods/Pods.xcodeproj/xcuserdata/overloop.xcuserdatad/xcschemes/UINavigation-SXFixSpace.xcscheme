@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "47A7FF7552F786FDC83BCA2C441F234B"
+               BlueprintIdentifier = "6B6F2FAC8F84F0347F43B781FB3B9D74"
                BlueprintName = "UINavigation-SXFixSpace"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libUINavigation-SXFixSpace.a">
