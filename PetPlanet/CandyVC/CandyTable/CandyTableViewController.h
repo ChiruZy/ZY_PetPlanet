@@ -11,7 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, CandyListType) {
+    CandyListFollowingType,
+    CandyListRecommendType,
+    CandyListNewsType,
+};
+
 @interface CandyTableViewController : UIViewController<JXCategoryListContentViewDelegate>
+
 
 @end
 

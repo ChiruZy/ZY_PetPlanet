@@ -95,6 +95,7 @@
 		637314A4224E9ECD00D4D5CD /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A2224E9ECD00D4D5CD /* FavoriteViewController.xib */; };
 		637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A5224EA03E00D4D5CD /* LoginView.xib */; };
 		637314A9224EA08D00D4D5CD /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314A8224EA08D00D4D5CD /* LoginView.m */; };
+		637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314AC224F452300D4D5CD /* CandyNetworking.m */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -266,6 +267,8 @@
 		637314A5224EA03E00D4D5CD /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		637314A7224EA08D00D4D5CD /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		637314A8224EA08D00D4D5CD /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		637314AB224F452300D4D5CD /* CandyNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyNetworking.h; sourceTree = "<group>"; };
+		637314AC224F452300D4D5CD /* CandyNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyNetworking.m; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -356,6 +359,7 @@
 		636CEF9D224A775D00675B0C /* CandyVC */ = {
 			isa = PBXGroup;
 			children = (
+				637314AA224F44F500D4D5CD /* CandyNetworking */,
 				636CF0A2224D55FE00675B0C /* SearchPage */,
 				636CF09C224D51CB00675B0C /* CommentPage */,
 				636CF090224D304200675B0C /* CandyTable */,
@@ -719,6 +723,15 @@
 			path = CollectionsPage;
 			sourceTree = "<group>";
 		};
+		637314AA224F44F500D4D5CD /* CandyNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				637314AB224F452300D4D5CD /* CandyNetworking.h */,
+				637314AC224F452300D4D5CD /* CandyNetworking.m */,
+			);
+			path = CandyNetworking;
+			sourceTree = "<group>";
+		};
 		63D0A1D2223046E5007E5B36 = {
 			isa = PBXGroup;
 			children = (
@@ -951,6 +964,7 @@
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
 				637314A9224EA08D00D4D5CD /* LoginView.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
+				637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */,
 				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
 				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,

@@ -12,11 +12,11 @@
 
 @implementation KolModel
 
-+ (instancetype)createWithImageURL:(NSString *)url name:(NSString *)name userID:(NSUInteger)UID{
++ (instancetype)createWithImageURL:(NSString *)url name:(NSString *)name userID:(NSUInteger)userID{
     KolModel *model = [KolModel new];
     // model.image =
     model.name = name;
-    model.userID = UID;
+    model.userID = userID;
     
     return model;
 }

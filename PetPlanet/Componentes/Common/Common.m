@@ -55,4 +55,41 @@
     }
 }
 
++ (NSString *)getDataStringWithTimeInterval:(NSTimeInterval)timeInterval{
+    NSTimeInterval currentTime = [[NSDate date]timeIntervalSince1970];
+    NSUInteger realTime = timeInterval/1000;
+    NSUInteger time = currentTime - realTime;
+    
+    if (time < 60) {
+        return @"just now";
+    }
+    time /= 60;
+    if (time<60) {
+        NSString *minute = time==1?@"minute ago":@"minutes ago";
+        return [NSString stringWithFormat:@"%ld %@",time,minute];
+    }
+    time /= 60;
+    if (time<24) {
+        NSString *hour = time==1?@"hour ago":@"hours ago";
+        return [NSString stringWithFormat:@"%ld %@",time,hour];
+    }
+    time /= 24;
+    if (time<4) {
+        NSString *day = time==1?@"day ago":@"days ago";
+        return [NSString stringWithFormat:@"%ld %@",time,day];
+    }
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yy-MM-dd"];
+    NSString *fullTimeString = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:realTime]];
+    return fullTimeString;
+}
+
++ (NSString *)getFullDataStringWithTimeInterval:(NSTimeInterval)timeInterval{
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeInterval/1000];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
+    NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
+    return confromTimespStr;
+}
 @end
