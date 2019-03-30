@@ -8,6 +8,17 @@
 
 #import "CandyCell.h"
 
+@interface CandyCell ()
+@property (weak, nonatomic) IBOutlet UIButton *name;
+@property (weak, nonatomic) IBOutlet UIButton *head;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *summary;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *like;
+@property (weak, nonatomic) IBOutlet UIButton *reply;
+
+@end
+
 @implementation CandyCell
 
 - (void)awakeFromNib {

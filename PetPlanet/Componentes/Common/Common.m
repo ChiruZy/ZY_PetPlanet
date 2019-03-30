@@ -55,7 +55,7 @@
     }
 }
 
-+ (NSString *)getDataStringWithTimeInterval:(NSTimeInterval)timeInterval{
++ (NSString *)getDateStringWithTimeInterval:(NSTimeInterval)timeInterval{
     NSTimeInterval currentTime = [[NSDate date]timeIntervalSince1970];
     NSUInteger realTime = timeInterval/1000;
     NSUInteger time = currentTime - realTime;
@@ -85,11 +85,21 @@
     return fullTimeString;
 }
 
-+ (NSString *)getFullDataStringWithTimeInterval:(NSTimeInterval)timeInterval{
++ (NSString *)getFullDateStringWithTimeInterval:(NSTimeInterval)timeInterval{
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeInterval/1000];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     return confromTimespStr;
+}
+
++ (NSString *)getDateStringWithTimeString:(NSString *)timeString{
+    NSTimeInterval time = [timeString doubleValue];
+    return [self getDateStringWithTimeInterval:time];
+}
+
++ (NSString *)getFullDateStringWithTimeString:(NSString *)timeString{
+    NSTimeInterval time = [timeString doubleValue];
+    return [self getFullDateStringWithTimeInterval:time];
 }
 @end

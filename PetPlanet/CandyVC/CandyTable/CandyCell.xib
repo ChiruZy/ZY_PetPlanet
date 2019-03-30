@@ -109,6 +109,15 @@
                     <integer key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="head" destination="Jj7-um-7M5" id="tBA-rT-N9B"/>
+                <outlet property="image" destination="1lA-ha-vGH" id="8gx-oT-uJP"/>
+                <outlet property="like" destination="V5m-1p-hXO" id="0Re-uR-39a"/>
+                <outlet property="name" destination="SyC-34-wnJ" id="iSK-zd-zaC"/>
+                <outlet property="reply" destination="V5m-1p-hXO" id="O9J-St-8xh"/>
+                <outlet property="summary" destination="sD1-q9-bDu" id="lQF-rz-G2A"/>
+                <outlet property="time" destination="xSn-SY-vmc" id="FMV-ev-XFp"/>
+            </connections>
             <point key="canvasLocation" x="53.600000000000001" y="48.575712143928037"/>
         </tableViewCell>
     </objects>

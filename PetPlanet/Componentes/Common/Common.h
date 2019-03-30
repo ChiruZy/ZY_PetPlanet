@@ -31,9 +31,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)validateCellPhoneNumber:(NSString *)cellNum;
 
-+ (NSString *)getDataStringWithTimeInterval:(NSTimeInterval)timeInterval;
++ (NSString *)getDateStringWithTimeInterval:(NSTimeInterval)timeInterval;
 
-+ (NSString *)getFullDataStringWithTimeInterval:(NSTimeInterval)timeInterval;
++ (NSString *)getFullDateStringWithTimeInterval:(NSTimeInterval)timeInterval;
+
++ (NSString *)getDateStringWithTimeString:(NSString *)timeString;
+
++ (NSString *)getFullDateStringWithTimeString:(NSString *)timeString;
 
 @end
 

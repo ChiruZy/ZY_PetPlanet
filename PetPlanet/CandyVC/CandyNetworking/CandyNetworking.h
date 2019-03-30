@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYModel.h>
 
 /* ERROR NUMBER
     10 Compelet
@@ -26,6 +27,20 @@ typedef NS_ENUM(NSUInteger, CandyNetworkingType) {
 };
 
 NS_ASSUME_NONNULL_BEGIN
+
+@interface CandyModel : NSObject<YYModel>
+
+@property NSString *header;
+@property NSString *name;
+@property NSString *summary;
+@property NSString *image;
+@property NSString *time;
+@property NSUInteger reply;
+@property NSUInteger like;
+@property BOOL isLike;
+
+@end
+
 
 @interface CandyNetworking : NSObject
 

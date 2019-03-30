@@ -10,6 +10,17 @@
 #import <AFNetworking.h>
 #import "Common.h"
 
+@implementation CandyModel
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic{
+    _time = [Common getDateStringWithTimeString:_time];
+    return YES;
+}
+
+@end
+
+
+
 @interface CandyNetworking ()
 
 @property (nonatomic,assign) CandyNetworkingType networkingType;
@@ -54,7 +65,7 @@
             return;
         }
         
-        NSArray *models = dic[@"items"];
+        NSArray *models = [weakSelf paserData:dic[@"items"]];
         if (models.count > 0) {
             [weakSelf.array setArray:models];
         }
@@ -99,7 +110,7 @@
             return;
         }
         
-        NSArray *models = dic[@"items"];
+        NSArray *models = [weakSelf paserData:dic[@"items"]];
         if (models.count > 0) {
             [weakSelf.array addObjectsFromArray:models];
         }
@@ -108,6 +119,15 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         fail(@"14");
     }];
+}
+
+- (NSArray<CandyModel *> *)paserData:(NSArray *)data{
+    NSMutableArray *arr = [NSMutableArray new];
+    for (NSDictionary *dic in data) {
+        CandyModel *model = [CandyModel yy_modelWithJSON:dic];
+        [arr addObject:model];
+    }
+    return arr.copy;
 }
 
 - (NSMutableArray *)array{
