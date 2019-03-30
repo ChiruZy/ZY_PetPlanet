@@ -7,6 +7,7 @@
 //
 
 #import "Common.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation Common
 
@@ -66,17 +67,17 @@
     time /= 60;
     if (time<60) {
         NSString *minute = time==1?@"minute ago":@"minutes ago";
-        return [NSString stringWithFormat:@"%ld %@",time,minute];
+        return [NSString stringWithFormat:@"%zd %@",time,minute];
     }
     time /= 60;
     if (time<24) {
         NSString *hour = time==1?@"hour ago":@"hours ago";
-        return [NSString stringWithFormat:@"%ld %@",time,hour];
+        return [NSString stringWithFormat:@"%zd %@",time,hour];
     }
     time /= 24;
     if (time<4) {
         NSString *day = time==1?@"day ago":@"days ago";
-        return [NSString stringWithFormat:@"%ld %@",time,day];
+        return [NSString stringWithFormat:@"%zd %@",time,day];
     }
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

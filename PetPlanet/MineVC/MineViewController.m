@@ -62,7 +62,7 @@
 
 - (void)changeCover{
     ChangeCoverView *coverView = [[[NSBundle mainBundle] loadNibNamed:@"ChangeCoverView" owner:nil options:nil]firstObject];
-    ZYPopView *pop = [[ZYPopView alloc]initWithContentView:coverView];
+    ZYPopView *pop = [[ZYPopView alloc]initWithContentView:coverView type:ZYPopViewBlurType];
     [pop show];
 }
 

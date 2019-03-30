@@ -14,7 +14,7 @@
 #import "LoginView.h"
 #import "LoginViewController.h"
 
-@interface CandyTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CandyTableViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet LoginView *loginView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
@@ -86,13 +86,13 @@
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer resetNoMoreData];
     } fail:^(NSString *error) {
-        if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
-            weakSelf.notConnectView.hidden = NO;
-            weakSelf.loginView.hidden = YES;
-        }if ([error isEqualToString:@"12"]) {
-            weakSelf.loginView.hidden = NO;
-            weakSelf.notConnectView.hidden = YES;
-        }
+//        if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
+//            weakSelf.notConnectView.hidden = NO;
+//            weakSelf.loginView.hidden = YES;
+//        }if ([error isEqualToString:@"12"]) {
+//            weakSelf.loginView.hidden = NO;
+//            weakSelf.notConnectView.hidden = YES;
+//        }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
@@ -126,6 +126,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
     return self.network.models.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -148,8 +149,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     CandyCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
+    [cell configCellWithModel:nil];
+    cell.delegate = self;
     return cell;
 }
 
@@ -169,5 +171,23 @@
         }
     }
     return _network;
+}
+
+#pragma mark - CandyCellDelegate
+
+- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
+    //TODO : GOTO USER PAGE
+}
+
+- (void)cellDidTapReplyWithModel:(CandyModel *)model{
+    
+}
+
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 @end

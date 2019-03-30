@@ -8,6 +8,7 @@
 
 #import "CandyCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ImageReviewView.h"
 
 @interface CandyCell ()
 @property (weak, nonatomic) IBOutlet UIButton *name;
@@ -38,10 +39,10 @@
     _time.text = model.time;
     _summary.text = model.summary;
     
-    [_image sd_setImageWithURL:[NSURL URLWithString:model.image]];
+    [_image sd_setImageWithURL:[NSURL URLWithString:model.smallImage]];
     [_head sd_setImageWithURL:[NSURL URLWithString:model.header]];
     UITapGestureRecognizer *tapHead = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(nameOrHeadEvent)];
-    UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageEvent)];
+    UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageEvent:)];
     [_head addGestureRecognizer:tapHead];
     [_image addGestureRecognizer:tapImage];
     
@@ -57,11 +58,11 @@
     if (model.like > 9999) {
         [_like setTitle:@"9999+" forState:UIControlStateNormal];
     }else{
-        [_like setTitle:[NSString stringWithFormat:@"%ld",model.like] forState:UIControlStateNormal];
+        [_like setTitle:[NSString stringWithFormat:@"%zd",model.like] forState:UIControlStateNormal];
     }
     [_like addTarget:self action:@selector(likeEvent) forControlEvents:UIControlEventTouchUpInside];
     
-    [_reply setTitle:[NSString stringWithFormat:@"%ld",model.reply] forState:UIControlStateNormal];
+    [_reply setTitle:[NSString stringWithFormat:@"%zd",model.reply] forState:UIControlStateNormal];
     [_reply addTarget:self action:@selector(replyEvent) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -84,7 +85,7 @@
     if (number > 9999) {
         [_like setTitle:@"9999+" forState:UIControlStateNormal];
     }else{
-        [_like setTitle:[NSString stringWithFormat:@"%ld",number] forState:UIControlStateNormal];
+        [_like setTitle:[NSString stringWithFormat:@"%zd",number] forState:UIControlStateNormal];
     }
 }
 
@@ -100,10 +101,14 @@
     }
 }
 
-- (void)imageEvent{
-    if ([_delegate respondsToSelector:@selector(cellDidTapImageWithModel:)]) {
-        [_delegate cellDidTapImageWithModel:_model];
-    }
+- (void)imageEvent:(UITapGestureRecognizer *)gesture{
+    UIImageView *imageView = (UIImageView *)gesture.view;
+    CGPoint point = [imageView convertPoint:imageView.frame.origin toView:[UIApplication sharedApplication].windows.lastObject];
+    CGRect rect = CGRectMake(point.x, point.y, imageView.frame.size.width, imageView.frame.size.height);
+    
+    //ImageReviewView *imageReviewView = [[ImageReviewView alloc]initWithOriginFrame:rect image:imageView.image originImage:_model.image];
+    ImageReviewView *imageReviewView = [[ImageReviewView alloc]initWithOriginFrame:rect image:[UIImage imageNamed:@"planet"] originImage:_model.image];
+    [imageReviewView show];
 }
 
 @end

@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *name;
 @property NSString *summary;
 @property NSString *image;
+@property NSString *smallImage;
 @property NSString *time;
 @property NSUInteger reply;
 @property NSUInteger like;

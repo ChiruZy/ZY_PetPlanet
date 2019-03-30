@@ -38,7 +38,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-ha-vGH">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-ha-vGH">
                         <rect key="frame" x="0.0" y="101" width="345" height="224.5"/>
                         <color key="backgroundColor" red="0.84313725490196079" green="0.99607843137254903" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
@@ -62,7 +62,7 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxu-3l-LV6">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxu-3l-LV6">
                         <rect key="frame" x="12" y="8" width="48" height="48"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>

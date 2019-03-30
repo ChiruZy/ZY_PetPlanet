@@ -12,6 +12,7 @@
 #import "AdoptCell/AdoptCell.h"
 #import "PopularCell/PopularCell.h"
 #import "MainViewNetworking.h"
+#import <MJRefresh/MJRefresh.h>
 
 #define SCROLL_SPACE 14
 
@@ -39,19 +40,28 @@
     [_tableView registerNib: [UINib nibWithNibName:@"KolCell" bundle:nil] forCellReuseIdentifier:@"KolCell"];
     [_tableView registerNib: [UINib nibWithNibName:@"AdoptCell" bundle:nil] forCellReuseIdentifier:@"AdoptCell"];
     [_tableView registerNib: [UINib nibWithNibName:@"PopularCell" bundle:nil] forCellReuseIdentifier:@"PopularCell"];
+    
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshMain)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    UIImage *image = [UIImage imageNamed:@"UFO_0"];
+    [header setImages:@[image] forState:MJRefreshStatePulling];
+    [header setImages:[self getUFOImage] forState:MJRefreshStateRefreshing];
+    _tableView.mj_header = header;
 }
 
-//- (void)configGradientView{
-//    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-//    gradientLayer.frame = CGRectMake(0, 0, Screen_Width,208);
-//    gradientLayer.colors = @[(__bridge id)HEXCOLOR(0xA19FEC).CGColor,
-//                             (__bridge id)HEXCOLOR(0xF5F5F5).CGColor];
-//    gradientLayer.startPoint = CGPointMake(0, 0);
-//    gradientLayer.endPoint = CGPointMake(0, 1);
-//    gradientLayer.locations = @[@(0),@(1)];
-//    [self.view.layer insertSublayer:gradientLayer atIndex:0];
-//}
+- (NSArray *)getUFOImage {
+    NSMutableArray *arr = [NSMutableArray new];
+    for (int i = 0; i<50 ; i+=4) {
+        NSString *name = [NSString stringWithFormat:@"UFO_%d",i];
+        [arr addObject:[UIImage imageNamed:name]];
+    }
+    return arr;
+}
 
+- (void)refreshMain{
+    
+}
 #pragma mark - events
 - (void)tapBannerWithIndex:(NSUInteger)index{
     

@@ -37,7 +37,7 @@
                                 <constraint firstAttribute="width" constant="280" id="U7t-wd-bTd"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_close" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Fv-97a">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Fv-97a">
                             <rect key="frame" x="0.0" y="24" width="36" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="36" id="XLn-2c-rlZ"/>
@@ -221,6 +221,7 @@
     <resources>
         <image name="cancel" width="23.5" height="23.5"/>
         <image name="eye_close" width="36" height="36"/>
+        <image name="lock" width="36" height="36"/>
         <image name="mine_selected" width="30" height="30"/>
         <image name="planet" width="375" height="285"/>
     </resources>

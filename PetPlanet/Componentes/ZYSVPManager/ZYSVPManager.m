@@ -17,10 +17,10 @@
 }
 
 + (void)configWithSVP{
-    [SVProgressHUD setBackgroundColor: HEXCOLOR(0xBBBAFA)];
+    [SVProgressHUD setBackgroundColor: HEXCOLOR(0x8D8CC6)];
     [SVProgressHUD setCornerRadius:5];
-    [SVProgressHUD setMinimumSize:CGSizeMake(200, 40)];
-    [SVProgressHUD setFont:[UIFont boldSystemFontOfSize:20]];
+    [SVProgressHUD setMinimumSize:CGSizeMake(200, 60)];
+    [SVProgressHUD setFont:[UIFont boldSystemFontOfSize:18]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
 }
 

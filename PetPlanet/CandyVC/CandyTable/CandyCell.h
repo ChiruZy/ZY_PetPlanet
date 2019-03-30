@@ -19,8 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model;
 
-- (void)cellDidTapImageWithModel:(CandyModel *)model;
-
 @end
 
 @interface CandyCell : UITableViewCell
