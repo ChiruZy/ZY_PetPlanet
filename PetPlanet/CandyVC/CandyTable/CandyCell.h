@@ -7,10 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CandyNetworking.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol CandyCellDelegate <NSObject>
+
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike;
+
+- (void)cellDidTapReplyWithModel:(CandyModel *)model;
+
+- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model;
+
+- (void)cellDidTapImageWithModel:(CandyModel *)model;
+
+@end
+
 @interface CandyCell : UITableViewCell
+
+@property (nonatomic,weak) id <CandyCellDelegate> delegate;
+
+- (void)configCellWithModel:(CandyModel *)model;
 
 @end
 

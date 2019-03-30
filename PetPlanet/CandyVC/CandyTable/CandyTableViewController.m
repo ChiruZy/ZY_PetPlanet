@@ -38,23 +38,37 @@
     [_loginView loginButtonAddTarget:self action:@selector(login)];
 }
 
+#pragma mark - PrivateMethod
 - (void)configTableView{
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"CandyCell" bundle:nil] forCellReuseIdentifier:@"CandyCell"];
-    _tableView.hidden = YES;
     [self reload];
     [self configHeaderAndFooter];
 }
 
 - (void)configHeaderAndFooter{
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerEvent)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    [header setImages:[self getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
     
     MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerEvent)];
+    footer.stateLabel.hidden = YES;
     _tableView.mj_footer = footer;
 }
 
+- (NSArray *)getUFOImage {
+    NSMutableArray *arr = [NSMutableArray new];
+    for (int i = 0; i<50 ; i+=4) {
+        NSString *name = [NSString stringWithFormat:@"UFO_%d",i];
+        [arr addObject:[UIImage imageNamed:name]];
+    }
+    return arr;
+}
+
+#pragma mark - TableViewEvent
 - (void)headerEvent{
     [self reload];
 }
@@ -67,7 +81,6 @@
     __weak typeof(self) weakSelf = self;
     [self.network reloadModelsWithComplete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.tableView.hidden = NO;
         weakSelf.loginView.hidden = YES;
         weakSelf.notConnectView.hidden = YES;
         [weakSelf.tableView.mj_header endRefreshing];
@@ -97,11 +110,13 @@
     }];
 }
 
+#pragma mark - OtherEvent
 - (void)login{
     LoginViewController *lvc =[LoginViewController new];
     [self.navigationController pushViewController:lvc animated:YES];
 }
 
+#pragma mark - TableViewDelegate
 - (UIView *)listView{
     return self.view;
 }
@@ -138,6 +153,8 @@
     return cell;
 }
 
+
+#pragma mark - Getter & Setter
 - (CandyNetworking *)network{
     if (!_network) {
         if (_type == CandyListFollowingType) {

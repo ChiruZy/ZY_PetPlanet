@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *time;
 @property NSUInteger reply;
 @property NSUInteger like;
+@property NSUInteger authorID;
+@property NSUInteger candyID;
 @property BOOL isLike;
 
 @end

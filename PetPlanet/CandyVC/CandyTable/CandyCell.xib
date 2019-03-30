@@ -19,19 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="345" height="369.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jj7-um-7M5">
-                        <rect key="frame" x="12" y="8" width="48" height="48"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="48" id="Nav-C5-XYf"/>
-                            <constraint firstAttribute="height" constant="48" id="z1k-M6-o7o"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="24"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-34-wnJ">
                         <rect key="frame" x="74" y="8" width="109" height="29"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
@@ -75,26 +62,39 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxu-3l-LV6">
+                        <rect key="frame" x="12" y="8" width="48" height="48"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="7OW-IH-eg7"/>
+                            <constraint firstAttribute="height" constant="48" id="V5f-fk-aac"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="V5m-1p-hXO" secondAttribute="bottom" id="1X8-Th-gTA"/>
-                    <constraint firstItem="sD1-q9-bDu" firstAttribute="top" secondItem="Jj7-um-7M5" secondAttribute="bottom" constant="16" id="47q-LQ-oSr"/>
                     <constraint firstItem="xSn-SY-vmc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="26" id="9i2-DG-wEF"/>
+                    <constraint firstItem="sD1-q9-bDu" firstAttribute="top" secondItem="rxu-3l-LV6" secondAttribute="bottom" constant="16" id="FhW-bH-xi7"/>
                     <constraint firstItem="sD1-q9-bDu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="I7I-zh-YFD"/>
                     <constraint firstItem="SyC-34-wnJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="NoU-1R-hpl"/>
                     <constraint firstItem="4IP-xH-IJ4" firstAttribute="top" secondItem="1lA-ha-vGH" secondAttribute="bottom" id="P8n-ds-at0"/>
-                    <constraint firstItem="Jj7-um-7M5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="QXM-XL-9ch"/>
                     <constraint firstItem="V5m-1p-hXO" firstAttribute="leading" secondItem="4IP-xH-IJ4" secondAttribute="trailing" id="Ug6-RV-f1h"/>
-                    <constraint firstItem="SyC-34-wnJ" firstAttribute="leading" secondItem="Jj7-um-7M5" secondAttribute="trailing" constant="14" id="V9G-05-iVr"/>
-                    <constraint firstItem="xSn-SY-vmc" firstAttribute="leading" secondItem="Jj7-um-7M5" secondAttribute="trailing" constant="14" id="aBN-7V-1bs"/>
+                    <constraint firstItem="rxu-3l-LV6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Vtg-3u-fMG"/>
                     <constraint firstItem="1lA-ha-vGH" firstAttribute="top" secondItem="sD1-q9-bDu" secondAttribute="bottom" constant="10" id="bBt-fh-7ou"/>
                     <constraint firstAttribute="bottom" secondItem="4IP-xH-IJ4" secondAttribute="bottom" id="dNs-5A-MZR"/>
                     <constraint firstAttribute="trailing" secondItem="sD1-q9-bDu" secondAttribute="trailing" constant="12" id="dpX-lB-Qb8"/>
                     <constraint firstAttribute="trailing" secondItem="V5m-1p-hXO" secondAttribute="trailing" constant="10" id="eEz-We-ZZo"/>
+                    <constraint firstItem="SyC-34-wnJ" firstAttribute="leading" secondItem="rxu-3l-LV6" secondAttribute="trailing" constant="14" id="jXu-46-NdB"/>
                     <constraint firstAttribute="bottom" secondItem="1lA-ha-vGH" secondAttribute="bottom" constant="44" id="knz-lQ-njv"/>
                     <constraint firstAttribute="trailing" secondItem="1lA-ha-vGH" secondAttribute="trailing" id="qhE-Ih-NlO"/>
+                    <constraint firstItem="xSn-SY-vmc" firstAttribute="leading" secondItem="rxu-3l-LV6" secondAttribute="trailing" constant="14" id="qj8-Io-yxq"/>
                     <constraint firstItem="V5m-1p-hXO" firstAttribute="top" secondItem="1lA-ha-vGH" secondAttribute="bottom" id="s4I-pb-qPs"/>
-                    <constraint firstItem="Jj7-um-7M5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="y22-4d-Lmg"/>
+                    <constraint firstItem="rxu-3l-LV6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ysX-dy-z9q"/>
                     <constraint firstItem="1lA-ha-vGH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zys-l6-xLM"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
@@ -110,7 +110,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="head" destination="Jj7-um-7M5" id="tBA-rT-N9B"/>
+                <outlet property="head" destination="rxu-3l-LV6" id="nea-U4-diW"/>
                 <outlet property="image" destination="1lA-ha-vGH" id="8gx-oT-uJP"/>
                 <outlet property="like" destination="V5m-1p-hXO" id="0Re-uR-39a"/>
                 <outlet property="name" destination="SyC-34-wnJ" id="iSK-zd-zaC"/>
