@@ -106,8 +106,7 @@
     CGPoint point = [imageView convertPoint:imageView.frame.origin toView:[UIApplication sharedApplication].windows.lastObject];
     CGRect rect = CGRectMake(point.x, point.y, imageView.frame.size.width, imageView.frame.size.height);
     
-    //ImageReviewView *imageReviewView = [[ImageReviewView alloc]initWithOriginFrame:rect image:imageView.image originImage:_model.image];
-    ImageReviewView *imageReviewView = [[ImageReviewView alloc]initWithOriginFrame:rect image:[UIImage imageNamed:@"planet"] originImage:_model.image];
+    ImageReviewView *imageReviewView = [[ImageReviewView alloc]initWithOriginFrame:rect image:imageView.image originImage:_model.image];
     [imageReviewView show];
 }
 
