@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - EllipsePageControl (0.0.4)
   - FXBlurView (1.6.4)
+  - MJRefresh (3.1.15.7)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - EllipsePageControl (~> 0.0.4)
   - FXBlurView (~> 1.6.4)
+  - MJRefresh
   - SDWebImage (~> 4.0)
   - SVProgressHUD
   - UINavigation-SXFixSpace (~> 1.0.9)
@@ -35,6 +37,7 @@ SPEC REPOS:
     - AFNetworking
     - EllipsePageControl
     - FXBlurView
+    - MJRefresh
     - SDWebImage
     - SVProgressHUD
     - UINavigation-SXFixSpace
@@ -43,10 +46,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   EllipsePageControl: d6c436006d72119c6cbba45af6648d15a7af7d3a
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UINavigation-SXFixSpace: d5cf69960794667c1315167d53658a89193ccba4
 
-PODFILE CHECKSUM: 56af49a503ae63263bb3562b2e6fa2ca70dfa297
+PODFILE CHECKSUM: 3098b38e230e913dbd39df4a50a8b1b8ed863f03
 
 COCOAPODS: 1.5.3

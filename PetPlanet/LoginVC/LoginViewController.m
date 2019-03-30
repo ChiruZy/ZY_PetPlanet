@@ -94,12 +94,12 @@
     button.userInteractionEnabled = NO;
     _isSignUp = !_isSignUp;
     __weak typeof(self) weakSelf = self;
-    NSString *title = _isSignUp?@"Sign up":@"Login";
+    NSString *title = !_isSignUp?@"Sign up":@"Login";
     [UIView animateWithDuration:0.2 animations:^{
         weakSelf.verificationView.layer.opacity = weakSelf.isSignUp?1:0;
         weakSelf.topSpace.constant = weakSelf.isSignUp?74:34;
         [button setTitle:title forState:UIControlStateNormal];
-        [weakSelf.loginButton setTitle:!weakSelf.isSignUp?@"Sign up":@"Login" forState:UIControlStateNormal];
+        [weakSelf.loginButton setTitle:weakSelf.isSignUp?@"Sign up":@"Login" forState:UIControlStateNormal];
         [weakSelf.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         button.userInteractionEnabled = YES;
