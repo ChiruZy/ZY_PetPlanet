@@ -106,7 +106,6 @@
         [contentView RemoveOriginImageView];
     }
     
-    
     _popView = [[ZYPopView alloc]initWithContentView:contentView type:ZYPopViewBlackType];
     _popView.popType = ZYPopBottomType;
     [_popView setDismissBlock:^{
@@ -120,7 +119,7 @@
 
 - (void)download{
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    NSURL *url = [NSURL URLWithString:@"https://img01.sogoucdn.com/app/a/07/ceeac68fc3c03b8f1c80992809147263"];
+    NSURL *url = [NSURL URLWithString:_originImagePath];
     if (!url) {
         [_popView dismiss];
         return;

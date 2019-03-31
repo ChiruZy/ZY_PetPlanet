@@ -16,10 +16,12 @@
     13 Wrong Response
     14 Connect fail
     15 No List
+    16 Candy Networking Buzy
 */
 typedef void(^Complete)(void);
-typedef void(^LoadComplete)(BOOL noMore);
 typedef void(^Fail)(NSString *error);
+typedef void(^LoadComplete)(BOOL noMore);
+
 typedef NS_ENUM(NSUInteger, CandyNetworkingType) {
     CandyNetworkingFollowingType,
     CandyNetworkingRecommendType,
@@ -37,11 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *image;
 @property NSString *smallImage;
 @property NSString *time;
-@property NSUInteger reply;
-@property NSUInteger like;
-@property NSUInteger authorID;
-@property NSUInteger candyID;
-@property NSUInteger hot;
+@property NSString *reply;
+@property NSString *hot;
+@property NSString *like;
+@property NSString *authorID;
+@property NSString *candyID;
+
 @property BOOL isLike;
 
 @end

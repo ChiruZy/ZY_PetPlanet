@@ -25,6 +25,7 @@
 
 @property (nonatomic,assign) CandyNetworkingType networkingType;
 @property (nonatomic,strong) NSMutableArray *array;
+@property (nonatomic,assign) BOOL networking;
 
 @end
 
@@ -39,24 +40,30 @@
 
 
 - (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail{
+    if (_networking) {
+        fail(@"16");
+    }
+    _networking = YES;
+    
     NSString *url = @"http://106.14.174.39/pet/candy/get_candy_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:@"" forKey:@"user_id"];
+        [param setObject:UID forKey:@"user_id"];
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingNewsType){
         [param setObject:@"2" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingUserType){
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:@"" forKey:@"user_id"];
+        [param setObject:UID forKey:@"user_id"];
     }
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+            weakSelf.networking = NO;
             fail(@"13");
             return;
         }
@@ -64,6 +71,7 @@
         NSDictionary *dic = responseObject;
         NSString *error = dic[@"error"];
         if(![error isEqualToString:@"10"]){
+            weakSelf.networking = NO;
             fail(error);
             return;
         }
@@ -72,13 +80,19 @@
         if (models.count > 0) {
             [weakSelf.array setArray:models];
         }
+        weakSelf.networking = NO;
         complete();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        weakSelf.networking = NO;
         fail(@"14");
     }];
 }
 
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail{
+    if (_networking) {
+        fail(@"16");
+    }
+    _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/candy/more_candy_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -86,7 +100,7 @@
     NSDictionary *dic = self.array.lastObject;
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:@"xxx" forKey:@"user_id"];
+        [param setObject:UID forKey:@"user_id"];
         if (dic) {
             [param setObject:dic[@"time"] forKey:@"time"];
         }
@@ -102,7 +116,7 @@
         }
     }if (_networkingType == CandyNetworkingUserType) {
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:@"xxx" forKey:@"user_id"];
+        [param setObject:UID forKey:@"user_id"];
         if (dic) {
             [param setObject:dic[@"time"] forKey:@"time"];
         }
@@ -111,6 +125,7 @@
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+            weakSelf.networking = NO;
             fail(@"13");
             return;
         }
@@ -118,6 +133,7 @@
         NSDictionary *dic = responseObject;
         NSString *error = dic[@"error"];
         if(![error isEqualToString:@"10"]){
+            weakSelf.networking = NO;
             fail(error);
             return;
         }
@@ -127,8 +143,10 @@
             [weakSelf.array addObjectsFromArray:models];
         }
         BOOL flag = models.count<20;
+        weakSelf.networking = NO;
         complete(flag);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        weakSelf.networking = NO;
         fail(@"14");
     }];
 }

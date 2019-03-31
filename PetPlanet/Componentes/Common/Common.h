@@ -19,7 +19,7 @@
 #pragma mark - test
 
 #define IS_LOGIN NO
-#define UID 123456
+#define UID @"123456"
 
 NS_ASSUME_NONNULL_BEGIN
 

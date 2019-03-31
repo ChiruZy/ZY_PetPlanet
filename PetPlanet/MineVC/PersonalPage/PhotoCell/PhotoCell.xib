@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="PhotoCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ego-nu-rgE">
+                        <rect key="frame" x="15" y="5" width="27" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="usc-oA-ged"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zsn-xW-9k1">
+                        <rect key="frame" x="15" y="33" width="345" height="55"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1030" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3T-c1-K6v">
+                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.72941176470000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R3T-c1-K6v" secondAttribute="height" multiplier="1:1" id="j4t-tq-OxK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1031" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWn-YX-7nN">
+                                <rect key="frame" x="72.5" y="0.0" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.72941176470000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GWn-YX-7nN" secondAttribute="height" multiplier="1:1" id="RsP-yi-R0a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1032" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-06-hYC">
+                                <rect key="frame" x="145" y="0.0" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.72941176470000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xur-06-hYC" secondAttribute="height" multiplier="1:1" id="Dae-aH-wz8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1033" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0l8-XD-iKo">
+                                <rect key="frame" x="217.5" y="0.0" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.72941176470000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0l8-XD-iKo" secondAttribute="height" multiplier="1:1" id="s4s-Zc-Vm0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1034" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lNT-uE-U3v">
+                                <rect key="frame" x="290" y="0.0" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.72941176470000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lNT-uE-U3v" secondAttribute="height" multiplier="1:1" id="QTj-U6-I2C"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="R3T-c1-K6v" firstAttribute="top" secondItem="zsn-xW-9k1" secondAttribute="top" id="07J-R1-mnV"/>
+                            <constraint firstAttribute="bottom" secondItem="R3T-c1-K6v" secondAttribute="bottom" id="1fe-Mc-4SW"/>
+                            <constraint firstItem="lNT-uE-U3v" firstAttribute="width" secondItem="lNT-uE-U3v" secondAttribute="height" multiplier="1:1" id="MuS-Nc-0gD"/>
+                            <constraint firstItem="Xur-06-hYC" firstAttribute="width" secondItem="Xur-06-hYC" secondAttribute="height" multiplier="1:1" id="bdf-L8-Dcs"/>
+                            <constraint firstAttribute="width" secondItem="zsn-xW-9k1" secondAttribute="height" multiplier="50:8" id="gG1-gt-vak"/>
+                            <constraint firstItem="0l8-XD-iKo" firstAttribute="width" secondItem="0l8-XD-iKo" secondAttribute="height" multiplier="1:1" id="r9k-Vq-F2d"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zsn-xW-9k1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4aJ-2G-s8P"/>
+                    <constraint firstItem="Ego-nu-rgE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Vnd-Hc-uLl"/>
+                    <constraint firstAttribute="trailing" secondItem="zsn-xW-9k1" secondAttribute="trailing" constant="15" id="a1W-UQ-2r3"/>
+                    <constraint firstItem="zsn-xW-9k1" firstAttribute="top" secondItem="Ego-nu-rgE" secondAttribute="bottom" constant="8" id="oOc-4m-ffT"/>
+                    <constraint firstItem="Ego-nu-rgE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xlg-iu-vPZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="141.59999999999999" y="150.22488755622189"/>
+        </tableViewCell>
+    </objects>
+</document>

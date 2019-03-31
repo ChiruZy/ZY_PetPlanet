@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonalViewController : ZYBaseViewController
 
+- (instancetype)initWithUserID:(NSString *)userID;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 //
-//  PersonalCell.h
+//  StateCell.h
 //  PetPlanet
 //
 //  Created by Overloop on 2019/3/31.
@@ -10,9 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PersonalCell : UITableViewCell
+@interface StateCell : UITableViewCell
 
-- (void)configWithDic:(NSDictionary *)dic isSelf:(BOOL)isSelf;
+- (void)isConnectionLost:(BOOL)flag;
+- (void)isNodata:(BOOL)flag;
 
 @end
 

@@ -96,6 +96,11 @@
 		637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A5224EA03E00D4D5CD /* LoginView.xib */; };
 		637314A9224EA08D00D4D5CD /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314A8224EA08D00D4D5CD /* LoginView.m */; };
 		637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 637314AC224F452300D4D5CD /* CandyNetworking.m */; };
+		6380A45B2250ABD90077F4E5 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6380A4592250ABD90077F4E5 /* PhotoCell.m */; };
+		6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6380A45A2250ABD90077F4E5 /* PhotoCell.xib */; };
+		6380A4612250B7F40077F4E5 /* StateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6380A45F2250B7F40077F4E5 /* StateCell.m */; };
+		6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6380A4602250B7F40077F4E5 /* StateCell.xib */; };
+		6380A4652250DB820077F4E5 /* PersonalPageNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 6380A4642250DB820077F4E5 /* PersonalPageNetwork.m */; };
 		63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DAC224FC3400078C1D8 /* ImageReviewView.m */; };
 		63A03DD8224FDEA40078C1D8 /* ImageReviewPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DD6224FDEA40078C1D8 /* ImageReviewPopView.m */; };
 		63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DDB224FE1EF0078C1D8 /* ImageReviewPopView.xib */; };
@@ -276,6 +281,14 @@
 		637314A8224EA08D00D4D5CD /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		637314AB224F452300D4D5CD /* CandyNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyNetworking.h; sourceTree = "<group>"; };
 		637314AC224F452300D4D5CD /* CandyNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyNetworking.m; sourceTree = "<group>"; };
+		6380A4582250ABD90077F4E5 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		6380A4592250ABD90077F4E5 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		6380A45A2250ABD90077F4E5 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		6380A45E2250B7F40077F4E5 /* StateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateCell.h; sourceTree = "<group>"; };
+		6380A45F2250B7F40077F4E5 /* StateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StateCell.m; sourceTree = "<group>"; };
+		6380A4602250B7F40077F4E5 /* StateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateCell.xib; sourceTree = "<group>"; };
+		6380A4632250DB820077F4E5 /* PersonalPageNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalPageNetwork.h; sourceTree = "<group>"; };
+		6380A4642250DB820077F4E5 /* PersonalPageNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalPageNetwork.m; sourceTree = "<group>"; };
 		63A03DAB224FC3400078C1D8 /* ImageReviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageReviewView.h; sourceTree = "<group>"; };
 		63A03DAC224FC3400078C1D8 /* ImageReviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageReviewView.m; sourceTree = "<group>"; };
 		63A03DD5224FDEA40078C1D8 /* ImageReviewPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageReviewPopView.h; sourceTree = "<group>"; };
@@ -752,6 +765,26 @@
 			path = CandyNetworking;
 			sourceTree = "<group>";
 		};
+		6380A4572250ABA70077F4E5 /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				6380A4582250ABD90077F4E5 /* PhotoCell.h */,
+				6380A4592250ABD90077F4E5 /* PhotoCell.m */,
+				6380A45A2250ABD90077F4E5 /* PhotoCell.xib */,
+			);
+			path = PhotoCell;
+			sourceTree = "<group>";
+		};
+		6380A45D2250B7E70077F4E5 /* StateCell */ = {
+			isa = PBXGroup;
+			children = (
+				6380A45E2250B7F40077F4E5 /* StateCell.h */,
+				6380A45F2250B7F40077F4E5 /* StateCell.m */,
+				6380A4602250B7F40077F4E5 /* StateCell.xib */,
+			);
+			path = StateCell;
+			sourceTree = "<group>";
+		};
 		63A03DDA224FDEAA0078C1D8 /* ImageReviewView */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,10 +800,14 @@
 		63A03DDD2250010E0078C1D8 /* PersonalPage */ = {
 			isa = PBXGroup;
 			children = (
+				6380A45D2250B7E70077F4E5 /* StateCell */,
+				6380A4572250ABA70077F4E5 /* PhotoCell */,
 				63A03DE3225009F40078C1D8 /* PersonalCell */,
 				63A03DDE225001350078C1D8 /* PersonalViewController.h */,
 				63A03DDF225001350078C1D8 /* PersonalViewController.m */,
 				63A03DE0225001350078C1D8 /* PersonalViewController.xib */,
+				6380A4632250DB820077F4E5 /* PersonalPageNetwork.h */,
+				6380A4642250DB820077F4E5 /* PersonalPageNetwork.m */,
 			);
 			path = PersonalPage;
 			sourceTree = "<group>";
@@ -928,12 +965,14 @@
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
+				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
 				6373149F224E9E7C00D4D5CD /* CollectionsViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* CandyCell.xib in Resources */,
+				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
@@ -1018,6 +1057,7 @@
 				636CF06F224CCACE00675B0C /* JXCategoryViewAnimator.m in Sources */,
 				636CF066224CCACE00675B0C /* JXCategoryImageCell.m in Sources */,
 				636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */,
+				6380A4652250DB820077F4E5 /* PersonalPageNetwork.m in Sources */,
 				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
 				63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */,
@@ -1066,7 +1106,9 @@
 				636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */,
 				6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */,
 				636CEFA7224A77B800675B0C /* CandyViewController.m in Sources */,
+				6380A4612250B7F40077F4E5 /* StateCell.m in Sources */,
 				636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */,
+				6380A45B2250ABD90077F4E5 /* PhotoCell.m in Sources */,
 				636CEFD3224ABF4700675B0C /* KolView.m in Sources */,
 				636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */,
 				636CF056224CCACE00675B0C /* JXCategoryIndicatorComponentView.m in Sources */,

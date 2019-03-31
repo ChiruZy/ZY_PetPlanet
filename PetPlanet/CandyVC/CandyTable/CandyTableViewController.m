@@ -92,6 +92,8 @@
         }if ([error isEqualToString:@"12"]) {
             weakSelf.loginView.hidden = NO;
             weakSelf.notConnectView.hidden = YES;
+        }if ([error isEqualToString:@"16"]){
+            
         }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -106,6 +108,9 @@
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
     } fail:^(NSString *error) {
+        if ([error isEqualToString:@"16"]){
+            
+        }
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }

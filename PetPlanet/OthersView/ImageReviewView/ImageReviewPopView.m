@@ -26,6 +26,8 @@
     }else{
         frame.size.height += 8;
     }
+    frame.origin.x = 0;
+    frame.size.width = Screen_Width;
     self.frame = frame;
 }
 

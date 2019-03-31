@@ -62,7 +62,6 @@
     if (!model) {
         return;
     }
-    NSUInteger uid = model.userID;
     
     // TODO : 根据id跳转
 }
