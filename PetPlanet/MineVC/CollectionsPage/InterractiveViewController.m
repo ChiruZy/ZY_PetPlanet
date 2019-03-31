@@ -1,31 +1,32 @@
 //
-//  CandyTableViewController.m
+//  CollectionsViewController.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/29.
+//  Created by Overloop on 2019/3/30.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "CandyTableViewController.h"
-#import "CandyCell.h"
-#import <MJRefresh/MJRefresh.h>
-#import "CandyNetworking.h"
-#import "NotConnectView.h"
+#import "InterractiveViewController.h"
 #import "LoginView.h"
 #import "LoginViewController.h"
+#import "InterractiveCell.h"
+#import "InterractiveNetworking.h"
+#import <MJRefresh.h>
+#import "NotConnectView.h"
 #import "PersonalViewController.h"
 
-@interface CandyTableViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
+@interface InterractiveViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet LoginView *loginView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
-@property (nonatomic,strong) CandyNetworking *network;
-@property (nonatomic,assign) CandyListType type;
+
+@property (nonatomic,strong) InterractiveNetworking *network;
+@property (nonatomic,assign) InterractiveVCType type;
 @end
 
-@implementation CandyTableViewController
+@implementation InterractiveViewController
 
-- (instancetype)initWithCandyListType:(CandyListType)type{
+- (instancetype)initWithInterractiveType:(InterractiveVCType)type{
     if (self = [super init]) {
         self.type = type;
     }
@@ -34,45 +35,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configTableView];
-    [_notConnectView reloadButtonAddTarget:self action:@selector(reload)];
-    [_loginView loginButtonAddTarget:self action:@selector(login)];
+    self.needNavBar = YES;
+    if (_type == InterractiveVCLikeType) {
+        self.navigationItem.title = @"My Favorite";
+    }else{
+        self.navigationItem.title = @"Collections";
+    }
+    [self judgeIsLogin];
+    
 }
 
-#pragma mark - PrivateMethod
-- (void)configTableView{
+- (void)judgeIsLogin{
+    [self configWithTableView];
+    if ([ZYUserManager shareInstance].isLogin) {
+        [self configWithTableView];
+    }else{
+        _loginView.hidden = NO;
+        [_loginView loginButtonAddTarget:self action:@selector(login)];
+    }
+}
+
+- (void)login{
+    __weak typeof(self) weakSelf = self;
+    LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
+        [weakSelf judgeIsLogin];
+    }];
+    [self.navigationController pushViewController:loginVC animated:YES];
+}
+
+- (void)configWithTableView{
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView registerNib:[UINib nibWithNibName:@"CandyCell" bundle:nil] forCellReuseIdentifier:@"CandyCell"];
-    [self reload];
+    [_tableView registerNib:[UINib nibWithNibName:@"InterractiveCell" bundle:nil] forCellReuseIdentifier:@"InterractiveCell"];
     [self configHeaderAndFooter];
 }
 
 - (void)configHeaderAndFooter{
-    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerEvent)];
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(reload)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
     
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerEvent)];
+    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     footer.stateLabel.hidden = YES;
     _tableView.mj_footer = footer;
 }
-#pragma mark - TableViewEvent
-- (void)headerEvent{
-    [self reload];
-}
 
-- (void)footerEvent{
-    [self loadMoreData];
-}
 
 - (void)reload{
     __weak typeof(self) weakSelf = self;
     [self.network reloadModelsWithComplete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.loginView.hidden = YES;
         weakSelf.notConnectView.hidden = YES;
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer resetNoMoreData];
@@ -106,20 +120,7 @@
     }];
 }
 
-#pragma mark - OtherEvent
-- (void)login{
-    __weak typeof(self) weakSelf = self;
-    LoginViewController *lvc =[[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
-        [weakSelf reload];
-    }];
-    [self.navigationController pushViewController:lvc animated:YES];
-}
-
-#pragma mark - TableViewDelegate
-- (UIView *)listView{
-    return self.view;
-}
-
+#pragma mark - UITableView Delegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return [UIView new];
 }
@@ -147,46 +148,36 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CandyCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
+    InterractiveCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"InterractiveCell" forIndexPath:indexPath];
     [cell configCellWithModel:_network.models[indexPath.section]];
     cell.delegate = self;
     return cell;
 }
 
-
-#pragma mark - Getter & Setter
-- (CandyNetworking *)network{
+#pragma getter & setter
+- (InterractiveNetworking *)network{
     if (!_network) {
-        if (_type == CandyListFollowingType) {
-            _network = [[CandyNetworking alloc]initWithNetWorkingType:
-                       CandyNetworkingFollowingType];
-        }else if (_type == CandyListRecommendType) {
-            _network = [[CandyNetworking alloc]initWithNetWorkingType:
-                        CandyNetworkingRecommendType];
-        }else if (_type == CandyListNewsType) {
-            _network = [[CandyNetworking alloc]initWithNetWorkingType:
-                        CandyNetworkingNewsType];
+        if (_type == InterractiveVCLikeType) {
+            _network = [[InterractiveNetworking alloc]initWithNetWorkingType:InterractiveLikeType];
+        }else{
+            _network = [[InterractiveNetworking alloc]initWithNetWorkingType:InterractiveCollectionType];
         }
     }
     return _network;
-}
-
-#pragma mark - CandyCellDelegate
-
-- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
-    PersonalViewController *personalVC =[[PersonalViewController alloc]initWithUserID:model.authorID];
-    [self.navigationController pushViewController:personalVC animated:YES];
 }
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model{
     
 }
 
+- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
+    PersonalViewController *personalVC =[[PersonalViewController alloc]initWithUserID:model.authorID];
+    [self.navigationController pushViewController:personalVC animated:YES];
+}
+
 - (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
+
 @end

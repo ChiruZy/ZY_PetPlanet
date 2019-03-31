@@ -20,11 +20,21 @@
 @property (nonatomic,assign) BOOL isSignUp;
 @property (nonatomic,assign) BOOL showPassword;
 @property (nonatomic,assign) CGFloat moveDistance;
+@property (nonatomic,strong) Login loginBlock;
 @end
 
 @implementation LoginViewController
 
 #pragma mark - LifeCycle
+
+- (instancetype)initWithLoginBlock:(Login)block{
+    if (self = [super init]) {
+        self.loginBlock = block;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = NO;
@@ -73,19 +83,26 @@
 - (IBAction)signUp:(id)sender {
     [self.view endEditing:YES];
     if (_phoneField.text.length<11 || ![Common validateCellPhoneNumber:_phoneField.text]) {
-        if ([ZYSVPManager isVisible]) {
-            return;
-        }
-        [ZYSVPManager showText:@"Wrong number" autoClose:2];
+        [ZYSVPManager showText:@"Wrong Number" autoClose:2];
         return;
     }
     
     if (_passwordField.text.length<8) {
-        if ([ZYSVPManager isVisible]) {
-            return;
-        }
-        [ZYSVPManager showText:@"Short password" autoClose:2];
+        [ZYSVPManager showText:@"Short Password" autoClose:2];
         return;
+    }
+    
+    if (_isSignUp && _verificationField.text.length<4) {
+        [ZYSVPManager showText:@"Short Verification" autoClose:2];
+        return;
+    }
+    
+    
+    
+    
+    //TODO : SUCCESS
+    if (_loginBlock) {
+        _loginBlock(@"");
     }
 }
 

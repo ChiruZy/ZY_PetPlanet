@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^Login)(NSString *uid);
+
 @interface LoginViewController : ZYBaseViewController
+
+- (instancetype)initWithLoginBlock:(Login)block;
 
 @end
 

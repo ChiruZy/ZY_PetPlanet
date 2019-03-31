@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WelcomeVC/WelcomeViewController.h"
-#import "MainViewController.h"
+#import "AdoptViewController.h"
 #import "CandyViewController.h"
 #import "MineViewController.h"
 #import "ZYTabBarController.h"
@@ -40,8 +40,8 @@
 }
 
 - (void)resetRootViewController{
-    MainViewController *mainVC = [MainViewController new];
-    ZYNavigationController *mainNav = [[ZYNavigationController alloc]initWithRootViewController:mainVC];
+    AdoptViewController *adoptVC = [AdoptViewController new];
+    ZYNavigationController *adoptNav = [[ZYNavigationController alloc]initWithRootViewController:adoptVC];
     
     CandyViewController *candyVC = [CandyViewController new];
     ZYNavigationController * candyNav = [[ZYNavigationController alloc]initWithRootViewController:candyVC];
@@ -52,7 +52,7 @@
     MessageViewController *messageVC = [MessageViewController new];
     ZYNavigationController * messageNav = [[ZYNavigationController alloc]initWithRootViewController:messageVC];
     
-    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[mainNav,candyNav,messageNav,mineNav]];
+    ZYTabBarController *tabBar = [[ZYTabBarController alloc]initWithControllers:@[candyNav,adoptNav,messageNav,mineNav]];
     [tabBar setItemsWithImageNameArray:@[@"main",@"candy",@"message",@"mine"]];
     _window.rootViewController = tabBar;
 }

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isVisible;
 + (void)configWithSVP;
 + (void)showText:(NSString *)text autoClose:(NSTimeInterval)time;
++ (void)dismiss;
 @end
 
 NS_ASSUME_NONNULL_END

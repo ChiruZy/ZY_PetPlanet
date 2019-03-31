@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Common.h"
+#import "ZYUserManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

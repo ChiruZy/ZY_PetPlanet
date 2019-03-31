@@ -25,8 +25,14 @@
 }
 
 + (void)showText:(NSString *)text autoClose:(NSTimeInterval)time{
+    if (SVProgressHUD.isVisible) {
+        return;
+    }
     [self configWithSVP];
     [SVProgressHUD showImage:nil status:text];
     [SVProgressHUD dismissWithDelay:time];
+}
++ (void)dismiss{
+    [SVProgressHUD dismiss];
 }
 @end

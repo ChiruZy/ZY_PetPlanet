@@ -33,7 +33,9 @@
 }
 
 - (void)login{
-    LoginViewController *loginVC = [LoginViewController new];
+    LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
+        //TODO:
+    }];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 

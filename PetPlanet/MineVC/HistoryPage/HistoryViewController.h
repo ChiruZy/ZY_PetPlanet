@@ -1,8 +1,8 @@
 //
-//  FavoriteViewController.h
+//  HistoryViewController.h
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/30.
+//  Created by Overloop on 2019/3/31.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FavoriteViewController : ZYBaseViewController
+@interface HistoryViewController : ZYBaseViewController
 
 @end
 

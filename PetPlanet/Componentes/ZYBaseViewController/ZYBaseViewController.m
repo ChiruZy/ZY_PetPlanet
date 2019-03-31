@@ -7,6 +7,7 @@
 //
 
 #import "ZYBaseViewController.h"
+#import "ZYSVPManager.h"
 
 @interface ZYBaseViewController ()<UIGestureRecognizerDelegate>
 
@@ -43,6 +44,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [ZYSVPManager dismiss];
 }
 
 - (void)backItemEvent{

@@ -1,37 +1,38 @@
 //
-//  CandyCell.m
+//  InterractiveCell.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/29.
+//  Created by Overloop on 2019/4/1.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "CandyCell.h"
+#import "InterractiveCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ImageReviewView.h"
 
-@interface CandyCell ()
-@property (weak, nonatomic) IBOutlet UIButton *name;
+@interface InterractiveCell()
+@property (weak, nonatomic) IBOutlet UILabel *interractiveLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *head;
-@property (weak, nonatomic) IBOutlet UILabel *time;
-@property (weak, nonatomic) IBOutlet UILabel *summary;
+@property (weak, nonatomic) IBOutlet UIButton *name;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UIButton *like;
+@property (weak, nonatomic) IBOutlet UILabel *summary;
+@property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UIButton *reply;
+@property (weak, nonatomic) IBOutlet UIButton *like;
 
 @property (nonatomic,assign) BOOL isLike;
-@property (nonatomic,assign) NSString *likeNumber;
-@property (nonatomic,strong) CandyModel *model;
+@property (nonatomic,assign) NSString * likeNumber;
+@property (nonatomic,strong) InterractiveModel *model;
 @end
 
-@implementation CandyCell
+@implementation InterractiveCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    // Initialization code
 }
 
-- (void)configCellWithModel:(CandyModel *)model{
+- (void)configCellWithModel:(InterractiveModel *)model{
     _model = model;
     _isLike = model.isLike;
     _likeNumber = model.like;
@@ -64,13 +65,19 @@
     
     [_reply setTitle:[NSString stringWithFormat:@"%@",model.reply] forState:UIControlStateNormal];
     [_reply addTarget:self action:@selector(replyEvent) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (_type == InterractiveLikeType) {
+        _interractiveLabel.text = [NSString stringWithFormat:@"Liked %@",model.interractiveTime];
+    }else{
+        _interractiveLabel.text = [NSString stringWithFormat:@"Collected %@",model.interractiveTime];
+    }
 }
 
 - (void)likeEvent{
     _isLike = !_isLike;
-    NSUInteger number = _isLike?_likeNumber.integerValue+1:_likeNumber.integerValue-1;
+    NSUInteger number = _isLike?_likeNumber.integerValue + 1:_likeNumber.integerValue-1;
     [self configLikeWithIsLike:_isLike likeNumber:number];
-
+    
     if ([_delegate respondsToSelector:@selector(cellDidTapLikeWithModel:isLike:)]) {
         [_delegate cellDidTapLikeWithModel:_model isLike:YES];
     }
@@ -111,3 +118,4 @@
 }
 
 @end
+

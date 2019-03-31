@@ -11,8 +11,7 @@
 #import "ZYPopView.h"
 #import "ChangeCoverView.h"
 #import "LoginViewController.h"
-#import "FavoriteViewController.h"
-#import "CollectionsViewController.h"
+#import "InterractiveViewController.h"
 #import "PersonalViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -57,7 +56,9 @@
 #pragma mark - TapEvent
 
 - (void)tapUser{
-    LoginViewController *loginVC = [LoginViewController new];
+    LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
+        
+    }];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 
@@ -108,12 +109,11 @@
         PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:@"123456"];
         [self.navigationController pushViewController:personalVC animated:YES];
     }else if (indexPath.section == 1) {
-        FavoriteViewController *favoriteVC = [FavoriteViewController new];
+        InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType];
         [self.navigationController pushViewController:favoriteVC animated:YES];
     }else if (indexPath.section == 2) {
-        CollectionsViewController *collectionsVC = [CollectionsViewController new];
+        InterractiveViewController *collectionsVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCCollectionType];
         [self.navigationController pushViewController:collectionsVC animated:YES];
     }
-    
 }
 @end

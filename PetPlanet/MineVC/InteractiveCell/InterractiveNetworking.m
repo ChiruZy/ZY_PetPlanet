@@ -1,39 +1,39 @@
 //
-//  CandyNetworking.m
+//  InterractiveNetworking.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/3/30.
+//  Created by Overloop on 2019/4/1.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "CandyNetworking.h"
+#import "InterractiveNetworking.h"
 #import <AFNetworking.h>
 #import "Common.h"
 
-@implementation CandyModel
+@implementation InterractiveModel
 
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic{
-    _time = [Common getDateStringWithTimeString:_time];
+    [super modelCustomTransformFromDictionary:dic];
+    _interractiveTime = [Common getDateStringWithTimeString:_interractiveTime];
+    
     return YES;
 }
 
 @end
 
+@interface InterractiveNetworking ()
 
-
-@interface CandyNetworking ()
-
-@property (nonatomic,assign) CandyNetworkingType networkingType;
+@property (nonatomic,assign) InterractiveType type;
 @property (nonatomic,strong) NSMutableArray *array;
 @property (nonatomic,assign) BOOL networking;
 
 @end
 
-@implementation CandyNetworking
+@implementation InterractiveNetworking
 
-- (instancetype)initWithNetWorkingType:(CandyNetworkingType)type{
+- (instancetype)initWithNetWorkingType:(InterractiveType)type{
     if (self = [super init]) {
-        self.networkingType = type;
+        self.type = type;
     }
     return self;
 }
@@ -45,21 +45,18 @@
     }
     _networking = YES;
     
-    NSString *url = @"http://106.14.174.39/pet/candy/get_candy_list.php";
+    NSString *url = @"http://106.14.174.39/pet/mine/get_interractive_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    if (_networkingType == CandyNetworkingFollowingType) {
+    if (_type == InterractiveLikeType) {
         [param setObject:@"0" forKey:@"type"];
         [param setObject:UID forKey:@"user_id"];
-    }else if(_networkingType == CandyNetworkingRecommendType){
+    }else {
         [param setObject:@"1" forKey:@"type"];
-    }else if (_networkingType == CandyNetworkingNewsType){
-        [param setObject:@"2" forKey:@"type"];
-    }else if (_networkingType == CandyNetworkingUserType){
-        [param setObject:@"3" forKey:@"type"];
         [param setObject:UID forKey:@"user_id"];
     }
+    
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isMemberOfClass:[NSDictionary class]]) {
@@ -88,39 +85,37 @@
     }];
 }
 
+- (NSArray<InterractiveModel *> *)paserData:(NSArray *)data{
+    NSMutableArray *arr = [NSMutableArray new];
+    for (NSDictionary *dic in data) {
+        InterractiveModel *model = [InterractiveModel yy_modelWithJSON:dic];
+        [arr addObject:model];
+    }
+    return arr.copy;
+}
+
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail{
     if (_networking) {
         fail(@"16");
     }
     _networking = YES;
-    NSString *url = @"http://106.14.174.39/pet/candy/more_candy_list.php";
+    NSString *url = @"http://106.14.174.39/pet/candy/more_interractive_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     NSDictionary *dic = self.array.lastObject;
-    if (_networkingType == CandyNetworkingFollowingType) {
+    
+    if (_type == InterractiveLikeType) {
         [param setObject:@"0" forKey:@"type"];
         [param setObject:UID forKey:@"user_id"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
-        }
-    }else if(_networkingType == CandyNetworkingRecommendType){
+    }else {
         [param setObject:@"1" forKey:@"type"];
-        if (dic) {
-            [param setObject:dic[@"hot"] forKey:@"hot"];
-        }
-    }else if (_networkingType == CandyNetworkingNewsType){
-        [param setObject:@"2" forKey:@"type"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
-        }
-    }else if (_networkingType == CandyNetworkingUserType) {
-        [param setObject:@"3" forKey:@"type"];
         [param setObject:UID forKey:@"user_id"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
-        }
     }
+    if (dic) {
+        [param setObject:dic[@"interractiveTime"] forKey:@"interractiveTime"];
+    }
+    
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isMemberOfClass:[NSDictionary class]]) {
@@ -150,15 +145,6 @@
     }];
 }
 
-- (NSArray<CandyModel *> *)paserData:(NSArray *)data{
-    NSMutableArray *arr = [NSMutableArray new];
-    for (NSDictionary *dic in data) {
-        CandyModel *model = [CandyModel yy_modelWithJSON:dic];
-        [arr addObject:model];
-    }
-    return arr.copy;
-}
-
 - (NSMutableArray *)array{
     if (!_array) {
         _array = [NSMutableArray new];
@@ -169,4 +155,5 @@
 - (NSArray *)models{
     return self.array;
 }
+
 @end
