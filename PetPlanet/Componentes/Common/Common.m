@@ -103,4 +103,13 @@
     NSTimeInterval time = [timeString doubleValue];
     return [self getFullDateStringWithTimeInterval:time];
 }
+
++ (NSArray *)getUFOImage {
+    NSMutableArray *arr = [NSMutableArray new];
+    for (int i = 0; i<50 ; i+=4) {
+        NSString *name = [NSString stringWithFormat:@"UFO_%d",i];
+        [arr addObject:[UIImage imageNamed:name]];
+    }
+    return arr;
+}
 @end

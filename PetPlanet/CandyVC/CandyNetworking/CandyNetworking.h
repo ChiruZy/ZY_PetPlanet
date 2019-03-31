@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, CandyNetworkingType) {
     CandyNetworkingFollowingType,
     CandyNetworkingRecommendType,
     CandyNetworkingNewsType,
+    CandyNetworkingUserType,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -40,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSUInteger like;
 @property NSUInteger authorID;
 @property NSUInteger candyID;
+@property NSUInteger hot;
 @property BOOL isLike;
 
 @end

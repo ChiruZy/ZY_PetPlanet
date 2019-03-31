@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 #import "FavoriteViewController.h"
 #import "CollectionsViewController.h"
+#import "PersonalViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mineBG;
@@ -103,8 +104,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
+        PersonalViewController *personalVC = [PersonalViewController new];
+        [self.navigationController pushViewController:personalVC animated:YES];
+    }else if (indexPath.section == 1) {
         FavoriteViewController *favoriteVC = [FavoriteViewController new];
         [self.navigationController pushViewController:favoriteVC animated:YES];
     }else if (indexPath.section == 2) {

@@ -19,7 +19,7 @@
 #pragma mark - test
 
 #define IS_LOGIN NO
-#define UID @"123456"
+#define UID 123456
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)getFullDateStringWithTimeString:(NSString *)timeString;
 
++ (NSArray *)getUFOImage;
 @end
 
 NS_ASSUME_NONNULL_END

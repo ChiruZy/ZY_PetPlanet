@@ -99,6 +99,10 @@
 		63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DAC224FC3400078C1D8 /* ImageReviewView.m */; };
 		63A03DD8224FDEA40078C1D8 /* ImageReviewPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DD6224FDEA40078C1D8 /* ImageReviewPopView.m */; };
 		63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DDB224FE1EF0078C1D8 /* ImageReviewPopView.xib */; };
+		63A03DE1225001350078C1D8 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DDF225001350078C1D8 /* PersonalViewController.m */; };
+		63A03DE2225001350078C1D8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DE0225001350078C1D8 /* PersonalViewController.xib */; };
+		63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DE522500A1D0078C1D8 /* PersonalCell.m */; };
+		63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DE622500A1D0078C1D8 /* PersonalCell.xib */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -277,6 +281,12 @@
 		63A03DD5224FDEA40078C1D8 /* ImageReviewPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageReviewPopView.h; sourceTree = "<group>"; };
 		63A03DD6224FDEA40078C1D8 /* ImageReviewPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageReviewPopView.m; sourceTree = "<group>"; };
 		63A03DDB224FE1EF0078C1D8 /* ImageReviewPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageReviewPopView.xib; sourceTree = "<group>"; };
+		63A03DDE225001350078C1D8 /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		63A03DDF225001350078C1D8 /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		63A03DE0225001350078C1D8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		63A03DE422500A1D0078C1D8 /* PersonalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalCell.h; sourceTree = "<group>"; };
+		63A03DE522500A1D0078C1D8 /* PersonalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalCell.m; sourceTree = "<group>"; };
+		63A03DE622500A1D0078C1D8 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -381,6 +391,7 @@
 		636CEF9E224A777D00675B0C /* MineVC */ = {
 			isa = PBXGroup;
 			children = (
+				63A03DDD2250010E0078C1D8 /* PersonalPage */,
 				6373149A224E9E6300D4D5CD /* CollectionsPage */,
 				63731499224E9E5300D4D5CD /* FavoritePage */,
 				636CEFA9224A77C700675B0C /* MineViewController.h */,
@@ -753,6 +764,27 @@
 			path = ImageReviewView;
 			sourceTree = "<group>";
 		};
+		63A03DDD2250010E0078C1D8 /* PersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+				63A03DE3225009F40078C1D8 /* PersonalCell */,
+				63A03DDE225001350078C1D8 /* PersonalViewController.h */,
+				63A03DDF225001350078C1D8 /* PersonalViewController.m */,
+				63A03DE0225001350078C1D8 /* PersonalViewController.xib */,
+			);
+			path = PersonalPage;
+			sourceTree = "<group>";
+		};
+		63A03DE3225009F40078C1D8 /* PersonalCell */ = {
+			isa = PBXGroup;
+			children = (
+				63A03DE422500A1D0078C1D8 /* PersonalCell.h */,
+				63A03DE522500A1D0078C1D8 /* PersonalCell.m */,
+				63A03DE622500A1D0078C1D8 /* PersonalCell.xib */,
+			);
+			path = PersonalCell;
+			sourceTree = "<group>";
+		};
 		63D0A1D2223046E5007E5B36 = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +938,7 @@
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
 				636CEFD0224AB88E00675B0C /* BannerCell.xib in Resources */,
+				63A03DE2225001350078C1D8 /* PersonalViewController.xib in Resources */,
 				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
 				636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */,
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
@@ -914,6 +947,7 @@
 				636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
+				63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */,
 				636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */,
 				63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */,
 			);
@@ -970,6 +1004,7 @@
 				637314A3224E9ECD00D4D5CD /* FavoriteViewController.m in Sources */,
 				636CEFCA224AB72000675B0C /* KolCell.m in Sources */,
 				63A03DD8224FDEA40078C1D8 /* ImageReviewPopView.m in Sources */,
+				63A03DE1225001350078C1D8 /* PersonalViewController.m in Sources */,
 				636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */,
 				636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */,
 				636CF083224CE33400675B0C /* ZYPopView.m in Sources */,
@@ -987,6 +1022,7 @@
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
 				63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */,
 				637314A9224EA08D00D4D5CD /* LoginView.m in Sources */,
+				63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
 				637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */,
 				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,

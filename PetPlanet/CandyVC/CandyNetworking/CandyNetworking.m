@@ -45,11 +45,14 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+        [param setObject:@"" forKey:@"user_id"];
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingNewsType){
         [param setObject:@"2" forKey:@"type"];
+    }else if (_networkingType == CandyNetworkingUserType){
+        [param setObject:@"3" forKey:@"type"];
+        [param setObject:@"" forKey:@"user_id"];
     }
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -83,19 +86,28 @@
     NSDictionary *dic = self.array.lastObject;
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+        [param setObject:@"xxx" forKey:@"user_id"];
         if (dic) {
             [param setObject:dic[@"time"] forKey:@"time"];
         }
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
-        
+        if (dic) {
+            [param setObject:dic[@"hot"] forKey:@"hot"];
+        }
     }else if (_networkingType == CandyNetworkingNewsType){
         [param setObject:@"2" forKey:@"type"];
         if (dic) {
             [param setObject:dic[@"time"] forKey:@"time"];
         }
+    }if (_networkingType == CandyNetworkingUserType) {
+        [param setObject:@"3" forKey:@"type"];
+        [param setObject:@"xxx" forKey:@"user_id"];
+        if (dic) {
+            [param setObject:dic[@"time"] forKey:@"time"];
+        }
     }
+    
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isMemberOfClass:[NSDictionary class]]) {

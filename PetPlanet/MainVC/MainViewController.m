@@ -46,17 +46,8 @@
     header.stateLabel.hidden = YES;
     UIImage *image = [UIImage imageNamed:@"UFO_0"];
     [header setImages:@[image] forState:MJRefreshStatePulling];
-    [header setImages:[self getUFOImage] forState:MJRefreshStateRefreshing];
+    [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
-}
-
-- (NSArray *)getUFOImage {
-    NSMutableArray *arr = [NSMutableArray new];
-    for (int i = 0; i<50 ; i+=4) {
-        NSString *name = [NSString stringWithFormat:@"UFO_%d",i];
-        [arr addObject:[UIImage imageNamed:name]];
-    }
-    return arr;
 }
 
 - (void)refreshMain{
