@@ -141,6 +141,11 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         }
         weakSelf.footerLoading = NO;
     } fail:^(NSString *error) {
+        if (![error isEqualToString:@"15"]) {
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            weakSelf.footerLoading = NO;
+            return ;
+        }
         [ZYSVPManager showText:@"Load Failed" autoClose:2];
         [weakSelf.tableView.mj_footer endRefreshing];
         weakSelf.footerLoading = NO;

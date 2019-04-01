@@ -60,6 +60,10 @@
 }
 
 - (void)show{
+    if (!_imageView.image){
+        return;
+    }
+    
     CGSize size = _imageView.image.size;
     CGFloat imageRatio = size.width/size.height;
     CGFloat screenRatio = Screen_Width/Screen_Height;
@@ -79,13 +83,23 @@
         weakSelf.layer.opacity = 1;
         weakSelf.imageView.frame = frame;
     }completion:^(BOOL finished) {
-        UITapGestureRecognizer *tapBack = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
+        UITapGestureRecognizer *tapScrollView = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
         weakSelf.userInteractionEnabled = YES;
-        [weakSelf addGestureRecognizer:tapBack];
+        [weakSelf addGestureRecognizer:tapScrollView];
         
-        UILongPressGestureRecognizer *tapImage = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress)];
-        weakSelf.imageView.userInteractionEnabled = YES;
+        ///
+        UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
         [weakSelf.imageView addGestureRecognizer:tapImage];
+        
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(amplification)];
+        doubleTap.numberOfTapsRequired = 2;
+        [weakSelf.imageView addGestureRecognizer:doubleTap];
+        
+        UILongPressGestureRecognizer *longPressImage = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress)];
+        [weakSelf.imageView addGestureRecognizer:longPressImage];
+        
+        weakSelf.imageView.userInteractionEnabled = YES;
+        [tapImage requireGestureRecognizerToFail:doubleTap];
     }];
 }
 
@@ -115,6 +129,14 @@
         weakSelf.isLongPress = NO;
     }];
     [_popView show];
+}
+
+- (void)amplification{
+    if (_scrollView.zoomScale == 1) {
+        [_scrollView setZoomScale:2 animated:YES];
+    }else{
+        [_scrollView setZoomScale:1 animated:YES];
+    }
 }
 
 - (void)download{

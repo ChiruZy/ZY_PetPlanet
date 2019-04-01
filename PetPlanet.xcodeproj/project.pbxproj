@@ -125,6 +125,7 @@
 		63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1FA223055E2007E5B36 /* WelcomeAnimateView.xib */; };
 		63D0A202223059AC007E5B36 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A201223059AC007E5B36 /* Common.m */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
+		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -337,6 +338,7 @@
 		63D0A201223059AC007E5B36 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
+		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
 		B48CEF95AB93A8F909B67857 /* Pods-PetPlanet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -791,6 +793,7 @@
 			children = (
 				63FD1F3422513C540023230A /* CleanCacheView.h */,
 				63FD1F3522513C540023230A /* CleanCacheView.m */,
+				63FD1F3722513D800023230A /* CleanCacheView.xib */,
 				636CF086224D044300675B0C /* ChangeCoverView.h */,
 				636CF087224D044300675B0C /* ChangeCoverView.m */,
 				636CF089224D046800675B0C /* ChangeCoverView.xib */,
@@ -1026,6 +1029,7 @@
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
+				63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,

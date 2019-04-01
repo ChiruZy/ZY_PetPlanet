@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, CandyListType) {
 
 @interface CandyTableViewController : UIViewController<JXCategoryListContentViewDelegate>
 
+- (instancetype)initWithCandyListType:(CandyListType)type superView:(UIViewController *)superView;
 
 @end
 

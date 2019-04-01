@@ -30,7 +30,7 @@
 
 - (void)addUnderView{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
-    if (_type == ZYPopViewBlurType) {
+    if (_type == ZYPopViewBlurType || _type == ZYPopNoCancelType) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.bounds];
         imageView.image = [ZYPopView getWindowImage];
         [self addSubview:imageView];
@@ -40,7 +40,9 @@
         blurView.blurRadius = 4;
         blurView.tintColor = [UIColor clearColor];
         blurView.layer.opacity = 0;
-        [blurView addGestureRecognizer:tap];
+        if (_type == ZYPopViewBlurType) {
+            [blurView addGestureRecognizer:tap];
+        }
         _underView = blurView;
     }else{
         UIView *view = [[UIView alloc]initWithFrame:self.bounds];

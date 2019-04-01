@@ -37,4 +37,7 @@ static ZYUserManager *manager = nil;
     
     
 }
+- (NSString *)UserID{
+    return @"13735006499";
+}
 @end

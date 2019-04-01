@@ -36,11 +36,11 @@
     _isLike = model.isLike;
     _likeNumber = model.like;
     
-    _time.text = model.time;
+    _time.text = model.timeInterval;
     _summary.text = model.summary;
     
     [_image sd_setImageWithURL:[NSURL URLWithString:model.smallImage]];
-    [_head sd_setImageWithURL:[NSURL URLWithString:model.header]];
+    [_head sd_setImageWithURL:[NSURL URLWithString:model.head]];
     UITapGestureRecognizer *tapHead = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(nameOrHeadEvent)];
     UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageEvent:)];
     [_head addGestureRecognizer:tapHead];
@@ -69,6 +69,7 @@
 - (void)likeEvent{
     _isLike = !_isLike;
     NSUInteger number = _isLike?_likeNumber.integerValue+1:_likeNumber.integerValue-1;
+    _likeNumber = [NSString stringWithFormat:@"%zd",number];
     [self configLikeWithIsLike:_isLike likeNumber:number];
 
     if ([_delegate respondsToSelector:@selector(cellDidTapLikeWithModel:isLike:)]) {

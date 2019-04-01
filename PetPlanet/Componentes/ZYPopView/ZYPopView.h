@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSUInteger, ZYPopViewType) {
     ZYPopViewBlurType,
     ZYPopViewBlackType,
+    ZYPopNoCancelType,
 };
 
 typedef NS_ENUM(NSUInteger, ZYPopType) {

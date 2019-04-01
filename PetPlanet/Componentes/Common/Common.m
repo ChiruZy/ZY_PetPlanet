@@ -58,8 +58,7 @@
 
 + (NSString *)getDateStringWithTimeInterval:(NSTimeInterval)timeInterval{
     NSTimeInterval currentTime = [[NSDate date]timeIntervalSince1970];
-    NSUInteger realTime = timeInterval/1000;
-    NSUInteger time = currentTime - realTime;
+    NSUInteger time = currentTime - timeInterval;
     
     if (time < 60) {
         return @"just now";
@@ -82,7 +81,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yy-MM-dd"];
-    NSString *fullTimeString = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:realTime]];
+    NSString *fullTimeString = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
     return fullTimeString;
 }
 
@@ -95,13 +94,23 @@
 }
 
 + (NSString *)getDateStringWithTimeString:(NSString *)timeString{
-    NSTimeInterval time = [timeString doubleValue];
+    NSInteger time = [Common timeSwitchTimestamp:timeString];
     return [self getDateStringWithTimeInterval:time];
 }
 
 + (NSString *)getFullDateStringWithTimeString:(NSString *)timeString{
     NSTimeInterval time = [timeString doubleValue];
     return [self getFullDateStringWithTimeInterval:time];
+}
+
++ (NSInteger)timeSwitchTimestamp:(NSString *)formatTime{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSDate* date = [formatter dateFromString:formatTime];
+    NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
+    return timeSp;
 }
 
 + (NSArray *)getUFOImage {

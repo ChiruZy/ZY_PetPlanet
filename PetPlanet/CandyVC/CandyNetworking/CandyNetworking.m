@@ -9,11 +9,12 @@
 #import "CandyNetworking.h"
 #import <AFNetworking.h>
 #import "Common.h"
+#import "ZYUserManager.h"
 
 @implementation CandyModel
 
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic{
-    _time = [Common getDateStringWithTimeString:_time];
+    _timeInterval = [Common getDateStringWithTimeString:dic[@"time"]];
     return YES;
 }
 
@@ -51,24 +52,24 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingNewsType){
         [param setObject:@"2" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingUserType){
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
     }
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+        NSDictionary *dic = responseObject;
+        if (![dic isKindOfClass:[NSDictionary class]]) {
             weakSelf.networking = NO;
             fail(@"13");
             return;
         }
-        
-        NSDictionary *dic = responseObject;
+
         NSString *error = dic[@"error"];
         if(![error isEqualToString:@"10"]){
             weakSelf.networking = NO;
@@ -97,33 +98,33 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    NSDictionary *dic = self.array.lastObject;
+    CandyModel *model = self.array.lastObject;
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
+        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        if (model) {
+            [param setObject:model.time forKey:@"time"];
         }
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
-        if (dic) {
-            [param setObject:dic[@"hot"] forKey:@"hot"];
+        if (model) {
+            [param setObject:model.hot forKey:@"hot"];
         }
     }else if (_networkingType == CandyNetworkingNewsType){
         [param setObject:@"2" forKey:@"type"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
+        if (model) {
+            [param setObject:model.time forKey:@"time"];
         }
     }else if (_networkingType == CandyNetworkingUserType) {
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
-        if (dic) {
-            [param setObject:dic[@"time"] forKey:@"time"];
+        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        if (model) {
+            [param setObject:model.time forKey:@"time"];
         }
     }
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
             weakSelf.networking = NO;
             fail(@"13");
             return;

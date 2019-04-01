@@ -33,12 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CandyModel : NSObject<YYModel>
 
-@property NSString *header;
+@property NSString *head;
 @property NSString *name;
 @property NSString *summary;
 @property NSString *image;
 @property NSString *smallImage;
 @property NSString *time;
+@property NSString *timeInterval;
 @property NSString *reply;
 @property NSString *hot;
 @property NSString *like;

@@ -64,8 +64,14 @@
 }
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    CandyTableViewController *tableview = [[CandyTableViewController alloc]init];
-    
+    CandyTableViewController *tableview;
+    if (index == 0) {
+        tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListFollowingType superView:self];
+    }else if (index == 1){
+        tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListRecommendType superView:self];
+    }else if (index == 2){
+        tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListNewsType superView:self];
+    }
     return tableview;
 }
 

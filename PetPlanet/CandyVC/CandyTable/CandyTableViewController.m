@@ -19,15 +19,17 @@
 @property (weak, nonatomic) IBOutlet LoginView *loginView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
+@property (weak, nonatomic) UIViewController * superView;
 @property (nonatomic,strong) CandyNetworking *network;
 @property (nonatomic,assign) CandyListType type;
 @end
 
 @implementation CandyTableViewController
 
-- (instancetype)initWithCandyListType:(CandyListType)type{
+- (instancetype)initWithCandyListType:(CandyListType)type superView:(UIViewController *)superView{
     if (self = [super init]) {
-        self.type = type;
+        _type = type;
+        _superView = superView;
     }
     return self;
 }
@@ -43,6 +45,7 @@
 - (void)configTableView{
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.estimatedRowHeight = 0;
     [_tableView registerNib:[UINib nibWithNibName:@"CandyCell" bundle:nil] forCellReuseIdentifier:@"CandyCell"];
     [self reload];
     [self configHeaderAndFooter];
@@ -52,6 +55,8 @@
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerEvent)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
+    UIImage *image = [UIImage imageNamed:@"UFO_0"];
+    [header setImages:@[image] forState:MJRefreshStatePulling];
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
     
@@ -99,8 +104,9 @@
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
     } fail:^(NSString *error) {
-        if ([error isEqualToString:@"16"]){
-            
+        if ([error isEqualToString:@"15"]){
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
         }
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
@@ -112,7 +118,7 @@
     LoginViewController *lvc =[[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
         [weakSelf reload];
     }];
-    [self.navigationController pushViewController:lvc animated:YES];
+    [_superView.navigationController pushViewController:lvc animated:YES];
 }
 
 #pragma mark - TableViewDelegate
@@ -121,6 +127,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [UIView new];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return [UIView new];
 }
 
@@ -175,7 +185,7 @@
 
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
     PersonalViewController *personalVC =[[PersonalViewController alloc]initWithUserID:model.authorID];
-    [self.navigationController pushViewController:personalVC animated:YES];
+    [_superView.navigationController pushViewController:personalVC animated:YES];
 }
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model{

@@ -41,7 +41,7 @@
     _summary.text = model.summary;
     
     [_image sd_setImageWithURL:[NSURL URLWithString:model.smallImage]];
-    [_head sd_setImageWithURL:[NSURL URLWithString:model.header]];
+    [_head sd_setImageWithURL:[NSURL URLWithString:model.head]];
     UITapGestureRecognizer *tapHead = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(nameOrHeadEvent)];
     UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageEvent:)];
     [_head addGestureRecognizer:tapHead];
