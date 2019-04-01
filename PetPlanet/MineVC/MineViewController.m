@@ -106,7 +106,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:@"123456"];
+        PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].UserID];
         [self.navigationController pushViewController:personalVC animated:YES];
     }else if (indexPath.section == 1) {
         InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType];

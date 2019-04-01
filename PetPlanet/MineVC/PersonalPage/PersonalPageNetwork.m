@@ -8,6 +8,7 @@
 
 #import "PersonalPageNetwork.h"
 #import <AFNetworking.h>
+#import "ZYUserManager.h"
 
 @interface PersonalPageNetwork()
 @property (nonatomic,assign) BOOL networking;
@@ -24,11 +25,11 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/get_mine_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    NSDictionary *param = @{@"uid":uid};
+    NSDictionary *param = @{@"uid":uid};
     
     __weak typeof(self) weakSelf = self;
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
             weakSelf.networking = NO;
             fail(@"11");
             return;
@@ -43,7 +44,9 @@
         }
         
         [self parserData:dic[@"items"]];
-
+        if (complete) {
+            complete();
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         weakSelf.networking = NO;
         fail(@"12");

@@ -57,10 +57,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithNetWorkingType:(CandyNetworkingType)type;
 
+- (void)reloadPersonalWithUid:(NSString *)uid Complete:(Complete)complete fail:(Fail)fail;
+
 - (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail;
 
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail;
 
+- (void)loadMorePersonalWithUid:(NSString *)uid WithComplete:(LoadComplete)complete fail:(Fail)fail;
 @end
 
 NS_ASSUME_NONNULL_END

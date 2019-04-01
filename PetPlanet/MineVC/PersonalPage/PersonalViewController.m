@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateFail,
 };
 
-@interface PersonalViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface PersonalViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -37,8 +37,6 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 @property (nonatomic,assign) CGFloat marginTop;
 
 @property (nonatomic,assign) BOOL isSelf;
-@property (nonatomic,assign) BOOL footerLoading;
-@property (nonatomic,assign) NSUInteger loadingStep;
 
 @end
 
@@ -47,8 +45,6 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 - (instancetype)initWithUserID:(NSString *)userID{
     if (self = [super init]) {
         _userID = userID;
-        _loadingStep = 0;
-        _footerLoading = NO;
         if ([_userID isEqualToString:UID]) {
             _isSelf = YES;
         }
@@ -66,6 +62,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 #pragma mark - Private Method
 
 - (void)configTableView{
+    _tableView.estimatedRowHeight = 0;
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
@@ -93,23 +90,21 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     __weak typeof(self) weakSelf = self;
     [self.personalNetwork loadWithUid:_userID complete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.loadingStep -= 1;
         weakSelf.name.text = weakSelf.personalNetwork.personal[@"name"];
+        [weakSelf.tableView.mj_header endRefreshing];
     } fail:^(NSString * _Nonnull error) {
         if ([error isEqualToString:@"11"]||[error isEqualToString:@"12"]) {
             [ZYSVPManager showText:@"Load Failed" autoClose:2];
-            weakSelf.loadingStep -= 1;
             return;
         }
-        weakSelf.loadingStep -= 1;
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
 
 - (void)loadCandyCells{
     __weak typeof(self) weakSelf = self;
-    [self.network reloadModelsWithComplete:^{
+    [self.network reloadPersonalWithUid:_userID Complete:^{
         weakSelf.state = CandyLoadStateComplete;
-        weakSelf.loadingStep -= 1;
         [weakSelf.tableView reloadData];
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
@@ -118,37 +113,27 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         }else if ([error isEqualToString:@"15"]){
             weakSelf.state = CandyLoadStateNoData;
         }else if ([error isEqualToString:@"16"]){
-            weakSelf.loadingStep -= 1;
             return;
         }
-        self.loadingStep -= 1;
         [weakSelf.tableView reloadData];
     }];
 }
 
 - (void)loadMoreData{
-    if (_loadingStep > 0) {
-        [_tableView.mj_footer endRefreshing];
-        return;
-    }
-    _footerLoading = YES;
     __weak typeof(self) weakSelf = self;
-    [self.network loadMoreWithComplete:^(BOOL noMore) {
+    [self.network loadMorePersonalWithUid:_userID WithComplete:^(BOOL noMore) {
         [weakSelf.tableView.mj_footer endRefreshing];
         [weakSelf.tableView reloadData];
         if (noMore) {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
-        weakSelf.footerLoading = NO;
     } fail:^(NSString *error) {
-        if (![error isEqualToString:@"15"]) {
+        if ([error isEqualToString:@"15"]||[error isEqualToString:@"16"]) {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
-            weakSelf.footerLoading = NO;
             return ;
         }
         [ZYSVPManager showText:@"Load Failed" autoClose:2];
         [weakSelf.tableView.mj_footer endRefreshing];
-        weakSelf.footerLoading = NO;
     }];
 }
 
@@ -159,10 +144,6 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 }
 
 - (void)refresh{
-    if (_loadingStep > 0 || _footerLoading) {
-        return;
-    }
-    _loadingStep = 2;
     [self loadPersonalPage];
     [self loadCandyCells];
 }
@@ -238,6 +219,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     }else if (indexPath.section > 2){
         NSUInteger index = indexPath.section - 3;
         CandyCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
+        cell.delegate = self;
         CandyModel *model = _network.models[index];
         [cell configCellWithModel:model];
         return cell;
@@ -280,11 +262,16 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     return _personalNetwork;
 }
 
-- (void)setLoadingStep:(NSUInteger)loadingStep{
-    _loadingStep = loadingStep;
-    if (_loadingStep == 0) {
-        [_tableView.mj_header endRefreshing];
-        [_tableView.mj_footer endRefreshing];
-    }
+
+- (void)cellDidTapReplyWithModel:(CandyModel *)model{
+    
+}
+
+- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
+    
+}
+
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
+    
 }
 @end

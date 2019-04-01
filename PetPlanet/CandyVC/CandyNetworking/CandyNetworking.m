@@ -39,8 +39,16 @@
     return self;
 }
 
-
 - (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail{
+    [self reloadWithUid:nil Complete:complete fail:fail];
+}
+
+- (void)reloadPersonalWithUid:(NSString *)uid Complete:(Complete)complete fail:(Fail)fail{
+    [self reloadWithUid:uid Complete:complete fail:fail];
+}
+
+- (void)reloadWithUid:(NSString *)uid Complete:(Complete)complete fail:(Fail)fail{
+
     if (_networking) {
         fail(@"16");
     }
@@ -59,7 +67,7 @@
         [param setObject:@"2" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingUserType){
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        [param setObject:uid forKey:@"uid"];
     }
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -90,6 +98,15 @@
 }
 
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail{
+    [self loadMoreWithUid:nil Complete:complete fail:fail];
+}
+
+- (void)loadMorePersonalWithUid:(NSString *)uid WithComplete:(LoadComplete)complete fail:(Fail)fail{
+    [self loadMoreWithUid:uid Complete:complete fail:fail];
+    
+}
+
+- (void)loadMoreWithUid:(NSString *)uid Complete:(LoadComplete)complete fail:(Fail)fail{
     if (_networking) {
         fail(@"16");
     }
@@ -117,7 +134,7 @@
         }
     }else if (_networkingType == CandyNetworkingUserType) {
         [param setObject:@"3" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        [param setObject:uid forKey:@"uid"];
         if (model) {
             [param setObject:model.time forKey:@"time"];
         }

@@ -36,12 +36,21 @@
 }
 
 - (void)configWithDic:(NSDictionary *)dic isSelf:(BOOL)isSelf{
-    [_cover sd_setImageWithURL:dic[@"cover"]];
-    [_head sd_setImageWithURL:dic[@"head"]];
-
+    if (!dic) {
+        return;
+    }
+    NSString *cover = dic[@"cover"];
+    if ([cover isKindOfClass:[NSString class]]) {
+        [_cover sd_setImageWithURL:[NSURL URLWithString:cover]];
+    }
+    
+    NSString *head = dic[@"head"];
+    if ([head isKindOfClass:[NSString class]]) {
+        [_head sd_setImageWithURL:[NSURL URLWithString:head]];
+    }
     _name.text = dic[@"name"]?:@"Loading";
     
-    NSString *follow = [NSString stringWithFormat:@"Follow %@ ",dic[@"follow"]?:@""];
+    NSString *follow = [NSString stringWithFormat:@"Follow %@ ",dic[@"follows"]?:@""];
     NSString *like = [NSString stringWithFormat:@"like %@ ",dic[@"like"]?:@""];
     
     [_follow setTitle:follow forState:UIControlStateNormal];
