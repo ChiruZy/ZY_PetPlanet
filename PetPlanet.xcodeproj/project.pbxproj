@@ -475,7 +475,7 @@
 				631FFE5F225124E2008F7188 /* InteractiveCell */,
 				631FFE5122511810008F7188 /* HistoryPage */,
 				63A03DDD2250010E0078C1D8 /* PersonalPage */,
-				6373149A224E9E6300D4D5CD /* CollectionsPage */,
+				6373149A224E9E6300D4D5CD /* InterractiveViewController */,
 				636CEFA9224A77C700675B0C /* MineViewController.h */,
 				636CEFAA224A77C700675B0C /* MineViewController.m */,
 				636CEFAB224A77C700675B0C /* MineViewController.xib */,
@@ -808,14 +808,14 @@
 			path = OthersView;
 			sourceTree = "<group>";
 		};
-		6373149A224E9E6300D4D5CD /* CollectionsPage */ = {
+		6373149A224E9E6300D4D5CD /* InterractiveViewController */ = {
 			isa = PBXGroup;
 			children = (
 				6373149B224E9E7C00D4D5CD /* InterractiveViewController.h */,
 				6373149C224E9E7C00D4D5CD /* InterractiveViewController.m */,
 				6373149D224E9E7C00D4D5CD /* InterractiveViewController.xib */,
 			);
-			path = CollectionsPage;
+			path = InterractiveViewController;
 			sourceTree = "<group>";
 		};
 		637314AA224F44F500D4D5CD /* CandyNetworking */ = {

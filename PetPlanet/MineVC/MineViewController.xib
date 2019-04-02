@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineViewController">
             <connections>
-                <outlet property="image" destination="QaG-QI-LvE" id="cuD-rh-Oty"/>
+                <outlet property="image" destination="Xxc-EV-Gbz" id="T2O-Hd-zpK"/>
                 <outlet property="mineBG" destination="IY0-yz-AQU" id="wlj-7l-Ykn"/>
                 <outlet property="name" destination="Ge9-W1-LOv" id="PRd-5v-Nbc"/>
                 <outlet property="tableView" destination="56X-72-amM" id="MNP-ES-aKl"/>
@@ -52,13 +52,15 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                     <state key="normal" title="Login"/>
                 </button>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-QI-LvE">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-EV-Gbz">
                     <rect key="frame" x="142.5" y="34" width="90" height="90"/>
-                    <color key="backgroundColor" red="0.84313725490196079" green="0.99607843137254903" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="Pr8-nH-yGe"/>
-                        <constraint firstAttribute="height" constant="90" id="QO8-ma-Aj5"/>
+                        <constraint firstAttribute="height" constant="90" id="kPT-Hy-bR4"/>
+                        <constraint firstAttribute="width" constant="90" id="qkb-cO-d1V"/>
                     </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" red="0.45882352939999999" green="0.92941176469999998" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="45"/>
@@ -70,15 +72,15 @@
             <constraints>
                 <constraint firstItem="56X-72-amM" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="31F-x8-EDi"/>
                 <constraint firstItem="Ge9-W1-LOv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="824-sc-ASC"/>
-                <constraint firstItem="Ge9-W1-LOv" firstAttribute="top" secondItem="QaG-QI-LvE" secondAttribute="bottom" id="8m5-H0-fNY"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="top" secondItem="Ge9-W1-LOv" secondAttribute="bottom" id="EOi-cC-s3J"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="top" secondItem="IY0-yz-AQU" secondAttribute="bottom" id="FlO-R4-s96"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Kf5-R3-siS"/>
+                <constraint firstItem="Xxc-EV-Gbz" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="14" id="Kgu-eR-ac9"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" constant="-60" id="MW4-9q-0su"/>
-                <constraint firstItem="QaG-QI-LvE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RfV-uB-xCh"/>
                 <constraint firstItem="56X-72-amM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="60" id="U3F-5A-PL3"/>
+                <constraint firstItem="Xxc-EV-Gbz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="awJ-cK-1Qa"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-44" id="dmh-9z-sMr"/>
-                <constraint firstItem="QaG-QI-LvE" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="14" id="nQB-f0-mMY"/>
+                <constraint firstItem="Ge9-W1-LOv" firstAttribute="top" secondItem="Xxc-EV-Gbz" secondAttribute="bottom" id="k9j-5E-TZo"/>
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="wkL-NP-avv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

@@ -46,13 +46,13 @@
 }
 
 - (void)judgeIsLogin{
-    [self configWithTableView];
-    if ([ZYUserManager shareInstance].isLogin) {
-        [self configWithTableView];
-    }else{
-        _loginView.hidden = NO;
-        [_loginView loginButtonAddTarget:self action:@selector(login)];
-    }
+     [self configWithTableView];
+//    if (![ZYUserManager shareInstance].isLogin) {
+//        _loginView.hidden = NO;
+//        [_loginView loginButtonAddTarget:self action:@selector(login)];
+//    }else{
+        [self reload];
+//    }
 }
 
 - (void)login{
@@ -66,6 +66,7 @@
 - (void)configWithTableView{
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.estimatedRowHeight = 0;
     [_tableView registerNib:[UINib nibWithNibName:@"InterractiveCell" bundle:nil] forCellReuseIdentifier:@"InterractiveCell"];
     [self configHeaderAndFooter];
 }
@@ -115,6 +116,9 @@
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"16"]){
             
+        }else if ([error isEqualToString:@"15"]){
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
         }
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
@@ -128,6 +132,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.network.models.count;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }

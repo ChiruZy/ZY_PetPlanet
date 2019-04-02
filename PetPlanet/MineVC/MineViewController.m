@@ -13,6 +13,9 @@
 #import "LoginViewController.h"
 #import "InterractiveViewController.h"
 #import "PersonalViewController.h"
+#import <AFNetworking.h>
+#import "ZYSVPManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mineBG;
@@ -29,20 +32,67 @@
     [_tableView registerNib:[UINib nibWithNibName:@"MineCell" bundle:nil] forCellReuseIdentifier:@"MineCell"];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    if (IS_LOGIN) {
+    [self judgeLogin];
+}
+
+- (void)judgeLogin{
+    [self removeAllTarget];
+    if ([ZYUserManager shareInstance].UserID.length) {
         UITapGestureRecognizer *tapCover = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeCover)];
         [_mineBG addGestureRecognizer:tapCover];
+        
+        [_name addTarget:self action:@selector(gotoPersonal) forControlEvents:UIControlEventTouchDown];
+        [_image addTarget:self action:@selector(gotoPersonal) forControlEvents:UIControlEventTouchDown];
+        [self getPersonal];
     }else{
-        [self configSubviews];
+        _mineBG.image = nil;
+        [_name setTitle:@"Loading" forState:UIControlStateNormal];
+        [_image setImage:nil forState:UIControlStateNormal];
+        UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapUser)];
+        [_image addGestureRecognizer:tapImage];
+        [_name addTarget:self action:@selector(tapUser) forControlEvents:UIControlEventTouchDown];
     }
 }
 
-- (void)configSubviews{
-    [self removeAllTarget];
-    [_image addTarget:self action:@selector(tapUser) forControlEvents:UIControlEventTouchDown];
-    [_name addTarget:self action:@selector(tapUser) forControlEvents:UIControlEventTouchDown];
+- (void)getPersonal{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].UserID};
+    
+    NSString *url = @"http://106.14.174.39/pet/mine/get_mine.php";
+    __weak typeof(self) weakSelf = self;
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [ZYSVPManager showText:@"Load Failed" autoClose:2];
+            return;
+        }
+        
+        NSDictionary *dic = responseObject[@"items"];
+
+        NSString *name = dic[@"name"];
+        [weakSelf.name setTitle:name.length?name:@"Loading" forState:UIControlStateNormal];
+        
+        NSString *head = dic[@"head"];
+        if (head.length) {
+            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:head] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                [weakSelf.image setImage:image forState:UIControlStateNormal];
+            }];
+        };
+        
+        NSString *cover = dic[@"cover"];
+        if ([cover isKindOfClass:[NSString class]]) {
+            [weakSelf.mineBG sd_setImageWithURL:[NSURL URLWithString:head]];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [ZYSVPManager showText:@"Load Failed" autoClose:2];
+    }];
 }
+
 
 - (void)removeAllTarget{
     __weak typeof(self) weakSelf = self;
@@ -54,6 +104,11 @@
 }
 
 #pragma mark - TapEvent
+
+- (void)gotoPersonal{
+    PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].UserID];
+    [self.navigationController pushViewController:personalVC animated:YES];
+}
 
 - (void)tapUser{
     LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
@@ -116,4 +171,5 @@
         [self.navigationController pushViewController:collectionsVC animated:YES];
     }
 }
+
 @end

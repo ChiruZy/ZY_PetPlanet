@@ -9,13 +9,13 @@
 #import "InterractiveNetworking.h"
 #import <AFNetworking.h>
 #import "Common.h"
+#import "ZYUserManager.h"
 
 @implementation InterractiveModel
 
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic{
     [super modelCustomTransformFromDictionary:dic];
-    _interractiveTime = [Common getDateStringWithTimeString:_interractiveTime];
-    
+    _interractiveTimeInterval = [Common getDateStringWithTimeString:dic[@"interractiveTime"]];
     return YES;
 }
 
@@ -50,16 +50,15 @@
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_type == InterractiveLikeType) {
-        [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
-    }else {
         [param setObject:@"1" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+    }else {
+        [param setObject:@"2" forKey:@"type"];
     }
+    [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
             weakSelf.networking = NO;
             fail(@"13");
             return;
@@ -99,26 +98,25 @@
         fail(@"16");
     }
     _networking = YES;
-    NSString *url = @"http://106.14.174.39/pet/candy/more_interractive_list.php";
+    NSString *url = @"http://106.14.174.39/pet/mine/more_interractive_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    NSDictionary *dic = self.array.lastObject;
+    InterractiveModel *model = self.array.lastObject;
     
     if (_type == InterractiveLikeType) {
-        [param setObject:@"0" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
-    }else {
         [param setObject:@"1" forKey:@"type"];
-        [param setObject:UID forKey:@"user_id"];
+    }else {
+        [param setObject:@"2" forKey:@"type"];
     }
-    if (dic) {
-        [param setObject:dic[@"interractiveTime"] forKey:@"interractiveTime"];
+    [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+    if (model) {
+        [param setObject:model.interractiveTime forKey:@"interractiveTime"];
     }
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isMemberOfClass:[NSDictionary class]]) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
             weakSelf.networking = NO;
             fail(@"13");
             return;

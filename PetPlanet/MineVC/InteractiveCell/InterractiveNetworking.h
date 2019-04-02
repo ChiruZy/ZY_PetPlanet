@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, InterractiveType) {
 @interface InterractiveModel : CandyModel <YYModel>
 
 @property NSString *interractiveTime;
+@property NSString *interractiveTimeInterval;
 
 @end
 

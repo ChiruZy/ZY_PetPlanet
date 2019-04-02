@@ -37,7 +37,7 @@
     _isLike = model.isLike;
     _likeNumber = model.like;
     
-    _time.text = model.time;
+    _time.text = model.timeInterval;
     _summary.text = model.summary;
     
     [_image sd_setImageWithURL:[NSURL URLWithString:model.smallImage]];
@@ -66,11 +66,7 @@
     [_reply setTitle:[NSString stringWithFormat:@"%@",model.reply] forState:UIControlStateNormal];
     [_reply addTarget:self action:@selector(replyEvent) forControlEvents:UIControlEventTouchUpInside];
     
-    if (_type == InterractiveLikeType) {
-        _interractiveLabel.text = [NSString stringWithFormat:@"Liked %@",model.interractiveTime];
-    }else{
-        _interractiveLabel.text = [NSString stringWithFormat:@"Collected %@",model.interractiveTime];
-    }
+    _interractiveLabel.text = [NSString stringWithFormat:@"added %@",model.interractiveTimeInterval];
 }
 
 - (void)likeEvent{
