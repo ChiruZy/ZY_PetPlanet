@@ -126,6 +126,14 @@
 		63D0A202223059AC007E5B36 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A201223059AC007E5B36 /* Common.m */; };
 		63E0998A2253738000C052E3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099892253738000C052E3 /* HintView.xib */; };
 		63E0998D225373A700C052E3 /* HintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0998C225373A700C052E3 /* HintView.m */; };
+		63E099A022553C1D00C052E3 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0999E22553C1D00C052E3 /* HistoryCell.m */; };
+		63E099A122553C1D00C052E3 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E0999F22553C1D00C052E3 /* HistoryCell.xib */; };
+		63E099A4225549BF00C052E3 /* HistoryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099A3225549BF00C052E3 /* HistoryDelegate.m */; };
+		63E099A722554B8500C052E3 /* HistoryLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099A622554B8500C052E3 /* HistoryLayout.m */; };
+		63E099AB2255508900C052E3 /* HotLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099AA2255508900C052E3 /* HotLayout.m */; };
+		63E099AF225550A500C052E3 /* HotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099AD225550A500C052E3 /* HotCell.m */; };
+		63E099B0225550A500C052E3 /* HotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099AE225550A500C052E3 /* HotCell.xib */; };
+		63E099B3225550C800C052E3 /* HotDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099B2225550C800C052E3 /* HotDelegate.m */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -341,6 +349,20 @@
 		63E099892253738000C052E3 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
 		63E0998B225373A700C052E3 /* HintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HintView.h; sourceTree = "<group>"; };
 		63E0998C225373A700C052E3 /* HintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HintView.m; sourceTree = "<group>"; };
+		63E0999D22553C1D00C052E3 /* HistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
+		63E0999E22553C1D00C052E3 /* HistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
+		63E0999F22553C1D00C052E3 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		63E099A2225549BF00C052E3 /* HistoryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryDelegate.h; sourceTree = "<group>"; };
+		63E099A3225549BF00C052E3 /* HistoryDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryDelegate.m; sourceTree = "<group>"; };
+		63E099A522554B8500C052E3 /* HistoryLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryLayout.h; sourceTree = "<group>"; };
+		63E099A622554B8500C052E3 /* HistoryLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryLayout.m; sourceTree = "<group>"; };
+		63E099A92255508900C052E3 /* HotLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotLayout.h; sourceTree = "<group>"; };
+		63E099AA2255508900C052E3 /* HotLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotLayout.m; sourceTree = "<group>"; };
+		63E099AC225550A500C052E3 /* HotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotCell.h; sourceTree = "<group>"; };
+		63E099AD225550A500C052E3 /* HotCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotCell.m; sourceTree = "<group>"; };
+		63E099AE225550A500C052E3 /* HotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotCell.xib; sourceTree = "<group>"; };
+		63E099B1225550C800C052E3 /* HotDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotDelegate.h; sourceTree = "<group>"; };
+		63E099B2225550C800C052E3 /* HotDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotDelegate.m; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -776,6 +798,8 @@
 		636CF0A2224D55FE00675B0C /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
+				63E099A82255506D00C052E3 /* SearchHotView */,
+				63E09994225538B400C052E3 /* SearchHistoryView */,
 				636CF0A3224D561B00675B0C /* SearchViewController.h */,
 				636CF0A4224D561B00675B0C /* SearchViewController.m */,
 				636CF0A5224D561B00675B0C /* SearchViewController.xib */,
@@ -953,6 +977,34 @@
 			path = AnimateView;
 			sourceTree = "<group>";
 		};
+		63E09994225538B400C052E3 /* SearchHistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				63E0999D22553C1D00C052E3 /* HistoryCell.h */,
+				63E0999E22553C1D00C052E3 /* HistoryCell.m */,
+				63E0999F22553C1D00C052E3 /* HistoryCell.xib */,
+				63E099A2225549BF00C052E3 /* HistoryDelegate.h */,
+				63E099A3225549BF00C052E3 /* HistoryDelegate.m */,
+				63E099A522554B8500C052E3 /* HistoryLayout.h */,
+				63E099A622554B8500C052E3 /* HistoryLayout.m */,
+			);
+			path = SearchHistoryView;
+			sourceTree = "<group>";
+		};
+		63E099A82255506D00C052E3 /* SearchHotView */ = {
+			isa = PBXGroup;
+			children = (
+				63E099A92255508900C052E3 /* HotLayout.h */,
+				63E099AA2255508900C052E3 /* HotLayout.m */,
+				63E099AC225550A500C052E3 /* HotCell.h */,
+				63E099AD225550A500C052E3 /* HotCell.m */,
+				63E099AE225550A500C052E3 /* HotCell.xib */,
+				63E099B1225550C800C052E3 /* HotDelegate.h */,
+				63E099B2225550C800C052E3 /* HotDelegate.m */,
+			);
+			path = SearchHotView;
+			sourceTree = "<group>";
+		};
 		E9678D26A770232E2FA33DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1097,7 @@
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* InterractiveCell.xib in Resources */,
 				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
+				63E099A122553C1D00C052E3 /* HistoryCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
@@ -1060,6 +1113,7 @@
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
 				631FFE50225117F2008F7188 /* HistoryViewController.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
+				63E099B0225550A500C052E3 /* HotCell.xib in Resources */,
 				63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */,
 				636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */,
 				63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */,
@@ -1115,6 +1169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E099A4225549BF00C052E3 /* HistoryDelegate.m in Sources */,
 				636CEFCA224AB72000675B0C /* KolCell.m in Sources */,
 				63A03DD8224FDEA40078C1D8 /* ImageReviewPopView.m in Sources */,
 				63A03DE1225001350078C1D8 /* PersonalViewController.m in Sources */,
@@ -1141,6 +1196,7 @@
 				63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
 				637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */,
+				63E099AB2255508900C052E3 /* HotLayout.m in Sources */,
 				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
 				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,
@@ -1160,6 +1216,7 @@
 				636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */,
 				636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */,
 				631FFE5922511B7F008F7188 /* ZYUserManager.m in Sources */,
+				63E099A722554B8500C052E3 /* HistoryLayout.m in Sources */,
 				636CEFAC224A77C700675B0C /* MineViewController.m in Sources */,
 				636CF064224CCACE00675B0C /* JXCategoryTitleView.m in Sources */,
 				636CF063224CCACE00675B0C /* JXCategoryTitleCell.m in Sources */,
@@ -1189,6 +1246,7 @@
 				631FFE552251184E008F7188 /* HistoryManager.m in Sources */,
 				6380A4612250B7F40077F4E5 /* StateCell.m in Sources */,
 				636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */,
+				63E099AF225550A500C052E3 /* HotCell.m in Sources */,
 				6380A45B2250ABD90077F4E5 /* PhotoCell.m in Sources */,
 				636CEFD3224ABF4700675B0C /* KolView.m in Sources */,
 				636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */,
@@ -1196,10 +1254,12 @@
 				636CEFB1224A879700675B0C /* ZYNavigationController.m in Sources */,
 				63E0998D225373A700C052E3 /* HintView.m in Sources */,
 				636CF057224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m in Sources */,
+				63E099A022553C1D00C052E3 /* HistoryCell.m in Sources */,
 				636CF069224CCACE00675B0C /* JXCategoryNumberCell.m in Sources */,
 				636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */,
 				6373149E224E9E7C00D4D5CD /* InterractiveViewController.m in Sources */,
 				636CF052224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m in Sources */,
+				63E099B3225550C800C052E3 /* HotDelegate.m in Sources */,
 				63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

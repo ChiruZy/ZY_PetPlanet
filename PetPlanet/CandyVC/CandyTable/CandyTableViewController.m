@@ -154,6 +154,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.network.models.count;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
