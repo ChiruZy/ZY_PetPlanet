@@ -54,7 +54,7 @@
     }else {
         [param setObject:@"2" forKey:@"type"];
     }
-    [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -109,7 +109,7 @@
     }else {
         [param setObject:@"2" forKey:@"type"];
     }
-    [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
     if (model) {
         [param setObject:model.interractiveTime forKey:@"interractiveTime"];
     }

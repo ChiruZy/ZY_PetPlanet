@@ -42,7 +42,7 @@
 
 - (void)judgeLogin{
     [self removeAllTarget];
-    if ([ZYUserManager shareInstance].UserID.length) {
+    if ([ZYUserManager shareInstance].isLogin) {
         UITapGestureRecognizer *tapCover = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeCover)];
         [_mineBG addGestureRecognizer:tapCover];
         
@@ -51,7 +51,7 @@
         [self getPersonal];
     }else{
         _mineBG.image = nil;
-        [_name setTitle:@"Loading" forState:UIControlStateNormal];
+        [_name setTitle:@"Login" forState:UIControlStateNormal];
         [_image setImage:nil forState:UIControlStateNormal];
         UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapUser)];
         [_image addGestureRecognizer:tapImage];
@@ -61,7 +61,7 @@
 
 - (void)getPersonal{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].UserID};
+    NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].userID};
     
     NSString *url = @"http://106.14.174.39/pet/mine/get_mine.php";
     __weak typeof(self) weakSelf = self;
@@ -85,7 +85,7 @@
         
         NSString *cover = dic[@"cover"];
         if ([cover isKindOfClass:[NSString class]]) {
-            [weakSelf.mineBG sd_setImageWithURL:[NSURL URLWithString:head]];
+            [weakSelf.mineBG sd_setImageWithURL:[NSURL URLWithString:cover]];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -106,7 +106,7 @@
 #pragma mark - TapEvent
 
 - (void)gotoPersonal{
-    PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].UserID];
+    PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].userID];
     [self.navigationController pushViewController:personalVC animated:YES];
 }
 
@@ -161,7 +161,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].UserID];
+        if (![ZYUserManager shareInstance].isLogin) {
+            [self tapUser];
+            return;
+        }
+        PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].userID];
         [self.navigationController pushViewController:personalVC animated:YES];
     }else if (indexPath.section == 1) {
         InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType];

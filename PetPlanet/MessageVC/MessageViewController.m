@@ -21,11 +21,16 @@
     [super viewDidLoad];
     self.needNavBar = YES;
     self.navigationItem.title = @"Message";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(judgeLogin) name:@"LoginStateChange" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([ZYUserManager shareInstance].UserID.length>0) {
+    [self judgeLogin];
+}
+
+- (void)judgeLogin{
+    if ([ZYUserManager shareInstance].isLogin) {
         _loginView.hidden = YES;
     }else{
         __weak typeof(self) weakSelf = self;
@@ -34,6 +39,10 @@
             [weakSelf login];
         };
     }
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)login{

@@ -60,7 +60,7 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingNewsType){
@@ -123,7 +123,7 @@
     CandyModel *model = self.array.lastObject;
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].UserID forKey:@"uid"];
+        [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
         if (model) {
             [param setObject:model.time forKey:@"time"];
         }

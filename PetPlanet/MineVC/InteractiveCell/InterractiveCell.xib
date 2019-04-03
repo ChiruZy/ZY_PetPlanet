@@ -41,7 +41,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-ha-vGH">
+                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-ha-vGH">
                         <rect key="frame" x="0.0" y="101" width="345" height="224.5"/>
                         <color key="backgroundColor" red="0.84313725490196079" green="0.99607843137254903" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>

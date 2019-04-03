@@ -32,6 +32,9 @@
     if (self = [super init]) {
         _type = type;
         _superView = superView;
+        if(type == CandyListFollowingType){
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:@"LoginStateChange" object:nil];
+        }
     }
     return self;
 }
@@ -48,6 +51,10 @@
     _hintView.login = ^{
         [weakSelf login];
     };
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - PrivateMethod

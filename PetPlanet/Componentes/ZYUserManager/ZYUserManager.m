@@ -8,9 +8,15 @@
 
 #import "ZYUserManager.h"
 
+@interface ZYUserManager ()
+
+@end
+
 static ZYUserManager *manager = nil;
 
 @implementation ZYUserManager
+
+@synthesize userID = _uid;
 
 +(instancetype)shareInstance{
     
@@ -30,14 +36,22 @@ static ZYUserManager *manager = nil;
 }
 
 - (void)LoginOut{
-    
+    _isLogin = NO;
+    _uid = @"";
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginStateChange" object:nil];
 }
 
 - (void)LoginWithUserID:(NSString *)uid{
-    
-    
+    _isLogin = YES;
+    _uid = uid;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginStateChange" object:nil];
 }
-- (NSString *)UserID{
-    return @"13735006499";
+
+- (NSString *)userID{
+    if (!_uid) {
+        return @"";
+    }
+    return _uid;
 }
+
 @end

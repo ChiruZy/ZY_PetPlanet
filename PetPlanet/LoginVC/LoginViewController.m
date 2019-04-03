@@ -162,7 +162,7 @@
         NSString *error = responseObject[@"error"];
         if ([@"10" isEqualToString:error]) {
             [ZYSVPManager showText:@"Success" autoClose:2];
-            [self loginSuccessWithUid:param[@"mobile"]];
+            [self loginSuccessWithUid:param[@"uid"]];
         }else if ([error isEqualToString:@"17"]){
             [ZYSVPManager showText:@"Server Error" autoClose:2];
         }else if ([error isEqualToString:@"16"]){
@@ -176,7 +176,11 @@
 }
 
 - (void)loginSuccessWithUid:(NSString *)uid{
-    
+    [[ZYUserManager shareInstance] LoginWithUserID:uid];
+    [self.navigationController popViewControllerAnimated:YES];
+    if (_loginBlock) {
+        _loginBlock(uid);
+    }
 }
 
 #pragma mark - UIControl Event

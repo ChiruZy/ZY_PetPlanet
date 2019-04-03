@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZYUserManager : NSObject
 
-@property (nonatomic,strong,readonly) NSString *UserID;
+@property (nonatomic,strong,readonly) NSString *userID;
 
 @property (nonatomic,assign,readonly) BOOL isLogin;
 

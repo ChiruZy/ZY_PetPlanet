@@ -41,12 +41,12 @@
     }else{
         self.navigationItem.title = @"Collections";
     }
+    [self configWithTableView];
     [self judgeIsLogin];
-    
 }
 
 - (void)judgeIsLogin{
-     [self configWithTableView];
+    
     if (![ZYUserManager shareInstance].isLogin) {
         [_loginView setType:HintLoginType needButton:YES];
         __weak typeof(self) weakSelf = self;
@@ -61,6 +61,7 @@
 - (void)login{
     __weak typeof(self) weakSelf = self;
     LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
+        [weakSelf.loginView setType:HintHiddenType needButton:YES];
         [weakSelf judgeIsLogin];
     }];
     [self.navigationController pushViewController:loginVC animated:YES];
