@@ -106,6 +106,11 @@
     
 }
 
+- (void)clearModels{
+    [_array removeAllObjects];
+}
+
+
 - (void)loadMoreWithUid:(NSString *)uid Complete:(LoadComplete)complete fail:(Fail)fail{
     if (_networking) {
         fail(@"16");

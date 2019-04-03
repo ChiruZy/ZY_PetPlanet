@@ -9,10 +9,13 @@
 #import "LoginViewController.h"
 #import <SVProgressHUD.h>
 #import "ZYSVPManager.h"
+#import <AFNetworking.h>
+#import <JKCountDownButton.h>
 
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet JKCountDownButton *sender;
 @property (weak, nonatomic) IBOutlet UITextField *verificationField;
 @property (weak, nonatomic) IBOutlet UIView *verificationView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -50,6 +53,8 @@
     [_verificationField setValue:[UIFont systemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];
     [_phoneField setValue:[UIFont systemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];
     [_passwordField setValue:[UIFont systemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];
+    
+    [self configSendButton];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -61,6 +66,120 @@
 }
 
 #pragma mark - PrivateMethod
+
+- (void)configSendButton{
+    [_sender countDownChanging:^NSString *(JKCountDownButton *countDownButton, NSUInteger second) {
+        return [NSString stringWithFormat:@"%zd s",second];
+    }];
+    [_sender countDownFinished:^NSString *(JKCountDownButton *countDownButton, NSUInteger second) {
+        countDownButton.enabled = YES;
+        return @"Send";
+    }];
+    __weak typeof(self) weakSelf = self;
+    [_sender countDownButtonHandler:^(JKCountDownButton *countDownButton, NSInteger tag) {
+        [weakSelf sendCode];
+    }];
+}
+
+- (void)sendCode{
+    if (![Common validateCellPhoneNumber:_phoneField.text]) {
+        [ZYSVPManager showText:@"Wrong Number" autoClose:2];
+        return;
+    }
+    [_sender startCountDownWithSecond:60];
+    _sender.enabled = NO;
+    
+    NSString *url = @"http://106.14.174.39/pet/user/post_code.php";
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSDictionary *param = @{@"mobile":_phoneField.text};
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+            return;
+        }
+        NSString *error = responseObject[@"error"];
+        if ([@"10" isEqualToString:error]) {
+
+        }else if ([error isEqualToString:@"11"]){
+            [ZYSVPManager showText:@"Already Registered" autoClose:2];
+        }else if ([error isEqualToString:@"12"]){
+            [ZYSVPManager showText:@"Send Failed" autoClose:2];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [ZYSVPManager showText:@"Time Out" autoClose:2];
+    }];
+}
+
+- (void)signUpEvent{
+    if (_verificationField.text.length<6) {
+        [ZYSVPManager showText:@"Short Verification" autoClose:2];
+        return;
+    }
+    NSString *url = @"http://106.14.174.39/pet/user/sign_up.php";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    NSDictionary *param = @{@"number":_phoneField.text,
+                            @"password":_passwordField.text,
+                            @"code":_verificationField.text,
+                            };
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+            return;
+        }
+        NSString *error = responseObject[@"error"];
+        if ([@"10" isEqualToString:error]) {
+            [ZYSVPManager showText:@"Success" autoClose:2];
+            [self loginSuccessWithUid:param[@"number"]];
+        }else if ([error isEqualToString:@"18"]){
+            [ZYSVPManager showText:@"Wrong Code" autoClose:2];
+        }else if ([error isEqualToString:@"17"]){
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+        }else if ([error isEqualToString:@"16"]){
+            [ZYSVPManager showText:@"Expired Code" autoClose:2];
+        }else if ([error isEqualToString:@"15"]){
+            [ZYSVPManager showText:@"No Record" autoClose:2];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [ZYSVPManager showText:@"Time Out" autoClose:2];
+    }];
+}
+
+- (void)loginEvent{
+    NSString *url = @"http://106.14.174.39/pet/user/login.php";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSDictionary *param = @{@"uid":_phoneField.text,
+                            @"password":_passwordField.text,
+                            };
+    
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+            return;
+        }
+        NSString *error = responseObject[@"error"];
+        if ([@"10" isEqualToString:error]) {
+            [ZYSVPManager showText:@"Success" autoClose:2];
+            [self loginSuccessWithUid:param[@"mobile"]];
+        }else if ([error isEqualToString:@"17"]){
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+        }else if ([error isEqualToString:@"16"]){
+            [ZYSVPManager showText:@"Wrong Password" autoClose:2];
+        }else if ([error isEqualToString:@"15"]){
+            [ZYSVPManager showText:@"UnRegistered" autoClose:2];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [ZYSVPManager showText:@"Time Out" autoClose:2];
+    }];
+}
+
+- (void)loginSuccessWithUid:(NSString *)uid{
+    
+}
+
+#pragma mark - UIControl Event
 - (void)tapBG{
     [self.view endEditing:YES];
 }
@@ -92,15 +211,12 @@
         return;
     }
     
-    if (_isSignUp && _verificationField.text.length<4) {
-        [ZYSVPManager showText:@"Short Verification" autoClose:2];
-        return;
+    if(_isSignUp){
+        [self signUpEvent];
+    }else{
+        [self loginEvent];
     }
-    
-    
-    
-    
-    //TODO : SUCCESS
+
     if (_loginBlock) {
         _loginBlock(@"");
     }
@@ -166,12 +282,24 @@
         if (newStr.length>11) {
             return NO;
         }
+        if (newStr.length<11) {
+            _sender.enabled = NO;
+            _loginButton.enabled = NO;
+        }else{
+            _sender.enabled = YES;
+            _loginButton.enabled = YES;
+        }
     }
     if (textField == _passwordField) {
         if (newStr.length>18) {
             return NO;
         }
+    }if (textField == _verificationField){
+        if (newStr.length>6) {
+            return NO;
+        }
     }
+    
     return YES;
 }
 @end

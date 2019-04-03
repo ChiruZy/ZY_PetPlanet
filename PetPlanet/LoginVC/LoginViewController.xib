@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +15,7 @@
                 <outlet property="loginButton" destination="4BX-3z-V0j" id="ris-PU-38D"/>
                 <outlet property="passwordField" destination="2iH-0F-Yb4" id="M78-Eo-amM"/>
                 <outlet property="phoneField" destination="FuF-A0-A3f" id="wcy-Aq-asi"/>
+                <outlet property="sender" destination="KMx-5Z-JwC" id="MFP-6p-Nzo"/>
                 <outlet property="topSpace" destination="NCX-P4-he1" id="EE6-a6-yPp"/>
                 <outlet property="verificationField" destination="DTj-m4-zf8" id="zSL-ww-ITF"/>
                 <outlet property="verificationView" destination="Qyx-Ja-LyS" id="RFQ-Gm-wGE"/>
@@ -44,6 +45,13 @@
                                 <constraint firstAttribute="height" constant="36" id="ceq-AZ-8iL"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMx-5Z-JwC" customClass="JKCountDownButton">
+                            <rect key="frame" x="240" y="26" width="40" height="32"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="Send">
+                                <color key="titleColor" red="0.56078431370000004" green="0.5568627451" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTj-m4-zf8">
                             <rect key="frame" x="56" y="24" width="164" height="36"/>
                             <color key="tintColor" red="0.56078431370000004" green="0.5568627451" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,7 +60,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="OLQ-wb-UqU"/>
                             </connections>
@@ -64,11 +72,13 @@
                         <constraint firstAttribute="trailing" secondItem="gcT-0K-cb4" secondAttribute="trailing" id="IMJ-WQ-G2d"/>
                         <constraint firstAttribute="trailing" secondItem="DTj-m4-zf8" secondAttribute="trailing" constant="60" id="L6b-02-Py3"/>
                         <constraint firstItem="DTj-m4-zf8" firstAttribute="leading" secondItem="RFy-Fv-97a" secondAttribute="trailing" constant="20" id="N5e-5e-C0E"/>
+                        <constraint firstAttribute="trailing" secondItem="KMx-5Z-JwC" secondAttribute="trailing" id="VFk-MP-NQo"/>
                         <constraint firstAttribute="bottom" secondItem="DTj-m4-zf8" secondAttribute="bottom" id="Z7Z-4n-bm7"/>
                         <constraint firstItem="RFy-Fv-97a" firstAttribute="leading" secondItem="Qyx-Ja-LyS" secondAttribute="leading" id="eTQ-2f-kLY"/>
                         <constraint firstAttribute="bottom" secondItem="RFy-Fv-97a" secondAttribute="bottom" id="nO0-pi-0nM"/>
                         <constraint firstAttribute="bottom" secondItem="gcT-0K-cb4" secondAttribute="bottom" id="o1f-Dv-YS8"/>
                         <constraint firstItem="gcT-0K-cb4" firstAttribute="leading" secondItem="Qyx-Ja-LyS" secondAttribute="leading" id="qU0-gL-G1D"/>
+                        <constraint firstItem="KMx-5Z-JwC" firstAttribute="centerY" secondItem="DTj-m4-zf8" secondAttribute="centerY" id="w6k-qe-UD8"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">

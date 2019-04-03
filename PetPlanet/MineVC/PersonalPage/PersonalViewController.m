@@ -95,7 +95,6 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     } fail:^(NSString * _Nonnull error) {
         if ([error isEqualToString:@"11"]||[error isEqualToString:@"12"]) {
             [ZYSVPManager showText:@"Load Failed" autoClose:2];
-            return;
         }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -107,13 +106,16 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         weakSelf.state = CandyLoadStateComplete;
         [weakSelf.tableView reloadData];
     } fail:^(NSString *error) {
+        // 已有列表不刷新
+        if (weakSelf.network.models.count>0) {
+            return;
+        }
+        // 没有列表显示不同提示
         if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
             [ZYSVPManager showText:@"Load Failed" autoClose:2];
             weakSelf.state = CandyLoadStateFail;
         }else if ([error isEqualToString:@"15"]){
             weakSelf.state = CandyLoadStateNoData;
-        }else if ([error isEqualToString:@"16"]){
-            return;
         }
         [weakSelf.tableView reloadData];
     }];
@@ -128,7 +130,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
     } fail:^(NSString *error) {
-        if ([error isEqualToString:@"15"]||[error isEqualToString:@"16"]) {
+        if ([error isEqualToString:@"15"]) {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
             return ;
         }
@@ -157,7 +159,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         return Screen_Width == 414?110:100;
     }else if (indexPath.section == 2){
         if (_state == CandyLoadStateFail || _state == CandyLoadStateNoData) {
-            return 270;
+            return 280;
         }else{
             return 0.01;
         }

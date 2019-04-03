@@ -7,7 +7,7 @@
 //
 
 #import "InterractiveViewController.h"
-#import "LoginView.h"
+#import "HintView.h"
 #import "LoginViewController.h"
 #import "InterractiveCell.h"
 #import "InterractiveNetworking.h"
@@ -16,7 +16,7 @@
 #import "PersonalViewController.h"
 
 @interface InterractiveViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
-@property (weak, nonatomic) IBOutlet LoginView *loginView;
+@property (weak, nonatomic) IBOutlet HintView *loginView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
 
@@ -47,12 +47,15 @@
 
 - (void)judgeIsLogin{
      [self configWithTableView];
-//    if (![ZYUserManager shareInstance].isLogin) {
-//        _loginView.hidden = NO;
-//        [_loginView loginButtonAddTarget:self action:@selector(login)];
-//    }else{
+    if (![ZYUserManager shareInstance].isLogin) {
+        [_loginView setType:HintLoginType needButton:YES];
+        __weak typeof(self) weakSelf = self;
+        _loginView.login = ^{
+            [weakSelf login];
+        };
+    }else{
         [self reload];
-//    }
+    }
 }
 
 - (void)login{

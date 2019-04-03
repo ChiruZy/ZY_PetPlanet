@@ -124,6 +124,8 @@
 		63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1F9223055E2007E5B36 /* WelcomeAnimateView.m */; };
 		63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1FA223055E2007E5B36 /* WelcomeAnimateView.xib */; };
 		63D0A202223059AC007E5B36 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A201223059AC007E5B36 /* Common.m */; };
+		63E0998A2253738000C052E3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099892253738000C052E3 /* HintView.xib */; };
+		63E0998D225373A700C052E3 /* HintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0998C225373A700C052E3 /* HintView.m */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -336,6 +338,9 @@
 		63D0A1FB223055E2007E5B36 /* WelcomeAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeAnimateView.h; sourceTree = "<group>"; };
 		63D0A200223059AC007E5B36 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		63D0A201223059AC007E5B36 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		63E099892253738000C052E3 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
+		63E0998B225373A700C052E3 /* HintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HintView.h; sourceTree = "<group>"; };
+		63E0998C225373A700C052E3 /* HintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HintView.m; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -803,6 +808,9 @@
 				637314A7224EA08D00D4D5CD /* LoginView.h */,
 				637314A8224EA08D00D4D5CD /* LoginView.m */,
 				637314A5224EA03E00D4D5CD /* LoginView.xib */,
+				63E0998B225373A700C052E3 /* HintView.h */,
+				63E0998C225373A700C052E3 /* HintView.m */,
+				63E099892253738000C052E3 /* HintView.xib */,
 				63A03DDA224FDEAA0078C1D8 /* ImageReviewView */,
 			);
 			path = OthersView;
@@ -1055,6 +1063,7 @@
 				63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */,
 				636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */,
 				63D0A1FD223055E2007E5B36 /* WelcomeViewController.xib in Resources */,
+				63E0998A2253738000C052E3 /* HintView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1194,7 @@
 				636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */,
 				636CF056224CCACE00675B0C /* JXCategoryIndicatorComponentView.m in Sources */,
 				636CEFB1224A879700675B0C /* ZYNavigationController.m in Sources */,
+				63E0998D225373A700C052E3 /* HintView.m in Sources */,
 				636CF057224CCACE00675B0C /* JXCategoryIndicatorDotLineView.m in Sources */,
 				636CF069224CCACE00675B0C /* JXCategoryNumberCell.m in Sources */,
 				636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */,

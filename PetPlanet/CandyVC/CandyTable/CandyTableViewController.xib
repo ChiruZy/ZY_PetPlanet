@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CandyTableViewController">
             <connections>
-                <outlet property="loginView" destination="7ax-J1-cF4" id="kdu-bH-5q7"/>
-                <outlet property="notConnectView" destination="t7O-qm-gzg" id="bxC-AL-z9Y"/>
+                <outlet property="hintView" destination="eHf-Td-pcL" id="eWK-8z-Vap"/>
                 <outlet property="tableView" destination="k7x-Cs-EB2" id="3Mk-Ih-IHT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,28 +25,20 @@
                     <rect key="frame" x="15" y="0.0" width="345" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-qm-gzg" customClass="NotConnectView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-J1-cF4" customClass="LoginView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-Td-pcL" customClass="HintView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="7ax-J1-cF4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1bn-0U-SiG"/>
-                <constraint firstAttribute="bottom" secondItem="7ax-J1-cF4" secondAttribute="bottom" id="Dwm-Rl-zcD"/>
-                <constraint firstItem="t7O-qm-gzg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IOV-lz-c6q"/>
+                <constraint firstItem="eHf-Td-pcL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DLZ-vC-SZ1"/>
                 <constraint firstItem="k7x-Cs-EB2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JiG-vz-fbq"/>
-                <constraint firstAttribute="trailing" secondItem="t7O-qm-gzg" secondAttribute="trailing" id="RB2-Fz-4gS"/>
-                <constraint firstAttribute="trailing" secondItem="7ax-J1-cF4" secondAttribute="trailing" id="Ss4-DX-UaR"/>
-                <constraint firstItem="t7O-qm-gzg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UsV-Se-KXk"/>
+                <constraint firstItem="eHf-Td-pcL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Svc-Xh-1ji"/>
                 <constraint firstItem="k7x-Cs-EB2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-30" id="bOs-Ey-t3g"/>
-                <constraint firstAttribute="bottom" secondItem="t7O-qm-gzg" secondAttribute="bottom" id="k9Y-ZW-4Pc"/>
                 <constraint firstItem="k7x-Cs-EB2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lOU-5x-MhX"/>
-                <constraint firstItem="7ax-J1-cF4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ufY-d8-hIe"/>
+                <constraint firstAttribute="trailing" secondItem="eHf-Td-pcL" secondAttribute="trailing" id="qf3-Wa-8Wv"/>
+                <constraint firstAttribute="bottom" secondItem="eHf-Td-pcL" secondAttribute="bottom" id="qtA-a9-tt9"/>
                 <constraint firstAttribute="bottom" secondItem="k7x-Cs-EB2" secondAttribute="bottom" id="xk9-m3-Cjz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -64,6 +64,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail;
 
 - (void)loadMorePersonalWithUid:(NSString *)uid WithComplete:(LoadComplete)complete fail:(Fail)fail;
+
+- (void)clearModels;
 @end
 
 NS_ASSUME_NONNULL_END

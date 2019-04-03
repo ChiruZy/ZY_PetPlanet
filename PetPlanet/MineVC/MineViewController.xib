@@ -54,13 +54,11 @@
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-EV-Gbz">
                     <rect key="frame" x="142.5" y="34" width="90" height="90"/>
+                    <color key="backgroundColor" red="0.68715912799588263" green="0.93221420049667358" blue="0.89299602787492904" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="kPT-Hy-bR4"/>
                         <constraint firstAttribute="width" constant="90" id="qkb-cO-d1V"/>
                     </constraints>
-                    <state key="normal">
-                        <color key="titleShadowColor" red="0.45882352939999999" green="0.92941176469999998" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="45"/>

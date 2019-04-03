@@ -8,10 +8,10 @@
 
 #import "MessageViewController.h"
 #import "LoginViewController.h"
-#import "LoginView.h"
+#import "HintView.h"
 
 @interface MessageViewController ()
-@property (weak, nonatomic) IBOutlet LoginView *loginView;
+@property (weak, nonatomic) IBOutlet HintView *loginView;
 
 @end
 
@@ -25,10 +25,14 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (IS_LOGIN) {
+    if ([ZYUserManager shareInstance].UserID.length>0) {
         _loginView.hidden = YES;
     }else{
-        [_loginView loginButtonAddTarget:self action:@selector(login)];
+        __weak typeof(self) weakSelf = self;
+        [_loginView setType:HintLoginType needButton:YES];
+        _loginView.login = ^{
+            [weakSelf login];
+        };
     }
 }
 

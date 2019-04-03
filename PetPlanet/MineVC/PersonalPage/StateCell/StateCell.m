@@ -7,10 +7,11 @@
 //
 
 #import "StateCell.h"
-@interface StateCell()
-@property (weak, nonatomic) IBOutlet UIView *noDataView;
-@property (weak, nonatomic) IBOutlet UIView *connectionView;
+#import "HintView.h"
 
+@interface StateCell()
+
+@property (weak, nonatomic) IBOutlet HintView *hintView;
 
 @end
 
@@ -22,12 +23,10 @@
 }
 
 - (void)isConnectionLost:(BOOL)flag{
-    _noDataView.hidden = flag;
-    _connectionView.hidden = !flag;
+    [_hintView setType:HintNoConnectType needButton:NO];
 }
 
 - (void)isNodata:(BOOL)flag{
-    _noDataView.hidden = !flag;
-    _connectionView.hidden = flag;
+    [_hintView setType:HintNoCandyType needButton:NO];
 }
 @end

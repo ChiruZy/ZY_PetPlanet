@@ -14,11 +14,13 @@
 #import "LoginView.h"
 #import "LoginViewController.h"
 #import "PersonalViewController.h"
+#import "HintView.h"
 
 @interface CandyTableViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
-@property (weak, nonatomic) IBOutlet LoginView *loginView;
+
+@property (weak, nonatomic) IBOutlet HintView *hintView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
+
 @property (weak, nonatomic) UIViewController * superView;
 @property (nonatomic,strong) CandyNetworking *network;
 @property (nonatomic,assign) CandyListType type;
@@ -37,8 +39,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configTableView];
-    [_notConnectView reloadButtonAddTarget:self action:@selector(reload)];
-    [_loginView loginButtonAddTarget:self action:@selector(login)];
+    __weak typeof(self) weakSelf = self;
+    [_hintView setType:HintHiddenType needButton:YES];
+    [_hintView moveY:-30];
+    _hintView.refresh = ^{
+        [weakSelf reload];
+    };
+    _hintView.login = ^{
+        [weakSelf login];
+    };
 }
 
 #pragma mark - PrivateMethod
@@ -77,19 +86,20 @@
     __weak typeof(self) weakSelf = self;
     [self.network reloadModelsWithComplete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.loginView.hidden = YES;
-        weakSelf.notConnectView.hidden = YES;
+        [weakSelf.hintView setType:HintHiddenType needButton:YES];
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer resetNoMoreData];
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
-            weakSelf.notConnectView.hidden = NO;
-            weakSelf.loginView.hidden = YES;
+            [weakSelf.hintView setType:HintNoConnectType needButton:YES];
         }if ([error isEqualToString:@"12"]) {
-            weakSelf.loginView.hidden = NO;
-            weakSelf.notConnectView.hidden = YES;
-        }if ([error isEqualToString:@"16"]){
-            
+            [weakSelf.hintView setType:HintLoginType needButton:YES];
+        }if ([error isEqualToString:@"11"]||[error isEqualToString:@"15"]){
+            [weakSelf.hintView setType:HintNoCandyType needButton:YES];
+        }
+        
+        if (![error isEqualToString:@"16"]) {
+            [weakSelf.network clearModels];
         }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
