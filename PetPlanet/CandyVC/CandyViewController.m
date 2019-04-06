@@ -33,7 +33,7 @@
 }
 
 - (void)configCategoryView{
-    _titleView.titles = @[@"Following",@"Recommend",@"News"];
+    _titleView.titles = @[@"Popular",@"Newest",@"Following"];
     _titleView.delegate = self;
     _titleView.titleColor = [UIColor whiteColor];
     _titleView.titleSelectedColor = [UIColor whiteColor];
@@ -65,11 +65,11 @@
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     CandyTableViewController *tableview;
-    if (index == 0) {
+    if (index == 2) {
         tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListFollowingType superView:self];
-    }else if (index == 1){
+    }else if (index == 0){
         tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListRecommendType superView:self];
-    }else if (index == 2){
+    }else if (index == 1){
         tableview = [[CandyTableViewController alloc]initWithCandyListType:CandyListNewsType superView:self];
     }
     return tableview;

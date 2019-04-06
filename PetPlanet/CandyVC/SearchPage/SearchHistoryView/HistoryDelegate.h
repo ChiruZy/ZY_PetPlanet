@@ -23,6 +23,8 @@ typedef void(^EventWithBool)(BOOL flag);
 
 - (void)setObjectToHistory:(NSString *)str;
 
+- (void)removeHistory;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -38,7 +38,7 @@
 
     CGRect frame = [_label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, 24) options:options attributes:attrs context:nil];
     
-    frame.size.width +=24;
+    frame.size.width +=40;
     frame.size.height = 24;
     attributes.frame = frame;
     return attributes;

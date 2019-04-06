@@ -45,6 +45,9 @@
             [weakSelf requestFailOrNoData];
         }else{
             weakSelf.model = arr.copy;
+            if (_getDataComplete) {
+                _getDataComplete();
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [weakSelf requestFailOrNoData];

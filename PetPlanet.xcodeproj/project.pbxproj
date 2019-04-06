@@ -18,6 +18,10 @@
 		631FFE6322512525008F7188 /* InterractiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE6122512525008F7188 /* InterractiveCell.m */; };
 		631FFE672251255A008F7188 /* InterractiveNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE662251255A008F7188 /* InterractiveNetworking.m */; };
 		631FFE6B22512980008F7188 /* CandyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE6A22512980008F7188 /* CandyCell.xib */; };
+		632EFD9F2258C668008EE300 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFD9D2258C668008EE300 /* SearchUserViewController.m */; };
+		632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFD9E2258C668008EE300 /* SearchUserViewController.xib */; };
+		632EFDA52258C81E008EE300 /* SearchUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFDA32258C81E008EE300 /* SearchUserCell.m */; };
+		632EFDA62258C81E008EE300 /* SearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDA42258C81E008EE300 /* SearchUserCell.xib */; };
 		636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEF9B224A75ED00675B0C /* ZYTabBarController.m */; };
 		636CEFA2224A77A500675B0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA0224A77A500675B0C /* MainViewController.m */; };
 		636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA1224A77A500675B0C /* MainViewController.xib */; };
@@ -134,6 +138,11 @@
 		63E099AF225550A500C052E3 /* HotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099AD225550A500C052E3 /* HotCell.m */; };
 		63E099B0225550A500C052E3 /* HotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099AE225550A500C052E3 /* HotCell.xib */; };
 		63E099B3225550C800C052E3 /* HotDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099B2225550C800C052E3 /* HotDelegate.m */; };
+		63E099B6225563D200C052E3 /* SearchViewNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099B5225563D200C052E3 /* SearchViewNetwork.m */; };
+		63E099BA225657BD00C052E3 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099B8225657BD00C052E3 /* UserCell.m */; };
+		63E099BB225657BD00C052E3 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099B9225657BD00C052E3 /* UserCell.xib */; };
+		63E099BF225657F800C052E3 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099BD225657F800C052E3 /* UserTableViewCell.m */; };
+		63E099C0225657F800C052E3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099BE225657F800C052E3 /* UserTableViewCell.xib */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -158,6 +167,12 @@
 		631FFE652251255A008F7188 /* InterractiveNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterractiveNetworking.h; sourceTree = "<group>"; };
 		631FFE662251255A008F7188 /* InterractiveNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterractiveNetworking.m; sourceTree = "<group>"; };
 		631FFE6A22512980008F7188 /* CandyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CandyCell.xib; sourceTree = "<group>"; };
+		632EFD9C2258C668008EE300 /* SearchUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserViewController.h; sourceTree = "<group>"; };
+		632EFD9D2258C668008EE300 /* SearchUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserViewController.m; sourceTree = "<group>"; };
+		632EFD9E2258C668008EE300 /* SearchUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserViewController.xib; sourceTree = "<group>"; };
+		632EFDA22258C81E008EE300 /* SearchUserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserCell.h; sourceTree = "<group>"; };
+		632EFDA32258C81E008EE300 /* SearchUserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserCell.m; sourceTree = "<group>"; };
+		632EFDA42258C81E008EE300 /* SearchUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserCell.xib; sourceTree = "<group>"; };
 		636CEF9A224A75ED00675B0C /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
 		636CEF9B224A75ED00675B0C /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
 		636CEF9F224A77A500675B0C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -363,6 +378,14 @@
 		63E099AE225550A500C052E3 /* HotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotCell.xib; sourceTree = "<group>"; };
 		63E099B1225550C800C052E3 /* HotDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotDelegate.h; sourceTree = "<group>"; };
 		63E099B2225550C800C052E3 /* HotDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotDelegate.m; sourceTree = "<group>"; };
+		63E099B4225563D200C052E3 /* SearchViewNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewNetwork.h; sourceTree = "<group>"; };
+		63E099B5225563D200C052E3 /* SearchViewNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewNetwork.m; sourceTree = "<group>"; };
+		63E099B7225657BD00C052E3 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		63E099B8225657BD00C052E3 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		63E099B9225657BD00C052E3 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		63E099BC225657F800C052E3 /* UserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		63E099BD225657F800C052E3 /* UserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		63E099BE225657F800C052E3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -431,6 +454,19 @@
 				631FFE662251255A008F7188 /* InterractiveNetworking.m */,
 			);
 			path = InteractiveCell;
+			sourceTree = "<group>";
+		};
+		632EFDA12258C7F4008EE300 /* SearchUser */ = {
+			isa = PBXGroup;
+			children = (
+				632EFD9C2258C668008EE300 /* SearchUserViewController.h */,
+				632EFD9D2258C668008EE300 /* SearchUserViewController.m */,
+				632EFD9E2258C668008EE300 /* SearchUserViewController.xib */,
+				632EFDA22258C81E008EE300 /* SearchUserCell.h */,
+				632EFDA32258C81E008EE300 /* SearchUserCell.m */,
+				632EFDA42258C81E008EE300 /* SearchUserCell.xib */,
+			);
+			path = SearchUser;
 			sourceTree = "<group>";
 		};
 		636CEF96224A725C00675B0C /* Componentes */ = {
@@ -798,11 +834,20 @@
 		636CF0A2224D55FE00675B0C /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
+				632EFDA12258C7F4008EE300 /* SearchUser */,
 				63E099A82255506D00C052E3 /* SearchHotView */,
 				63E09994225538B400C052E3 /* SearchHistoryView */,
 				636CF0A3224D561B00675B0C /* SearchViewController.h */,
 				636CF0A4224D561B00675B0C /* SearchViewController.m */,
 				636CF0A5224D561B00675B0C /* SearchViewController.xib */,
+				63E099B4225563D200C052E3 /* SearchViewNetwork.h */,
+				63E099B5225563D200C052E3 /* SearchViewNetwork.m */,
+				63E099B7225657BD00C052E3 /* UserCell.h */,
+				63E099B8225657BD00C052E3 /* UserCell.m */,
+				63E099B9225657BD00C052E3 /* UserCell.xib */,
+				63E099BC225657F800C052E3 /* UserTableViewCell.h */,
+				63E099BD225657F800C052E3 /* UserTableViewCell.m */,
+				63E099BE225657F800C052E3 /* UserTableViewCell.xib */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -1085,6 +1130,7 @@
 				636CEFEF224C9E3F00675B0C /* MineCell.xib in Resources */,
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
+				632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */,
 				631FFE4B2251157C008F7188 /* AdoptViewController.xib in Resources */,
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
@@ -1097,13 +1143,16 @@
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				636CF095224D315500675B0C /* InterractiveCell.xib in Resources */,
 				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
+				632EFDA62258C81E008EE300 /* SearchUserCell.xib in Resources */,
 				63E099A122553C1D00C052E3 /* HistoryCell.xib in Resources */,
+				63E099C0225657F800C052E3 /* UserTableViewCell.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
 				631FFE6B22512980008F7188 /* CandyCell.xib in Resources */,
 				636CEFD0224AB88E00675B0C /* BannerCell.xib in Resources */,
 				63A03DE2225001350078C1D8 /* PersonalViewController.xib in Resources */,
+				63E099BB225657BD00C052E3 /* UserCell.xib in Resources */,
 				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
 				636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */,
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
@@ -1190,18 +1239,22 @@
 				636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */,
 				6380A4652250DB820077F4E5 /* PersonalPageNetwork.m in Sources */,
 				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
+				632EFDA52258C81E008EE300 /* SearchUserCell.m in Sources */,
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
 				63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */,
 				637314A9224EA08D00D4D5CD /* LoginView.m in Sources */,
 				63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */,
 				63D0A1EE223046E6007E5B36 /* main.m in Sources */,
 				637314AD224F452300D4D5CD /* CandyNetworking.m in Sources */,
+				63E099B6225563D200C052E3 /* SearchViewNetwork.m in Sources */,
 				63E099AB2255508900C052E3 /* HotLayout.m in Sources */,
 				636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */,
 				636CF088224D044300675B0C /* ChangeCoverView.m in Sources */,
 				636CF060224CCACE00675B0C /* JXCategoryTitleImageCell.m in Sources */,
+				63E099BF225657F800C052E3 /* UserTableViewCell.m in Sources */,
 				636CF09A224D50E800675B0C /* PopularViewController.m in Sources */,
 				631FFE4F225117F2008F7188 /* HistoryViewController.m in Sources */,
+				63E099BA225657BD00C052E3 /* UserCell.m in Sources */,
 				636CF0B0224E0BE900675B0C /* LoginViewController.m in Sources */,
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
@@ -1239,6 +1292,7 @@
 				636CF070224CCACE00675B0C /* JXCategoryListCollectionContainerView.m in Sources */,
 				636CF05B224CCACE00675B0C /* JXCategoryIndicatorView.m in Sources */,
 				636CF08E224D2E8100675B0C /* CandyTableViewController.m in Sources */,
+				632EFD9F2258C668008EE300 /* SearchUserViewController.m in Sources */,
 				636CF06B224CCACE00675B0C /* JXCategoryListContainerView.m in Sources */,
 				636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */,
 				6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */,

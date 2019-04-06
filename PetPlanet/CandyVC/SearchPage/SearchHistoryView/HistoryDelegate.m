@@ -24,7 +24,11 @@
 - (instancetype)initWithNeedRefreshBlock:(EventWithBool)needRefresh{
     if (self = [super init]) {
         NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:HistoryKey];
-        self.model = arr.mutableCopy;
+        _model = arr.mutableCopy;
+        if (!_model) {
+            _model = [NSMutableArray new];
+        }
+        
         _needRefresh = needRefresh;
         if (_needRefresh) {
             _needRefresh(arr.count>0);

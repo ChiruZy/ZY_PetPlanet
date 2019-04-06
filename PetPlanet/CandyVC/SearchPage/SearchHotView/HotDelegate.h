@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) Event noData;
 
+@property (nonatomic,strong) Event getDataComplete;
+
 @end
 
 NS_ASSUME_NONNULL_END

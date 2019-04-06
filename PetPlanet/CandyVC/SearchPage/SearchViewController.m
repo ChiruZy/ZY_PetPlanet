@@ -9,16 +9,27 @@
 #import "SearchViewController.h"
 #import "HistoryDelegate.h"
 #import "HotDelegate.h"
+#import "JXCategoryView.h"
+#import "CandyCell.h"
+#import "SearchViewNetwork.h"
+#import "UserTableViewCell.h"
+#import "PersonalViewController.h"
+#import "SearchUserViewController.h"
+#import <MJRefresh.h>
+#import "ZYSVPManager.h"
 
-@interface SearchViewController ()<UITextFieldDelegate>
+@interface SearchViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UICollectionView *history;
 @property (weak, nonatomic) IBOutlet UICollectionView *hot;
 @property (weak, nonatomic) IBOutlet UIView *historyView;
 @property (weak, nonatomic) IBOutlet UIView *hotView;
+@property (weak, nonatomic) IBOutlet UIView *hiddenView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) HistoryDelegate *historyDelegate;
 @property (nonatomic,strong) HotDelegate *hotDelegate;
+@property (nonatomic,strong) SearchViewNetwork *network;
 @end
 
 @implementation SearchViewController
@@ -27,13 +38,15 @@
     [super viewDidLoad];
     _searchField.delegate = self;
     [_cancel addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//    UITapGestureRecognizer *tapSelf = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelf)];
+//    [self.view addGestureRecognizer:tapSelf];
     [self configHistory];
+    [self configWithTableView];
 }
 
+#pragma mark - UIConfig
 - (void)configHistory{
      __weak typeof(self) weakSelf = self;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:@[@"sddsd",@"dsddddd"] forKey:@"search_history"];
     
     _historyDelegate = [[HistoryDelegate alloc]initWithNeedRefreshBlock:^(BOOL flag) {
         weakSelf.historyView.hidden = !flag;
@@ -41,6 +54,7 @@
     }];
     _historyDelegate.block = ^(NSString * _Nullable content) {
         weakSelf.searchField.text = content;
+        [weakSelf requestWithString:content];
     };
     _history.delegate = _historyDelegate;
     _history.dataSource = _historyDelegate;
@@ -49,17 +63,185 @@
     _hotDelegate = [HotDelegate new];
     _hotDelegate.block = ^(NSString * _Nullable content) {
         weakSelf.searchField.text = content;
+        weakSelf.historyView.hidden = NO;
+        [weakSelf requestWithString:content];
     };
-    _hotDelegate.noData = ^{
-        weakSelf.hotView.hidden = YES;
+    _hotDelegate.getDataComplete = ^{
+        weakSelf.hotView.hidden = NO;
     };
     _hot.delegate = _hotDelegate;
     _hot.dataSource = _hotDelegate;
     [_hot registerNib:[UINib nibWithNibName:@"HotCell" bundle:nil] forCellWithReuseIdentifier:@"HotCell"];
 }
 
+- (void)configWithTableView{
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.estimatedRowHeight = 0;
+    _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [_tableView registerNib:[UINib nibWithNibName:@"UserTableViewCell" bundle:nil] forCellReuseIdentifier:@"UserTableViewCell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"CandyCell" bundle:nil] forCellReuseIdentifier:@"CandyCell"];
+    [self configHeaderAndFooter];
+}
+
+- (void)configHeaderAndFooter{
+    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    footer.stateLabel.hidden = YES;
+    _tableView.mj_footer = footer;
+}
+#pragma mark - Events
 - (void)back{
     [self.navigationController popViewControllerAnimated: YES];
 }
 
+- (IBAction)clearHistory:(id)sender {
+    [_historyDelegate removeHistory];
+}
+
+
+- (void)tapSelf{
+    [_searchField resignFirstResponder];
+}
+
+#pragma mark - PrivateMethod
+- (void)requestWithString:(NSString *)str{
+    __weak typeof(self) weakSelf = self;
+    self.hiddenView.hidden = NO;
+    [self.network searchWithKeyword:str complete:^{
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_footer resetNoMoreData];
+    } fail:^(NSString * _Nonnull error) {
+        [ZYSVPManager showText:@"Connect Failed" autoClose:2];
+    }];
+}
+
+- (void)loadMoreData{
+    __weak typeof(self) weakSelf = self;
+    [_network searchMoreWithKeyword:_searchField.text complete:^(BOOL noMore){
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        if (noMore) {
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    } fail:^(NSString * _Nonnull error) {
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
+}
+
+#pragma mark - TableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.network.models.count + 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [UIView new];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return 0.01;
+    }
+    return 12;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return self.network.users.count>0?100:0.01;
+    }else{
+        return 370;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0){
+        UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserTableViewCell" forIndexPath:indexPath];
+        [cell configWithUserModels:_network.users];
+        __weak typeof(self) weakSelf = self;
+        cell.block = ^(UsersModel * _Nonnull model) {
+            if (!model) {
+                NSString *keyword = weakSelf.searchField.text;
+                SearchUserViewController *searchUserVC = [[SearchUserViewController alloc]initWithKeyword:keyword];
+                [weakSelf.navigationController pushViewController:searchUserVC animated:YES];
+                return;
+            }
+            PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:model.uid];
+            [weakSelf.navigationController pushViewController:personalVC animated:YES];
+        };
+        return cell;
+    }else{
+        NSUInteger index = indexPath.section -1;
+        CandyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
+        [cell configCellWithModel:_network.models[index]];
+        cell.delegate = self;
+        return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_historyDelegate setObjectToHistory:_searchField.text];
+    
+    
+}
+
+#pragma mark - CandyDelegate
+
+- (void)cellDidTapReplyWithModel:(CandyModel *)model{
+    [_historyDelegate setObjectToHistory:_searchField.text];
+}
+
+- (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
+    [_historyDelegate setObjectToHistory:_searchField.text];
+    PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:model.authorID];
+    [self.navigationController pushViewController:personalVC animated:YES];
+}
+
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
+    [_historyDelegate setObjectToHistory:_searchField.text];
+}
+
+#pragma mark - TextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSMutableString *newStr = [NSMutableString stringWithString:textField.text];
+    [newStr replaceCharactersInRange:range withString:string];
+
+    _hiddenView.hidden = (newStr.length == 0);
+    
+    if (newStr.length>20) {
+        return NO;
+    }
+    if (newStr.length == 0) {
+        [_network removeRecord];
+        [self.tableView reloadData];
+        return YES;
+    }
+    [self requestWithString:newStr];
+    return YES;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+    [_network removeRecord];
+    _hiddenView.hidden = YES;
+    [self.tableView reloadData];
+    ;    return YES;
+}
+#pragma mark - Getter & Setter
+
+- (SearchViewNetwork *)network{
+    if (!_network) {
+        _network = [SearchViewNetwork new];
+    }
+    return _network;
+}
 @end
