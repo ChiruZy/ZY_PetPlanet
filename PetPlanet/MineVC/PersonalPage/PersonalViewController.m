@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 - (instancetype)initWithUserID:(NSString *)userID{
     if (self = [super init]) {
         _userID = userID;
-        if ([_userID isEqualToString:UID]) {
+        if ([_userID isEqualToString:[ZYUserManager shareInstance].userID]) {
             _isSelf = YES;
         }
         _marginTop = -80;
@@ -90,7 +90,8 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     __weak typeof(self) weakSelf = self;
     [self.personalNetwork loadWithUid:_userID complete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.name.text = weakSelf.personalNetwork.personal[@"name"];
+        NSDictionary *dic = weakSelf.personalNetwork.personal;
+        weakSelf.name.text = dic[@"name"];
         [weakSelf.tableView.mj_header endRefreshing];
     } fail:^(NSString * _Nonnull error) {
         if ([error isEqualToString:@"11"]||[error isEqualToString:@"12"]) {

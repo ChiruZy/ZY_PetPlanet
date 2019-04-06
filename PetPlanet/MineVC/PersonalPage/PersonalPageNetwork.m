@@ -25,7 +25,7 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/get_mine_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSDictionary *param = @{@"uid":uid};
+    NSDictionary *param = @{@"uid":uid,@"sender":[ZYUserManager shareInstance].userID};
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

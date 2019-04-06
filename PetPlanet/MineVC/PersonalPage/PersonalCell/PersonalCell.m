@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *like;
 @property (weak, nonatomic) IBOutlet UIButton *adobt;
 
+@property (nonatomic,assign) BOOL isFollow;
 
 @end
 
@@ -59,8 +60,18 @@
     if ([dic[@"isMale"]isEqualToString:@"0"]) {
         [_sex setImage:[UIImage imageNamed:@"female"]];
     }
+
+    _edit.hidden = NO;
     if (isSelf) {
-        _edit.hidden = NO;
+        
+    }else{
+        if ([dic[@"is_Follows"] isEqualToString:@"1"]) {
+            _isFollow = YES;
+            [_edit setImage:[UIImage imageNamed:@"unFollow"] forState:UIControlStateNormal];
+        }else{
+            _isFollow = NO;
+            [_edit setImage:[UIImage imageNamed:@"follow"] forState:UIControlStateNormal];
+        }
     }
 }
 @end

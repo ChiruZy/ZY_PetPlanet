@@ -37,12 +37,12 @@
     _name.text = model.name;
     
     NSString *isFollow = model.isFollow;
-    if ([isFollow isEqualToString:@"0"]) {
-        _isFollow = NO;
-        [_follow setImage:[UIImage imageNamed:@"follow"] forState:UIControlStateNormal];
-    }else{
+    if ([isFollow isEqualToString:@"1"]) {
         _isFollow = YES;
         [_follow setImage:[UIImage imageNamed:@"unFollow"] forState:UIControlStateNormal];
+    }else{
+        _isFollow = NO;
+        [_follow setImage:[UIImage imageNamed:@"follow"] forState:UIControlStateNormal];
     }
     [_follow addTarget:self action:@selector(tapFollow) forControlEvents:UIControlEventTouchUpInside];
 }

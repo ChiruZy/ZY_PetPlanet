@@ -78,15 +78,6 @@
         if (![error isEqualToString:@"10"]) {
             fail(error);
         }
-        
-        NSArray *user = responseObject[@"user"];
-        NSMutableArray *userArr = [NSMutableArray new];
-        for (NSDictionary *dic in user) {
-            UsersModel *model = [UsersModel yy_modelWithJSON:dic];
-            [userArr addObject:model];
-        }
-        [weakSelf.usr setArray:userArr];
-        
         NSArray *candy = responseObject[@"candy"];
         NSMutableArray *candyArr = [NSMutableArray new];
         for (NSDictionary *dic in candy) {

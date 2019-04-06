@@ -87,10 +87,11 @@
         
         [weakSelf.model setArray:[self parserData:responseObject[@"items"]]];
         
-        [weakSelf.tableview refreshControl];
-        if (weakSelf.model.count<20) {
-            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
-        }
+        [weakSelf.tableview.mj_header endRefreshing];
+        [weakSelf.tableview.mj_footer resetNoMoreData];
+//        if (weakSelf.model.count<20) {
+//            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
+//        }
         weakSelf.networking = NO;
         [weakSelf.tableview reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
