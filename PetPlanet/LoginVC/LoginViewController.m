@@ -124,6 +124,7 @@
                             @"password":_passwordField.text,
                             @"code":_verificationField.text,
                             };
+    __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isKindOfClass:[NSDictionary class]]) {
             [ZYSVPManager showText:@"Server Error" autoClose:2];
@@ -132,7 +133,7 @@
         NSString *error = responseObject[@"error"];
         if ([@"10" isEqualToString:error]) {
             [ZYSVPManager showText:@"Success" autoClose:2];
-            [self loginSuccessWithUid:param[@"number"]];
+            [weakSelf loginSuccessWithInfo:responseObject[@"items"]];
         }else if ([error isEqualToString:@"18"]){
             [ZYSVPManager showText:@"Wrong Code" autoClose:2];
         }else if ([error isEqualToString:@"17"]){
@@ -153,7 +154,7 @@
     NSDictionary *param = @{@"uid":_phoneField.text,
                             @"password":_passwordField.text,
                             };
-    
+    __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isKindOfClass:[NSDictionary class]]) {
             [ZYSVPManager showText:@"Server Error" autoClose:2];
@@ -162,7 +163,7 @@
         NSString *error = responseObject[@"error"];
         if ([@"10" isEqualToString:error]) {
             [ZYSVPManager showText:@"Success" autoClose:2];
-            [self loginSuccessWithUid:param[@"uid"]];
+            [weakSelf loginSuccessWithInfo:responseObject[@"item"]];
         }else if ([error isEqualToString:@"17"]){
             [ZYSVPManager showText:@"Server Error" autoClose:2];
         }else if ([error isEqualToString:@"16"]){
@@ -175,11 +176,11 @@
     }];
 }
 
-- (void)loginSuccessWithUid:(NSString *)uid{
-    [[ZYUserManager shareInstance] LoginWithUserID:uid];
+- (void)loginSuccessWithInfo:(NSDictionary *)info{
+    [[ZYUserManager shareInstance] LoginWithUserInfo:info];
     [self.navigationController popViewControllerAnimated:YES];
     if (_loginBlock) {
-        _loginBlock(uid);
+        _loginBlock(info[@"uid"]);
     }
 }
 

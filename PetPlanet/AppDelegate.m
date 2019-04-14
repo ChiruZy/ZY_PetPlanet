@@ -14,6 +14,7 @@
 #import "ZYTabBarController.h"
 #import "ZYNavigationController.h"
 #import "MessageViewController.h"
+#import <RongIMKit/RongIMKit.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[RCIM sharedRCIM]initWithAppKey:@"uwd1c0sxupu51"];
+    [[ZYUserManager shareInstance]refreshUserInfo];
     
     [NSThread sleepForTimeInterval:1];
     
@@ -59,4 +62,6 @@
     [tabBar setItemsWithImageNameArray:@[@"main",@"candy",@"message",@"mine"]];
     _window.rootViewController = tabBar;
 }
+
+
 @end

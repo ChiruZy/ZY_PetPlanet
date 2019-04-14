@@ -89,9 +89,9 @@
         
         [weakSelf.tableview.mj_header endRefreshing];
         [weakSelf.tableview.mj_footer resetNoMoreData];
-//        if (weakSelf.model.count<20) {
-//            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
-//        }
+        if (weakSelf.model.count<20) {
+            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
+        }
         weakSelf.networking = NO;
         [weakSelf.tableview reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -119,6 +119,11 @@
             return ;
         }
         NSString *error = responseObject[@"error"];
+        if ([error isEqualToString:@"16"]) {
+            [weakSelf.tableview.mj_footer endRefreshing];
+            return;
+        }
+        
         if (![error isEqualToString:@"10"]) {
             [ZYSVPManager showText:@"Server Error" autoClose:2];
         }

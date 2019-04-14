@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,10 +67,10 @@
                         </state>
                     </button>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGM-Vk-uqK">
-                        <rect key="frame" x="293" y="134" width="50" height="38"/>
+                        <rect key="frame" x="323" y="126" width="40" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="LUy-eU-9Ix"/>
-                            <constraint firstAttribute="height" constant="38" id="z78-Qg-zKT"/>
+                            <constraint firstAttribute="width" constant="40" id="LUy-eU-9Ix"/>
+                            <constraint firstAttribute="height" constant="28" id="z78-Qg-zKT"/>
                         </constraints>
                         <state key="normal" image="edit"/>
                     </button>
@@ -81,6 +81,14 @@
                             <color key="titleColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YX-km-hnE">
+                        <rect key="frame" x="265" y="126" width="40" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="5ll-BY-fQK"/>
+                            <constraint firstAttribute="width" constant="40" id="Xi2-S7-IPn"/>
+                        </constraints>
+                        <state key="normal" image="p_message"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5Sd-U3-VAK" firstAttribute="bottom" secondItem="7Qr-1A-GND" secondAttribute="bottom" constant="45" id="3in-PD-Bg6"/>
@@ -89,17 +97,19 @@
                     <constraint firstItem="7Qr-1A-GND" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6wN-GP-dPs"/>
                     <constraint firstAttribute="trailing" secondItem="nf7-KN-oOF" secondAttribute="trailing" constant="8" id="C5k-GG-G2r"/>
                     <constraint firstItem="7Qr-1A-GND" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Jx1-IN-WHW"/>
+                    <constraint firstItem="9YX-km-hnE" firstAttribute="top" secondItem="7Qr-1A-GND" secondAttribute="bottom" constant="6" id="KUP-ii-LD2"/>
                     <constraint firstItem="Lyr-DR-gKK" firstAttribute="top" secondItem="5Sd-U3-VAK" secondAttribute="bottom" constant="10" id="Kez-gh-jQg"/>
                     <constraint firstItem="0Mu-26-OTT" firstAttribute="centerY" secondItem="Lyr-DR-gKK" secondAttribute="centerY" id="Msh-TM-8mH"/>
                     <constraint firstItem="5Sd-U3-VAK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Q62-Tr-OGp"/>
-                    <constraint firstItem="xGM-Vk-uqK" firstAttribute="top" secondItem="7Qr-1A-GND" secondAttribute="bottom" constant="14" id="R4q-sM-6XV"/>
+                    <constraint firstItem="xGM-Vk-uqK" firstAttribute="top" secondItem="7Qr-1A-GND" secondAttribute="bottom" constant="6" id="R4q-sM-6XV"/>
                     <constraint firstAttribute="trailing" secondItem="7Qr-1A-GND" secondAttribute="trailing" id="RCu-nL-jdN"/>
                     <constraint firstItem="0Mu-26-OTT" firstAttribute="leading" secondItem="Lyr-DR-gKK" secondAttribute="trailing" constant="22" id="Wa9-nA-9kh"/>
+                    <constraint firstItem="xGM-Vk-uqK" firstAttribute="leading" secondItem="9YX-km-hnE" secondAttribute="trailing" constant="18" id="YGn-hD-V3u"/>
                     <constraint firstItem="nf7-KN-oOF" firstAttribute="centerY" secondItem="k0a-SK-3yl" secondAttribute="centerY" id="Ymt-nS-yJx"/>
                     <constraint firstItem="03a-lb-veP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="i8A-wa-HWG"/>
                     <constraint firstItem="k0a-SK-3yl" firstAttribute="centerY" secondItem="03a-lb-veP" secondAttribute="centerY" id="rFp-Rq-Xmr"/>
                     <constraint firstItem="Lyr-DR-gKK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rIa-QL-Iqp"/>
-                    <constraint firstAttribute="trailing" secondItem="xGM-Vk-uqK" secondAttribute="trailing" constant="32" id="yOm-So-Low"/>
+                    <constraint firstAttribute="trailing" secondItem="xGM-Vk-uqK" secondAttribute="trailing" constant="12" id="yOm-So-Low"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -111,6 +121,7 @@
                 <outlet property="follow" destination="03a-lb-veP" id="xlg-6U-mZd"/>
                 <outlet property="head" destination="5Sd-U3-VAK" id="tWI-NJ-uyq"/>
                 <outlet property="like" destination="k0a-SK-3yl" id="buD-dZ-Q4o"/>
+                <outlet property="message" destination="9YX-km-hnE" id="jog-YC-EIY"/>
                 <outlet property="name" destination="Lyr-DR-gKK" id="WzX-00-BJL"/>
                 <outlet property="sex" destination="0Mu-26-OTT" id="My5-yY-WUs"/>
             </connections>
@@ -118,7 +129,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="edit" width="50" height="37"/>
+        <image name="edit" width="40" height="28"/>
         <image name="male" width="18" height="18"/>
+        <image name="p_message" width="40" height="28"/>
     </resources>
 </document>

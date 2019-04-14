@@ -22,6 +22,10 @@
 		632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFD9E2258C668008EE300 /* SearchUserViewController.xib */; };
 		632EFDA52258C81E008EE300 /* SearchUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFDA32258C81E008EE300 /* SearchUserCell.m */; };
 		632EFDA62258C81E008EE300 /* SearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDA42258C81E008EE300 /* SearchUserCell.xib */; };
+		632EFDDF225A84DF008EE300 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFDDD225A84DF008EE300 /* MessageViewController.m */; };
+		632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDDE225A84DF008EE300 /* MessageViewController.xib */; };
+		632EFDE4225A8530008EE300 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFDE2225A8530008EE300 /* ConversationViewController.m */; };
+		632EFDE5225A8530008EE300 /* ConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDE3225A8530008EE300 /* ConversationViewController.xib */; };
 		636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEF9B224A75ED00675B0C /* ZYTabBarController.m */; };
 		636CEFA2224A77A500675B0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA0224A77A500675B0C /* MainViewController.m */; };
 		636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA1224A77A500675B0C /* MainViewController.xib */; };
@@ -42,8 +46,6 @@
 		636CEFE0224B459000675B0C /* PopularCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFDE224B459000675B0C /* PopularCell.m */; };
 		636CEFE1224B459000675B0C /* PopularCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFDF224B459000675B0C /* PopularCell.xib */; };
 		636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFE3224BA5E100675B0C /* MainViewNetworking.m */; };
-		636CEFE9224C96BC00675B0C /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFE7224C96BC00675B0C /* MessageViewController.m */; };
-		636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFE8224C96BC00675B0C /* MessageViewController.xib */; };
 		636CEFEE224C9E3F00675B0C /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFEC224C9E3F00675B0C /* MineCell.m */; };
 		636CEFEF224C9E3F00675B0C /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFED224C9E3F00675B0C /* MineCell.xib */; };
 		636CF04E224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFF7224CCACE00675B0C /* JXCategoryTitleVerticalZoomCellModel.m */; };
@@ -173,6 +175,36 @@
 		632EFDA22258C81E008EE300 /* SearchUserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserCell.h; sourceTree = "<group>"; };
 		632EFDA32258C81E008EE300 /* SearchUserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserCell.m; sourceTree = "<group>"; };
 		632EFDA42258C81E008EE300 /* SearchUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserCell.xib; sourceTree = "<group>"; };
+		632EFDA72259B6B5008EE300 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		632EFDA92259B6BE008EE300 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		632EFDAB2259B6C4008EE300 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		632EFDAD2259B6CC008EE300 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		632EFDAF2259B6D6008EE300 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		632EFDB12259B6DE008EE300 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		632EFDB32259B6E9008EE300 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		632EFDB52259B6F2008EE300 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		632EFDB72259B6FA008EE300 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		632EFDB92259B705008EE300 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		632EFDBB2259B70E008EE300 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		632EFDBD2259B722008EE300 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		632EFDBE2259B722008EE300 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		632EFDC12259B72D008EE300 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		632EFDC32259B7C9008EE300 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "../../../Downloads/libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
+		632EFDC52259B7DB008EE300 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		632EFDC72259B7E5008EE300 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		632EFDC92259B7EC008EE300 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		632EFDCB2259B7F4008EE300 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		632EFDCD2259B7FD008EE300 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		632EFDCF2259B805008EE300 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		632EFDD12259B80C008EE300 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		632EFDD32259B815008EE300 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		632EFDD52259B81B008EE300 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		632EFDDC225A84DF008EE300 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		632EFDDD225A84DF008EE300 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		632EFDDE225A84DF008EE300 /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		632EFDE1225A8530008EE300 /* ConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
+		632EFDE2225A8530008EE300 /* ConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
+		632EFDE3225A8530008EE300 /* ConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationViewController.xib; sourceTree = "<group>"; };
 		636CEF9A224A75ED00675B0C /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
 		636CEF9B224A75ED00675B0C /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
 		636CEF9F224A77A500675B0C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -205,9 +237,6 @@
 		636CEFDF224B459000675B0C /* PopularCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCell.xib; sourceTree = "<group>"; };
 		636CEFE2224BA5E100675B0C /* MainViewNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewNetworking.h; sourceTree = "<group>"; };
 		636CEFE3224BA5E100675B0C /* MainViewNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewNetworking.m; sourceTree = "<group>"; };
-		636CEFE6224C96BC00675B0C /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		636CEFE7224C96BC00675B0C /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		636CEFE8224C96BC00675B0C /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		636CEFEB224C9E3F00675B0C /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		636CEFEC224C9E3F00675B0C /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		636CEFED224C9E3F00675B0C /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
@@ -614,9 +643,12 @@
 		636CEFE5224C969700675B0C /* MessageVC */ = {
 			isa = PBXGroup;
 			children = (
-				636CEFE6224C96BC00675B0C /* MessageViewController.h */,
-				636CEFE7224C96BC00675B0C /* MessageViewController.m */,
-				636CEFE8224C96BC00675B0C /* MessageViewController.xib */,
+				632EFDDC225A84DF008EE300 /* MessageViewController.h */,
+				632EFDDD225A84DF008EE300 /* MessageViewController.m */,
+				632EFDDE225A84DF008EE300 /* MessageViewController.xib */,
+				632EFDE1225A8530008EE300 /* ConversationViewController.h */,
+				632EFDE2225A8530008EE300 /* ConversationViewController.m */,
+				632EFDE3225A8530008EE300 /* ConversationViewController.xib */,
 			);
 			path = MessageVC;
 			sourceTree = "<group>";
@@ -1053,6 +1085,30 @@
 		E9678D26A770232E2FA33DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				632EFDD52259B81B008EE300 /* SafariServices.framework */,
+				632EFDD32259B815008EE300 /* Photos.framework */,
+				632EFDD12259B80C008EE300 /* UIKit.framework */,
+				632EFDCF2259B805008EE300 /* SystemConfiguration.framework */,
+				632EFDCD2259B7FD008EE300 /* QuartzCore.framework */,
+				632EFDCB2259B7F4008EE300 /* OpenGLES.framework */,
+				632EFDC92259B7EC008EE300 /* MapKit.framework */,
+				632EFDC72259B7E5008EE300 /* libz.tbd */,
+				632EFDC52259B7DB008EE300 /* libxml2.tbd */,
+				632EFDC32259B7C9008EE300 /* libstdc++.6.0.9.tbd */,
+				632EFDC12259B72D008EE300 /* libsqlite3.tbd */,
+				632EFDBD2259B722008EE300 /* libc++.tbd */,
+				632EFDBE2259B722008EE300 /* libc++abi.tbd */,
+				632EFDBB2259B70E008EE300 /* ImageIO.framework */,
+				632EFDB92259B705008EE300 /* CoreVideo.framework */,
+				632EFDB72259B6FA008EE300 /* CoreTelephony.framework */,
+				632EFDB52259B6F2008EE300 /* CoreMedia.framework */,
+				632EFDB32259B6E9008EE300 /* CoreLocation.framework */,
+				632EFDB12259B6DE008EE300 /* CoreGraphics.framework */,
+				632EFDAF2259B6D6008EE300 /* CoreAudio.framework */,
+				632EFDAD2259B6CC008EE300 /* CFNetwork.framework */,
+				632EFDAB2259B6C4008EE300 /* AVFoundation.framework */,
+				632EFDA92259B6BE008EE300 /* AudioToolbox.framework */,
+				632EFDA72259B6B5008EE300 /* AssetsLibrary.framework */,
 				636CF084224CE74200675B0C /* CoreImage.framework */,
 				2B91524463320E4412F44030 /* libPods-PetPlanet.a */,
 			);
@@ -1133,6 +1189,7 @@
 				632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */,
 				631FFE4B2251157C008F7188 /* AdoptViewController.xib in Resources */,
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
+				632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
 				63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */,
@@ -1141,6 +1198,7 @@
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
 				6373149F224E9E7C00D4D5CD /* InterractiveViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
+				632EFDE5225A8530008EE300 /* ConversationViewController.xib in Resources */,
 				636CF095224D315500675B0C /* InterractiveCell.xib in Resources */,
 				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
 				632EFDA62258C81E008EE300 /* SearchUserCell.xib in Resources */,
@@ -1158,7 +1216,6 @@
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
 				637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
-				636CEFEA224C96BC00675B0C /* MessageViewController.xib in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
 				631FFE50225117F2008F7188 /* HistoryViewController.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
@@ -1181,11 +1238,21 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1308,7 @@
 				636CEFB5224A8EBE00675B0C /* ZYBaseViewController.m in Sources */,
 				632EFDA52258C81E008EE300 /* SearchUserCell.m in Sources */,
 				636CF055224CCACE00675B0C /* JXCategoryIndicatorBallView.m in Sources */,
+				632EFDE4225A8530008EE300 /* ConversationViewController.m in Sources */,
 				63A03DAD224FC3400078C1D8 /* ImageReviewView.m in Sources */,
 				637314A9224EA08D00D4D5CD /* LoginView.m in Sources */,
 				63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */,
@@ -1256,11 +1324,11 @@
 				631FFE4F225117F2008F7188 /* HistoryViewController.m in Sources */,
 				63E099BA225657BD00C052E3 /* UserCell.m in Sources */,
 				636CF0B0224E0BE900675B0C /* LoginViewController.m in Sources */,
+				632EFDDF225A84DF008EE300 /* MessageViewController.m in Sources */,
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
 				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
 				636CF061224CCACE00675B0C /* JXCategoryTitleImageCellModel.m in Sources */,
-				636CEFE9224C96BC00675B0C /* MessageViewController.m in Sources */,
 				636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */,
 				636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */,
 				636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */,

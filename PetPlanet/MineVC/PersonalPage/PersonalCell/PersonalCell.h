@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^EventBlock)(void);
+typedef NSString *_Nullable(^FollowBlock)(void);
+
 @interface PersonalCell : UITableViewCell
+
+@property (nonatomic,strong) EventBlock messageBlock;
+@property (nonatomic,strong) EventBlock editBlock;
+@property (nonatomic,strong) FollowBlock followBlock;
 
 - (void)configWithDic:(NSDictionary *)dic isSelf:(BOOL)isSelf;
 

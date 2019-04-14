@@ -40,7 +40,8 @@
 }
 
 - (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail{
-    [self reloadWithUid:nil Complete:complete fail:fail];
+    NSString *uid = [ZYUserManager shareInstance].userID;
+    [self reloadWithUid:uid Complete:complete fail:fail];
 }
 
 - (void)reloadPersonalWithUid:(NSString *)uid Complete:(Complete)complete fail:(Fail)fail{
@@ -60,7 +61,7 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
+        [param setObject:uid forKey:@"uid"];
     }else if(_networkingType == CandyNetworkingRecommendType){
         [param setObject:@"1" forKey:@"type"];
     }else if (_networkingType == CandyNetworkingNewsType){
@@ -164,7 +165,7 @@
         if (models.count > 0) {
             [weakSelf.array addObjectsFromArray:models];
         }
-        BOOL flag = models.count<20;
+        BOOL flag = models.count<10;
         weakSelf.networking = NO;
         complete(flag);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

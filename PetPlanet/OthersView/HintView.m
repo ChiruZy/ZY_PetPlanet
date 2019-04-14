@@ -27,6 +27,15 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        _hintView = [[[NSBundle mainBundle]loadNibNamed:@"HintView" owner:self options:nil]firstObject];
+        _hintView.frame = self.bounds;
+        [self addSubview:_hintView];
+    }
+    return self;
+}
+
 - (void)awakeFromNib{
     [super awakeFromNib];
     _hintView.frame = self.bounds;

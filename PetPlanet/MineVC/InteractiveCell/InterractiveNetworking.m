@@ -26,7 +26,6 @@
 @property (nonatomic,assign) InterractiveType type;
 @property (nonatomic,strong) NSMutableArray *array;
 @property (nonatomic,assign) BOOL networking;
-
 @end
 
 @implementation InterractiveNetworking

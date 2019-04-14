@@ -15,6 +15,7 @@
 #import "StateCell.h"
 #import "PersonalPageNetwork.h"
 #import "ZYSVPManager.h"
+#import "ConversationViewController.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -204,6 +205,16 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     if (indexPath.section == 0) {
         PersonalCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"PersonalCell" forIndexPath:indexPath];
         [cell configWithDic:self.personalNetwork.personal isSelf:_isSelf];
+        __weak typeof(self) weakSelf = self;
+        cell.messageBlock = ^{
+            [weakSelf gotoConversationView];
+        };
+        cell.editBlock = ^{
+            [weakSelf gotoEditView];
+        };
+        cell.followBlock = ^NSString * _Nullable{
+            return weakSelf.userID;
+        };
         return cell;
     }else if(indexPath.section == 1){
         PhotoCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
@@ -248,6 +259,31 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         _topView.backgroundColor = [UIColor colorWithRed:161.0/255.0 green:159.0/255.0 blue:236.0/255.0 alpha:0];
         _name.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
     }
+}
+
+#pragma mark - PersonalCell Event
+- (void)gotoConversationView{
+    __weak typeof(self) weakSelf = self;
+    __block BOOL flag = NO;
+    [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[ConversationViewController class]] &&
+            [obj.title isEqualToString:weakSelf.name.text]) {
+            [weakSelf.navigationController popToViewController:obj animated:YES];
+            flag = YES;
+            *stop = YES;
+            return;
+        }
+    }];
+    if (!flag) {
+        ConversationViewController *conversationVC = [[ConversationViewController alloc]initWithConversationType:ConversationType_PRIVATE targetId:_userID];
+        conversationVC.title = _name.text;
+        [self.navigationController pushViewController:conversationVC animated:YES];
+    }
+    
+}
+
+- (void)gotoEditView{
+    
 }
 
 #pragma mark - getter &setter

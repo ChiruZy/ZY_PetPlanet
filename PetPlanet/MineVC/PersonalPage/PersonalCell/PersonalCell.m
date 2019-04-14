@@ -9,6 +9,8 @@
 #import "PersonalCell.h"
 #import "Common.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking.h>
+#import "ZYUserManager.h"
 
 @interface PersonalCell ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *coverHeight;
@@ -21,9 +23,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *follow;
 @property (weak, nonatomic) IBOutlet UIButton *like;
 @property (weak, nonatomic) IBOutlet UIButton *adobt;
+@property (weak, nonatomic) IBOutlet UIButton *message;
 
 @property (nonatomic,assign) BOOL isFollow;
-
+@property (nonatomic,assign) BOOL networking;
 @end
 
 @implementation PersonalCell
@@ -62,9 +65,13 @@
     }
 
     _edit.hidden = NO;
+    [_message removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_edit removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
     if (isSelf) {
-        
+        _message.hidden = YES;
+        [_edit addTarget:self action:@selector(editEvent) forControlEvents:UIControlEventTouchUpInside];
     }else{
+        _message.hidden = NO;
         if ([dic[@"is_Follows"] isEqualToString:@"1"]) {
             _isFollow = YES;
             [_edit setImage:[UIImage imageNamed:@"unFollow"] forState:UIControlStateNormal];
@@ -72,6 +79,50 @@
             _isFollow = NO;
             [_edit setImage:[UIImage imageNamed:@"follow"] forState:UIControlStateNormal];
         }
+        [_edit addTarget:self action:@selector(followEvent) forControlEvents:UIControlEventTouchUpInside];
+        [_message addTarget:self action:@selector(messageEvent) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)messageEvent{
+    if (_messageBlock) {
+        _messageBlock();
+    }
+}
+
+- (void)editEvent{
+    if (_editBlock) {
+        _editBlock();
+    }
+}
+
+- (void)followEvent{
+    if (_followBlock && !_networking) {
+        _networking = YES;
+        NSString *uid = _followBlock();
+        
+        NSString *url = @"http://106.14.174.39/pet/mine/set_follow.php";
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].userID,
+                                @"oid":uid,
+                                @"isFollow":!_isFollow?@"1":@"0",
+                                };
+        __weak typeof(self) weakSelf = self;
+        [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSString *error = responseObject[@"error"];
+                if([error isEqualToString:@"10"]){
+                    weakSelf.isFollow = !weakSelf.isFollow;
+                    UIImage *image = [UIImage imageNamed:weakSelf.isFollow?@"unFollow":@"follow"];
+                    [weakSelf.edit setImage:image forState:UIControlStateNormal];
+                    weakSelf.networking = NO;
+                    return;
+                }
+            }
+            weakSelf.networking = NO;
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            weakSelf.networking = NO;
+        }];
     }
 }
 @end

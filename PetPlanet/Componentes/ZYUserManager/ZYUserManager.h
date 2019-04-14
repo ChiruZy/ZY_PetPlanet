@@ -12,15 +12,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZYUserManager : NSObject
 
-@property (nonatomic,strong,readonly) NSString *userID;
+@property (nonatomic,strong) NSString *userID;
+@property (nonatomic,strong) NSString *token;
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *head;
+@property (nonatomic,strong) NSString *cover;
 
 @property (nonatomic,assign,readonly) BOOL isLogin;
 
-- (void)LoginWithUserID:(NSString *)uid;
+- (void)LoginWithUserInfo:(NSDictionary *)info;
 
 - (void)LoginOut;
 
-+(instancetype)shareInstance;
+- (void)refreshUserInfoWithInfo:(NSDictionary *)info;
+
+- (void)refreshUserInfo;
+
++ (instancetype)shareInstance;
 
 @end
 

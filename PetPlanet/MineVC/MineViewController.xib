@@ -45,12 +45,12 @@
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge9-W1-LOv">
-                    <rect key="frame" x="142.5" y="124" width="90" height="66"/>
+                    <rect key="frame" x="141.5" y="124" width="92" height="66"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="eKe-DB-th0"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="9Vn-Ye-rCd"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <state key="normal" title="Login"/>
+                    <state key="normal" title="Login Now"/>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-EV-Gbz">
                     <rect key="frame" x="142.5" y="34" width="90" height="90"/>
@@ -82,7 +82,7 @@
                 <constraint firstItem="IY0-yz-AQU" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="wkL-NP-avv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="138.40000000000001" y="134.48275862068965"/>
+            <point key="canvasLocation" x="138.40000000000001" y="133.5832083958021"/>
         </view>
     </objects>
 </document>

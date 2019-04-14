@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, InterractiveType) {
 - (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail;
 
 - (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail;
+
 @end
 
 NS_ASSUME_NONNULL_END

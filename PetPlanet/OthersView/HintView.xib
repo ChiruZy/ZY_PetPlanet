@@ -31,7 +31,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSQ-SS-7qF">
-                    <rect key="frame" x="127.5" y="500.5" width="120" height="36"/>
+                    <rect key="frame" x="127.5" y="480.5" width="120" height="36"/>
                     <color key="backgroundColor" red="0.63137254899999995" green="0.62352941179999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="vmT-aj-R3Z"/>
@@ -63,7 +63,7 @@
                 <constraint firstItem="VSQ-SS-7qF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Lg-Nn-May"/>
                 <constraint firstItem="yDj-wW-QHt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="5ae-T7-UP1"/>
                 <constraint firstItem="AP0-js-e0a" firstAttribute="top" secondItem="BfB-O0-O1a" secondAttribute="bottom" constant="15" id="B5M-gf-eRO"/>
-                <constraint firstItem="VSQ-SS-7qF" firstAttribute="top" secondItem="BfB-O0-O1a" secondAttribute="bottom" constant="100" id="BDx-iy-uQ4"/>
+                <constraint firstItem="VSQ-SS-7qF" firstAttribute="top" secondItem="BfB-O0-O1a" secondAttribute="bottom" constant="80" id="BDx-iy-uQ4"/>
                 <constraint firstItem="BfB-O0-O1a" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="D1U-Ve-sJH"/>
                 <constraint firstItem="BfB-O0-O1a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="HNT-w3-551"/>
                 <constraint firstItem="AP0-js-e0a" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cYQ-uV-efd"/>
