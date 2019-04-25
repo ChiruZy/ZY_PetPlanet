@@ -16,6 +16,7 @@
 #import <AFNetworking.h>
 #import "ZYSVPManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SettingPage/SettingViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mineBG;
@@ -60,37 +61,19 @@
 }
 
 - (void)getPersonal{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].userID};
-    
-    NSString *url = @"http://106.14.174.39/pet/mine/get_mine.php";
+    ZYUserManager *manager = [ZYUserManager shareInstance];
+    [_name setTitle:manager.name forState:UIControlStateNormal];
+    if (manager.cover.length) {
+        [_mineBG sd_setImageWithURL:[NSURL URLWithString: manager.cover]];
+    }else{
+        [_mineBG setImage:nil];
+    }
     __weak typeof(self) weakSelf = self;
-    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (![responseObject isKindOfClass:[NSDictionary class]]) {
-            [ZYSVPManager showText:@"Load Failed" autoClose:2];
-            return;
-        }
-        
-        NSDictionary *dic = responseObject[@"items"];
-
-        NSString *name = dic[@"name"];
-        [weakSelf.name setTitle:name.length?name:@"Loading" forState:UIControlStateNormal];
-        
-        NSString *head = dic[@"head"];
-        if (head.length) {
-            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:head] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-                [weakSelf.image setImage:image forState:UIControlStateNormal];
-            }];
-        };
-        
-        NSString *cover = dic[@"cover"];
-        if ([cover isKindOfClass:[NSString class]]) {
-            [weakSelf.mineBG sd_setImageWithURL:[NSURL URLWithString:cover]];
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [ZYSVPManager showText:@"Load Failed" autoClose:2];
-    }];
+    if (manager.head.length) {
+        [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:manager.head] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+            [weakSelf.image setImage:image forState:UIControlStateNormal];
+        }];
+    };
 }
 
 
@@ -173,7 +156,14 @@
     }else if (indexPath.section == 2) {
         InterractiveViewController *collectionsVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCCollectionType];
         [self.navigationController pushViewController:collectionsVC animated:YES];
+    }else if (indexPath.section == 4) {
+        [[SDWebImageManager sharedManager].imageCache clearMemory];
+        [ZYSVPManager showText:@"Success" autoClose:1.5];
+    }else if (indexPath.section == 5) {
+        [self.navigationController pushViewController:[SettingViewController new] animated:YES] ;
+        
     }
+    
 }
 
 @end

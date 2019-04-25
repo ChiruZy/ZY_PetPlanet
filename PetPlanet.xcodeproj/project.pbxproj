@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		05D9C6A3E779AA5A813B0251 /* libPods-PetPlanet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91524463320E4412F44030 /* libPods-PetPlanet.a */; };
+		630C331922632C28008FB5E1 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C331722632C28008FB5E1 /* PhotoViewController.m */; };
+		630C331A22632C28008FB5E1 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C331822632C28008FB5E1 /* PhotoViewController.xib */; };
+		630C331D22632F03008FB5E1 /* PhotoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C331C22632F03008FB5E1 /* PhotoLayout.m */; };
+		630C3321226331FF008FB5E1 /* PhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C331F226331FF008FB5E1 /* PhotoViewCell.m */; };
+		630C3322226331FF008FB5E1 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630C3320226331FF008FB5E1 /* PhotoViewCell.xib */; };
 		6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6312F5E5224E4DE100FFC391 /* ZYSVPManager.m */; };
 		631FFE4A2251157C008F7188 /* AdoptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FFE482251157C008F7188 /* AdoptViewController.m */; };
 		631FFE4B2251157C008F7188 /* AdoptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631FFE492251157C008F7188 /* AdoptViewController.xib */; };
@@ -26,6 +31,18 @@
 		632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDDE225A84DF008EE300 /* MessageViewController.xib */; };
 		632EFDE4225A8530008EE300 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632EFDE2225A8530008EE300 /* ConversationViewController.m */; };
 		632EFDE5225A8530008EE300 /* ConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632EFDE3225A8530008EE300 /* ConversationViewController.xib */; };
+		634D017822708AA70030F851 /* ZYBaseViewController+ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D017722708AA70030F851 /* ZYBaseViewController+ImagePicker.m */; };
+		634D017F2270A7DA0030F851 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 634D017E2270A7DA0030F851 /* ImageClassifier.mlmodel */; };
+		634D018322717CDB0030F851 /* AdoptDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D018122717CDB0030F851 /* AdoptDetailViewController.m */; };
+		634D018422717CDB0030F851 /* AdoptDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D018222717CDB0030F851 /* AdoptDetailViewController.xib */; };
+		634F9D4C226C3BEA00E52960 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D49226C3BEA00E52960 /* CardView.m */; };
+		634F9D4D226C3BEA00E52960 /* CardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D4B226C3BEA00E52960 /* CardItemView.m */; };
+		634F9D50226C478100E52960 /* CardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D4F226C478100E52960 /* CardItem.m */; };
+		634F9D52226C47BE00E52960 /* CardItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634F9D51226C47BE00E52960 /* CardItem.xib */; };
+		634F9D56226D84D900E52960 /* CreateAdoptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D54226D84D900E52960 /* CreateAdoptViewController.m */; };
+		634F9D57226D84D900E52960 /* CreateAdoptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634F9D55226D84D900E52960 /* CreateAdoptViewController.xib */; };
+		634F9D5C226DE18900E52960 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D5A226DE18900E52960 /* SettingViewController.m */; };
+		634F9D5D226DE18900E52960 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634F9D5B226DE18900E52960 /* SettingViewController.xib */; };
 		636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEF9B224A75ED00675B0C /* ZYTabBarController.m */; };
 		636CEFA2224A77A500675B0C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CEFA0224A77A500675B0C /* MainViewController.m */; };
 		636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CEFA1224A77A500675B0C /* MainViewController.xib */; };
@@ -152,6 +169,14 @@
 /* Begin PBXFileReference section */
 		29B472290C2928DB0F723F03 /* Pods-PetPlanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanet/Pods-PetPlanet.release.xcconfig"; sourceTree = "<group>"; };
 		2B91524463320E4412F44030 /* libPods-PetPlanet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PetPlanet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		630C331622632C28008FB5E1 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		630C331722632C28008FB5E1 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		630C331822632C28008FB5E1 /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
+		630C331B22632F03008FB5E1 /* PhotoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoLayout.h; sourceTree = "<group>"; };
+		630C331C22632F03008FB5E1 /* PhotoLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoLayout.m; sourceTree = "<group>"; };
+		630C331E226331FF008FB5E1 /* PhotoViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewCell.h; sourceTree = "<group>"; };
+		630C331F226331FF008FB5E1 /* PhotoViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewCell.m; sourceTree = "<group>"; };
+		630C3320226331FF008FB5E1 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
 		6312F5E4224E4DE100FFC391 /* ZYSVPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYSVPManager.h; sourceTree = "<group>"; };
 		6312F5E5224E4DE100FFC391 /* ZYSVPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSVPManager.m; sourceTree = "<group>"; };
 		631FFE472251157C008F7188 /* AdoptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdoptViewController.h; sourceTree = "<group>"; };
@@ -205,6 +230,25 @@
 		632EFDE1225A8530008EE300 /* ConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
 		632EFDE2225A8530008EE300 /* ConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
 		632EFDE3225A8530008EE300 /* ConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationViewController.xib; sourceTree = "<group>"; };
+		634D017622708AA70030F851 /* ZYBaseViewController+ImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZYBaseViewController+ImagePicker.h"; sourceTree = "<group>"; };
+		634D017722708AA70030F851 /* ZYBaseViewController+ImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZYBaseViewController+ImagePicker.m"; sourceTree = "<group>"; };
+		634D017E2270A7DA0030F851 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		634D018022717CDB0030F851 /* AdoptDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdoptDetailViewController.h; sourceTree = "<group>"; };
+		634D018122717CDB0030F851 /* AdoptDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdoptDetailViewController.m; sourceTree = "<group>"; };
+		634D018222717CDB0030F851 /* AdoptDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdoptDetailViewController.xib; sourceTree = "<group>"; };
+		634F9D48226C3BEA00E52960 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		634F9D49226C3BEA00E52960 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		634F9D4A226C3BEA00E52960 /* CardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardItemView.h; sourceTree = "<group>"; };
+		634F9D4B226C3BEA00E52960 /* CardItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardItemView.m; sourceTree = "<group>"; };
+		634F9D4E226C478100E52960 /* CardItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardItem.h; sourceTree = "<group>"; };
+		634F9D4F226C478100E52960 /* CardItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardItem.m; sourceTree = "<group>"; };
+		634F9D51226C47BE00E52960 /* CardItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardItem.xib; sourceTree = "<group>"; };
+		634F9D53226D84D900E52960 /* CreateAdoptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAdoptViewController.h; sourceTree = "<group>"; };
+		634F9D54226D84D900E52960 /* CreateAdoptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAdoptViewController.m; sourceTree = "<group>"; };
+		634F9D55226D84D900E52960 /* CreateAdoptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAdoptViewController.xib; sourceTree = "<group>"; };
+		634F9D59226DE18900E52960 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		634F9D5A226DE18900E52960 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		634F9D5B226DE18900E52960 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		636CEF9A224A75ED00675B0C /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
 		636CEF9B224A75ED00675B0C /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
 		636CEF9F224A77A500675B0C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -433,6 +477,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630C331522632C02008FB5E1 /* PhotoPage */ = {
+			isa = PBXGroup;
+			children = (
+				630C331622632C28008FB5E1 /* PhotoViewController.h */,
+				630C331722632C28008FB5E1 /* PhotoViewController.m */,
+				630C331822632C28008FB5E1 /* PhotoViewController.xib */,
+				630C331B22632F03008FB5E1 /* PhotoLayout.h */,
+				630C331C22632F03008FB5E1 /* PhotoLayout.m */,
+				630C331E226331FF008FB5E1 /* PhotoViewCell.h */,
+				630C331F226331FF008FB5E1 /* PhotoViewCell.m */,
+				630C3320226331FF008FB5E1 /* PhotoViewCell.xib */,
+			);
+			path = PhotoPage;
+			sourceTree = "<group>";
+		};
 		6312F5E3224E4DC700FFC391 /* ZYSVPManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,9 +504,19 @@
 		631FFE462251152A008F7188 /* AdoptVC */ = {
 			isa = PBXGroup;
 			children = (
+				634F9D47226C3BC200E52960 /* CardView */,
+				634F9D4E226C478100E52960 /* CardItem.h */,
+				634F9D4F226C478100E52960 /* CardItem.m */,
+				634F9D51226C47BE00E52960 /* CardItem.xib */,
 				631FFE472251157C008F7188 /* AdoptViewController.h */,
 				631FFE482251157C008F7188 /* AdoptViewController.m */,
 				631FFE492251157C008F7188 /* AdoptViewController.xib */,
+				634F9D53226D84D900E52960 /* CreateAdoptViewController.h */,
+				634F9D54226D84D900E52960 /* CreateAdoptViewController.m */,
+				634F9D55226D84D900E52960 /* CreateAdoptViewController.xib */,
+				634D018022717CDB0030F851 /* AdoptDetailViewController.h */,
+				634D018122717CDB0030F851 /* AdoptDetailViewController.m */,
+				634D018222717CDB0030F851 /* AdoptDetailViewController.xib */,
 			);
 			path = AdoptVC;
 			sourceTree = "<group>";
@@ -496,6 +565,27 @@
 				632EFDA42258C81E008EE300 /* SearchUserCell.xib */,
 			);
 			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		634F9D47226C3BC200E52960 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				634F9D4A226C3BEA00E52960 /* CardItemView.h */,
+				634F9D4B226C3BEA00E52960 /* CardItemView.m */,
+				634F9D48226C3BEA00E52960 /* CardView.h */,
+				634F9D49226C3BEA00E52960 /* CardView.m */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		634F9D58226DE17900E52960 /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				634F9D59226DE18900E52960 /* SettingViewController.h */,
+				634F9D5A226DE18900E52960 /* SettingViewController.m */,
+				634F9D5B226DE18900E52960 /* SettingViewController.xib */,
+			);
+			path = SettingPage;
 			sourceTree = "<group>";
 		};
 		636CEF96224A725C00675B0C /* Componentes */ = {
@@ -564,6 +654,8 @@
 		636CEF9E224A777D00675B0C /* MineVC */ = {
 			isa = PBXGroup;
 			children = (
+				634F9D58226DE17900E52960 /* SettingPage */,
+				630C331522632C02008FB5E1 /* PhotoPage */,
 				631FFE5F225124E2008F7188 /* InteractiveCell */,
 				631FFE5122511810008F7188 /* HistoryPage */,
 				63A03DDD2250010E0078C1D8 /* PersonalPage */,
@@ -592,6 +684,8 @@
 			children = (
 				636CEFB3224A8EBE00675B0C /* ZYBaseViewController.h */,
 				636CEFB4224A8EBE00675B0C /* ZYBaseViewController.m */,
+				634D017622708AA70030F851 /* ZYBaseViewController+ImagePicker.h */,
+				634D017722708AA70030F851 /* ZYBaseViewController+ImagePicker.m */,
 			);
 			path = ZYBaseViewController;
 			sourceTree = "<group>";
@@ -1029,6 +1123,7 @@
 				63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */,
 				63D0A1EC223046E6007E5B36 /* Info.plist */,
 				63D0A1ED223046E6007E5B36 /* main.m */,
+				634D017E2270A7DA0030F851 /* ImageClassifier.mlmodel */,
 			);
 			path = PetPlanet;
 			sourceTree = "<group>";
@@ -1192,12 +1287,15 @@
 				632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
+				630C331A22632C28008FB5E1 /* PhotoViewController.xib in Resources */,
 				63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
+				634D018422717CDB0030F851 /* AdoptDetailViewController.xib in Resources */,
 				6373149F224E9E7C00D4D5CD /* InterractiveViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
+				634F9D57226D84D900E52960 /* CreateAdoptViewController.xib in Resources */,
 				632EFDE5225A8530008EE300 /* ConversationViewController.xib in Resources */,
 				636CF095224D315500675B0C /* InterractiveCell.xib in Resources */,
 				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
@@ -1212,13 +1310,16 @@
 				63A03DE2225001350078C1D8 /* PersonalViewController.xib in Resources */,
 				63E099BB225657BD00C052E3 /* UserCell.xib in Resources */,
 				636CEFD5224ABF5700675B0C /* KolView.xib in Resources */,
+				634F9D52226C47BE00E52960 /* CardItem.xib in Resources */,
 				636CF0A1224D51E400675B0C /* CommentViewController.xib in Resources */,
 				636CEFA3224A77A500675B0C /* MainViewController.xib in Resources */,
 				637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */,
+				634F9D5D226DE18900E52960 /* SettingViewController.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
 				631FFE50225117F2008F7188 /* HistoryViewController.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
+				630C3322226331FF008FB5E1 /* PhotoViewCell.xib in Resources */,
 				63E099B0225550A500C052E3 /* HotCell.xib in Resources */,
 				63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */,
 				636CF0A7224D561B00675B0C /* SearchViewController.xib in Resources */,
@@ -1298,6 +1399,7 @@
 				636CF065224CCACE00675B0C /* JXCategoryImageView.m in Sources */,
 				636CEFCF224AB88E00675B0C /* BannerCell.m in Sources */,
 				636CF071224CCACE00675B0C /* UIColor+JXAdd.m in Sources */,
+				634F9D56226D84D900E52960 /* CreateAdoptViewController.m in Sources */,
 				636CF054224CCACE00675B0C /* JXCategoryIndicatorImageView.m in Sources */,
 				636CF04F224CCACE00675B0C /* JXCategoryTitleVerticalZoomCell.m in Sources */,
 				636CF074224CCACE00675B0C /* JXCategoryBaseCellModel.m in Sources */,
@@ -1327,13 +1429,18 @@
 				632EFDDF225A84DF008EE300 /* MessageViewController.m in Sources */,
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
+				630C331922632C28008FB5E1 /* PhotoViewController.m in Sources */,
 				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
+				630C331D22632F03008FB5E1 /* PhotoLayout.m in Sources */,
 				636CF061224CCACE00675B0C /* JXCategoryTitleImageCellModel.m in Sources */,
 				636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */,
 				636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */,
 				636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */,
 				636CF05F224CCACE00675B0C /* JXCategoryTitleImageView.m in Sources */,
+				630C3321226331FF008FB5E1 /* PhotoViewCell.m in Sources */,
 				631FFE4A2251157C008F7188 /* AdoptViewController.m in Sources */,
+				634F9D50226C478100E52960 /* CardItem.m in Sources */,
+				634D017822708AA70030F851 /* ZYBaseViewController+ImagePicker.m in Sources */,
 				636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */,
 				636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */,
 				631FFE5922511B7F008F7188 /* ZYUserManager.m in Sources */,
@@ -1345,17 +1452,20 @@
 				636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */,
 				636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */,
 				636CEFA2224A77A500675B0C /* MainViewController.m in Sources */,
+				634F9D5C226DE18900E52960 /* SettingViewController.m in Sources */,
 				63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */,
 				636CF050224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m in Sources */,
 				631FFE6322512525008F7188 /* InterractiveCell.m in Sources */,
 				636CEFEE224C9E3F00675B0C /* MineCell.m in Sources */,
 				636CEFDB224B3DDD00675B0C /* AdoptCell.m in Sources */,
+				634F9D4C226C3BEA00E52960 /* CardView.m in Sources */,
 				636CF06A224CCACE00675B0C /* JXCategoryNumberCellModel.m in Sources */,
 				636CF05C224CCACE00675B0C /* JXCategoryDotCell.m in Sources */,
 				636CF06C224CCACE00675B0C /* JXCategoryFactory.m in Sources */,
 				636CEFE0224B459000675B0C /* PopularCell.m in Sources */,
 				636CF059224CCACE00675B0C /* JXCategoryIndicatorCellModel.m in Sources */,
 				636CF06E224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m in Sources */,
+				634D017F2270A7DA0030F851 /* ImageClassifier.mlmodel in Sources */,
 				636CF094224D315500675B0C /* CandyCell.m in Sources */,
 				636CF070224CCACE00675B0C /* JXCategoryListCollectionContainerView.m in Sources */,
 				636CF05B224CCACE00675B0C /* JXCategoryIndicatorView.m in Sources */,
@@ -1365,6 +1475,7 @@
 				636CF05E224CCACE00675B0C /* JXCategoryDotCellModel.m in Sources */,
 				6312F5E6224E4DE100FFC391 /* ZYSVPManager.m in Sources */,
 				636CEFA7224A77B800675B0C /* CandyViewController.m in Sources */,
+				634F9D4D226C3BEA00E52960 /* CardItemView.m in Sources */,
 				631FFE552251184E008F7188 /* HistoryManager.m in Sources */,
 				6380A4612250B7F40077F4E5 /* StateCell.m in Sources */,
 				636CF062224CCACE00675B0C /* JXCategoryTitleCellModel.m in Sources */,
@@ -1381,6 +1492,7 @@
 				636CF072224CCACE00675B0C /* JXCategoryBaseView.m in Sources */,
 				6373149E224E9E7C00D4D5CD /* InterractiveViewController.m in Sources */,
 				636CF052224CCACE00675B0C /* JXCategoryIndicatorTriangleView.m in Sources */,
+				634D018322717CDB0030F851 /* AdoptDetailViewController.m in Sources */,
 				63E099B3225550C800C052E3 /* HotDelegate.m in Sources */,
 				63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */,
 			);

@@ -16,6 +16,7 @@ typedef void(^TapPoint)(void);
 
 @property NSString *image;
 @property NSString *originImage;
+@property NSString *pid;
 
 + (instancetype)createWithImage:(NSString *)image originImage:(NSString *)originImage;
 @end

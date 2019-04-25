@@ -79,6 +79,8 @@
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(reload)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
+    UIImage *image = [UIImage imageNamed:@"UFO_0"];
+    [header setImages:@[image] forState:MJRefreshStatePulling];
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
     

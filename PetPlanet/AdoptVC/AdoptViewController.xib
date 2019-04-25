@@ -1,26 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdoptViewController">
             <connections>
+                <outlet property="cardView" destination="jNZ-PI-xR1" id="JXg-0R-xJM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CardView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNZ-PI-xR1" customClass="CardView">
+                    <rect key="frame" x="57.5" y="224.5" width="260" height="360"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="260" id="Mqt-8c-c43"/>
+                        <constraint firstAttribute="height" constant="360" id="X4Q-fE-2Hb"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eF-dn-6z6">
+                    <rect key="frame" x="57.5" y="168.5" width="66" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="iCl-CS-hcp"/>
+                        <constraint firstAttribute="width" constant="66" id="ujW-50-bA4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Cat">
+                        <color key="titleColor" red="0.32941176470588235" green="0.32549019607843138" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="changePetType:" destination="-1" eventType="touchUpInside" id="IjJ-QR-75L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXx-5q-qNI">
+                    <rect key="frame" x="154.5" y="168.5" width="66" height="30"/>
+                    <color key="backgroundColor" red="0.3294117647" green="0.32549019610000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="ApU-Jj-MG0"/>
+                        <constraint firstAttribute="height" constant="30" id="SIW-KS-KBd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Dog"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="changePetType:" destination="-1" eventType="touchUpInside" id="LCf-Mc-btR"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for your favorite pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3J-Cq-ZU5">
+                    <rect key="frame" x="57.5" y="120" width="184" height="16.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" red="0.60392156862745094" green="0.59999999999999998" blue="0.54696439363416605" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEX-Y7-JPC">
+                    <rect key="frame" x="57.5" y="70" width="260" height="48"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                    <color key="textColor" red="0.32941176470588235" green="0.32549019607843138" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUy-dU-9uC">
+                    <rect key="frame" x="251.5" y="168.5" width="66" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="AHW-J7-uDO"/>
+                        <constraint firstAttribute="height" constant="30" id="uic-1F-K8n"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Etc">
+                        <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="changePetType:" destination="-1" eventType="touchUpInside" id="aku-m4-z3C"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S4-vK-9JR">
+                    <rect key="frame" x="274.5" y="76" width="43" height="36"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="New">
+                        <color key="titleColor" red="0.32941176470588235" green="0.32549019607843138" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="createNewAdopt:" destination="-1" eventType="touchUpInside" id="RzJ-Zk-4XM"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="top" secondItem="dXx-5q-qNI" secondAttribute="bottom" constant="26" id="4ZB-qC-K5s"/>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="top" secondItem="GUy-dU-9uC" secondAttribute="bottom" constant="26" id="A8i-EZ-Ofa"/>
+                <constraint firstItem="5eF-dn-6z6" firstAttribute="top" secondItem="G3J-Cq-ZU5" secondAttribute="bottom" constant="32" id="B5d-Bt-tta"/>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="leading" secondItem="5eF-dn-6z6" secondAttribute="leading" id="Gkn-Xp-y4o"/>
+                <constraint firstItem="6S4-vK-9JR" firstAttribute="centerY" secondItem="iEX-Y7-JPC" secondAttribute="centerY" id="NSf-Nj-feY"/>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="top" secondItem="5eF-dn-6z6" secondAttribute="bottom" constant="26" id="OQc-1M-qWY"/>
+                <constraint firstItem="5eF-dn-6z6" firstAttribute="leading" secondItem="G3J-Cq-ZU5" secondAttribute="leading" id="fVG-Yc-HSf"/>
+                <constraint firstItem="GUy-dU-9uC" firstAttribute="trailing" secondItem="jNZ-PI-xR1" secondAttribute="trailing" id="g3I-Uj-Wkv"/>
+                <constraint firstItem="dXx-5q-qNI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n2y-ie-jRP"/>
+                <constraint firstItem="G3J-Cq-ZU5" firstAttribute="top" secondItem="iEX-Y7-JPC" secondAttribute="bottom" constant="2" id="qTW-sD-A2n"/>
+                <constraint firstItem="GUy-dU-9uC" firstAttribute="trailing" secondItem="iEX-Y7-JPC" secondAttribute="trailing" id="srh-nF-O0F"/>
+                <constraint firstItem="G3J-Cq-ZU5" firstAttribute="leading" secondItem="iEX-Y7-JPC" secondAttribute="leading" id="uBV-0Y-pol"/>
+                <constraint firstItem="6S4-vK-9JR" firstAttribute="trailing" secondItem="iEX-Y7-JPC" secondAttribute="trailing" id="uGH-PF-MJC"/>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ucb-SH-jra"/>
+                <constraint firstItem="jNZ-PI-xR1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="71" id="wxR-Li-6q4"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="138.40000000000001" y="134.48275862068968"/>
         </view>
     </objects>
 </document>

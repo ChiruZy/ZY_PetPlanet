@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>请允许APP进行拍摄</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>请允许APP访问您的位置</string>
 	<key>NSPhotoLibraryUsageDescription</key>

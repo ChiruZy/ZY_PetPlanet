@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChangeCoverView : UIView
+typedef void(^Event)(void);
 
+@interface ChangeCoverView : UIView
+@property (nonatomic,strong) Event photo;
+@property (nonatomic,strong) Event local;
 @end
 
 NS_ASSUME_NONNULL_END

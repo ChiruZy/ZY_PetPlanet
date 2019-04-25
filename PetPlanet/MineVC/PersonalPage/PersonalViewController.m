@@ -16,6 +16,7 @@
 #import "PersonalPageNetwork.h"
 #import "ZYSVPManager.h"
 #import "ConversationViewController.h"
+#import "PhotoViewController.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -221,6 +222,11 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         if(self.personalNetwork.loadComplete){
             [cell setImagesWithImageModels:self.personalNetwork.photos];
         }
+        __weak typeof(self) weakSelf = self;
+        cell.tapBlock = ^{
+            PhotoViewController *photoVC = [[PhotoViewController alloc]initWithUid:weakSelf.userID];
+            [weakSelf.navigationController pushViewController:photoVC animated:YES];
+        };
         return cell;
     }else if(indexPath.section == 2){
         StateCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"StateCell" forIndexPath:indexPath];

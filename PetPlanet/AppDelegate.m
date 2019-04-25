@@ -24,24 +24,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[RCIM sharedRCIM]initWithAppKey:@"uwd1c0sxupu51"];
-    [[ZYUserManager shareInstance]refreshUserInfo];
-    
     [NSThread sleepForTimeInterval:1];
     
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
-//    WelcomeViewController *wvc =[WelcomeViewController new];
-//    _window.rootViewController = wvc;
-    __weak typeof(self) weakSelf = self;
-    [weakSelf resetRootViewController];
-//    wvc.block = ^{
-//        [weakSelf resetRootViewController];
-//    };
+    
+    [[RCIM sharedRCIM]initWithAppKey:@"uwd1c0sxupu51"];
+    
+    if (![[[NSUserDefaults standardUserDefaults] valueForKey:@"notFirst"] isEqualToString:@"1"]) {
+        [[ZYUserManager shareInstance] LoginOut];
+        
+        WelcomeViewController *wvc =[WelcomeViewController new];
+        _window.rootViewController = wvc;
+        __weak typeof(self) weakSelf = self;
+        wvc.block = ^{
+            [weakSelf resetRootViewController];
+        };
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"notFirst"];
+    }else{
+        [[ZYUserManager shareInstance]refreshUserInfo];
+        [self resetRootViewController];
+    }
     [_window makeKeyAndVisible];
-    
-      [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }
 

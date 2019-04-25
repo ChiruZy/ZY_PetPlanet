@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak) id <CandyCellDelegate> delegate;
 
-- (void)configCellWithModel:(CandyModel *)model;
+- (void)configCellWithModel:(InterractiveModel *)model;
 
 @end
 

@@ -10,6 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface AdoptModel : NSObject
+@property NSString *aid;
+@property NSString *uid;
+@property NSString *name;
+@property NSString *content;
+@property NSString *image;
+@property NSString *type;
+
+@end
+
 @interface AdoptViewController : ZYBaseViewController
 
 @end
