@@ -67,8 +67,7 @@
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _collectionView.mj_header = header;
     
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
-    footer.stateLabel.hidden = YES;
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
     _collectionView.mj_footer = footer;
 }
 
@@ -82,6 +81,7 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/get_photos.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSDictionary *param = @{@"uid":_uid};
     
     __weak typeof(self) weakSelf = self;
@@ -119,6 +119,7 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/get_more_photos.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     PhotoModel *model = _model.lastObject;
     NSDictionary *param = @{@"uid":_uid,
                             @"last":model.pid,};

@@ -57,7 +57,7 @@
     
     NSString *url = @"http://106.14.174.39/pet/candy/get_candy_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = 8;
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_networkingType == CandyNetworkingFollowingType) {
         [param setObject:@"0" forKey:@"type"];

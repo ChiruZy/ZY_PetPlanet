@@ -17,6 +17,7 @@
 #import "ZYSVPManager.h"
 #import "ConversationViewController.h"
 #import "PhotoViewController.h"
+#import "MyAdoptViewController.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -72,8 +73,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     [header setImages:@[image] forState:MJRefreshStatePulling];
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    footer.stateLabel.hidden = YES;
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     _tableView.mj_footer = footer;
     
     _tableView.mj_header = header;
@@ -216,6 +216,10 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         cell.followBlock = ^NSString * _Nullable{
             return weakSelf.userID;
         };
+        cell.adoptBlock = ^{
+            MyAdoptViewController *myAdoptVC = [[MyAdoptViewController alloc]initWithUid:weakSelf.userID];
+            [weakSelf.navigationController pushViewController:myAdoptVC animated:YES];
+        };
         return cell;
     }else if(indexPath.section == 1){
         PhotoCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
@@ -272,12 +276,14 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     __weak typeof(self) weakSelf = self;
     __block BOOL flag = NO;
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[ConversationViewController class]] &&
-            [obj.title isEqualToString:weakSelf.name.text]) {
-            [weakSelf.navigationController popToViewController:obj animated:YES];
-            flag = YES;
-            *stop = YES;
-            return;
+        if ([obj isKindOfClass:[ConversationViewController class]]) {
+            ConversationViewController *controller = obj;
+            if (controller.targetId == weakSelf.userID) {
+                [weakSelf.navigationController popToViewController:obj animated:YES];
+                flag = YES;
+                *stop = YES;
+                return;
+            }
         }
     }];
     if (!flag) {
@@ -285,7 +291,6 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         conversationVC.title = _name.text;
         [self.navigationController pushViewController:conversationVC animated:YES];
     }
-    
 }
 
 - (void)gotoEditView{
@@ -307,6 +312,9 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     return _personalNetwork;
 }
 
+- (NSString *)uid{
+    return _userID;
+}
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model{
     

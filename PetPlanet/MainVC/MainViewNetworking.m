@@ -14,6 +14,7 @@
 + (void)getBannerWithBlock:(successBlock)success fail:(failBlock)fail{
     NSString *url = @"http://106.14.174.39/pet/banner/getBanner.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

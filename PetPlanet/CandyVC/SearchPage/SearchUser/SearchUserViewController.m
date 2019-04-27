@@ -58,8 +58,7 @@
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableview.mj_header = header;
     
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    footer.stateLabel.hidden = YES;
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     _tableview.mj_footer = footer;
 }
 
@@ -71,6 +70,7 @@
     
     _networking = YES;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_user.php";
     NSDictionary *param = @{@"keyword":_keyword,@"uid":[ZYUserManager shareInstance].userID};
     
@@ -108,6 +108,7 @@
     _networking = YES;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_more_user.php";
     SearchUserModel *model = _model.lastObject;
     NSDictionary *param = @{@"keyword":_keyword,@"uid":[ZYUserManager shareInstance].userID,@"last":model.uid};

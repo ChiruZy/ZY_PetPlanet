@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithUserID:(NSString *)userID;
 
+@property (nonatomic,strong,readonly) NSString *uid;
+
 @end
 
 NS_ASSUME_NONNULL_END

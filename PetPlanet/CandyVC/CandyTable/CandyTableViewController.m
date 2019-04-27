@@ -76,8 +76,7 @@
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
     _tableView.mj_header = header;
     
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerEvent)];
-    footer.stateLabel.hidden = YES;
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerEvent)];
     _tableView.mj_footer = footer;
 }
 #pragma mark - TableViewEvent

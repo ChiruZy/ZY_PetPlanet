@@ -35,6 +35,8 @@
 		634D017F2270A7DA0030F851 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 634D017E2270A7DA0030F851 /* ImageClassifier.mlmodel */; };
 		634D018322717CDB0030F851 /* AdoptDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D018122717CDB0030F851 /* AdoptDetailViewController.m */; };
 		634D018422717CDB0030F851 /* AdoptDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D018222717CDB0030F851 /* AdoptDetailViewController.xib */; };
+		634D018822719D150030F851 /* MyAdoptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634D018622719D150030F851 /* MyAdoptViewController.m */; };
+		634D018922719D150030F851 /* MyAdoptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D018722719D150030F851 /* MyAdoptViewController.xib */; };
 		634F9D4C226C3BEA00E52960 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D49226C3BEA00E52960 /* CardView.m */; };
 		634F9D4D226C3BEA00E52960 /* CardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D4B226C3BEA00E52960 /* CardItemView.m */; };
 		634F9D50226C478100E52960 /* CardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F9D4F226C478100E52960 /* CardItem.m */; };
@@ -162,6 +164,10 @@
 		63E099BB225657BD00C052E3 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099B9225657BD00C052E3 /* UserCell.xib */; };
 		63E099BF225657F800C052E3 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E099BD225657F800C052E3 /* UserTableViewCell.m */; };
 		63E099C0225657F800C052E3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E099BE225657F800C052E3 /* UserTableViewCell.xib */; };
+		63F422CD2274180D0040311A /* MyAdoptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422CB2274180D0040311A /* MyAdoptCell.m */; };
+		63F422CE2274180D0040311A /* MyAdoptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422CC2274180D0040311A /* MyAdoptCell.xib */; };
+		63F422D322747FF60040311A /* EditPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422D122747FF60040311A /* EditPersonalViewController.m */; };
+		63F422D422747FF60040311A /* EditPersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422D222747FF60040311A /* EditPersonalViewController.xib */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -236,6 +242,9 @@
 		634D018022717CDB0030F851 /* AdoptDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdoptDetailViewController.h; sourceTree = "<group>"; };
 		634D018122717CDB0030F851 /* AdoptDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdoptDetailViewController.m; sourceTree = "<group>"; };
 		634D018222717CDB0030F851 /* AdoptDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdoptDetailViewController.xib; sourceTree = "<group>"; };
+		634D018522719D150030F851 /* MyAdoptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAdoptViewController.h; sourceTree = "<group>"; };
+		634D018622719D150030F851 /* MyAdoptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAdoptViewController.m; sourceTree = "<group>"; };
+		634D018722719D150030F851 /* MyAdoptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdoptViewController.xib; sourceTree = "<group>"; };
 		634F9D48226C3BEA00E52960 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		634F9D49226C3BEA00E52960 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		634F9D4A226C3BEA00E52960 /* CardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardItemView.h; sourceTree = "<group>"; };
@@ -459,6 +468,12 @@
 		63E099BC225657F800C052E3 /* UserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		63E099BD225657F800C052E3 /* UserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		63E099BE225657F800C052E3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		63F422CA2274180D0040311A /* MyAdoptCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAdoptCell.h; sourceTree = "<group>"; };
+		63F422CB2274180D0040311A /* MyAdoptCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAdoptCell.m; sourceTree = "<group>"; };
+		63F422CC2274180D0040311A /* MyAdoptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdoptCell.xib; sourceTree = "<group>"; };
+		63F422D022747FF60040311A /* EditPersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPersonalViewController.h; sourceTree = "<group>"; };
+		63F422D122747FF60040311A /* EditPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPersonalViewController.m; sourceTree = "<group>"; };
+		63F422D222747FF60040311A /* EditPersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPersonalViewController.xib; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -504,6 +519,7 @@
 		631FFE462251152A008F7188 /* AdoptVC */ = {
 			isa = PBXGroup;
 			children = (
+				634D018A22719F1F0030F851 /* MyAdoptVC */,
 				634F9D47226C3BC200E52960 /* CardView */,
 				634F9D4E226C478100E52960 /* CardItem.h */,
 				634F9D4F226C478100E52960 /* CardItem.m */,
@@ -565,6 +581,19 @@
 				632EFDA42258C81E008EE300 /* SearchUserCell.xib */,
 			);
 			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		634D018A22719F1F0030F851 /* MyAdoptVC */ = {
+			isa = PBXGroup;
+			children = (
+				634D018522719D150030F851 /* MyAdoptViewController.h */,
+				634D018622719D150030F851 /* MyAdoptViewController.m */,
+				634D018722719D150030F851 /* MyAdoptViewController.xib */,
+				63F422CA2274180D0040311A /* MyAdoptCell.h */,
+				63F422CB2274180D0040311A /* MyAdoptCell.m */,
+				63F422CC2274180D0040311A /* MyAdoptCell.xib */,
+			);
+			path = MyAdoptVC;
 			sourceTree = "<group>";
 		};
 		634F9D47226C3BC200E52960 /* CardView */ = {
@@ -654,6 +683,7 @@
 		636CEF9E224A777D00675B0C /* MineVC */ = {
 			isa = PBXGroup;
 			children = (
+				63F422CF22747FDC0040311A /* EditPersonalPage */,
 				634F9D58226DE17900E52960 /* SettingPage */,
 				630C331522632C02008FB5E1 /* PhotoPage */,
 				631FFE5F225124E2008F7188 /* InteractiveCell */,
@@ -1177,6 +1207,16 @@
 			path = SearchHotView;
 			sourceTree = "<group>";
 		};
+		63F422CF22747FDC0040311A /* EditPersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+				63F422D022747FF60040311A /* EditPersonalViewController.h */,
+				63F422D122747FF60040311A /* EditPersonalViewController.m */,
+				63F422D222747FF60040311A /* EditPersonalViewController.xib */,
+			);
+			path = EditPersonalPage;
+			sourceTree = "<group>";
+		};
 		E9678D26A770232E2FA33DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1282,8 +1322,10 @@
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */,
+				63F422D422747FF60040311A /* EditPersonalViewController.xib in Resources */,
 				631FFE4B2251157C008F7188 /* AdoptViewController.xib in Resources */,
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
+				63F422CE2274180D0040311A /* MyAdoptCell.xib in Resources */,
 				632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
@@ -1317,6 +1359,7 @@
 				634F9D5D226DE18900E52960 /* SettingViewController.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
+				634D018922719D150030F851 /* MyAdoptViewController.xib in Resources */,
 				631FFE50225117F2008F7188 /* HistoryViewController.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
 				630C3322226331FF008FB5E1 /* PhotoViewCell.xib in Resources */,
@@ -1430,6 +1473,7 @@
 				636CF068224CCACE00675B0C /* JXCategoryNumberView.m in Sources */,
 				636CF058224CCACE00675B0C /* JXCategoryIndicatorBackgroundView.m in Sources */,
 				630C331922632C28008FB5E1 /* PhotoViewController.m in Sources */,
+				63F422CD2274180D0040311A /* MyAdoptCell.m in Sources */,
 				63D0A1FE223055E2007E5B36 /* WelcomeAnimateView.m in Sources */,
 				630C331D22632F03008FB5E1 /* PhotoLayout.m in Sources */,
 				636CF061224CCACE00675B0C /* JXCategoryTitleImageCellModel.m in Sources */,
@@ -1449,6 +1493,7 @@
 				636CF064224CCACE00675B0C /* JXCategoryTitleView.m in Sources */,
 				636CF063224CCACE00675B0C /* JXCategoryTitleCell.m in Sources */,
 				63D0A202223059AC007E5B36 /* Common.m in Sources */,
+				63F422D322747FF60040311A /* EditPersonalViewController.m in Sources */,
 				636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */,
 				636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */,
 				636CEFA2224A77A500675B0C /* MainViewController.m in Sources */,
@@ -1457,6 +1502,7 @@
 				636CF050224CCACE00675B0C /* JXCategoryTitleVerticalZoomView.m in Sources */,
 				631FFE6322512525008F7188 /* InterractiveCell.m in Sources */,
 				636CEFEE224C9E3F00675B0C /* MineCell.m in Sources */,
+				634D018822719D150030F851 /* MyAdoptViewController.m in Sources */,
 				636CEFDB224B3DDD00675B0C /* AdoptCell.m in Sources */,
 				634F9D4C226C3BEA00E52960 /* CardView.m in Sources */,
 				636CF06A224CCACE00675B0C /* JXCategoryNumberCellModel.m in Sources */,

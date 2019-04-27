@@ -17,7 +17,9 @@ typedef NSString *_Nullable(^FollowBlock)(void);
 
 @property (nonatomic,strong) EventBlock messageBlock;
 @property (nonatomic,strong) EventBlock editBlock;
+@property (nonatomic,strong) EventBlock adoptBlock;
 @property (nonatomic,strong) FollowBlock followBlock;
+
 
 - (void)configWithDic:(NSDictionary *)dic isSelf:(BOOL)isSelf;
 

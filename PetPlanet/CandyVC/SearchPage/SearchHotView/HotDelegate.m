@@ -28,6 +28,7 @@
 - (void)requestHot{
     NSString *url = @"http://106.14.174.39/pet/search/get_hot.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSMutableDictionary *param = [NSMutableDictionary new];
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

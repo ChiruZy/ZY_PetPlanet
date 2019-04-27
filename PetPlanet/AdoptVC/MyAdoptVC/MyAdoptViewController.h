@@ -1,5 +1,5 @@
 //
-//  AdoptDetailViewController.h
+//  MyAdoptViewController.h
 //  PetPlanet
 //
 //  Created by Overloop on 2019/4/25.
@@ -7,13 +7,14 @@
 //
 
 #import "ZYBaseViewController.h"
-#import "AdoptViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AdoptDetailViewController : ZYBaseViewController
+@interface MyAdoptViewController : ZYBaseViewController
 
-- (instancetype)initWithModel:(AdoptModel *)model;
+- (instancetype)initWithUid:(NSString *)uid;
+
+- (void)reloadData;
 
 @end
 

@@ -62,6 +62,7 @@ static ZYUserManager *manager = nil;
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
     NSString *url = @"http://106.14.174.39/pet/user/get_user_info.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     [manager GET:url parameters:@{@"uid":userId} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSString *error = responseObject[@"error"];
@@ -108,6 +109,7 @@ static ZYUserManager *manager = nil;
     if ([self isLogin]) {
         NSString *url = @"http://106.14.174.39/pet/user/get_user_info.php";
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer.timeoutInterval = 8;
         NSDictionary *param = @{@"uid":_userID};
         
         __weak typeof(self) weakSelf = self;
@@ -122,7 +124,24 @@ static ZYUserManager *manager = nil;
             [ZYSVPManager showText:@"Load Failed" autoClose:2];
             [weakSelf LoginOut];
         }];
+    }
+}
+
+- (void)updateUserInfo{
+    if ([self isLogin]) {
+        NSString *url = @"http://106.14.174.39/pet/user/get_user_info.php";
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer.timeoutInterval = 8;
+        NSDictionary *param = @{@"uid":_userID};
         
+        __weak typeof(self) weakSelf = self;
+        [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                [weakSelf refreshUserInfoWithInfo:responseObject[@"items"]];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+ 
+        }];
     }
 }
 

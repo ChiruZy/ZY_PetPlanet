@@ -92,6 +92,7 @@
     NSString *url = @"http://106.14.174.39/pet/user/post_code.php";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSDictionary *param = @{@"mobile":_phoneField.text};
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -119,6 +120,7 @@
     }
     NSString *url = @"http://106.14.174.39/pet/user/sign_up.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     NSDictionary *param = @{@"number":_phoneField.text,
                             @"password":_passwordField.text,
@@ -151,6 +153,7 @@
 - (void)loginEvent{
     NSString *url = @"http://106.14.174.39/pet/user/login.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSDictionary *param = @{@"uid":_phoneField.text,
                             @"password":_passwordField.text,
                             };

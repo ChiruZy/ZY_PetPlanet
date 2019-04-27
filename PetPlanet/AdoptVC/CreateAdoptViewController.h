@@ -7,10 +7,13 @@
 //
 
 #import "ZYBaseViewController.h"
+#import "AdoptViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CreateAdoptViewController : ZYBaseViewController
+
+- (instancetype)initWithAdoptModel:(AdoptModel *)model;
 
 @end
 

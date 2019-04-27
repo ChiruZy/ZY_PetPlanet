@@ -17,6 +17,7 @@
 #import "ZYSVPManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SettingPage/SettingViewController.h"
+#import "ZYBaseViewController+ImagePicker.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mineBG;
@@ -101,11 +102,29 @@
 }
 
 - (void)changeCover{
-    ChangeCoverView *coverView = [[[NSBundle mainBundle] loadNibNamed:@"ChangeCoverView" owner:nil options:nil]firstObject];
-    ZYPopView *pop = [[ZYPopView alloc]initWithContentView:coverView type:ZYPopViewBlurType];
-    [pop show];
+    __weak typeof(self) weakSelf = self;
+    
+    [self pickImageWithCompletionHandler:^(NSData * _Nonnull imageData, UIImage * _Nonnull image) {
+        [weakSelf updateCoverWithImageData:imageData image:image];
+    }];
 }
 
+- (void)updateCoverWithImageData:(NSData *)data image:(UIImage *)image{
+    NSString *url = @"http://106.14.174.39/pet/mine/update_cover.php";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+    __weak typeof(self) weakSelf = self;
+    [manager POST:url parameters:@{@"uid":[ZYUserManager shareInstance].userID} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:data name:@"cover" fileName:@"cover" mimeType:@"image/jpge"];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[ZYUserManager shareInstance] updateUserInfo];
+        weakSelf.mineBG.image = image;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [ZYSVPManager showText:@"Upload Failed"autoClose:1.5];
+    }];
+    
+}
 #pragma mark - TableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

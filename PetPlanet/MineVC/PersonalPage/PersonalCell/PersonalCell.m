@@ -82,6 +82,7 @@
         [_edit addTarget:self action:@selector(followEvent) forControlEvents:UIControlEventTouchUpInside];
         [_message addTarget:self action:@selector(messageEvent) forControlEvents:UIControlEventTouchUpInside];
     }
+    [_adobt addTarget:self action:@selector(adoptEvent) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)messageEvent{
@@ -103,6 +104,7 @@
         
         NSString *url = @"http://106.14.174.39/pet/mine/set_follow.php";
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer.timeoutInterval = 8;
         NSDictionary *param = @{@"uid":[ZYUserManager shareInstance].userID,
                                 @"oid":uid,
                                 @"isFollow":!_isFollow?@"1":@"0",
@@ -123,6 +125,12 @@
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             weakSelf.networking = NO;
         }];
+    }
+}
+
+- (void)adoptEvent{
+    if (_adoptBlock) {
+        _adoptBlock();
     }
 }
 @end

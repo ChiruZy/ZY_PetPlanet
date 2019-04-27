@@ -46,7 +46,7 @@
     
     NSString *url = @"http://106.14.174.39/pet/mine/get_interractive_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = 8;
     NSMutableDictionary *param = [NSMutableDictionary new];
     if (_type == InterractiveLikeType) {
         [param setObject:@"1" forKey:@"type"];
@@ -99,7 +99,7 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/more_interractive_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = 8;
     NSMutableDictionary *param = [NSMutableDictionary new];
     InterractiveModel *model = self.array.lastObject;
     

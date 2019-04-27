@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "PersonalViewController.h"
 #import "ZYUserManager.h"
+#import <AFNetworking.h>
 
 @interface ConversationViewController ()
 
@@ -37,6 +38,27 @@
     }
     self.view.backgroundColor = HEXCOLOR(0xF9F9F9);
     self.conversationMessageCollectionView.backgroundColor = [UIColor clearColor];
+    
+    if (self.navigationItem.title.length == 0) {
+        [self getName];
+    }
+}
+
+- (void)getName{
+    NSString *url = @"http://106.14.174.39/pet/user/get_name.php";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
+    __weak typeof(self) weakSelf = self;
+    [manager GET:url parameters:@{@"uid":self.targetId} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSString *error = responseObject[@"error"];
+            if ([error isEqualToString:@"10"]) {
+                weakSelf.navigationItem.title = responseObject[@"name"];
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)backItemEvent{
@@ -54,7 +76,22 @@
 }
 
 - (void)didTapCellPortrait:(NSString *)userId{
-    PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:userId];
-    [self.navigationController pushViewController:personalVC animated:YES];
+    __weak typeof(self) weakSelf = self;
+    __block BOOL flag = NO;
+    [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[PersonalViewController class]]) {
+            PersonalViewController *controller = obj;
+            if (controller.uid == userId) {
+                [weakSelf.navigationController popToViewController:obj animated:YES];
+                flag = YES;
+                *stop = YES;
+                return;
+            }
+        }
+    }];
+    if (!flag) {
+        PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:userId];
+        [self.navigationController pushViewController:personalVC animated:YES];
+    }  
 }
 @end

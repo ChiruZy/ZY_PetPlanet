@@ -13,6 +13,7 @@
 #import "ZYSVPManager.h"
 #import <AFNetworking.h>
 #import <YYModel.h>
+#import "AdoptDetailViewController.h"
 
 typedef NS_ENUM(NSUInteger, AdoptPetType) {
     AdoptPetCatType,
@@ -36,6 +37,7 @@ typedef NS_ENUM(NSUInteger, AdoptPetType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     _type = AdoptPetCatType;
     _cardView.delegate = self;
     _cardView.dataSource = self;
@@ -50,8 +52,11 @@ typedef NS_ENUM(NSUInteger, AdoptPetType) {
 - (void)loadData{
     NSString *url = @"http://106.14.174.39/pet/adopt/get_adopt.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     __weak typeof(self) weakSelf = self;
-    [manager GET:url parameters:@{@"type":[NSString stringWithFormat:@"%zd",_type]} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSDictionary *param = @{@"type":[NSString stringWithFormat:@"%zd",_type],
+                            @"uid":[ZYUserManager shareInstance].userID};
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSString *error = responseObject[@"error"];
             if ([error isEqualToString:@"10"]) {
@@ -121,8 +126,8 @@ typedef NS_ENUM(NSUInteger, AdoptPetType) {
 
 - (void)cardView:(CardView *)cardView didClickItemAtIndex:(NSInteger)index{
     AdoptModel *model = _models[index];
-    
-    
+    AdoptDetailViewController *detail = [[AdoptDetailViewController alloc]initWithModel:model];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark - getter & setter

@@ -25,6 +25,7 @@
     _networking = YES;
     NSString *url = @"http://106.14.174.39/pet/mine/get_mine_list.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSDictionary *param = @{@"uid":uid,@"sender":[ZYUserManager shareInstance].userID};
     
     __weak typeof(self) weakSelf = self;

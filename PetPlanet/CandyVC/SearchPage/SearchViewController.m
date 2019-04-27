@@ -85,8 +85,7 @@
 }
 
 - (void)configHeaderAndFooter{
-    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    footer.stateLabel.hidden = YES;
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     _tableView.mj_footer = footer;
 }
 #pragma mark - Events

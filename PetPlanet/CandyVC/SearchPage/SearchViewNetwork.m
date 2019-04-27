@@ -27,6 +27,7 @@
 
 - (void)searchWithKeyword:(NSString *)keyword complete:(nonnull Complete)complete fail:(nonnull Fail)fail{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_candy.php";
     NSDictionary *param = @{@"keyword":keyword};
     
@@ -64,6 +65,7 @@
 
 - (void)searchMoreWithKeyword:(NSString *)keyword complete:(nonnull LoadComplete)complete fail:(nonnull Fail)fail{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_more_candy.php";
     CandyModel *model = _candys.lastObject;
     NSDictionary *param = @{@"keyword":keyword,@"last":model.time};

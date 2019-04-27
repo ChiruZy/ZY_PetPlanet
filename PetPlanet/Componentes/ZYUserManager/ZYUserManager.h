@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)refreshUserInfo;
 
+- (void)updateUserInfo;
+
 + (instancetype)shareInstance;
 
 @end
