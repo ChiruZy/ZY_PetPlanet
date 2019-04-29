@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, HintType) {
     HintNoCandyType,
     HintNoMessageType,
     HintNoConnectType,
+    HintWaitType,
     HintHiddenType,
 };
 

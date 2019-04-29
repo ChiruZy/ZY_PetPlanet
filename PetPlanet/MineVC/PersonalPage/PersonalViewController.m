@@ -18,6 +18,7 @@
 #import "ConversationViewController.h"
 #import "PhotoViewController.h"
 #import "MyAdoptViewController.h"
+#import "EditPersonalViewController.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -95,6 +96,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         NSDictionary *dic = weakSelf.personalNetwork.personal;
         weakSelf.name.text = dic[@"name"];
         [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView reloadData];
     } fail:^(NSString * _Nonnull error) {
         if ([error isEqualToString:@"11"]||[error isEqualToString:@"12"]) {
             [ZYSVPManager showText:@"Load Failed" autoClose:2];
@@ -294,7 +296,11 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 }
 
 - (void)gotoEditView{
-    
+    __weak typeof(self) weakSelf = self;
+    EditPersonalViewController *editView = [[EditPersonalViewController alloc]initWithCompleteBlock:^{
+        [weakSelf refresh];
+    }];
+    [self.navigationController pushViewController:editView animated:YES];
 }
 
 #pragma mark - getter &setter

@@ -168,6 +168,8 @@
 		63F422CE2274180D0040311A /* MyAdoptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422CC2274180D0040311A /* MyAdoptCell.xib */; };
 		63F422D322747FF60040311A /* EditPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422D122747FF60040311A /* EditPersonalViewController.m */; };
 		63F422D422747FF60040311A /* EditPersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422D222747FF60040311A /* EditPersonalViewController.xib */; };
+		63F422D82276BDC00040311A /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422D62276BDC00040311A /* EditNameViewController.m */; };
+		63F422D92276BDC00040311A /* EditNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422D72276BDC00040311A /* EditNameViewController.xib */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -474,6 +476,9 @@
 		63F422D022747FF60040311A /* EditPersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPersonalViewController.h; sourceTree = "<group>"; };
 		63F422D122747FF60040311A /* EditPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPersonalViewController.m; sourceTree = "<group>"; };
 		63F422D222747FF60040311A /* EditPersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPersonalViewController.xib; sourceTree = "<group>"; };
+		63F422D52276BDC00040311A /* EditNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditNameViewController.h; sourceTree = "<group>"; };
+		63F422D62276BDC00040311A /* EditNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditNameViewController.m; sourceTree = "<group>"; };
+		63F422D72276BDC00040311A /* EditNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNameViewController.xib; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -1213,6 +1218,9 @@
 				63F422D022747FF60040311A /* EditPersonalViewController.h */,
 				63F422D122747FF60040311A /* EditPersonalViewController.m */,
 				63F422D222747FF60040311A /* EditPersonalViewController.xib */,
+				63F422D52276BDC00040311A /* EditNameViewController.h */,
+				63F422D62276BDC00040311A /* EditNameViewController.m */,
+				63F422D72276BDC00040311A /* EditNameViewController.xib */,
 			);
 			path = EditPersonalPage;
 			sourceTree = "<group>";
@@ -1329,6 +1337,7 @@
 				632EFDE0225A84DF008EE300 /* MessageViewController.xib in Resources */,
 				636CF08F224D2E8100675B0C /* CandyTableViewController.xib in Resources */,
 				6380A45C2250ABD90077F4E5 /* PhotoCell.xib in Resources */,
+				63F422D92276BDC00040311A /* EditNameViewController.xib in Resources */,
 				630C331A22632C28008FB5E1 /* PhotoViewController.xib in Resources */,
 				63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
@@ -1511,6 +1520,7 @@
 				636CEFE0224B459000675B0C /* PopularCell.m in Sources */,
 				636CF059224CCACE00675B0C /* JXCategoryIndicatorCellModel.m in Sources */,
 				636CF06E224CCACE00675B0C /* JXCategoryIndicatorParamsModel.m in Sources */,
+				63F422D82276BDC00040311A /* EditNameViewController.m in Sources */,
 				634D017F2270A7DA0030F851 /* ImageClassifier.mlmodel in Sources */,
 				636CF094224D315500675B0C /* CandyCell.m in Sources */,
 				636CF070224CCACE00675B0C /* JXCategoryListCollectionContainerView.m in Sources */,

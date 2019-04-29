@@ -49,8 +49,8 @@
     _button.hidden = !need;
     [_button removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
     
-    _planet.hidden = (type != HintLoginType);
-    _image.hidden = (type == HintLoginType);
+    _planet.hidden = (type != HintLoginType && type != HintWaitType);
+    _image.hidden = (type == HintLoginType || type == HintWaitType);
     
     
     if (type == HintLoginType) {
@@ -79,6 +79,10 @@
         _hint.text = @"No Message";
         [_button setTitle:@"Refresh" forState:UIControlStateNormal];
         [_button addTarget:self action:@selector(refreshEvent) forControlEvents:UIControlEventTouchUpInside];
+    }else if(type == HintWaitType){
+        self.hidden = NO;
+        _hint.hidden = NO;
+        _hint.text = @"Please Wait";
     }else{
         self.hidden = YES;
     }

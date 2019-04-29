@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^complete)(void);
+
 @interface EditPersonalViewController : ZYBaseViewController
+
+- (instancetype)initWithCompleteBlock:(complete)block;
 
 @end
 

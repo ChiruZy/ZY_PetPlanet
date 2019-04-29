@@ -60,8 +60,10 @@
     [_follow setTitle:follow forState:UIControlStateNormal];
     [_like setTitle:like forState:UIControlStateNormal];
     
-    if ([dic[@"isMale"]isEqualToString:@"0"]) {
+    if ([dic[@"sex"]isEqualToString:@"0"]) {
         [_sex setImage:[UIImage imageNamed:@"female"]];
+    }else{
+        [_sex setImage:[UIImage imageNamed:@"male"]];
     }
 
     _edit.hidden = NO;
