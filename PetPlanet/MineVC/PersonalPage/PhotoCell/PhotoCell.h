@@ -17,8 +17,10 @@ typedef void(^TapPoint)(void);
 @property NSString *image;
 @property NSString *originImage;
 @property NSString *pid;
+@property NSString *ratio;
 
 + (instancetype)createWithImage:(NSString *)image originImage:(NSString *)originImage;
+
 @end
 
 @interface PhotoCell : UITableViewCell

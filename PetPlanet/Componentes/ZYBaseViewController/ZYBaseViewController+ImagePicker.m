@@ -145,7 +145,8 @@ static void *isCut =  @"isCut"; //截取
         imageData = UIImageJPEGRepresentation(image, 0.5);
         image = [UIImage imageWithData:imageData];
     }
-    self.completionHandler(imageData, image);
+    NSData *originData = UIImageJPEGRepresentation(editedimage, 1);
+    self.completionHandler(imageData,originData,image);
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

@@ -31,9 +31,21 @@
         _imageView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageEvent:)];
         [_imageView addGestureRecognizer:tap];
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
+        [_imageView addGestureRecognizer:longPress];
+        
+        [tap requireGestureRecognizerToFail:longPress];
     }
 }
+    
 
+- (void)longPress:(UILongPressGestureRecognizer *)sender{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if (_block) {
+            _block(_model);
+        }
+    }
+}
 
 
 - (void)imageEvent:(UITapGestureRecognizer *)gesture{

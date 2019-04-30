@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^ImagePickerCompletionHandler)(NSData *imageData, UIImage *image);
+typedef void(^ImagePickerCompletionHandler)(NSData *imageData,NSData *originData,UIImage *image);
 
 @interface ZYBaseViewController (ImagePicker)
 

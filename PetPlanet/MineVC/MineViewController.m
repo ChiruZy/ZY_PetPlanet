@@ -104,7 +104,7 @@
 - (void)changeCover{
     __weak typeof(self) weakSelf = self;
     
-    [self pickImageWithCompletionHandler:^(NSData * _Nonnull imageData, UIImage * _Nonnull image) {
+    [self pickImageWithCompletionHandler:^(NSData * _Nonnull imageData, NSData * _Nonnull originData, UIImage * _Nonnull image) {
         [weakSelf updateCoverWithImageData:imageData image:image];
     }];
 }

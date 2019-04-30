@@ -106,7 +106,7 @@ typedef NS_ENUM(NSUInteger, AdoptPetType) {
 
 - (void)tapImage{
     __weak typeof(self) weakSelf = self;
-    [self pickImageWithpickImageCutImageWithImageSize:CGSizeMake(Screen_Width, Screen_Width) CompletionHandler:^(NSData * _Nonnull imageData, UIImage * _Nonnull image) {
+    [self pickImageWithpickImageCutImageWithImageSize:CGSizeMake(Screen_Width, Screen_Width) CompletionHandler:^(NSData * _Nonnull imageData, NSData * _Nonnull originData, UIImage * _Nonnull image) {
         weakSelf.imageData = imageData;
         weakSelf.image.image = image;
         if (@available(iOS 11.0, *)) {

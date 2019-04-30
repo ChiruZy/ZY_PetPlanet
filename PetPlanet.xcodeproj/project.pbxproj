@@ -170,6 +170,8 @@
 		63F422D422747FF60040311A /* EditPersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422D222747FF60040311A /* EditPersonalViewController.xib */; };
 		63F422D82276BDC00040311A /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422D62276BDC00040311A /* EditNameViewController.m */; };
 		63F422D92276BDC00040311A /* EditNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422D72276BDC00040311A /* EditNameViewController.xib */; };
+		63F422DC227857460040311A /* ChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F422DB227857460040311A /* ChooseView.m */; };
+		63F422DE227857550040311A /* ChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F422DD227857550040311A /* ChooseView.xib */; };
 		63FD1F3622513C540023230A /* CleanCacheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD1F3522513C540023230A /* CleanCacheView.m */; };
 		63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FD1F3722513D800023230A /* CleanCacheView.xib */; };
 /* End PBXBuildFile section */
@@ -479,6 +481,9 @@
 		63F422D52276BDC00040311A /* EditNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditNameViewController.h; sourceTree = "<group>"; };
 		63F422D62276BDC00040311A /* EditNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditNameViewController.m; sourceTree = "<group>"; };
 		63F422D72276BDC00040311A /* EditNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNameViewController.xib; sourceTree = "<group>"; };
+		63F422DA227857460040311A /* ChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseView.h; sourceTree = "<group>"; };
+		63F422DB227857460040311A /* ChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseView.m; sourceTree = "<group>"; };
+		63F422DD227857550040311A /* ChooseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseView.xib; sourceTree = "<group>"; };
 		63FD1F3422513C540023230A /* CleanCacheView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanCacheView.h; sourceTree = "<group>"; };
 		63FD1F3522513C540023230A /* CleanCacheView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanCacheView.m; sourceTree = "<group>"; };
 		63FD1F3722513D800023230A /* CleanCacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanCacheView.xib; sourceTree = "<group>"; };
@@ -1026,6 +1031,9 @@
 		636CF0B7224E0F2A00675B0C /* OthersView */ = {
 			isa = PBXGroup;
 			children = (
+				63F422DA227857460040311A /* ChooseView.h */,
+				63F422DB227857460040311A /* ChooseView.m */,
+				63F422DD227857550040311A /* ChooseView.xib */,
 				63FD1F3422513C540023230A /* CleanCacheView.h */,
 				63FD1F3522513C540023230A /* CleanCacheView.m */,
 				63FD1F3722513D800023230A /* CleanCacheView.xib */,
@@ -1353,6 +1361,7 @@
 				632EFDA62258C81E008EE300 /* SearchUserCell.xib in Resources */,
 				63E099A122553C1D00C052E3 /* HistoryCell.xib in Resources */,
 				63E099C0225657F800C052E3 /* UserTableViewCell.xib in Resources */,
+				63F422DE227857550040311A /* ChooseView.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
@@ -1445,6 +1454,7 @@
 				631FFE672251255A008F7188 /* InterractiveNetworking.m in Sources */,
 				63FD1F3622513C540023230A /* CleanCacheView.m in Sources */,
 				636CEFE4224BA5E100675B0C /* MainViewNetworking.m in Sources */,
+				63F422DC227857460040311A /* ChooseView.m in Sources */,
 				636CF051224CCACE00675B0C /* JXCategoryIndicatorLineView.m in Sources */,
 				636CF083224CE33400675B0C /* ZYPopView.m in Sources */,
 				636CF0A0224D51E400675B0C /* CommentViewController.m in Sources */,

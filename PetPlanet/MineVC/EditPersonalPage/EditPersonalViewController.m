@@ -81,7 +81,7 @@
 
 - (void)tapImage{
     __weak typeof(self) weakSelf = self;
-    [self pickImageWithpickImageCutImageWithImageSize:CGSizeMake(500, 500) CompletionHandler:^(NSData * _Nonnull imageData, UIImage * _Nonnull image) {
+    [self pickImageWithpickImageCutImageWithImageSize:CGSizeMake(500, 500) CompletionHandler:^(NSData * _Nonnull imageData, NSData * _Nonnull originData, UIImage * _Nonnull image) {
         weakSelf.head.image = image;
         weakSelf.headData = imageData;
     }];

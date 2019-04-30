@@ -10,10 +10,13 @@
 #import "PhotoCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^DidLongPressCell)(PhotoModel *model);
 
 @interface PhotoViewCell : UICollectionViewCell
 
 - (void)configWithModel:(PhotoModel *)model;
+
+@property (nonatomic,strong) DidLongPressCell block;
 
 @end
 
