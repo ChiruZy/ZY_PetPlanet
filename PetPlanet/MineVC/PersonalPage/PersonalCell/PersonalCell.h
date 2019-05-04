@@ -19,7 +19,8 @@ typedef NSString *_Nullable(^FollowBlock)(void);
 @property (nonatomic,strong) EventBlock editBlock;
 @property (nonatomic,strong) EventBlock adoptBlock;
 @property (nonatomic,strong) FollowBlock followBlock;
-
+@property (nonatomic,strong) EventBlock followPageBlock;
+@property (nonatomic,strong) EventBlock likePageBlock;
 
 - (void)configWithDic:(NSDictionary *)dic isSelf:(BOOL)isSelf;
 

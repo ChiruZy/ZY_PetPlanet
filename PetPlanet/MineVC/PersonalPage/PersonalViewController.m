@@ -21,6 +21,8 @@
 #import "EditPersonalViewController.h"
 #import "CandyDetailController.h"
 #import "CandyDetailNetwork.h"
+#import "InterractiveViewController.h"
+#import "FollowViewController.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -64,6 +66,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = NO;
+    
     [self configTableView];
 }
 
@@ -148,6 +151,15 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     }];
 }
 
+- (void)gotoLikePage{
+    InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType uid:_userID];
+    [self.navigationController pushViewController:favoriteVC animated:YES];
+}
+
+- (void)gotoFollowPage{
+    FollowViewController *followVC = [[FollowViewController alloc]initWithUid:_userID];
+    [self.navigationController pushViewController:followVC animated:YES];
+}
 #pragma mark - Events
 
 - (IBAction)back:(id)sender {
@@ -225,8 +237,14 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
         cell.messageBlock = ^{
             [weakSelf gotoConversationView];
         };
+        cell.followPageBlock = ^{
+            [weakSelf gotoFollowPage];
+        };
         cell.editBlock = ^{
             [weakSelf gotoEditView];
+        };
+        cell.likePageBlock = ^{
+            [weakSelf gotoLikePage];
         };
         cell.followBlock = ^NSString * _Nullable{
             return weakSelf.userID;

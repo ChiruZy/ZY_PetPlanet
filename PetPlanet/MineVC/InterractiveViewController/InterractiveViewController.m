@@ -12,7 +12,6 @@
 #import "InterractiveCell.h"
 #import "InterractiveNetworking.h"
 #import <MJRefresh.h>
-#import "NotConnectView.h"
 #import "PersonalViewController.h"
 #import "CandyDetailController.h"
 #import "ZYSVPManager.h"
@@ -21,19 +20,20 @@
 @interface InterractiveViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet HintView *loginView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
 
 @property (nonatomic,strong) InterractiveNetworking *network;
 @property (nonatomic,strong) CandyDetailNetwork *detailNetwork;
 @property (nonatomic,assign) InterractiveVCType type;
+@property (nonatomic,strong) NSString *uid;
 @property (nonatomic,assign) BOOL liking;
 @end
 
 @implementation InterractiveViewController
 
-- (instancetype)initWithInterractiveType:(InterractiveVCType)type{
+- (instancetype)initWithInterractiveType:(InterractiveVCType)type uid:(nonnull NSString *)uid{
     if (self = [super init]) {
-        self.type = type;
+        _type = type;
+        _uid = uid;
     }
     return self;
 }
@@ -42,17 +42,21 @@
     [super viewDidLoad];
     self.needNavBar = YES;
     if (_type == InterractiveVCLikeType) {
-        self.navigationItem.title = @"My Favorite";
+        self.navigationItem.title = @"Favorite";
     }else{
         self.navigationItem.title = @"Collections";
     }
+    __weak typeof(self) weakSelf = self;
+    [_loginView moveY: -40];
+    _loginView.refresh = ^{
+        [weakSelf reload];
+    };
     [self configWithTableView];
     [self judgeIsLogin];
 }
 
 - (void)judgeIsLogin{
-    
-    if (![ZYUserManager shareInstance].isLogin) {
+    if (_uid.length == 0) {
         [_loginView setType:HintLoginType needButton:YES];
         __weak typeof(self) weakSelf = self;
         _loginView.login = ^{
@@ -66,7 +70,7 @@
 - (void)login{
     __weak typeof(self) weakSelf = self;
     LoginViewController *loginVC = [[LoginViewController alloc]initWithLoginBlock:^(NSString * _Nonnull uid) {
-        [weakSelf.loginView setType:HintHiddenType needButton:YES];
+        weakSelf.uid = [ZYUserManager shareInstance].userID;
         [weakSelf judgeIsLogin];
     }];
     [self.navigationController pushViewController:loginVC animated:YES];
@@ -96,20 +100,16 @@
 
 - (void)reload{
     __weak typeof(self) weakSelf = self;
-    [self.network reloadModelsWithComplete:^{
+    [self.network reloadModelsWithUid:_uid complete:^{
         [weakSelf.tableView reloadData];
-        weakSelf.notConnectView.hidden = YES;
+        [weakSelf.loginView setType:HintHiddenType needButton:NO];
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
     } fail:^(NSString *error) {
-        if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
-            weakSelf.notConnectView.hidden = NO;
-            weakSelf.loginView.hidden = YES;
-        }if ([error isEqualToString:@"12"]) {
-            weakSelf.loginView.hidden = NO;
-            weakSelf.notConnectView.hidden = YES;
-        }if ([error isEqualToString:@"16"]){
-            
+        if ([error isEqualToString:@"15"]) {
+            [weakSelf.loginView setType:HintNoCandyType needButton:YES];
+        }else{
+            [weakSelf.loginView setType:HintNoConnectType needButton:YES];
         }
         [weakSelf.tableView.mj_header endRefreshing];
     }];
@@ -117,7 +117,7 @@
 
 - (void)loadMoreData{
     __weak typeof(self) weakSelf = self;
-    [self.network loadMoreWithComplete:^(BOOL noMore) {
+    [self.network loadMoreWithUid:_uid complete:^(BOOL noMore) {
         [weakSelf.tableView.mj_footer endRefreshing];
         [weakSelf.tableView reloadData];
         if (noMore) {

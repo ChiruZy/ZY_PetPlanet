@@ -34,9 +34,9 @@ typedef NS_ENUM(NSUInteger, InterractiveType) {
 
 - (instancetype)initWithNetWorkingType:(InterractiveType)type;
 
-- (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail;
+- (void)reloadModelsWithUid:(NSString *)uid complete:(Complete)complete fail:(Fail)fail;
 
-- (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail;
+- (void)loadMoreWithUid:(NSString *)uid complete:(LoadComplete)complete fail:(Fail)fail;
 
 @end
 

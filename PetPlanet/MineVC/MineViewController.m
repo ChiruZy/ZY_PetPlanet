@@ -170,10 +170,10 @@
         PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:[ZYUserManager shareInstance].userID];
         [self.navigationController pushViewController:personalVC animated:YES];
     }else if (indexPath.section == 1) {
-        InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType];
+        InterractiveViewController *favoriteVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCLikeType uid:[ZYUserManager shareInstance].userID];
         [self.navigationController pushViewController:favoriteVC animated:YES];
     }else if (indexPath.section == 2) {
-        InterractiveViewController *collectionsVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCCollectionType];
+        InterractiveViewController *collectionsVC = [[InterractiveViewController alloc]initWithInterractiveType:InterractiveVCCollectionType uid:[ZYUserManager shareInstance].userID];
         [self.navigationController pushViewController:collectionsVC animated:YES];
     }else if (indexPath.section == 4) {
         [[SDWebImageManager sharedManager].imageCache clearMemory];

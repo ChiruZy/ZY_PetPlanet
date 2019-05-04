@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterractiveViewController">
             <connections>
                 <outlet property="loginView" destination="A9P-PG-O0H" id="0R3-l0-4Oe"/>
-                <outlet property="notConnectView" destination="uCN-wh-cJ8" id="Ifp-Au-gy4"/>
                 <outlet property="tableView" destination="TdI-m6-obC" id="ime-gH-d0U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,26 +30,17 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-wh-cJ8" customClass="NotConnectView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="X2j-dO-GS0"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="uCN-wh-cJ8" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="4n3-Vj-z29"/>
                 <constraint firstItem="A9P-PG-O0H" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Al0-w8-Xs6"/>
                 <constraint firstAttribute="bottom" secondItem="TdI-m6-obC" secondAttribute="bottom" id="Ghs-JC-9Uc"/>
-                <constraint firstItem="uCN-wh-cJ8" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Kcz-yM-4Zw"/>
-                <constraint firstItem="uCN-wh-cJ8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tis-09-54p"/>
                 <constraint firstItem="TdI-m6-obC" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="WCv-Ka-a4A"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="A9P-PG-O0H" secondAttribute="trailing" id="WEd-kJ-CUi"/>
                 <constraint firstItem="TdI-m6-obC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="gai-9N-zly"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="TdI-m6-obC" secondAttribute="trailing" constant="15" id="nTZ-gy-e6z"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="A9P-PG-O0H" secondAttribute="bottom" id="vNi-Sf-OSq"/>
                 <constraint firstItem="A9P-PG-O0H" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="xOl-MN-FWb"/>
-                <constraint firstItem="uCN-wh-cJ8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="xtx-Da-KqR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

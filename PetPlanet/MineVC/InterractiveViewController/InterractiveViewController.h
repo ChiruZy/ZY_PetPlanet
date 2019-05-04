@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, InterractiveVCType) {
 
 @interface InterractiveViewController : ZYBaseViewController
 
-- (instancetype)initWithInterractiveType:(InterractiveVCType)type;
+- (instancetype)initWithInterractiveType:(InterractiveVCType)type uid:(NSString *)uid;
 
 @end
 

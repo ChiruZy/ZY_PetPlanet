@@ -62,8 +62,6 @@
         }
     }
     
-    NSLog(@"%@, %ld, %ld",shortest,shortCol,indexPath.row);
-    
     CGFloat x = (shortCol+1)*colMargin+ shortCol * self.colWidth;
     CGFloat y = shortest.floatValue+colMargin;
     

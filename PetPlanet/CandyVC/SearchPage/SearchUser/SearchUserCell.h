@@ -11,7 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef BOOL(^FollowEvent)(NSString *uid,BOOL isFollow);
+typedef void(^Complete)(void);
+
+typedef void(^FollowEvent)(NSString *uid,BOOL isFollow,Complete complete);
 
 @interface SearchUserCell : UITableViewCell
 

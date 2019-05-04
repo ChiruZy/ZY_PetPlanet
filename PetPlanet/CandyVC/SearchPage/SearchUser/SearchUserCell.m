@@ -33,7 +33,7 @@
     NSString *follow = model.follow?:@"";
     NSString *like = model.like?:@"";
     _uid = model.uid;
-    _content.text = [NSString stringWithFormat:@"%@ Followed  %@ Likes",follow,like];
+    _content.text = [NSString stringWithFormat:@"%@ Follow  %@ Like",follow,like];
     _name.text = model.name;
     
     NSString *isFollow = model.isFollow;
@@ -48,14 +48,12 @@
 }
 
 - (void)tapFollow{
-    BOOL needChange = YES;
+    __weak typeof(self) weakSelf = self;
     if (_block) {
-        needChange = _block(_uid,!_isFollow);
-    }
-    
-    if (needChange) {
-        _isFollow = !_isFollow;
-        [_follow setImage:[UIImage imageNamed:_isFollow?@"unFollow":@"follow"] forState:UIControlStateNormal];
+        self.block(_uid, !_isFollow, ^{
+            weakSelf.isFollow = !weakSelf.isFollow;
+            [weakSelf.follow setImage:[UIImage imageNamed:weakSelf.isFollow?@"unFollow":@"follow"] forState:UIControlStateNormal];
+        });
     }
 }
 

@@ -38,7 +38,7 @@
 }
 
 
-- (void)reloadModelsWithComplete:(Complete)complete fail:(Fail)fail{
+- (void)reloadModelsWithUid:(NSString *)uid complete:(Complete)complete fail:(Fail)fail{
     if (_networking) {
         fail(@"16");
     }
@@ -53,8 +53,8 @@
     }else {
         [param setObject:@"2" forKey:@"type"];
     }
-    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
-    
+    [param setObject:uid forKey:@"uid"];
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"selfID"];
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (![responseObject isKindOfClass:[NSDictionary class]]) {
@@ -92,7 +92,7 @@
     return arr.copy;
 }
 
-- (void)loadMoreWithComplete:(LoadComplete)complete fail:(Fail)fail{
+- (void)loadMoreWithUid:(NSString *)uid complete:(LoadComplete)complete fail:(Fail)fail{
     if (_networking) {
         fail(@"16");
     }
@@ -108,7 +108,8 @@
     }else {
         [param setObject:@"2" forKey:@"type"];
     }
-    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
+    [param setObject:uid forKey:@"uid"];
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"selfID"];
     if (model) {
         [param setObject:model.interractiveTime forKey:@"interractiveTime"];
     }

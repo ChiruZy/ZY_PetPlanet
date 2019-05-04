@@ -60,6 +60,9 @@
     [_follow setTitle:follow forState:UIControlStateNormal];
     [_like setTitle:like forState:UIControlStateNormal];
     
+    [_follow addTarget:self action:@selector(followPage) forControlEvents:UIControlEventTouchUpInside];
+    [_like addTarget:self action:@selector(likePage) forControlEvents:UIControlEventTouchUpInside];
+    
     if ([dic[@"sex"]isEqualToString:@"0"]) {
         [_sex setImage:[UIImage imageNamed:@"female"]];
     }else{
@@ -85,6 +88,18 @@
         [_message addTarget:self action:@selector(messageEvent) forControlEvents:UIControlEventTouchUpInside];
     }
     [_adobt addTarget:self action:@selector(adoptEvent) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)followPage{
+    if (_followPageBlock) {
+        _followPageBlock();
+    }
+}
+
+- (void)likePage{
+    if (_likePageBlock) {
+        _likePageBlock();
+    }
 }
 
 - (void)messageEvent{

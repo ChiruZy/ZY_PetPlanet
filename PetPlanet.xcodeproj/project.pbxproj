@@ -152,6 +152,8 @@
 		63BBC3A0227A223B00BF8955 /* CandyReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BBC39E227A223B00BF8955 /* CandyReplyCell.xib */; };
 		63BBC3A6227B604400BF8955 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC3A3227B604300BF8955 /* HPGrowingTextView.m */; };
 		63BBC3A7227B604400BF8955 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC3A4227B604300BF8955 /* HPTextViewInternal.m */; };
+		63BBC3AC227DD9F600BF8955 /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC3AA227DD9F600BF8955 /* FollowViewController.m */; };
+		63BBC3AD227DD9F600BF8955 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BBC3AB227DD9F600BF8955 /* FollowViewController.xib */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -464,6 +466,9 @@
 		63BBC3A3227B604300BF8955 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		63BBC3A4227B604300BF8955 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
 		63BBC3A5227B604300BF8955 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
+		63BBC3A9227DD9F600BF8955 /* FollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
+		63BBC3AA227DD9F600BF8955 /* FollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		63BBC3AB227DD9F600BF8955 /* FollowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -732,6 +737,7 @@
 		636CEF9E224A777D00675B0C /* MineVC */ = {
 			isa = PBXGroup;
 			children = (
+				63BBC3A8227DD96300BF8955 /* FollowPage */,
 				63F422CF22747FDC0040311A /* EditPersonalPage */,
 				634F9D58226DE17900E52960 /* SettingPage */,
 				630C331522632C02008FB5E1 /* PhotoPage */,
@@ -1206,6 +1212,16 @@
 			path = GrowingTextView;
 			sourceTree = "<group>";
 		};
+		63BBC3A8227DD96300BF8955 /* FollowPage */ = {
+			isa = PBXGroup;
+			children = (
+				63BBC3A9227DD9F600BF8955 /* FollowViewController.h */,
+				63BBC3AA227DD9F600BF8955 /* FollowViewController.m */,
+				63BBC3AB227DD9F600BF8955 /* FollowViewController.xib */,
+			);
+			path = FollowPage;
+			sourceTree = "<group>";
+		};
 		63D0A1D2223046E5007E5B36 = {
 			isa = PBXGroup;
 			children = (
@@ -1441,6 +1457,7 @@
 				63E099A122553C1D00C052E3 /* HistoryCell.xib in Resources */,
 				63E099C0225657F800C052E3 /* UserTableViewCell.xib in Resources */,
 				63F422DE227857550040311A /* ChooseView.xib in Resources */,
+				63BBC3AD227DD9F600BF8955 /* FollowViewController.xib in Resources */,
 				636CEFAD224A77C700675B0C /* MineViewController.xib in Resources */,
 				636CEFE1224B459000675B0C /* PopularCell.xib in Resources */,
 				63D0A1FF223055E2007E5B36 /* WelcomeAnimateView.xib in Resources */,
@@ -1601,6 +1618,7 @@
 				636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */,
 				63BBC39F227A223B00BF8955 /* CandyReplyCell.m in Sources */,
 				636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */,
+				63BBC3AC227DD9F600BF8955 /* FollowViewController.m in Sources */,
 				636CEFA2224A77A500675B0C /* MainViewController.m in Sources */,
 				634F9D5C226DE18900E52960 /* SettingViewController.m in Sources */,
 				63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */,

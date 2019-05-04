@@ -1,12 +1,12 @@
 //
-//  SearchUserViewController.m
+//  FollowViewController.m
 //  PetPlanet
 //
-//  Created by Overloop on 2019/4/6.
+//  Created by Overloop on 2019/5/4.
 //  Copyright © 2019 Chiru. All rights reserved.
 //
 
-#import "SearchUserViewController.h"
+#import "FollowViewController.h"
 #import "SearchUserCell.h"
 #import <MJRefresh.h>
 #import <AFNetworking.h>
@@ -14,38 +14,33 @@
 #import "ZYSVPManager.h"
 #import "PersonalViewController.h"
 
-@implementation SearchUserModel
 
-@end
+@interface FollowViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@interface SearchUserViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic,strong) NSString *keyword;
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (nonatomic,strong) NSString *uid;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *model;
 @property (nonatomic,assign) BOOL networking;
 @property (nonatomic,assign) BOOL following;
 
 @end
 
-@implementation SearchUserViewController
+@implementation FollowViewController
 
-
-- (instancetype)initWithKeyword:(NSString *)keyword{
+- (instancetype)initWithUid:(NSString *)uid{
     if (self = [super init]) {
-        _keyword = keyword;
+        _uid = uid;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.needNavBar = YES;
-    self.navigationItem.title = _keyword;
-    _tableview.delegate = self;
-    _tableview.dataSource = self;
-    [_tableview registerNib:[UINib nibWithNibName:@"SearchUserCell" bundle:nil] forCellReuseIdentifier:@"SearchUserCell"];
+    self.navigationItem.title = @"Follows";
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerNib:[UINib nibWithNibName:@"SearchUserCell" bundle:nil] forCellReuseIdentifier:@"SearchUserCell"];
     [self configHeaderAndFooter];
     [self reload];
 }
@@ -57,23 +52,24 @@
     UIImage *image = [UIImage imageNamed:@"UFO_0"];
     [header setImages:@[image] forState:MJRefreshStatePulling];
     [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
-    _tableview.mj_header = header;
+    _tableView.mj_header = header;
     
     MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    _tableview.mj_footer = footer;
+    _tableView.mj_footer = footer;
 }
+
 
 - (void)reload{
     if (_networking) {
-        [_tableview.mj_header endRefreshing];
+        [_tableView.mj_header endRefreshing];
         return;
     }
     
     _networking = YES;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
-    NSString *url = @"http://106.14.174.39/pet/search/search_user.php";
-    NSDictionary *param = @{@"keyword":_keyword,@"uid":[ZYUserManager shareInstance].userID};
+    NSString *url = @"http://106.14.174.39/pet/candy/get_follow_list.php";
+    NSDictionary *param = @{@"sid":[ZYUserManager shareInstance].userID,@"uid":_uid};
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -88,31 +84,40 @@
         
         [weakSelf.model setArray:[self parserData:responseObject[@"items"]]];
         
-        [weakSelf.tableview.mj_header endRefreshing];
-        [weakSelf.tableview.mj_footer resetNoMoreData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer resetNoMoreData];
         if (weakSelf.model.count<20) {
-            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         weakSelf.networking = NO;
-        [weakSelf.tableview reloadData];
+        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [ZYSVPManager showText:@"Connect Failed" autoClose:2];
-        [weakSelf.tableview.mj_header endRefreshing];
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
+}
+
+- (NSArray *)parserData:(NSArray *)arr{
+    NSMutableArray *result = [NSMutableArray new];
+    for (NSDictionary *dic in arr) {
+        SearchUserModel *model = [SearchUserModel yy_modelWithJSON:dic];
+        [result addObject:model];
+    }
+    return result.copy;
 }
 
 - (void)loadMoreData{
     if (_networking) {
-        [_tableview.mj_footer endRefreshing];
+        [_tableView.mj_footer endRefreshing];
         return;
     }
     _networking = YES;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
-    NSString *url = @"http://106.14.174.39/pet/search/search_more_user.php";
+    NSString *url = @"http://106.14.174.39/pet/candy/more_follow_list.php";
     SearchUserModel *model = _model.lastObject;
-    NSDictionary *param = @{@"keyword":_keyword,@"uid":[ZYUserManager shareInstance].userID,@"last":model.uid};
+    NSDictionary *param = @{@"sid":[ZYUserManager shareInstance].userID,@"uid":_uid,@"last":model.uid};
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -122,7 +127,7 @@
         }
         NSString *error = responseObject[@"error"];
         if ([error isEqualToString:@"16"]) {
-            [weakSelf.tableview.mj_footer endRefreshing];
+            [weakSelf.tableView.mj_footer endRefreshing];
             return;
         }
         
@@ -132,20 +137,18 @@
         
         [weakSelf.model addObjectsFromArray:[self parserData:responseObject[@"back"]]];
         
-        [weakSelf.tableview.mj_footer endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
         if (weakSelf.model.count<20) {
-            [weakSelf.tableview.mj_footer endRefreshingWithNoMoreData];
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         weakSelf.networking = NO;
-        [weakSelf.tableview reloadData];
+        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [ZYSVPManager showText:@"Connect Failed" autoClose:2];
-        [weakSelf.tableview.mj_footer endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
     }];
-
-    
-    
 }
+
 
 - (void)followEventWithUid:(NSString *)uid isFollow:(BOOL)isFollow complete:(Complete)complete{
     if (_following) {
@@ -176,14 +179,6 @@
     }];
 }
 
-- (NSArray *)parserData:(NSArray *)arr{
-    NSMutableArray *result = [NSMutableArray new];
-    for (NSDictionary *dic in arr) {
-        SearchUserModel *model = [SearchUserModel yy_modelWithJSON:dic];
-        [result addObject:model];
-    }
-    return result.copy;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 68;
@@ -200,6 +195,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return [UIView new];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SearchUserCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchUserCell"];
     __weak typeof(self) weakSelf = self;

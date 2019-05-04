@@ -62,6 +62,14 @@
     [self reload];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    CGRect frame = self.view.bounds;
+    frame.size.height -= topMargin;
+    
+    _collectionView.frame = frame;
+}
+
 - (void)addPhoto{
     __weak typeof(self) weakSelf = self;
     [self pickImageWithCompletionHandler:^(NSData * _Nonnull imageData, NSData * _Nonnull originData, UIImage * _Nonnull image) {

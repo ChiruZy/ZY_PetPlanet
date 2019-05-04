@@ -24,7 +24,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -206,7 +206,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bin" width="36" height="36"/>
+        <image name="bin" width="44" height="44"/>
         <image name="search" width="20" height="20"/>
     </resources>
 </document>
