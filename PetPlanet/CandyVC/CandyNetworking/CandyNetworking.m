@@ -113,26 +113,12 @@
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     CandyModel *model = self.array.lastObject;
-    if (_networkingType == CandyNetworkingFollowingType) {
-        [param setObject:@"0" forKey:@"type"];
-        [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
-        if (model) {
-            [param setObject:model.time forKey:@"time"];
-        }
-    }else if(_networkingType == CandyNetworkingRecommendType){
-        [param setObject:@"1" forKey:@"type"];
-        if (model) {
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
+    [param setObject:[NSString stringWithFormat:@"%zd",_networkingType] forKey:@"type"];
+    if (model) {
+        if(_networkingType == CandyNetworkingRecommendType){
             [param setObject:model.hot forKey:@"hot"];
-        }
-    }else if (_networkingType == CandyNetworkingNewsType){
-        [param setObject:@"2" forKey:@"type"];
-        if (model) {
-            [param setObject:model.time forKey:@"time"];
-        }
-    }else if (_networkingType == CandyNetworkingUserType) {
-        [param setObject:@"3" forKey:@"type"];
-        [param setObject:uid forKey:@"uid"];
-        if (model) {
+        }else{
             [param setObject:model.time forKey:@"time"];
         }
     }

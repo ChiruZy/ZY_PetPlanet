@@ -19,6 +19,8 @@
 #import "PhotoViewController.h"
 #import "MyAdoptViewController.h"
 #import "EditPersonalViewController.h"
+#import "CandyDetailController.h"
+#import "CandyDetailNetwork.h"
 
 typedef NS_ENUM(NSUInteger, CandyLoadState) {
     CandyLoadStateLoading,
@@ -34,12 +36,14 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 
 @property (nonatomic,strong) CandyNetworking *network;
 @property (nonatomic,strong) PersonalPageNetwork *personalNetwork;
+@property (nonatomic,strong) CandyDetailNetwork *detailNetwork;
 
 @property (nonatomic,assign) CandyLoadState state;
 @property (nonatomic,assign) NSString *userID;
 @property (nonatomic,assign) CGFloat threshold;
 @property (nonatomic,assign) CGFloat marginTop;
 
+@property (nonatomic,assign) BOOL liking;
 @property (nonatomic,assign) BOOL isSelf;
 
 @end
@@ -156,6 +160,15 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section -3 <0) {
+        return;
+    }
+    CandyModel *model = _network.models[indexPath.section-3];
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -280,7 +293,7 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[ConversationViewController class]]) {
             ConversationViewController *controller = obj;
-            if (controller.targetId == weakSelf.userID) {
+            if ([controller.targetId isEqualToString: weakSelf.userID]) {
                 [weakSelf.navigationController popToViewController:obj animated:YES];
                 flag = YES;
                 *stop = YES;
@@ -322,15 +335,39 @@ typedef NS_ENUM(NSUInteger, CandyLoadState) {
     return _userID;
 }
 
-- (void)cellDidTapReplyWithModel:(CandyModel *)model{
-    
-}
-
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
-    
+//    PersonalViewController *personalVC =[[PersonalViewController alloc]initWithUserID:model.authorID];
+//    [_superView.navigationController pushViewController:personalVC animated:YES];
 }
 
-- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
-    
+- (void)cellDidTapReplyWithModel:(CandyModel *)model{
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [detailVC edit];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike complete:(nonnull LikeComplete)block{
+    if (![ZYUserManager shareInstance].isLogin) {
+        [ZYSVPManager showText:@"Please Login" autoClose:1.5];
+    }
+    if (_liking) {
+        return;
+    }
+    _liking = YES;
+    __weak typeof(self) weakSelf = self;
+    [self.detailNetwork likeWithCid:model.candyID isLike:isLike complete:^{
+        block();
+        weakSelf.liking = NO;
+    } fail:^(NSString * _Nonnull error) {
+        weakSelf.liking = NO;
+        [ZYSVPManager showText:@"Like Failed" autoClose:1.5];
+    }];
+}
+
+- (CandyDetailNetwork *)detailNetwork{
+    if (!_detailNetwork) {
+        _detailNetwork = [[CandyDetailNetwork alloc]init];
+    }
+    return _detailNetwork;
 }
 @end

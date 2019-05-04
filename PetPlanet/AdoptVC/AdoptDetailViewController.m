@@ -66,7 +66,7 @@
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[ConversationViewController class]]) {
             ConversationViewController *controller = obj;
-            if (controller.targetId == weakSelf.model.uid) {
+            if ([controller.targetId isEqualToString: weakSelf.model.uid]) {
                 [weakSelf.navigationController popToViewController:obj animated:YES];
                 flag = YES;
                 *stop = YES;

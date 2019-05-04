@@ -143,6 +143,53 @@
     }];
 }
 
+- (void)moreReplyWithAid:(NSString *)cid complete:(LoadComplete)complete fail:(Fail)fail{
+    if (_networking) {
+        fail(@"16");
+        return;
+    }
+    _networking = YES;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
+    
+    NSString *url = @"http://106.14.174.39/pet/candy/get_more_reply.php";
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    [param setObject:cid forKey:@"cid"];
+    [param setObject:[ZYUserManager shareInstance].userID forKey:@"uid"];
+    if (_replyModel.count >0) {
+        CandyReplyModel *model = [_replyModel lastObject];
+        [param setObject:model.rid forKey:@"last"];
+    }
+    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            fail(@"13");
+        }else{
+            NSString *error = responseObject[@"error"];
+            if ([error isEqualToString:@"10"]) {
+                NSArray *arr = [weakSelf parserReplyWithData:responseObject[@"items"]];
+                [weakSelf.replyModel addObjectsFromArray:arr];
+                complete(arr.count<10);
+            }else{
+                fail(error);
+            }
+        }
+        weakSelf.networking = NO;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        fail(@"14");
+        weakSelf.networking = NO;
+    }];
+}
+
+- (NSArray *)parserReplyWithData:(NSArray *)data{
+    NSMutableArray *arr = [NSMutableArray new];
+    [data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CandyReplyModel *model = [CandyReplyModel yy_modelWithJSON:obj];
+        [arr addObject:model];
+    }];
+    return arr.copy;
+}
+
 - (void)parserReloadData:(NSDictionary *)data{
     _cdModel = [CandyDetailModel yy_modelWithJSON:data[@"detail"]];
     NSArray *reply = data[@"replys"];

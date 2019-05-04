@@ -17,6 +17,8 @@
 #import "SearchUserViewController.h"
 #import <MJRefresh.h>
 #import "ZYSVPManager.h"
+#import "CandyDetailController.h"
+#import "CandyDetailNetwork.h"
 
 @interface SearchViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
@@ -30,6 +32,8 @@
 @property (nonatomic,strong) HistoryDelegate *historyDelegate;
 @property (nonatomic,strong) HotDelegate *hotDelegate;
 @property (nonatomic,strong) SearchViewNetwork *network;
+@property (nonatomic,strong) CandyDetailNetwork *detailNetwork;
+@property (nonatomic,assign) BOOL liking;
 @end
 
 @implementation SearchViewController
@@ -190,14 +194,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [_historyDelegate setObjectToHistory:_searchField.text];
-    
-    
+    CandyModel *model = _network.models[indexPath.section-1];
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - CandyDelegate
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model{
     [_historyDelegate setObjectToHistory:_searchField.text];
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [detailVC edit];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
@@ -206,8 +214,23 @@
     [self.navigationController pushViewController:personalVC animated:YES];
 }
 
-- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike complete:(nonnull LikeComplete)block{
     [_historyDelegate setObjectToHistory:_searchField.text];
+    if (![ZYUserManager shareInstance].isLogin) {
+        [ZYSVPManager showText:@"Please Login" autoClose:1.5];
+    }
+    if (_liking) {
+        return;
+    }
+    _liking = YES;
+    __weak typeof(self) weakSelf = self;
+    [self.detailNetwork likeWithCid:model.candyID isLike:isLike complete:^{
+        block();
+        weakSelf.liking = NO;
+    } fail:^(NSString * _Nonnull error) {
+        weakSelf.liking = NO;
+        [ZYSVPManager showText:@"Like Failed" autoClose:1.5];
+    }];
 }
 
 #pragma mark - TextFieldDelegate
@@ -242,5 +265,12 @@
         _network = [SearchViewNetwork new];
     }
     return _network;
+}
+
+- (CandyDetailNetwork *)detailNetwork{
+    if (!_detailNetwork) {
+        _detailNetwork = [[CandyDetailNetwork alloc]init];
+    }
+    return _detailNetwork;
 }
 @end

@@ -81,7 +81,7 @@
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[PersonalViewController class]]) {
             PersonalViewController *controller = obj;
-            if (controller.uid == userId) {
+            if ([controller.uid isEqualToString: userId]) {
                 [weakSelf.navigationController popToViewController:obj animated:YES];
                 flag = YES;
                 *stop = YES;

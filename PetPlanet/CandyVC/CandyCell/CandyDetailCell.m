@@ -36,6 +36,10 @@
     _likeNumber = model.like.integerValue;
     _isLike = model.isLike.boolValue;
     _content.text = model.content;
+    NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
+    attrDict[NSFontAttributeName] = _content.font;
+    CGSize size = [model.content boundingRectWithSize:CGSizeMake(Screen_Width-40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrDict context:nil].size;
+    
     _time.text = [Common getDateStringWithTimeString:model.time];
     _comments.text = [NSString stringWithFormat:@"comments %@",model.comments];
     
@@ -66,7 +70,7 @@
         weakSelf.image.userInteractionEnabled = YES;
         if ([weakSelf.delegate respondsToSelector:@selector(didLoadImage:)]) {
             CGFloat imageHeight = image.size.height/image.size.width * (Screen_Width - 20*2);
-            CGFloat height = 153 + imageHeight + weakSelf.content.frame.size.height;
+            CGFloat height = 153 + imageHeight + size.height;
             [weakSelf.delegate didLoadImage:height];
         }
     }];

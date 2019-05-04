@@ -13,6 +13,7 @@
 #import "HPGrowingTextView.h"
 #import "PersonalViewController.h"
 #import "ZYSVPManager.h"
+#import <MJRefresh.h>
 
 @interface CandyDetailController ()<UITableViewDelegate,UITableViewDataSource,CandyDetailCellDelegate,HPGrowingTextViewDelegate>
 
@@ -90,6 +91,19 @@
 }
 
 #pragma mark - PrivateMethod
+- (void)configHeaderAndFooter{
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    UIImage *image = [UIImage imageNamed:@"UFO_0"];
+    [header setImages:@[image] forState:MJRefreshStatePulling];
+    [header setImages:[Common getUFOImage] forState:MJRefreshStateRefreshing];
+    _tableView.mj_header = header;
+    
+    MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreData)];
+    _tableView.mj_footer = footer;
+}
+
 - (void)configNavigationItems{
     UIBarButtonItem *item;
     if ([_model.authorID isEqualToString:[ZYUserManager shareInstance].userID]) {
@@ -144,6 +158,7 @@
     _tableView.estimatedRowHeight = 100;
     [_tableView registerNib:[UINib nibWithNibName:@"CandyDetailCell" bundle:nil] forCellReuseIdentifier:@"CandyDetailCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"CandyReplyCell" bundle:nil] forCellReuseIdentifier:@"CandyReplyCell"];
+    [self configHeaderAndFooter];
 }
 
 - (void)gotoPersonalPageWithUid:(NSString *)uid{
@@ -152,7 +167,7 @@
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[PersonalViewController class]]) {
             PersonalViewController *controller = obj;
-            if (controller.uid == uid) {
+            if ([controller.uid isEqualToString: uid]) {
                 [weakSelf.navigationController popToViewController:obj animated:YES];
                 flag = YES;
                 *stop = YES;
@@ -172,12 +187,33 @@
         weakSelf.detailHeight = 0;
         weakSelf.heightDic = nil;
         [weakSelf configNavigationItems];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
         [weakSelf.tableView reloadData];
     } fail:^(NSString * _Nonnull error) {
+        [weakSelf.tableView.mj_header endRefreshing];
         if ([error isEqualToString:@"30"]) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
             [ZYSVPManager showText:@"Already Delete" autoClose:1.5];
         }
+    }];
+}
+
+- (void)moreData{
+    __weak typeof(self) weakSelf = self;
+    [self.network moreReplyWithAid:_model.candyID complete:^(BOOL noMore) {
+        [weakSelf.tableView.mj_footer endRefreshing];
+        if (noMore) {
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        [weakSelf.tableView reloadData];
+    } fail:^(NSString * _Nonnull error) {
+        [weakSelf.tableView.mj_footer endRefreshing];
+        if ([error isEqualToString:@"15"]) {
+            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
+        }
+        [ZYSVPManager showText:@"Load Failed" autoClose:1.5];
     }];
 }
 

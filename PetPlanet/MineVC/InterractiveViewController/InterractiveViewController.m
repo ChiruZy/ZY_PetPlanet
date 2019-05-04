@@ -14,6 +14,9 @@
 #import <MJRefresh.h>
 #import "NotConnectView.h"
 #import "PersonalViewController.h"
+#import "CandyDetailController.h"
+#import "ZYSVPManager.h"
+#import "CandyDetailNetwork.h"
 
 @interface InterractiveViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 @property (weak, nonatomic) IBOutlet HintView *loginView;
@@ -21,7 +24,9 @@
 @property (weak, nonatomic) IBOutlet NotConnectView *notConnectView;
 
 @property (nonatomic,strong) InterractiveNetworking *network;
+@property (nonatomic,strong) CandyDetailNetwork *detailNetwork;
 @property (nonatomic,assign) InterractiveVCType type;
+@property (nonatomic,assign) BOOL liking;
 @end
 
 @implementation InterractiveViewController
@@ -95,7 +100,7 @@
         [weakSelf.tableView reloadData];
         weakSelf.notConnectView.hidden = YES;
         [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer resetNoMoreData];
+        [weakSelf.tableView.mj_footer endRefreshing];
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"13"]||[error isEqualToString:@"14"]) {
             weakSelf.notConnectView.hidden = NO;
@@ -168,6 +173,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CandyModel *model = _network.models[indexPath.section];
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 #pragma getter & setter
 - (InterractiveNetworking *)network{
     if (!_network) {
@@ -180,18 +190,41 @@
     return _network;
 }
 
-- (void)cellDidTapReplyWithModel:(CandyModel *)model{
-    
-}
+#pragma mark - CandyCellDelegate
 
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
     PersonalViewController *personalVC =[[PersonalViewController alloc]initWithUserID:model.authorID];
     [self.navigationController pushViewController:personalVC animated:YES];
 }
 
-- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
-    
+- (void)cellDidTapReplyWithModel:(CandyModel *)model{
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [detailVC edit];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike complete:(nonnull LikeComplete)block{
+    if (![ZYUserManager shareInstance].isLogin) {
+        [ZYSVPManager showText:@"Please Login" autoClose:1.5];
+    }
+    if (_liking) {
+        return;
+    }
+    _liking = YES;
+    __weak typeof(self) weakSelf = self;
+    [self.detailNetwork likeWithCid:model.candyID isLike:isLike complete:^{
+        block();
+        weakSelf.liking = NO;
+    } fail:^(NSString * _Nonnull error) {
+        weakSelf.liking = NO;
+        [ZYSVPManager showText:@"Like Failed" autoClose:1.5];
+    }];
+}
 
+- (CandyDetailNetwork *)detailNetwork{
+    if (!_detailNetwork) {
+        _detailNetwork = [[CandyDetailNetwork alloc]init];
+    }
+    return _detailNetwork;
+}
 @end

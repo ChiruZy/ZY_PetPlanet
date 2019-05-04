@@ -9,6 +9,7 @@
 #import "SearchViewNetwork.h"
 #import <AFNetworking.h>
 #import <NSObject+YYModel.h>
+#import "ZYUserManager.h"
 
 @implementation UsersModel
 
@@ -29,7 +30,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_candy.php";
-    NSDictionary *param = @{@"keyword":keyword};
+    NSDictionary *param = @{@"keyword":keyword,@"uid":[ZYUserManager shareInstance].userID};
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -68,7 +69,7 @@
     manager.requestSerializer.timeoutInterval = 8;
     NSString *url = @"http://106.14.174.39/pet/search/search_more_candy.php";
     CandyModel *model = _candys.lastObject;
-    NSDictionary *param = @{@"keyword":keyword,@"last":model.time};
+    NSDictionary *param = @{@"keyword":keyword,@"last":model.time,@"uid":[ZYUserManager shareInstance].userID};
     
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

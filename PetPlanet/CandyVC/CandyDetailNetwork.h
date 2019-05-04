@@ -31,6 +31,8 @@ typedef void(^LoadComplete)(BOOL noMore);
 
 - (void)reloadDataWithAid:(NSString *)cid complete:(Complete)complete fail:(Fail)fail;
 
+- (void)moreReplyWithAid:(NSString *)cid complete:(LoadComplete)complete fail:(Fail)fail;
+
 - (void)replyWithContent:(NSString *)content cid:(NSString *)cid complete:(Complete)complete fail:(Fail)fail;
 
 - (void)deleteCandyWithCid:(NSString *)cid complete:(Complete)complete fail:(Fail)fail;
