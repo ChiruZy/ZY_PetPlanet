@@ -68,7 +68,7 @@
     _networking = YES;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
-    NSString *url = @"http://106.14.174.39/pet/candy/get_follow_list.php";
+    NSString *url = @"http://106.14.174.39/pet/mine/get_follow_list.php";
     NSDictionary *param = @{@"sid":[ZYUserManager shareInstance].userID,@"uid":_uid};
     
     __weak typeof(self) weakSelf = self;
@@ -93,6 +93,7 @@
         [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [ZYSVPManager showText:@"Connect Failed" autoClose:2];
+        weakSelf.networking = NO;
         [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
@@ -115,7 +116,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
-    NSString *url = @"http://106.14.174.39/pet/candy/more_follow_list.php";
+    NSString *url = @"http://106.14.174.39/pet/mine/more_follow_list.php";
     SearchUserModel *model = _model.lastObject;
     NSDictionary *param = @{@"sid":[ZYUserManager shareInstance].userID,@"uid":_uid,@"last":model.uid};
     
@@ -135,7 +136,7 @@
             [ZYSVPManager showText:@"Server Error" autoClose:2];
         }
         
-        [weakSelf.model addObjectsFromArray:[self parserData:responseObject[@"back"]]];
+        [weakSelf.model addObjectsFromArray:[self parserData:responseObject[@"items"]]];
         
         [weakSelf.tableView.mj_footer endRefreshing];
         if (weakSelf.model.count<20) {

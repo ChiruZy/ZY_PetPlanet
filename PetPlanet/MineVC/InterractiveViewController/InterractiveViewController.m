@@ -26,6 +26,7 @@
 @property (nonatomic,assign) InterractiveVCType type;
 @property (nonatomic,strong) NSString *uid;
 @property (nonatomic,assign) BOOL liking;
+@property (nonatomic,assign) BOOL isNetworking;
 @end
 
 @implementation InterractiveViewController
@@ -99,12 +100,17 @@
 
 
 - (void)reload{
+    if (_isNetworking) {
+        [_tableView.mj_header endRefreshing];
+    }
+    _isNetworking = YES;
     __weak typeof(self) weakSelf = self;
     [self.network reloadModelsWithUid:_uid complete:^{
         [weakSelf.tableView reloadData];
         [weakSelf.loginView setType:HintHiddenType needButton:NO];
         [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer endRefreshing];
+        [weakSelf.tableView.mj_footer resetNoMoreData];
+        weakSelf.isNetworking = NO;
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"15"]) {
             [weakSelf.loginView setType:HintNoCandyType needButton:YES];
@@ -112,10 +118,15 @@
             [weakSelf.loginView setType:HintNoConnectType needButton:YES];
         }
         [weakSelf.tableView.mj_header endRefreshing];
+        weakSelf.isNetworking = NO;
     }];
 }
 
 - (void)loadMoreData{
+    if (_isNetworking) {
+        [_tableView.mj_footer endRefreshing];
+    }
+    _isNetworking = YES;
     __weak typeof(self) weakSelf = self;
     [self.network loadMoreWithUid:_uid complete:^(BOOL noMore) {
         [weakSelf.tableView.mj_footer endRefreshing];
@@ -123,6 +134,7 @@
         if (noMore) {
             [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
         }
+        weakSelf.isNetworking = NO;
     } fail:^(NSString *error) {
         if ([error isEqualToString:@"16"]){
             
@@ -131,6 +143,7 @@
             return;
         }
         [weakSelf.tableView.mj_footer endRefreshing];
+        weakSelf.isNetworking = NO;
     }];
 }
 

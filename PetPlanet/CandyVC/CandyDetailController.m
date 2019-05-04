@@ -188,7 +188,7 @@
         weakSelf.heightDic = nil;
         [weakSelf configNavigationItems];
         [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer endRefreshing];
+        [weakSelf.tableView.mj_footer resetNoMoreData];
         [weakSelf.tableView reloadData];
     } fail:^(NSString * _Nonnull error) {
         [weakSelf.tableView.mj_header endRefreshing];

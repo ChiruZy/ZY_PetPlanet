@@ -33,6 +33,13 @@
     NSString *follow = model.follow?:@"";
     NSString *like = model.like?:@"";
     _uid = model.uid;
+    
+    if ([_uid isEqualToString:[ZYUserManager shareInstance].userID]) {
+        _follow.hidden = YES;
+    }else{
+        _follow.hidden = NO;
+    }
+    
     _content.text = [NSString stringWithFormat:@"%@ Follow  %@ Like",follow,like];
     _name.text = model.name;
     
