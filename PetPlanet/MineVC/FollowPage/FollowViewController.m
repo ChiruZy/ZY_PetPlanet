@@ -13,7 +13,7 @@
 #import <YYModel.h>
 #import "ZYSVPManager.h"
 #import "PersonalViewController.h"
-
+#import "HintView.h"
 
 @interface FollowViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -22,6 +22,7 @@
 @property (nonatomic,strong) NSMutableArray *model;
 @property (nonatomic,assign) BOOL networking;
 @property (nonatomic,assign) BOOL following;
+@property (weak, nonatomic) IBOutlet HintView *hintView;
 
 @end
 
@@ -37,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.needNavBar = YES;
+    [_hintView setType:HintWaitType needButton:NO];
+    [_hintView moveY:-40];
     self.navigationItem.title = @"Follows";
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -77,24 +80,27 @@
             [ZYSVPManager showText:@"Server Error" autoClose:2];
             return ;
         }
-        NSString *error = responseObject[@"error"];
-        if (![error isEqualToString:@"10"]) {
-            [ZYSVPManager showText:@"Server Error" autoClose:2];
-        }
-        
-        [weakSelf.model setArray:[self parserData:responseObject[@"items"]]];
-        
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer resetNoMoreData];
-        if (weakSelf.model.count<20) {
-            [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+        weakSelf.networking = NO;
+        
+        NSString *error = responseObject[@"error"];
+        if ([error isEqualToString:@"16"]){
+            [weakSelf.hintView setType:HintNoCandyType needButton:YES];
+        }else if (![error isEqualToString:@"10"]) {
+            [ZYSVPManager showText:@"Server Error" autoClose:2];
+            [weakSelf.hintView setType:HintNoConnectType needButton:YES];
+        }else{
+            [weakSelf.hintView setType:HintHiddenType needButton:NO];
+            [weakSelf.model setArray:[self parserData:responseObject[@"items"]]];
+            if (weakSelf.model.count<20) {
+                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
+            [weakSelf.tableView reloadData];
         }
-        weakSelf.networking = NO;
-        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [ZYSVPManager showText:@"Connect Failed" autoClose:2];
+        [weakSelf.hintView setType:HintNoConnectType needButton:YES];
         weakSelf.networking = NO;
-        [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
 

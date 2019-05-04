@@ -62,11 +62,13 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="9Vn-Ye-rCd"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <state key="normal" title="Login Now"/>
+                    <state key="normal" title="Login Now">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-EV-Gbz">
                     <rect key="frame" x="142.5" y="34" width="90" height="90"/>
-                    <color key="backgroundColor" red="0.68715912799588263" green="0.93221420049667358" blue="0.89299602787492904" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.78978667234109579" green="0.79860054894657539" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="kPT-Hy-bR4"/>
                         <constraint firstAttribute="width" constant="90" id="qkb-cO-d1V"/>

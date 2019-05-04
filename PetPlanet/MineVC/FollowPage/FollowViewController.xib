@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FollowViewController">
             <connections>
+                <outlet property="hintView" destination="8vp-nc-cjv" id="pmO-DH-hiH"/>
                 <outlet property="tableView" destination="pqm-o1-Ikm" id="aIy-bw-tNL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,13 +26,21 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vp-nc-cjv" customClass="HintView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="8vp-nc-cjv" secondAttribute="bottom" id="DVM-ul-L58"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="pqm-o1-Ikm" secondAttribute="trailing" id="JRa-ua-1Rl"/>
                 <constraint firstAttribute="bottom" secondItem="pqm-o1-Ikm" secondAttribute="bottom" id="Q1D-Qr-981"/>
                 <constraint firstItem="pqm-o1-Ikm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="RDy-S9-Bpy"/>
+                <constraint firstItem="8vp-nc-cjv" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Wwk-sx-do2"/>
+                <constraint firstItem="8vp-nc-cjv" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="itt-w9-pdx"/>
                 <constraint firstItem="pqm-o1-Ikm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jka-oT-9D0"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="8vp-nc-cjv" secondAttribute="trailing" id="qFp-Mx-NsK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

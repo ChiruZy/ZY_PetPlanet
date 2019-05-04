@@ -238,6 +238,8 @@
 }
 
 - (void)deleteWithPid:(NSString *)pid{
+    
+    
     NSString *url = @"http://106.14.174.39/pet/mine/delete_photos.php";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
@@ -267,10 +269,12 @@
     
     __weak typeof(self) weakSelf = self;
     cell.block = ^(PhotoModel * _Nonnull model) {
+        if (![[ZYUserManager shareInstance].userID isEqualToString:weakSelf.uid]) {
+            return;
+        }
         ChooseView *chooseView = [[[NSBundle mainBundle] loadNibNamed:@"ChooseView" owner:nil options:nil]firstObject];
         ZYPopView *popView = [[ZYPopView alloc]initWithContentView:chooseView type:ZYPopViewBlurType];
         chooseView.yesEvent = ^{
-            
             [weakSelf.collectionView performBatchUpdates:^{
                 NSIndexPath *indexpath = [NSIndexPath indexPathForRow:[weakSelf.model indexOfObject:model] inSection:0] ;
                 [self.collectionView deleteItemsAtIndexPaths:@[indexpath]];

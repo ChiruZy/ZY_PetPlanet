@@ -125,6 +125,10 @@
 }
 
 - (void)collectionEvnet:(UIBarButtonItem *)sender{
+    if (![ZYUserManager shareInstance].isLogin) {
+        [ZYSVPManager showText:@"Please Login" autoClose:1.5];
+        return;
+    }
     sender.enabled = NO;
     BOOL isCollection = !_isCollection;
     __weak typeof(self) weakSelf = self;
