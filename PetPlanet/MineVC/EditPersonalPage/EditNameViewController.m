@@ -49,6 +49,12 @@
         [ZYSVPManager showText:@"Null Name" autoClose:1.5];
         return;
     }
+    NSRange range = [_name.text rangeOfString:@" "];
+    if (range.location != NSNotFound) {
+        [ZYSVPManager showText:@"Can't Have Space" autoClose:1.5];
+        return;
+    }
+    
     if (_block) {
         _block(_name.text);
     }

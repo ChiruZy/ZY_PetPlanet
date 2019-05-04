@@ -11,12 +11,14 @@
 #import "CandyTable/CandyTableViewController.h"
 #import "CommentPage/CommentViewController.h"
 #import "SearchPage/SearchViewController.h"
+#import "NewCandy/NewCandyController.h"
 
 @interface CandyViewController ()<JXCategoryViewDelegate,JXCategoryListContainerViewDelegate>
 @property (weak, nonatomic) IBOutlet JXCategoryTitleView *titleView;
 @property (weak, nonatomic) IBOutlet JXCategoryListContainerView *listView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UIButton *addCandy;
 
 @end
 
@@ -30,6 +32,7 @@
     UITapGestureRecognizer *tapSearch = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoSearchPage)];
     [_searchView addGestureRecognizer:tapSearch];
     _searchView.userInteractionEnabled = YES;
+    [_addCandy addTarget: self action:@selector(newCandy) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)configCategoryView{
@@ -47,6 +50,16 @@
     
     [_listView configWithDelegate:self];
     _titleView.contentScrollView = _listView.scrollView;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _addCandy.hidden = ![ZYUserManager shareInstance].isLogin;
+}
+
+- (void)newCandy{
+    NewCandyController *new = [NewCandyController new];
+    [self.navigationController pushViewController:new animated:YES];
 }
 
 - (void)gotoCommentPage{

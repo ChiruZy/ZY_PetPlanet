@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="305" id="KGk-i7-Jjw" customClass="CandyDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="418.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyH-ul-b9f">
+                        <rect key="frame" x="82" y="36" width="109" height="29"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                        <state key="normal" title="Andrea Marshall">
+                            <color key="titleColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-0R-0qp">
+                        <rect key="frame" x="82" y="69" width="88" height="16"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog is human best friends" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75e-HM-FyD">
+                        <rect key="frame" x="20" y="106" width="335" height="16.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny3-ez-kPh">
+                        <rect key="frame" x="295" y="60" width="70" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="gxx-mf-mWT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                        <state key="normal" title="152" image="likeButton">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="emg-GV-1RF">
+                        <rect key="frame" x="20" y="38" width="48" height="48"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.85882352939999995" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="2il-0l-EpB"/>
+                            <constraint firstAttribute="height" constant="48" id="xBy-02-LQH"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments  45 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-NE-Gvr">
+                        <rect key="frame" x="20" y="391.5" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Df1-ls-BiH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.60392156860000001" green="0.59999999999999998" blue="0.54696439360000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ESp-Fz-Gqq">
+                        <rect key="frame" x="20" y="132.5" width="335" height="249"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.99607843139999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="b6c-NE-Gvr" firstAttribute="top" secondItem="ESp-Fz-Gqq" secondAttribute="bottom" constant="10" id="03P-Y0-tCG"/>
+                    <constraint firstItem="75e-HM-FyD" firstAttribute="top" secondItem="emg-GV-1RF" secondAttribute="bottom" constant="20" id="3ac-IA-5Pd"/>
+                    <constraint firstItem="SgA-0R-0qp" firstAttribute="top" secondItem="FyH-ul-b9f" secondAttribute="bottom" constant="4" id="4WM-7i-efL"/>
+                    <constraint firstAttribute="trailing" secondItem="75e-HM-FyD" secondAttribute="trailing" constant="20" id="AVn-th-CmI"/>
+                    <constraint firstItem="b6c-NE-Gvr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Adl-uX-htJ"/>
+                    <constraint firstItem="ESp-Fz-Gqq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="D1w-Lh-fbJ"/>
+                    <constraint firstItem="ESp-Fz-Gqq" firstAttribute="top" secondItem="75e-HM-FyD" secondAttribute="bottom" constant="10" id="EGG-oL-AdH"/>
+                    <constraint firstItem="emg-GV-1RF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Io1-Fa-578"/>
+                    <constraint firstAttribute="bottom" secondItem="b6c-NE-Gvr" secondAttribute="bottom" constant="10" id="Jqy-15-Imf"/>
+                    <constraint firstItem="FyH-ul-b9f" firstAttribute="leading" secondItem="emg-GV-1RF" secondAttribute="trailing" constant="14" id="O5N-5q-e0P"/>
+                    <constraint firstItem="emg-GV-1RF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="Ynp-Sm-2dI"/>
+                    <constraint firstItem="75e-HM-FyD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bIX-2T-Wao"/>
+                    <constraint firstItem="FyH-ul-b9f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="dDG-4s-0er"/>
+                    <constraint firstItem="ny3-ez-kPh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="fgg-VG-okk"/>
+                    <constraint firstAttribute="trailing" secondItem="ESp-Fz-Gqq" secondAttribute="trailing" constant="20" id="hMR-fz-D4f"/>
+                    <constraint firstItem="SgA-0R-0qp" firstAttribute="leading" secondItem="emg-GV-1RF" secondAttribute="trailing" constant="14" id="sD6-jU-rSd"/>
+                    <constraint firstAttribute="trailing" secondItem="ny3-ez-kPh" secondAttribute="trailing" constant="10" id="ykz-Vu-Y0b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="comments" destination="b6c-NE-Gvr" id="QjK-yh-jTO"/>
+                <outlet property="content" destination="75e-HM-FyD" id="Uly-Ih-cyv"/>
+                <outlet property="head" destination="emg-GV-1RF" id="fZn-0v-lAh"/>
+                <outlet property="image" destination="ESp-Fz-Gqq" id="okM-Ln-dRv"/>
+                <outlet property="like" destination="ny3-ez-kPh" id="g5Q-lq-YZ3"/>
+                <outlet property="name" destination="FyH-ul-b9f" id="L5n-pe-mfM"/>
+                <outlet property="time" destination="SgA-0R-0qp" id="w67-Ba-1Fz"/>
+            </connections>
+            <point key="canvasLocation" x="136.95652173913044" y="82.700892857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="likeButton" width="24" height="24"/>
+    </resources>
+</document>

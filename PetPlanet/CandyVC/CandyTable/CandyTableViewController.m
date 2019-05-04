@@ -15,6 +15,10 @@
 #import "LoginViewController.h"
 #import "PersonalViewController.h"
 #import "HintView.h"
+#import "CandyDetailController.h"
+#import "CandyDetailNetwork.h"
+#import "ZYSVPManager.h"
+#import "CandyDetailController.h"
 
 @interface CandyTableViewController ()<UITableViewDelegate,UITableViewDataSource,CandyCellDelegate>
 
@@ -23,6 +27,8 @@
 
 @property (weak, nonatomic) UIViewController * superView;
 @property (nonatomic,strong) CandyNetworking *network;
+@property (nonatomic,strong) CandyDetailNetwork *detailNetwork;
+@property (nonatomic,assign) BOOL liking;
 @property (nonatomic,assign) CandyListType type;
 @end
 
@@ -198,6 +204,12 @@
     return _network;
 }
 
+- (CandyDetailNetwork *)detailNetwork{
+    if (!_detailNetwork) {
+        _detailNetwork = [[CandyDetailNetwork alloc]init];
+    }
+    return _detailNetwork;
+}
 #pragma mark - CandyCellDelegate
 
 - (void)cellDidTapHeadOrNameWithModel:(CandyModel *)model{
@@ -206,14 +218,32 @@
 }
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model{
-    
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [detailVC edit];
+    [_superView.navigationController pushViewController:detailVC animated:YES];
 }
 
-- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike{
-    
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike complete:(nonnull LikeComplete)block{
+    if (![ZYUserManager shareInstance].isLogin) {
+        [ZYSVPManager showText:@"Please Login" autoClose:1.5];
+    }
+    if (_liking) {
+        return;
+    }
+    _liking = YES;
+    __weak typeof(self) weakSelf = self;
+    [self.detailNetwork likeWithCid:model.candyID isLike:isLike complete:^{
+        block();
+        weakSelf.liking = NO;
+    } fail:^(NSString * _Nonnull error) {
+        weakSelf.liking = NO;
+        [ZYSVPManager showText:@"Like Failed" autoClose:1.5];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CandyModel *model = _network.models[indexPath.section];
+    CandyDetailController *detailVC = [[CandyDetailController alloc]initWithCandyModel:model];
+    [_superView.navigationController pushViewController:detailVC animated:YES];
 }
 @end

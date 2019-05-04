@@ -11,9 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^LikeComplete)(void);
+
 @protocol CandyCellDelegate <NSObject>
 
-- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike;
+- (void)cellDidTapLikeWithModel:(CandyModel *)model isLike:(BOOL)isLike complete:(LikeComplete)block;
 
 - (void)cellDidTapReplyWithModel:(CandyModel *)model;
 

@@ -123,6 +123,13 @@
 		636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0AF224E0BE900675B0C /* LoginViewController.xib */; };
 		636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CF0B2224E0C5400675B0C /* NotConnectView.xib */; };
 		636CF0BA224E10E000675B0C /* NotConnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF0B9224E10E000675B0C /* NotConnectView.m */; };
+		6370A17B2279575C0090D40D /* NewCandyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370A1792279575C0090D40D /* NewCandyController.m */; };
+		6370A17C2279575C0090D40D /* NewCandyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6370A17A2279575C0090D40D /* NewCandyController.xib */; };
+		6370A18022797F6B0090D40D /* CandyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370A17E22797F6B0090D40D /* CandyDetailController.m */; };
+		6370A18122797F6B0090D40D /* CandyDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6370A17F22797F6B0090D40D /* CandyDetailController.xib */; };
+		6370A186227991030090D40D /* CandyDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370A184227991030090D40D /* CandyDetailCell.m */; };
+		6370A187227991030090D40D /* CandyDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6370A185227991030090D40D /* CandyDetailCell.xib */; };
+		6370A18A2279F3720090D40D /* CandyDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370A1892279F3720090D40D /* CandyDetailModel.m */; };
 		6373149E224E9E7C00D4D5CD /* InterractiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373149C224E9E7C00D4D5CD /* InterractiveViewController.m */; };
 		6373149F224E9E7C00D4D5CD /* InterractiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6373149D224E9E7C00D4D5CD /* InterractiveViewController.xib */; };
 		637314A6224EA03E00D4D5CD /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637314A5224EA03E00D4D5CD /* LoginView.xib */; };
@@ -140,6 +147,11 @@
 		63A03DE2225001350078C1D8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DE0225001350078C1D8 /* PersonalViewController.xib */; };
 		63A03DE722500A1D0078C1D8 /* PersonalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03DE522500A1D0078C1D8 /* PersonalCell.m */; };
 		63A03DE822500A1D0078C1D8 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A03DE622500A1D0078C1D8 /* PersonalCell.xib */; };
+		63BBC39B227A09A600BF8955 /* CandyDetailNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC39A227A09A600BF8955 /* CandyDetailNetwork.m */; };
+		63BBC39F227A223B00BF8955 /* CandyReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC39D227A223B00BF8955 /* CandyReplyCell.m */; };
+		63BBC3A0227A223B00BF8955 /* CandyReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BBC39E227A223B00BF8955 /* CandyReplyCell.xib */; };
+		63BBC3A6227B604400BF8955 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC3A3227B604300BF8955 /* HPGrowingTextView.m */; };
+		63BBC3A7227B604400BF8955 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BBC3A4227B604300BF8955 /* HPTextViewInternal.m */; };
 		63D0A1E0223046E5007E5B36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D0A1DF223046E5007E5B36 /* AppDelegate.m */; };
 		63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E7223046E6007E5B36 /* Assets.xcassets */; };
 		63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D0A1E9223046E6007E5B36 /* LaunchScreen.storyboard */; };
@@ -405,6 +417,17 @@
 		636CF0B2224E0C5400675B0C /* NotConnectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotConnectView.xib; sourceTree = "<group>"; };
 		636CF0B8224E10E000675B0C /* NotConnectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotConnectView.h; sourceTree = "<group>"; };
 		636CF0B9224E10E000675B0C /* NotConnectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotConnectView.m; sourceTree = "<group>"; };
+		6370A1782279575C0090D40D /* NewCandyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewCandyController.h; sourceTree = "<group>"; };
+		6370A1792279575C0090D40D /* NewCandyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewCandyController.m; sourceTree = "<group>"; };
+		6370A17A2279575C0090D40D /* NewCandyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCandyController.xib; sourceTree = "<group>"; };
+		6370A17D22797F6B0090D40D /* CandyDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyDetailController.h; sourceTree = "<group>"; };
+		6370A17E22797F6B0090D40D /* CandyDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyDetailController.m; sourceTree = "<group>"; };
+		6370A17F22797F6B0090D40D /* CandyDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyDetailController.xib; sourceTree = "<group>"; };
+		6370A183227991030090D40D /* CandyDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyDetailCell.h; sourceTree = "<group>"; };
+		6370A184227991030090D40D /* CandyDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyDetailCell.m; sourceTree = "<group>"; };
+		6370A185227991030090D40D /* CandyDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyDetailCell.xib; sourceTree = "<group>"; };
+		6370A1882279F3720090D40D /* CandyDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyDetailModel.h; sourceTree = "<group>"; };
+		6370A1892279F3720090D40D /* CandyDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyDetailModel.m; sourceTree = "<group>"; };
 		6373149B224E9E7C00D4D5CD /* InterractiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterractiveViewController.h; sourceTree = "<group>"; };
 		6373149C224E9E7C00D4D5CD /* InterractiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterractiveViewController.m; sourceTree = "<group>"; };
 		6373149D224E9E7C00D4D5CD /* InterractiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterractiveViewController.xib; sourceTree = "<group>"; };
@@ -432,6 +455,15 @@
 		63A03DE422500A1D0078C1D8 /* PersonalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalCell.h; sourceTree = "<group>"; };
 		63A03DE522500A1D0078C1D8 /* PersonalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalCell.m; sourceTree = "<group>"; };
 		63A03DE622500A1D0078C1D8 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
+		63BBC399227A09A600BF8955 /* CandyDetailNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyDetailNetwork.h; sourceTree = "<group>"; };
+		63BBC39A227A09A600BF8955 /* CandyDetailNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyDetailNetwork.m; sourceTree = "<group>"; };
+		63BBC39C227A223B00BF8955 /* CandyReplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CandyReplyCell.h; sourceTree = "<group>"; };
+		63BBC39D227A223B00BF8955 /* CandyReplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyReplyCell.m; sourceTree = "<group>"; };
+		63BBC39E227A223B00BF8955 /* CandyReplyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyReplyCell.xib; sourceTree = "<group>"; };
+		63BBC3A2227B604300BF8955 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
+		63BBC3A3227B604300BF8955 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
+		63BBC3A4227B604300BF8955 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
+		63BBC3A5227B604300BF8955 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
 		63D0A1DB223046E5007E5B36 /* PetPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D0A1DE223046E5007E5B36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63D0A1DF223046E5007E5B36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -679,6 +711,8 @@
 		636CEF9D224A775D00675B0C /* CandyVC */ = {
 			isa = PBXGroup;
 			children = (
+				6370A182227982B30090D40D /* CandyCell */,
+				6370A1772279568E0090D40D /* NewCandy */,
 				637314AA224F44F500D4D5CD /* CandyNetworking */,
 				636CF0A2224D55FE00675B0C /* SearchPage */,
 				636CF09C224D51CB00675B0C /* CommentPage */,
@@ -686,6 +720,11 @@
 				636CEFA4224A77B800675B0C /* CandyViewController.h */,
 				636CEFA5224A77B800675B0C /* CandyViewController.m */,
 				636CEFA6224A77B800675B0C /* CandyViewController.xib */,
+				6370A17D22797F6B0090D40D /* CandyDetailController.h */,
+				6370A17E22797F6B0090D40D /* CandyDetailController.m */,
+				6370A17F22797F6B0090D40D /* CandyDetailController.xib */,
+				63BBC399227A09A600BF8955 /* CandyDetailNetwork.h */,
+				63BBC39A227A09A600BF8955 /* CandyDetailNetwork.m */,
 			);
 			path = CandyVC;
 			sourceTree = "<group>";
@@ -1031,6 +1070,7 @@
 		636CF0B7224E0F2A00675B0C /* OthersView */ = {
 			isa = PBXGroup;
 			children = (
+				63BBC3A1227B604300BF8955 /* GrowingTextView */,
 				63F422DA227857460040311A /* ChooseView.h */,
 				63F422DB227857460040311A /* ChooseView.m */,
 				63F422DD227857550040311A /* ChooseView.xib */,
@@ -1052,6 +1092,31 @@
 				63A03DDA224FDEAA0078C1D8 /* ImageReviewView */,
 			);
 			path = OthersView;
+			sourceTree = "<group>";
+		};
+		6370A1772279568E0090D40D /* NewCandy */ = {
+			isa = PBXGroup;
+			children = (
+				6370A1782279575C0090D40D /* NewCandyController.h */,
+				6370A1792279575C0090D40D /* NewCandyController.m */,
+				6370A17A2279575C0090D40D /* NewCandyController.xib */,
+			);
+			path = NewCandy;
+			sourceTree = "<group>";
+		};
+		6370A182227982B30090D40D /* CandyCell */ = {
+			isa = PBXGroup;
+			children = (
+				6370A183227991030090D40D /* CandyDetailCell.h */,
+				6370A184227991030090D40D /* CandyDetailCell.m */,
+				6370A185227991030090D40D /* CandyDetailCell.xib */,
+				6370A1882279F3720090D40D /* CandyDetailModel.h */,
+				6370A1892279F3720090D40D /* CandyDetailModel.m */,
+				63BBC39C227A223B00BF8955 /* CandyReplyCell.h */,
+				63BBC39D227A223B00BF8955 /* CandyReplyCell.m */,
+				63BBC39E227A223B00BF8955 /* CandyReplyCell.xib */,
+			);
+			path = CandyCell;
 			sourceTree = "<group>";
 		};
 		6373149A224E9E6300D4D5CD /* InterractiveViewController */ = {
@@ -1128,6 +1193,17 @@
 				63A03DE622500A1D0078C1D8 /* PersonalCell.xib */,
 			);
 			path = PersonalCell;
+			sourceTree = "<group>";
+		};
+		63BBC3A1227B604300BF8955 /* GrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				63BBC3A2227B604300BF8955 /* HPTextViewInternal.h */,
+				63BBC3A4227B604300BF8955 /* HPTextViewInternal.m */,
+				63BBC3A3227B604300BF8955 /* HPGrowingTextView.m */,
+				63BBC3A5227B604300BF8955 /* HPGrowingTextView.h */,
+			);
+			path = GrowingTextView;
 			sourceTree = "<group>";
 		};
 		63D0A1D2223046E5007E5B36 = {
@@ -1338,6 +1414,7 @@
 				636CEFCB224AB72000675B0C /* KolCell.xib in Resources */,
 				636CF08A224D046800675B0C /* ChangeCoverView.xib in Resources */,
 				632EFDA02258C668008EE300 /* SearchUserViewController.xib in Resources */,
+				6370A187227991030090D40D /* CandyDetailCell.xib in Resources */,
 				63F422D422747FF60040311A /* EditPersonalViewController.xib in Resources */,
 				631FFE4B2251157C008F7188 /* AdoptViewController.xib in Resources */,
 				63A03DDC224FE1EF0078C1D8 /* ImageReviewPopView.xib in Resources */,
@@ -1350,11 +1427,13 @@
 				63FD1F3822513D800023230A /* CleanCacheView.xib in Resources */,
 				636CF0B3224E0C5400675B0C /* NotConnectView.xib in Resources */,
 				636CF09B224D50E800675B0C /* PopularViewController.xib in Resources */,
+				6370A17C2279575C0090D40D /* NewCandyController.xib in Resources */,
 				636CF0B1224E0BE900675B0C /* LoginViewController.xib in Resources */,
 				634D018422717CDB0030F851 /* AdoptDetailViewController.xib in Resources */,
 				6373149F224E9E7C00D4D5CD /* InterractiveViewController.xib in Resources */,
 				63D0A1EB223046E6007E5B36 /* LaunchScreen.storyboard in Resources */,
 				634F9D57226D84D900E52960 /* CreateAdoptViewController.xib in Resources */,
+				6370A18122797F6B0090D40D /* CandyDetailController.xib in Resources */,
 				632EFDE5225A8530008EE300 /* ConversationViewController.xib in Resources */,
 				636CF095224D315500675B0C /* InterractiveCell.xib in Resources */,
 				6380A4622250B7F40077F4E5 /* StateCell.xib in Resources */,
@@ -1377,6 +1456,7 @@
 				634F9D5D226DE18900E52960 /* SettingViewController.xib in Resources */,
 				63D0A1E8223046E6007E5B36 /* Assets.xcassets in Resources */,
 				636CEFDC224B3DDD00675B0C /* AdoptCell.xib in Resources */,
+				63BBC3A0227A223B00BF8955 /* CandyReplyCell.xib in Resources */,
 				634D018922719D150030F851 /* MyAdoptViewController.xib in Resources */,
 				631FFE50225117F2008F7188 /* HistoryViewController.xib in Resources */,
 				636CEFA8224A77B800675B0C /* CandyViewController.xib in Resources */,
@@ -1449,6 +1529,7 @@
 			files = (
 				63E099A4225549BF00C052E3 /* HistoryDelegate.m in Sources */,
 				636CEFCA224AB72000675B0C /* KolCell.m in Sources */,
+				6370A186227991030090D40D /* CandyDetailCell.m in Sources */,
 				63A03DD8224FDEA40078C1D8 /* ImageReviewPopView.m in Sources */,
 				63A03DE1225001350078C1D8 /* PersonalViewController.m in Sources */,
 				631FFE672251255A008F7188 /* InterractiveNetworking.m in Sources */,
@@ -1499,11 +1580,14 @@
 				636CEF9C224A75ED00675B0C /* ZYTabBarController.m in Sources */,
 				636CF053224CCACE00675B0C /* JXCategoryIndicatorRainbowLineView.m in Sources */,
 				636CF0A6224D561B00675B0C /* SearchViewController.m in Sources */,
+				6370A18022797F6B0090D40D /* CandyDetailController.m in Sources */,
+				63BBC3A7227B604400BF8955 /* HPTextViewInternal.m in Sources */,
 				636CF05F224CCACE00675B0C /* JXCategoryTitleImageView.m in Sources */,
 				630C3321226331FF008FB5E1 /* PhotoViewCell.m in Sources */,
 				631FFE4A2251157C008F7188 /* AdoptViewController.m in Sources */,
 				634F9D50226C478100E52960 /* CardItem.m in Sources */,
 				634D017822708AA70030F851 /* ZYBaseViewController+ImagePicker.m in Sources */,
+				63BBC3A6227B604400BF8955 /* HPGrowingTextView.m in Sources */,
 				636CF067224CCACE00675B0C /* JXCategoryImageCellModel.m in Sources */,
 				636CF06D224CCACE00675B0C /* JXCategoryCollectionView.m in Sources */,
 				631FFE5922511B7F008F7188 /* ZYUserManager.m in Sources */,
@@ -1511,9 +1595,11 @@
 				636CEFAC224A77C700675B0C /* MineViewController.m in Sources */,
 				636CF064224CCACE00675B0C /* JXCategoryTitleView.m in Sources */,
 				636CF063224CCACE00675B0C /* JXCategoryTitleCell.m in Sources */,
+				6370A18A2279F3720090D40D /* CandyDetailModel.m in Sources */,
 				63D0A202223059AC007E5B36 /* Common.m in Sources */,
 				63F422D322747FF60040311A /* EditPersonalViewController.m in Sources */,
 				636CF05A224CCACE00675B0C /* JXCategoryIndicatorCell.m in Sources */,
+				63BBC39F227A223B00BF8955 /* CandyReplyCell.m in Sources */,
 				636CF073224CCACE00675B0C /* JXCategoryBaseCell.m in Sources */,
 				636CEFA2224A77A500675B0C /* MainViewController.m in Sources */,
 				634F9D5C226DE18900E52960 /* SettingViewController.m in Sources */,
@@ -1548,6 +1634,7 @@
 				63E099AF225550A500C052E3 /* HotCell.m in Sources */,
 				6380A45B2250ABD90077F4E5 /* PhotoCell.m in Sources */,
 				636CEFD3224ABF4700675B0C /* KolView.m in Sources */,
+				6370A17B2279575C0090D40D /* NewCandyController.m in Sources */,
 				636CF05D224CCACE00675B0C /* JXCategoryDotView.m in Sources */,
 				636CF056224CCACE00675B0C /* JXCategoryIndicatorComponentView.m in Sources */,
 				636CEFB1224A879700675B0C /* ZYNavigationController.m in Sources */,
@@ -1561,6 +1648,7 @@
 				634D018322717CDB0030F851 /* AdoptDetailViewController.m in Sources */,
 				63E099B3225550C800C052E3 /* HotDelegate.m in Sources */,
 				63D0A1FC223055E2007E5B36 /* WelcomeViewController.m in Sources */,
+				63BBC39B227A09A600BF8955 /* CandyDetailNetwork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

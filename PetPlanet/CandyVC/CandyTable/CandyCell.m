@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *reply;
 
 @property (nonatomic,assign) BOOL isLike;
-@property (nonatomic,assign) NSString *likeNumber;
+@property (nonatomic,assign) NSUInteger likeNumber;
 @property (nonatomic,strong) CandyModel *model;
 @end
 
@@ -34,7 +34,7 @@
 - (void)configCellWithModel:(CandyModel *)model{
     _model = model;
     _isLike = model.isLike;
-    _likeNumber = model.like;
+    _likeNumber = model.like.integerValue;
     
     _time.text = model.timeInterval;
     _summary.text = model.summary;
@@ -67,13 +67,14 @@
 }
 
 - (void)likeEvent{
-    _isLike = !_isLike;
-    NSUInteger number = _isLike?_likeNumber.integerValue+1:_likeNumber.integerValue-1;
-    _likeNumber = [NSString stringWithFormat:@"%zd",number];
-    [self configLikeWithIsLike:_isLike likeNumber:number];
-
-    if ([_delegate respondsToSelector:@selector(cellDidTapLikeWithModel:isLike:)]) {
-        [_delegate cellDidTapLikeWithModel:_model isLike:YES];
+    BOOL isLike = !_isLike;
+    __weak typeof(self) weakSelf = self;
+    if ([_delegate respondsToSelector:@selector(cellDidTapLikeWithModel:isLike:complete:)]) {
+        [_delegate cellDidTapLikeWithModel:_model isLike:isLike complete:^{
+            weakSelf.isLike = isLike;
+            weakSelf.likeNumber = weakSelf.isLike?weakSelf.likeNumber+1:weakSelf.likeNumber-1;
+            [self configLikeWithIsLike:weakSelf.isLike likeNumber:weakSelf.likeNumber];
+        }];
     }
 }
 

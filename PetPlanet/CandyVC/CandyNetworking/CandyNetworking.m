@@ -59,17 +59,8 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 8;
     NSMutableDictionary *param = [NSMutableDictionary new];
-    if (_networkingType == CandyNetworkingFollowingType) {
-        [param setObject:@"0" forKey:@"type"];
-        [param setObject:uid forKey:@"uid"];
-    }else if(_networkingType == CandyNetworkingRecommendType){
-        [param setObject:@"1" forKey:@"type"];
-    }else if (_networkingType == CandyNetworkingNewsType){
-        [param setObject:@"2" forKey:@"type"];
-    }else if (_networkingType == CandyNetworkingUserType){
-        [param setObject:@"3" forKey:@"type"];
-        [param setObject:uid forKey:@"uid"];
-    }
+    [param setObject:uid forKey:@"uid"];
+    [param setObject:[NSString stringWithFormat:@"%zd",_networkingType] forKey:@"type"];
     __weak typeof(self) weakSelf = self;
     [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;

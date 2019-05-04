@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CandyViewController">
             <connections>
+                <outlet property="addCandy" destination="ony-MS-NcN" id="KIP-Tg-B0q"/>
                 <outlet property="commentButton" destination="eUe-qQ-AWD" id="PHK-Cd-zEf"/>
                 <outlet property="listView" destination="ZKK-CC-RUL" id="jRu-9c-kKa"/>
                 <outlet property="searchView" destination="rF1-91-XEl" id="qi0-eT-UJv"/>
@@ -91,10 +92,32 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ony-MS-NcN">
+                    <rect key="frame" x="305" y="714" width="56" height="56"/>
+                    <color key="backgroundColor" red="0.63137254899999995" green="0.62352941179999999" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="56" id="7Yy-tj-Oxh"/>
+                        <constraint firstAttribute="height" constant="56" id="W69-4p-fSS"/>
+                    </constraints>
+                    <state key="normal" image="add"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="28"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ony-MS-NcN" secondAttribute="bottom" constant="8" id="9WQ-gF-eZt"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZKK-CC-RUL" secondAttribute="trailing" id="9e3-Le-Q3X"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ony-MS-NcN" secondAttribute="trailing" constant="14" id="AbA-zC-DMV"/>
                 <constraint firstItem="T6x-fL-jmx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-44" id="J0n-h5-iSZ"/>
                 <constraint firstItem="T6x-fL-jmx" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="PpF-NR-Nqj"/>
                 <constraint firstItem="ZKK-CC-RUL" firstAttribute="top" secondItem="T6x-fL-jmx" secondAttribute="bottom" id="lrU-GQ-pf7"/>
@@ -107,6 +130,7 @@
         </view>
     </objects>
     <resources>
+        <image name="add" width="44" height="44"/>
         <image name="bell" width="40" height="40"/>
         <image name="search" width="20" height="20"/>
     </resources>

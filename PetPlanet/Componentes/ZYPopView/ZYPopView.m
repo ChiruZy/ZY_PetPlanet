@@ -76,7 +76,7 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:view.bounds];
     imageView.image = [self getWindowImage];
     [view addSubview:imageView];
-    
+
     FXBlurView *blurView = [[FXBlurView alloc]initWithFrame:view.bounds];
     blurView.blurRadius = 4;
     blurView.tintColor = [UIColor clearColor];
