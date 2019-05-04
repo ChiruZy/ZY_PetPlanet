@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Common.h"
 #import "WelcomeVC/WelcomeViewController.h"
 #import "AdoptViewController.h"
 #import "CandyViewController.h"
@@ -25,9 +26,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSThread sleepForTimeInterval:1];
-    
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    _window.backgroundColor = [UIColor whiteColor];
+    _window.backgroundColor = HEXCOLOR(0xF9F9F9);
     
     [[RCIM sharedRCIM]initWithAppKey:@"uwd1c0sxupu51"];
     
