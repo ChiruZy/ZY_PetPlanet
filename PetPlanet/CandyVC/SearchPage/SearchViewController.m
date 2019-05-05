@@ -42,8 +42,6 @@
     [super viewDidLoad];
     _searchField.delegate = self;
     [_cancel addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-//    UITapGestureRecognizer *tapSelf = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelf)];
-//    [self.view addGestureRecognizer:tapSelf];
     [self configHistory];
     [self configWithTableView];
 }
@@ -99,11 +97,6 @@
 
 - (IBAction)clearHistory:(id)sender {
     [_historyDelegate removeHistory];
-}
-
-
-- (void)tapSelf{
-    [_searchField resignFirstResponder];
 }
 
 #pragma mark - PrivateMethod
@@ -179,6 +172,7 @@
                 [weakSelf.navigationController pushViewController:searchUserVC animated:YES];
                 return;
             }
+            [weakSelf.historyDelegate setObjectToHistory:weakSelf.searchField.text];
             PersonalViewController *personalVC = [[PersonalViewController alloc]initWithUserID:model.uid];
             [weakSelf.navigationController pushViewController:personalVC animated:YES];
         };

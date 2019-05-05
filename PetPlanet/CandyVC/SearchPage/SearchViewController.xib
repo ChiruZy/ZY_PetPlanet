@@ -40,7 +40,7 @@
                                         <constraint firstAttribute="width" constant="36" id="BWO-vi-tK5"/>
                                         <constraint firstAttribute="height" constant="36" id="XfI-6L-Y5y"/>
                                     </constraints>
-                                    <state key="normal" image="bin"/>
+                                    <state key="normal" image="bin_g"/>
                                     <connections>
                                         <action selector="clearHistory:" destination="-1" eventType="touchUpInside" id="Hbg-nk-aM8"/>
                                     </connections>
@@ -206,7 +206,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bin" width="44" height="44"/>
+        <image name="bin_g" width="17.5" height="19"/>
         <image name="search" width="20" height="20"/>
     </resources>
 </document>
