@@ -9,8 +9,8 @@
 #import "CardView.h"
 #import "CardItemView.h"
 
-static const NSInteger ITEM_VIEW_COUNT = 4;     //显示的item个数 必须大于2
-static const NSInteger AHEAD_ITEM_COUNT = 5;    //提前几张view开始提醒刷新
+static const NSInteger ITEM_VIEW_COUNT = 5;     //显示的item个数 必须大于2
+static const NSInteger AHEAD_ITEM_COUNT = 2;    //提前几张view开始提醒刷新
 
 @interface CardView () <CardItemViewDelegate>
 
